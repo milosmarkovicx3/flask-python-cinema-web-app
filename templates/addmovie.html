@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Marković Miloš, milosmarkovicx3@gmail.com">
+    <link rel="icon" href="{{url_for('static', filename='/resources/images/icon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/register.css')}}">
+    {# <link rel="stylesheet" href="{{url_for('static', filename='/css/addmovie/addmovie.css')}}">#}
+    <script src="{{url_for('static', filename='/javascript/jquery.js')}}" defer></script>
+    <script src="js/addmovie/addmovie.js" defer></script>
+    <title>Dodaj film</title>
+</head>
+<body class="background">
+    <div id="main">
+        <div id="navbar">
+            <a href="/index">Početna</a>
+            <a href="/events">Događaji</a>
+            <a href="/repertoire">Repertoar</a>
+            <a href="/soon">Uskoro</a>
+            <a href="/contact">Kontakt</a>
+            <a href="/addmovie" class="active">ADMIN</a>
+            <a onclick="document.getElementById('register').style.display='block'" style="width:auto;" class="active">Registracija</a>
+        </div>
+        
+    <div id="register" class="modal">
+        <span onclick="document.getElementById('register').style.display='none'" class="close">&times;</span>
+        <form class="modal-content" action="/register" onsubmit="return validate()" method="POST">
+        <div class="container">
+            <h1>Registrujte se</h1>
+            <hr>
+            <input type="text" style="display: none;" value="registration" name="request">
+            <label for="first-name"><b>Ime:</b></label>
+            <input type="text" placeholder="npr. Miloš" id="first-name" name="first-name" required>
+
+            <label for="last-name"><b>Prezime:</b></label>
+            <input type="text" placeholder="npr. Marković" id="last-name" name="last-name" required>
+
+            <label for="email"><b>Email:</b></label>
+            <input type="text" placeholder="npr. milosmarkovic@gmail.com" id="email" name="email" required>
+
+            <label for="username"><b>Korisničko ime:</b></label>
+            <input type="text" placeholder="npr. milosm99" id="username" name="username" required>
+    
+            <label for="password"><b>Lozinka:</b></label>
+            <input type="password" placeholder="npr. Lozink@2106!" id="password" name="password" required>
+    
+            <label for="password-repeat"><b>Ponovite lozinku:</b></label>
+            <input type="password" placeholder="npr. Lozink@2106!" id="password-repeat" name="password-repeat" required>
+        
+            
+            <input type="checkbox" name="terms">
+            <p>Kreiranjem naloga prihvatate naše <a href=''>uslove korišćenja, politike privatnosti i zaštite podataka</a>.</p>
+
+            <button type="submit" class="signupbtn">Registrujte se</button>       
+        </div>
+        </form>
+    </div>
+    <script>
+        var modal = document.getElementById('register');
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+          <div id="add">
+            <form action="" id="form-movie" enctype="multipart/form-data">
+            <div id="add-movie">
+            <div class="flex-row just-evenly">
+                    <label class="dark-text uppercase text-spacing w-87 align-center" for="title">Naslov:</label>
+            </div>
+            <div class="flex-row just-evenly">                    
+                <input class="w-87" id="title" name="title" type="text" placeholder="npr. Star Wars: Episode IV - A New Hope">
+            </div>
+            <div class="flex-row just-evenly">                    
+                <label class="dark-text uppercase text-spacing w-40 align-center" for="year">Godina:</label>
+                <label class="dark-text uppercase text-spacing w-40 align-center" for="duration">Trajanje:</label>
+            </div>
+            <div class="flex-row just-evenly">
+                <input class="w-40" id="year" name="year" type="text" placeholder="npr. 1977">
+                <input class="w-40" id="duration" name="duration" type="text" placeholder="npr. 2h 1m">
+            </div>
+            <div class="flex-row just-evenly">
+                <label class="dark-text uppercase text-spacing w-40 align-center" for="rating">Rejting:</label>
+                <label class="dark-text uppercase text-spacing w-40 align-center" for="votes">Glasovi:</label>
+            </div>
+            <div class="flex-row just-evenly">
+                <input class="w-40" id="rating" name="rating" type="text" placeholder="npr. 8.6">
+                <input class="w-40" id="votes" name="votes" type="text" placeholder="npr. 1.3M">
+            </div>  
+            <div class="flex-row just-evenly">
+                <label class="dark-text uppercase text-spacing w-40 align-center" for="genres-search">Žanrovi:</label>
+                <label class="dark-text uppercase text-spacing w-40 align-center" for="actors-search">Glumci:</label>
+            </div>
+            <div class="flex-row just-evenly">
+                <div class="w-40" id="genres"> 
+                    <input class="w-100" id="genres-search" name="genres-search" type="search" placeholder="npr. Fantasy">
+                    <div class="flex-row content-start" id="genres-database"></div> 
+                </div>
+                <div class="w-40" id="actors"> 
+                    <input class="w-100" id="actors-search" name="actors-search" type="search" placeholder="npr. Mark Hamill">   
+                    <div class="flex-row content-start" id="actors-database"></div> 
+                </div>
+            </div>
+            <div class="flex-row just-evenly">
+                    <label class="dark-text uppercase text-spacing w-87 align-center" for="image-movie">Poster (2:3):</label>
+            </div>
+            <div class="flex-row just-center"> 
+                <div class="flex w-87 just-between">
+                    <input class="w-80" id="image-path-movie" name="image-path-movie" type="text" placeholder="npr. C:\fakepath\star_wars_iv.png" readonly>
+                    <label class="dark-text uppercase align-center lbl-file" for="image-movie">Izaberi
+                        <input id="image-movie" name="image-movie" type="file" accept=".png, .jpg, .jpeg">
+                    </label>
+                </div>  
+            </div>  
+            <div class="flex-row just-evenly">
+                <label class="dark-text uppercase text-spacing w-87 align-center" for="srw-message-movie">Snimi(poruka srw):</label>
+            </div>
+            <div class="flex-row just-evenly">                    
+                <input class="w-75" id="srw-message-movie" name="srw-message-movie" type="text" placeholder="npr. Uspešno snimljeno!" readonly>
+                <button class="uppercase" id="send-movie" type="submit">Snimi</button>
+            </div>
+            </div>
+            </form>
+            <hr><!--  -->
+            <form action="" id="form-actor" enctype="multipart/form-data">
+            <div id="add-actor">
+                <div class="flex-row just-evenly">
+                        <label class="dark-text uppercase text-spacing w-87 align-center" for="name-actor">Ime i prezime:</label>
+                </div>
+                <div class="flex-row just-evenly">                    
+                    <input class="w-87" id="name-actor" name="name-actor" type="text" placeholder="npr. Robert De Niro">
+                </div>
+                <div class="flex-row just-evenly">
+                    <label class="dark-text uppercase text-spacing w-87 align-center" for="image-actor">Slika (1:1):</label>
+                </div>
+                <div class="flex-row just-center"> 
+                    <div class="flex w-87 just-between">
+                        <input class="w-80" id="image-path-actor" name="image-path-actor" type="text" placeholder="npr. C:\fakepath\robert_de_niro.png" readonly>
+                        <label class="dark-text uppercase align-center lbl-file" for="image-actor">Izaberi
+                            <input id="image-actor" name="image-actor" type="file" accept=".png, .jpg, .jpeg">
+                        </label>
+                    </div>  
+                </div>
+                <div class="flex-row just-evenly">
+                    <label class="dark-text uppercase text-spacing w-87 align-center" for="srw-message-actor">Snimi(poruka srw):</label>
+                </div>
+                <div class="flex-row just-evenly">                    
+                    <input class="w-75" id="srw-message-actor" name="srw-message-actor" type="text" placeholder="npr. Uspešno snimljeno!" readonly>
+                    <button class="uppercase" id="send-actor" type="submit">Snimi</button>
+                </div>
+            </div>
+            <hr><!--  -->
+            </form> 
+            <form action="" id="form-genre" enctype="multipart/form-data">
+            <div id="add-genre">
+                <div class="flex-row just-evenly">
+                        <label class="dark-text uppercase text-spacing w-87 align-center" for="name-genre">Naziv žanra:</label>
+                </div>
+                <div class="flex-row just-evenly">                    
+                    <input class="w-87" id="name-genre" name="name-genre" type="text" placeholder="npr. Action">
+                </div>
+                <div class="flex-row just-evenly">
+                    <label class="dark-text uppercase text-spacing w-87 align-center" for="image-genre">Slika (1:1):</label>
+                </div>
+                <div class="flex-row just-center"> 
+                    <div class="flex w-87 just-between">
+                        <input class="w-80" id="image-path-genre" name="image-path-genre" type="text" placeholder="npr. C:\fakepath\action.png" readonly>
+                        <label class="dark-text uppercase align-center lbl-file" for="image-genre">Izaberi
+                            <input id="image-genre" name="image-genre" type="file" accept=".png, .jpg, .jpeg">
+                        </label>
+                    </div>  
+                </div>
+                <div class="flex-row just-evenly">
+                    <label class="dark-text uppercase text-spacing w-87 align-center" for="srw-message-genre">Snimi(poruka srw):</label>
+                </div>
+                <div class="flex-row just-evenly">                    
+                    <input class="w-75" id="srw-message-genre" name="srw-message-genre" type="text" placeholder="npr. Uspešno snimljeno!" readonly>
+                    <button class="uppercase" id="send-genre" type="submit">Snimi</button>
+                </div>
+            </div>
+            </form>
+          </div>
+    </div>       
+</body>
+</html>

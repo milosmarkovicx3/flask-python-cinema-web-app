@@ -1,0 +1,199 @@
+* {
+    user-select: none;
+    font-family: Consolas, Helvetica, Arial, sans-serif;
+    /* color: azure; */
+    flex-wrap: wrap;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body,
+html {
+    height: 100%
+}
+
+select,
+input,
+label,
+span,
+button {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.background {
+    background-image: url('../../resources/images/background3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#main {
+    width: 100vw;
+    min-height: 100%;
+    height: 100%;
+}
+
+#add {
+    width: 60%;
+    min-height: calc(100% - 50px);
+    margin: auto;
+    background-color: #171717;
+}
+
+/* #form{background-color: #171717;height: 200px;} */
+
+select,
+input,
+button,
+.lbl-file {
+    border: 1px solid black;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+[type="file"] {
+    display: none;
+}
+
+[id^="error-"] {
+    display: none;
+    color: red;
+}
+
+[id$="-database"] {
+    display: flex;
+    width: 50%;
+    height: 150px;
+    border: 1px solid black;
+}
+
+
+#genresDatabase,
+#actorsDatabase {
+    height: calc(4 * 38px);
+    overflow: hidden;
+    background-color: #1d1d1d;
+}
+
+.lbl-actor {
+    width: calc(100% - 38px);
+}
+
+[id$="-role"] {
+    display: none;
+    width: calc(100% - 76px);
+    border: 0;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+[id*="-name-"] {
+    width: calc(100% - 76px);
+    border-bottom: 1px solid black;
+}
+
+
+.field, #instances{display: none;}
+
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.w-100 {
+    display: flex;
+    width: 100%;
+}
+
+.w-38px {
+    width: 38px;
+}
+
+.h-38px {
+    height: 38px;
+}
+
+/* 
+[type="submit"]{background-color:#5da93c;width: 6%;}
+[type="submit"]:hover{background-color:#376822;}
+
+select, input, button, label{height: 38px;}
+input{background-color: #1d1d1d;text-indent: 5px;}
+label{text-indent: 2px;}
+
+
+
+.dark-text{color: #575757;}
+.text-spacing{letter-spacing: 0.2em;}
+.uppercase{text-transform: uppercase;}
+.overflow{overflow: hidden;}
+.flex{display: flex;}
+.flex-row{display: flex; width: 100%;}
+.just-evenly{display: flex;justify-content: space-evenly;}
+.just-between{display: flex;justify-content:space-between}
+.just-end{display: flex;justify-content: flex-end;}
+.just-center{display: flex;justify-content: center;}
+.align-center{display: flex;align-items: center;}
+.content-start{align-content: flex-start;}
+.w-100{display: flex;width: 100%;}
+.w-87{display: flex;width: 87%;}
+.w-80{display: flex;width: 80%;}
+.w-75{display: flex;width: 75%;}
+.w-50{display: flex;width: 50%;}
+.w-40{display: flex;width: 40%;}
+.w-18{display: flex;width: 18%;}
+.w-38px{width: 38px;}
+.h-100{display: flex;height: 100%;}
+.h-38px{height: 38px;}
+
+#genres-database,#actors-database{    
+    height: calc(4 * 38px);
+    overflow: hidden;
+    background-color: #1d1d1d;
+}
+
+#genres-database>div:hover,#actors-database>div:hover{background-color: #7e2626;}
+
+.lbl-click{width: calc(100% - 38px);}
+input[type="file"] {display: none;}
+.lbl-file{padding: 0 10px;}
+.lbl-file:hover{background-color: #1d1d1d;}
+
+[id$="-role"]{
+    display: none;
+    width: calc(100% - 76px);
+    border: 0;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+[id*="-name-"]{
+    width: calc(100% - 76px);
+    border-bottom: 1px solid black;
+}
+
+
+[id^="srw-message"]{color:#830000} */

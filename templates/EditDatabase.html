@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Marković Miloš, milosmarkovicx3@gmail.com">
+    <link rel="icon" href="{{url_for('static', filename='resources/images/icon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/AddToDatabase/css.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <script src="{{url_for('static', filename='javascript/jquery.js')}}" defer></script>
+    <script src="{{url_for('static', filename='javascript/AddToDatabase/js.js')}}" defer></script>
+    <title>Dodaj u bazu</title>
+</head>
+<body>
+        Opcija: 
+        <select id="option">
+            <option value="insert">- Dodaj -</option>            
+            <option value="delete">- Obriši -</option>
+        </select> <br>
+        Kategorija: 
+        <select id="category">
+            <option value="Movie">- Film -</option>
+            <option value="Actor">- Glumac -</option>
+            <option value="Genre">- Žanr -</option>
+        </select> <br>
+        Instance:
+        <select id="instances"></select> <br> 
+        <button onclick="request()">Pošalji zahtev</button>  
+
+        <fieldset id="fieldMovie" class="field">
+        <legend>FILM</legend>
+        <form id="formMovie" enctype="multipart/form-data">            
+                {{ formMovie.hidden_tag() }}
+                {{ formMovie.title.label }}
+                <label id="error-title">*Loš unos, pokušajte opet*</label> <br>
+                {{ formMovie.title }} <br>
+                {{ formMovie.year.label }}
+                <label id="error-year">*Loš unos, pokušajte opet*</label> <br>
+                {{ formMovie.year }} <br>
+                {{ formMovie.duration.label }}
+                <label id="error-duration">*Loš unos, pokušajte opet*</label> <br>
+                {{ formMovie.duration }} <br>
+                {{ formMovie.rating.label }}
+                <label id="error-rating">*Loš unos, pokušajte opet*</label> <br>
+                {{ formMovie.rating }} <br>
+                {{ formMovie.votes.label }}
+                <label id="error-votes">*Loš unos, pokušajte opet*</label> <br>
+                {{ formMovie.votes }} <br>
+            
+                {{ formMovie.poster.label }}
+                <label id="error-poster"></label> <br>
+                {{ formMovie.poster }}
+                {{ formMovie.posterFile }}
+                {{ formMovie.posterFile.label }} <br>
+                
+                {{ formMovie.genresSearch.label }}
+                <label id="error-genresSearch">*Loš unos, pokušajte opet*</label> <br>
+                {{ formMovie.genresSearch }}
+                <div id="genresDatabase"></div>
+
+                {{ formMovie.actorsSearch.label }}
+                <label id="error-actorsSearch">*Loš unos, pokušajte opet*</label> <br>
+                {{ formMovie.actorsSearch }}
+                <div id="actorsDatabase"></div>
+                {{ formMovie.recaptcha }}
+                {{ formMovie.submit }}
+        </form>
+        </fieldset>
+        <fieldset id="fieldActor" class="field">
+        <legend>GLUMAC</legend>
+        <form id="formActor" enctype="multipart/form-data">
+                {{ formActor.hidden_tag() }}
+                <div>
+                    {{ formActor.name.label }}
+                    <label id="error-name">*Loš unos, pokušajte opet*</label> <br>
+                    {{ formActor.name }} <br>
+                    {{ formActor.actorImage.label }}
+                    <label id="error-actorImage"></label> <br>
+                    {{ formActor.actorImage }}
+                    {{ formActor.actorFile }}
+                    {{ formActor.actorFile.label }} <br>
+                    {{ formActor.recaptcha }}
+                    {{ formActor.submit }}
+                </div>            
+        </form>
+        </fieldset>
+        <fieldset id="fieldGenre" class="field">
+        <legend>ŽANR</legend>
+        <form id="formGenre" enctype="multipart/form-data">
+                {{ formGenre.hidden_tag() }}
+                <div>
+                    {{ formGenre.genre.label }}
+                    <label id="error-genre">*Loš unos, pokušajte opet*</label> <br>
+                    {{ formGenre.genre }} <br>
+                    {{ formGenre.genreImage.label }}
+                    <label id="error-genreImage"></label> <br>
+                    {{ formGenre.genreImage }}
+                    {{ formGenre.genreFile }}
+                    {{ formGenre.genreFile.label }} <br>
+                    {{ formGenre.recaptcha }}
+                    {{ formGenre.submit }}
+                </div>
+        </form>
+        </fieldset>
+</body>
+</html>
