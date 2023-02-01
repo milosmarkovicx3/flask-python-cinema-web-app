@@ -13,7 +13,7 @@ class movies(db.Model):
     votes = db.Column('votes', String(255))
     poster = db.Column('poster', String(255))
 
-    actors = relationship('actors', secondary=movie_actor, backref='movies')
+    #actors = relationship('actors', secondary=movie_actor, backref='movies')
 
     def __init__(self, title, year, duration, rating, votes, poster):
         self.title = title

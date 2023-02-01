@@ -301,7 +301,7 @@ from entities.entities.movies import movies
 
 @app.route('/proba')
 def show_all():
-    return movies.query.get(4)
+    return jsonify(movies.query.get(4).__repr__())
     #return mf.get_by_id(4)
     #return mf.get_actors_by(4)
 
