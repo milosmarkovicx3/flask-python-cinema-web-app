@@ -5,5 +5,6 @@ def toJSON(entity_array):
     result = []
     for entity in entity_array:
         result.append(entity.__repr__())
-    return escape(jsonify(result))
+    return jsonify(result)
+    #return escape(jsonify(result))
 
