@@ -5,7 +5,7 @@ from ..core.base import db
 
 class actors(db.Model):
     __tablename__ = 'actors'
-    id = db.Column('id_actor', Integer, primary_key = True)
+    id = db.Column('id', Integer, primary_key = True)
     name = db.Column('name', String(255))
     image = db.Column('image', String(255))
 
