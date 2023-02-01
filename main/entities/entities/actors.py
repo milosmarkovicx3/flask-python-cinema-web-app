@@ -9,8 +9,6 @@ class actors(db.Model):
     name = db.Column('name', String(255))
     image = db.Column('image', String(255))
 
-    movies = relationship('movies', secondary=movie_actor, backref='actors')
-
     def __init__(self, name, image):
         self.name = name
         self.image = image
