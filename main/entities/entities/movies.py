@@ -5,7 +5,7 @@ from ..core.base import db
 
 class movies(db.Model):
     __tablename__ = 'movies'
-    id = db.Column('id_movie', Integer, primary_key = True)
+    id = db.Column('id', Integer, primary_key = True)
     title = db.Column('title', String(255))
     year = db.Column('year', String(255))
     duration = db.Column('duration', String(255))

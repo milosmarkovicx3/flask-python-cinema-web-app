@@ -278,7 +278,10 @@ def register():
 
 
 
-
+import entities.facade.movies_facade as mf
+from entities.entities.movies import movies
+#from entities.entities.actors import actors
+from service.utility.utility import toJSON
 
 
 
@@ -295,13 +298,15 @@ def register():
 #         user = db.get_or_404(User, id)   #.first_or_404()
 #         db.commit()
 
+def getActor(actor):
+    return actors.query.filter_by(name=actor).first()
 
-import entities.facade.movies_facade as mf
-from entities.entities.movies import movies
+
 
 @app.route('/proba')
 def show_all():
-    return movies.query.get(4).actors
+    #return jsonify(getActor("Robert de Niro").__repr__())
+    return toJSON(movies.query.get(4).actors)
     #return mf.get_by_id(4)
     #return mf.get_actors_by(4)
 
