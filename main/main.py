@@ -282,7 +282,7 @@ import entities.facade.movies_facade as mf
 from entities.entities.movies import movies
 #from entities.entities.actors import actors
 from service.utility.utility import toJSON
-
+import entities.facade.movies_facade as mf
 
 
 # def getActor(actor):
@@ -298,15 +298,27 @@ from service.utility.utility import toJSON
 #         user = db.get_or_404(User, id)   #.first_or_404()
 #         db.commit()
 
-def getActor(actor):
-    return actors.query.filter_by(name=actor).first()
-
+# def getActor(actor):
+#     return actors.query.filter_by(name=actor).first()
+#
 
 
 @app.route('/proba')
 def show_all():
+    try:
+        return toJSON(mf.get_by_id(4).actors)
+    except Exception as e:
+        return str(e)
+
+@app.route('/proba1')
+def shoaw_all():
+    try:
+        return toJSON(mf.get_all())
+    except Exception as e:
+        return str(e)
+
     #return jsonify(getActor("Robert de Niro").__repr__())
-    return toJSON(movies.query.get(4).actors)
+    #return toJSON(movies.query.get(4).actors)
     #return mf.get_by_id(4)
     #return mf.get_actors_by(4)
 

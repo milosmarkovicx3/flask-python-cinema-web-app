@@ -33,4 +33,15 @@ class movies(db.Model):
             "votes": self.votes,
             "poster": self.poster
         }
+    def __str__(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "year": self.year,
+            "duration": self.duration,
+            "rating": self.rating,
+            "votes": self.votes,
+            "poster": self.poster
+        }
+
 
