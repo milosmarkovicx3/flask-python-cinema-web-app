@@ -1,4 +1,4 @@
-from ..utility.logger import log
+from log.logger import log
 from ..core.base import db
 from ..entities.movies import movies
 from ..entities.actors import actors
@@ -23,7 +23,6 @@ def get_by_name(name):
 
 def get_all():
     try:
-        log.info('<>')
         return db.session.query(actors).all()
     except Exception as e:
         log.error(e)

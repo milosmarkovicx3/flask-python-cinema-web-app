@@ -1,7 +1,6 @@
-from ..utility.logger import log
+from log.logger import log
 from ..core.base import db
 from ..entities.movies import movies
-from ..entities.actors import actors
 from ..entities.movie_actor import movie_actor
 
 
@@ -23,7 +22,6 @@ def get_by_title(title):
 
 def get_all():
     try:
-        log.info('<>')
         return db.session.query(movies).all()
     except Exception as e:
         log.error(e)
@@ -46,6 +44,7 @@ def delete(id):
     try:
         log.info(f'id: {id}')
         db.session.query(movies).filter_by(id = id).delete()
+        db.session.query(movie_actor).filter_by(id_movie = id).delete()
         db.session.commit()
     except Exception as e:
         log.error(e)
