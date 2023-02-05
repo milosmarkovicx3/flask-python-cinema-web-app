@@ -1,12 +1,9 @@
-from flask import render_template
-
 #from WTForms import *
 
 from flask import Flask
 
-from WTForms import WTFInsertMovie, WTFInsertActor, WTFInsertGenre
-
-app = Flask(__name__)
+from service.utility.logger import project_path
+app = Flask(__name__, template_folder=f'{project_path}templates')
 # csrf = CSRFProtect()
 # csrf.init_app(app)
 app.config["SECRET_KEY"] = 'development key'
@@ -24,10 +21,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #     print("[error: 413] Veličina datoteke prelazi dozvoljenu granicu!")
 #
 #
-from service.utility.logger import project_path
-@app.route('/EditDatabase', methods=['GET','POST'])
-def EditDatabase():
-    return render_template('EditDatabase.html', formMovie=WTFInsertMovie(), formActor=WTFInsertActor(), formGenre=WTFInsertGenre())
+
+# @app.route('/EditDatabase', methods=['GET','POST'])
+# def EditDatabase():
+#     return render_template('EditDatabase.html', formMovie=WTFInsertMovie(), formActor=WTFInsertActor(), formGenre=WTFInsertGenre())
 
 
 # def registerUser(req):
@@ -251,9 +248,14 @@ def EditDatabase():
 
 
 from entities.core.base import db
+from web.rest_api.genres_api import genres_api
+from web.rest_api.actors_api import actors_api
+from web.rest_api.movies_api import movies_api
 
-from web.entities_api.actors_api import actors_api
+
 app.register_blueprint(actors_api, url_prefix='/actors')
+app.register_blueprint(genres_api, url_prefix='/genres')
+app.register_blueprint(movies_api, url_prefix='/movies')
 
 
 

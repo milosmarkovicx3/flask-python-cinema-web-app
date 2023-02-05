@@ -1,5 +1,4 @@
 class Result:
-
     OK = "200"
     BAD_REQUEST = "400"
     UNAUTHORIZED = "401"
@@ -27,6 +26,8 @@ class Result:
     def set_status(self, status):
         self._status = status
 
+    def set_status_with_description(self, status):
+        self._status = status
         if status == "200":
             self._description = "OK"
         elif status == "400":
@@ -35,19 +36,21 @@ class Result:
             self._description = "UNAUTHORIZED"
         elif status == "403":
             self._description = "FORBIDDEN"
+        elif status == "404":
+            self._description = "NOT_FOUND"
         elif status == "500":
             self._description = "INTERNAL_SERVER_ERROR"
 
     def set_description(self, description):
             self._description = description
 
-    def _repr_helper_for_array(self):
+    def _repr_helper_for_list(self):
         return [single_item.__repr__() for single_item in self._item]
 
     def __repr__(self):
         return {
             "status": self._status,
             "description": self._description,
-            "item": self._repr_helper_for_array() if isinstance(self._item, list) else self._item.__repr__()
+            "item": self._repr_helper_for_list() if isinstance(self._item, list) else self._item.__repr__()
         }
 

@@ -9,7 +9,11 @@ from entities.models.movie_genre import movie_genre
 def get_by_id(id):
     try:
         log.info(f'id: {id}')
-        return db.session.query(genres).filter(genres.id == id).first()
+        response = db.session.query(genres).filter(genres.id == id).first()
+        if response is None:
+            return False
+        else:
+            return response
     except Exception as e:
         log.error(e)
         return None
@@ -17,14 +21,22 @@ def get_by_id(id):
 def get_by_name(name):
     try:
         log.info(f'name: {name}')
-        return db.session.query(genres).filter(genres.name == name).first()
+        response =  db.session.query(genres).filter(genres.name == name).first()
+        if response is None:
+            return False
+        else:
+            return response
     except Exception as e:
         log.error(e)
         return None
 
 def get_all():
     try:
-        return db.session.query(genres).order_by(genres.name).all()
+        response =  db.session.query(genres).order_by(genres.name).all()
+        if response is None:
+            return False
+        else:
+            return response
     except Exception as e:
         log.error(e)
         return None
@@ -32,6 +44,8 @@ def get_all():
 def create(genre):
     try:
         log.info(f'genre: {genre}')
+        if not isinstance(genre, genres):
+            return False
         db.session.add(genre)
         db.session.commit()
         return True
@@ -43,12 +57,17 @@ def create(genre):
 def delete_by_id(id):
     try:
         log.info(f'id: {id}')
-        db.session.query(genres).filter_by(id = id).delete()
+        response = db.session.query(genres).filter(genres.id == id).first()
+        if response is None:
+            return False
+        db.session.delete(response)
         db.session.commit()
         return True
     except Exception as e:
         log.error(e)
         db.rollback()
         return None
+
+
 
 

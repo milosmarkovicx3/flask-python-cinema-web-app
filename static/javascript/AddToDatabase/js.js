@@ -3,9 +3,9 @@ let actorsSelected=[];
 let genres=[];
 let genresSelected=[];
 let movies=[];
-function getActors(){$.post("/getActors",  response=>{actors=response;})}
-function getGenres(){$.post("/getGenres",  response=>{genres=response;})}
-function getMovies(){$.post("/getMovies",  response=>{movies=response;})}
+function getActors(){$.post("/actors/",  response=>{actors=response;})}
+function getGenres(){$.post("/genres/",  response=>{genres=response;})}
+function getMovies(){$.post("/movies/",  response=>{movies=response;})}
 getActors();
 getGenres();
 getMovies();

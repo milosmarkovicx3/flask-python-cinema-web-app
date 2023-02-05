@@ -29,7 +29,7 @@ def length(min=-1, max=-1):
 #     return _end_with
 
 
-class WTFInsertMovie(FlaskForm):
+class wtf_create_movie(FlaskForm):
     title = StringField("Naslov: ", validators=[length(min=2,max=100)], render_kw={"placeholder": "npr. Star Wars: Episode IV - A New Hope"})
     year = StringField("Godina: ", validators=[length(min=4,max=4)], render_kw={"placeholder": "npr. 1977"})
     duration = StringField("Trajanje: ", validators=[length(min=2,max=6)], render_kw={"placeholder": "npr. 2h 1m"})
@@ -52,14 +52,14 @@ class WTFInsertMovie(FlaskForm):
     # language = SelectField('Languages', choices=[('cpp', 'C++'), ('py', 'Python')])
     # submit = SubmitField("Send")
 
-class WTFInsertActor(FlaskForm):
+class wtf_create_actor(FlaskForm):
     name = StringField("Ime i prezime: ", validators=[length(min=6, max=100)], render_kw={"placeholder": "npr. Robert De Niro"})
     actorImage = StringField("Slika (1:1): ", validators=[FileAllowed(['png','jpg','jpeg'])], render_kw={"placeholder": "npr. C:\\fakepath\\robert_de_niro.png", "readonly": "true"})
     actorFile = FileField("Izaberi", validators=[], render_kw={"accept": ".png, .jpg, .jpeg"})
     submit = SubmitField("Pošalji zahtev")
     recaptcha = RecaptchaField()
 
-class WTFInsertGenre(FlaskForm):
+class wtf_create_genre(FlaskForm):
     genre = StringField("Naziv: ", validators=[length(min=3, max=100)], render_kw={"placeholder": "npr. Action"})
     genreImage = StringField("Slika (1:1): ", validators=[FileAllowed(['png','jpg','jpeg'])], render_kw={"placeholder": "npr. C:\\fakepath\\action.png", "readonly": "true"})
     genreFile = FileField("Izaberi", validators=[], render_kw={"accept": ".png, .jpg, .jpeg"})

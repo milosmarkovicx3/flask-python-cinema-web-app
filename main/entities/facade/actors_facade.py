@@ -9,7 +9,11 @@ from entities.models.movie_actor import movie_actor
 def get_by_id(id):
     try:
         log.info(f'id: {id}')
-        return db.session.query(actors).filter(actors.id == id).first()
+        response = db.session.query(actors).filter(actors.id == id).first()
+        if response is None:
+            return False
+        else:
+            return response
     except Exception as e:
         log.error(e)
         return None
@@ -17,14 +21,22 @@ def get_by_id(id):
 def get_by_name(name):
     try:
         log.info(f'name: {name}')
-        return db.session.query(actors).filter(actors.name == name).first()
+        response =  db.session.query(actors).filter(actors.name == name).first()
+        if response is None:
+            return False
+        else:
+            return response
     except Exception as e:
         log.error(e)
         return None
 
 def get_all():
     try:
-        return db.session.query(actors).order_by(actors.name).all()
+        response =  db.session.query(actors).order_by(actors.name).all()
+        if response is None:
+            return False
+        else:
+            return response
     except Exception as e:
         log.error(e)
         return None
@@ -32,6 +44,8 @@ def get_all():
 def create(actor):
     try:
         log.info(f'actor: {actor}')
+        if not isinstance(actor, actors):
+            return False
         db.session.add(actor)
         db.session.commit()
         return True
@@ -43,7 +57,10 @@ def create(actor):
 def delete_by_id(id):
     try:
         log.info(f'id: {id}')
-        db.session.query(actors).filter_by(id = id).delete()
+        response = db.session.query(actors).filter(actors.id == id).first()
+        if response is None:
+            return False
+        db.session.delete(response)
         db.session.commit()
         return True
     except Exception as e:
