@@ -1,12 +1,10 @@
-import os
-
-from flask import Flask, request, render_template, jsonify
-from werkzeug.utils import secure_filename
+from flask import render_template
 
 #from WTForms import *
 
-import pymysql
 from flask import Flask
+
+from WTForms import WTFInsertMovie, WTFInsertActor, WTFInsertGenre
 
 app = Flask(__name__)
 # csrf = CSRFProtect()
@@ -26,11 +24,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #     print("[error: 413] Veličina datoteke prelazi dozvoljenu granicu!")
 #
 #
-# @app.route('/EditDatabase', methods=['GET','POST'])
-# def EditDatabase():
-#     return render_template('EditDatabase.html', formMovie=WTFInsertMovie(), formActor=WTFInsertActor(), formGenre=WTFInsertGenre())
-#
-#
+from service.utility.logger import project_path
+@app.route('/EditDatabase', methods=['GET','POST'])
+def EditDatabase():
+    return render_template('EditDatabase.html', formMovie=WTFInsertMovie(), formActor=WTFInsertActor(), formGenre=WTFInsertGenre())
+
+
 # def registerUser(req):
 #     first_name = req.form['first-name']
 #     last_name = req.form['last-name']
@@ -40,22 +39,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #     sqlList = []
 #     sql = "insert into users(first_name,last_name,email,password) values('%s','%s','%s','%s') " % (first_name,last_name,email,password)
 #     sqlExecute(sql)
-#
+
 # #---------------------------------------------------------------------------------------------------
-# @app.route('/getMovies', methods=['GET','POST'])
-# def getMovies(): return sqlSelect("select * from movies order by title asc")
-#
-# @app.route('/getMovie/<int:id_movie>', methods=['GET'])
-# def getMovie(id_movie):
-#     return sqlSelect(f"select * from movies where id_movie={id_movie}")
-#
-# @app.route('/getMovieGenres/<int:id_movie>', methods=['GET'])
-# def getMovieGenres(id_movie):
-#     return sqlSelect(f"select * from movie_genre where id_movie={id_movie}")
-#
-# @app.route('/getMovieActors/<int:id_movie>', methods=['GET'])
-# def getMovieActors(id_movie):
-#     return sqlSelect(f"select * from movie_actor where id_movie={id_movie}")
 #
 # @app.route('/insertMovie', methods=['POST'])
 # def insertMovie():
@@ -173,12 +158,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #     db.close()
 #     return returnMessage
 # #---------------------------------------------------------------------------------------------------
-# @app.route('/getGenres',methods=['GET','POST'])
-# def getGenres(): return sqlSelect("select * from genres order by genre asc")
-#
-# @app.route('/getGenre/<int:id_genre>',methods=['GET','POST'])
-# def getGenre(id_genre): return sqlSelect(f"select * from genres  where id_genre={id_genre}")
-#
 # @app.route('/insertGenre', methods=['POST'])
 # def insertGenre():
 #     form =  WTFInsertGenre()
@@ -265,55 +244,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #         if request.form['request'] == 'registerUser':
 #             registerUser(request)
 #
-#
-#
-#
-#
-#
-#
-# import entities.facade.movies_facade as mf
-# from entities.entities.movies import movies
-# #from entities.entities.actors import actors
-# from service.utility.utility import toJSON
-# import entities.facade.movies_facade as mf
-#
-#
-# # def getActor(actor):
-# #     return actors.query.filter_by(name=actor).first()
-# #     if found_actor:
-# #         pass
-# #     else:
-# #         actor = actors('MilosCarProba 1', "123")
-# #         db.session.add(actor)
-# #         db.delete(actor)
-# #         users = db.session.execute(db.select(User).order_by(User.username)).scalars()
-# #         user = db.session.execute(db.select(User).filter_by(username=username)).one()
-# #         user = db.get_or_404(User, id)   #.first_or_404()
-# #         db.commit()
-#
-# # def getActor(actor):
-# #     return actors.query.filter_by(name=actor).first()
-# #
 
 
-# @app.route('/proba')
-# def show_all():
-#     try:
-#         return toJSON(mf.get_by_id(4).actors)
-#     except Exception as e:
-#         return str(e)
-#
-# @app.route('/proba1')
-# def shoaw_all():
-#     try:
-#         return toJSON(mf.get_all())
-#     except Exception as e:
-#         return str(e)
-
-    #return jsonify(getActor("Robert de Niro").__repr__())
-    #return toJSON(movies.query.get(4).actors)
-    #return mf.get_by_id(4)
-    #return mf.get_actors_by(4)
 
 
 
@@ -322,7 +254,7 @@ from entities.core.base import db
 
 from web.entities_api.actors_api import actors_api
 app.register_blueprint(actors_api, url_prefix='/actors')
-#app.register_blueprint(actors_api)
+
 
 
 

@@ -1,6 +1,0 @@
-2023-02-02 20:52:55,355 INFO    [movies_facade.py(get_by_id:11)] 4
-2023-02-02 21:10:01,322 ERROR   [movies_facade.py(get_all:30)] Logger.info() missing 1 required positional argument: 'msg'
-2023-02-02 21:10:56,141 INFO    [movies_facade.py(get_all:27)] 
-2023-02-02 21:24:06,650 INFO    [movies_facade.py(get_all:27)] 
-2023-02-02 21:24:13,265 INFO    [movies_facade.py(get_all:27)] 
-2023-02-02 21:24:15,581 INFO    [movies_facade.py(get_by_id:11)] 4

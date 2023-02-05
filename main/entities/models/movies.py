@@ -1,7 +1,8 @@
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import relationship
-from .movie_actor import movie_actor
-from ..core.base import db
+from entities.models.movie_actor import movie_actor
+from entities.models.movie_genre import movie_genre
+from entities.core.base import db
 
 class movies(db.Model):
     __tablename__ = 'movies'
@@ -14,6 +15,7 @@ class movies(db.Model):
     poster = db.Column('poster', String(255))
 
     actors = relationship('actors', secondary=movie_actor, backref='movies')
+    genres = relationship('genres', secondary=movie_genre, backref='movies')
 
     def __init__(self, title, year, duration, rating, votes, poster):
         self.title = title

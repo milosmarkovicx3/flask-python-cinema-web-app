@@ -7,10 +7,11 @@ from logging.handlers import TimedRotatingFileHandler
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
-project_path = os.path.dirname(os.path.abspath(sys.argv[0]))
-current_time = time.strftime("%Y.%m.%d")
+project_path = "C:/Users/Markovic Milos/PycharmProjects/pythonProject/zavrsni-rad/"
+log_path = project_path + "log/"
+current_time = time.strftime("%Y-%m-%d")
 
-handler = TimedRotatingFileHandler(f'{project_path}\\server-{current_time}.log', when="d", interval=1, backupCount=30, utc=True)
+handler = TimedRotatingFileHandler(f'{project_path}server.log.{current_time}', when="d", interval=1, backupCount=30, utc=True)
 
 handler.setLevel(logging.DEBUG)
 
