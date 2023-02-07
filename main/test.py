@@ -15,6 +15,6 @@ def xor_str(a, b):
 
 cipher = encrypt('Losmim123!', 'milos')
 print(cipher)
-msg = decrypt(cipher, 'milos')
-print(msg)
+masg = decrypt(cipher, 'milos')
+print(masg)
 
