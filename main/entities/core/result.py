@@ -44,13 +44,24 @@ class Result:
     def set_description(self, description):
             self._description = description
 
-    def _repr_helper_for_list(self):
-        return [single_item.__repr__() for single_item in self._item]
+    def _repr_helper(self):
+        if not isinstance(self._item, list):
+            return self._item.__repr__()
+        lst = []
+        for item in self._item:
+            if isinstance(item, list):
+                sub_lst = []
+                for sub_item in item:
+                    sub_lst.append(sub_item.__repr__())
+                lst.append(sub_lst)
+            else:
+                lst.append(item.__repr__())
+        return lst
 
     def __repr__(self):
         return {
             "status": self._status,
             "description": self._description,
-            "item": self._repr_helper_for_list() if isinstance(self._item, list) else self._item.__repr__()
+            "item": self._repr_helper()
         }
 

@@ -38,7 +38,7 @@ class wtf_create_movie(FlaskForm):
     poster = StringField("Poster (2:3): ", validators=[], render_kw={"placeholder": "npr. C:\\fakepath\\star_wars_iv.png", "readonly": "true"})
     posterFile = FileField("Izaberi", validators=[FileAllowed(['png','jpg','jpeg'])], render_kw={"accept": ".png, .jpg, .jpeg"})
     submit = SubmitField("Pošalji zahtev")
-    recaptcha = RecaptchaField()
+    # recaptcha = RecaptchaField()
     genresSearch = StringField("Žanrovi: ", render_kw={"placeholder": "npr. Fantasy"})
     actorsSearch = StringField("Glumci: ", render_kw={"placeholder": "npr. Mark Hamill"})
 
@@ -57,13 +57,13 @@ class wtf_create_actor(FlaskForm):
     actorImage = StringField("Slika (1:1): ", validators=[FileAllowed(['png','jpg','jpeg'])], render_kw={"placeholder": "npr. C:\\fakepath\\robert_de_niro.png", "readonly": "true"})
     actorFile = FileField("Izaberi", validators=[], render_kw={"accept": ".png, .jpg, .jpeg"})
     submit = SubmitField("Pošalji zahtev")
-    recaptcha = RecaptchaField()
+    # recaptcha = RecaptchaField()
 
 class wtf_create_genre(FlaskForm):
     genre = StringField("Naziv: ", validators=[length(min=3, max=100)], render_kw={"placeholder": "npr. Action"})
     genreImage = StringField("Slika (1:1): ", validators=[FileAllowed(['png','jpg','jpeg'])], render_kw={"placeholder": "npr. C:\\fakepath\\action.png", "readonly": "true"})
     genreFile = FileField("Izaberi", validators=[], render_kw={"accept": ".png, .jpg, .jpeg"})
     submit = SubmitField("Pošalji zahtev")
-    recaptcha = RecaptchaField()
+    # recaptcha = RecaptchaField()
 
 

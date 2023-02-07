@@ -48,7 +48,7 @@ def create(actor):
             return False
         db.session.add(actor)
         db.session.commit()
-        return True
+        return actor
     except Exception as e:
         log.error(e)
         db.rollback()
@@ -62,7 +62,7 @@ def delete_by_id(id):
             return False
         db.session.delete(response)
         db.session.commit()
-        return True
+        return response
     except Exception as e:
         log.error(e)
         db.rollback()

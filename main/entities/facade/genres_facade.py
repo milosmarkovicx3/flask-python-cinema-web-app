@@ -48,7 +48,7 @@ def create(genre):
             return False
         db.session.add(genre)
         db.session.commit()
-        return True
+        return genre
     except Exception as e:
         log.error(e)
         db.rollback()
@@ -62,7 +62,7 @@ def delete_by_id(id):
             return False
         db.session.delete(response)
         db.session.commit()
-        return True
+        return response
     except Exception as e:
         log.error(e)
         db.rollback()
