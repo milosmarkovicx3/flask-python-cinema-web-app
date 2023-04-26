@@ -1,0 +1,14 @@
+------------------------------------------------------------
+1. Promeniti vrednost 'project_path' promenljive u 'logger.py' klasi.
+------------------------------------------------------------
+2. Kreirati promenljivu 'PYTHONPATH' sa vrednošću npr:
+'C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main'
+------------------------------------------------------------
+2.1. Ako se problem ne reši kreiranjem promenljive, uraditi desni klik
+na 'main' folder i setovati ga kao 'Source folder' kroz 'Mark directory as'.
+
+I onda checkirati opciju 'Add source roots to PYHTONPATH' unutar
+podesavanja 'Build, Execution, Deployment' > 'Console' > 'Pyhton Console'
+
+https://stackoverflow.com/questions/21236824/unresolved-reference-issue-in-pycharm
+------------------------------------------------------------

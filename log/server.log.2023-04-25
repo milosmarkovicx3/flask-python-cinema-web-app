@@ -1,0 +1,6 @@
+2023-04-25 05:48:12,445 INFO    [actors_facade.py(get_by_id:11)] id: 1
+2023-04-25 05:48:47,356 INFO    [actors_facade.py(get_by_id:11)] id: 1
+2023-04-25 05:48:48,590 INFO    [actors_facade.py(get_by_id:11)] id: 1
+2023-04-25 06:54:51,442 INFO    [actors_facade.py(get_by_id:12)] id: 1
+2023-04-25 06:55:00,348 INFO    [actors_facade.py(get_by_id:12)] id: 2
+2023-04-25 07:49:41,225 INFO    [actors_facade.py(get_by_id:12)] id: 3

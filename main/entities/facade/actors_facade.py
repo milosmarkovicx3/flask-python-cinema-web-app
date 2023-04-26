@@ -6,6 +6,7 @@ from entities.models.actors import actors
 from entities.models.movie_actor import movie_actor
 
 
+
 def get_by_id(id):
     try:
         log.info(f'id: {id}')
@@ -21,7 +22,7 @@ def get_by_id(id):
 def get_by_name(name):
     try:
         log.info(f'name: {name}')
-        response =  db.session.query(actors).filter(actors.name == name).first()
+        response = db.session.query(actors).filter(actors.name == name).first()
         if response is None:
             return False
         else:
@@ -32,7 +33,7 @@ def get_by_name(name):
 
 def get_all():
     try:
-        response =  db.session.query(actors).order_by(actors.name).all()
+        response = db.session.query(actors).order_by(actors.name).all()
         if response is None:
             return False
         else:

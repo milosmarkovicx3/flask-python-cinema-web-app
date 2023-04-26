@@ -1,125 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
+  <title>Arhiv | Početna</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-  </style>
+  <meta name="description" content="">
+  <meta name="author" content="Marković Miloš, milos.dj.markovic@gmail.com">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='resources/images/arhiva_logo.ico') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-solid-rounded/css/uicons-solid-rounded.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-bold-straight/css/uicons-bold-straight.css') }}">
+  <script src="{{ url_for('static', filename='javascript/jquery.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='javascript/bootstrap.min.js') }}" defer></script>
 </head>
 <body>
-<div class="col-lg-8 d-flex justify-content-center">
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>Online Store</h1>      
-    <p>Mission, Vission & Values</p>
-  </div>
-</div>
+  <div class="container-sm">
+    <div class="row">
+        <div class="jumbotron">
+          <div class="container text-center">
+            <h1>Arhiv</h1>      
+            <p>Mozda neki okretac slika</p>
+          </div>
+        </div>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="#">Stores</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-danger">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-success">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-  </div>
-</div><br>
+        <!--NAVIGACIJA_POČETAK-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li>
+                  <a id="nav-li-logo" href="#">
+                    <img id="nav-img-logo" src="{{ url_for('static', filename='resources/images/arhiva_logo.jpg') }}" alt="ARHIV-LOGO">
+                  </a>
+                </li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">POČETNA</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">REPERTOAR</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><a class="nav-link" href="#"><span class="fi fi-bs-list"></span> Registracija</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><span class="fi fi-sr-user"></span> Prijava</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!--NAVIGACIJA_KRAJ-->
 
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
+
+        <!--IMG_SLIDER_POČETAK-->
+        <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{ url_for('static', filename='resources/images/background1.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='resources/images/background2.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='resources/images/background3.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!--IMG_SLIDER_KRAJ-->
+
+
+        <div class="container">    
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              </div>
+            </div>
+            <div class="col-sm-4"> 
+              <div class="panel panel-danger">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              </div>
+            </div>
+            <div class="col-sm-4"> 
+              <div class="panel panel-success">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              </div>
+            </div>
+          </div>
+        </div><br>
+
+        <div class="container">    
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              </div>
+            </div>
+            <div class="col-sm-4"> 
+              <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              </div>
+            </div>
+            <div class="col-sm-4"> 
+              <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              </div>
+            </div>
+          </div>
+        </div><br><br>
+
+        <footer class="container-fluid text-center">
+          <p>Online Store Copyright</p>  
+          <form class="form-inline">Get deals:
+            <input type="email" class="form-control" size="50" placeholder="Email Address">
+            <button type="button" class="btn btn-danger">Sign Up</button>
+          </form>
+        </footer>
     </div>
   </div>
-</div><br><br>
-</div>
-<footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
-  <form class="form-inline">Get deals:
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
-  </form>
-</footer>
 
 </body>
 </html>

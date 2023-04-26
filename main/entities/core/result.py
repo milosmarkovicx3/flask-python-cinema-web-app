@@ -6,7 +6,7 @@ class Result:
     NOT_FOUND = "404"
     INTERNAL_SERVER_ERROR = "500"
 
-    def __init__(self, item = None, status = OK, description = "OK"):
+    def __init__(self, item=None, status=OK, description="OK"):
         self._item = item
         self._status = status
         self._description = description

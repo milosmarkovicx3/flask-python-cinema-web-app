@@ -62,7 +62,7 @@ def create(data):
         upload_folder = f'{project_path}static/resources/actors-images/'
         image_file.save(os.path.join(upload_folder, filename))
 
-        actor = actors(name = data['name'], image = data['image'])
+        actor = actors(name=data['name'], image=data['image'])
         result.set_item(af.create(actor))
 
         if result.get_item() is False:

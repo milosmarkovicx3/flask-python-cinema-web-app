@@ -21,7 +21,7 @@ def get_by_id(id):
 def get_by_name(name):
     try:
         log.info(f'name: {name}')
-        response =  db.session.query(genres).filter(genres.name == name).first()
+        response = db.session.query(genres).filter(genres.name == name).first()
         if response is None:
             return False
         else:
@@ -32,7 +32,7 @@ def get_by_name(name):
 
 def get_all():
     try:
-        response =  db.session.query(genres).order_by(genres.name).all()
+        response = db.session.query(genres).order_by(genres.name).all()
         if response is None:
             return False
         else:

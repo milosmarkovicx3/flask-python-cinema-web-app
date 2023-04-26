@@ -3,7 +3,11 @@
 from flask import Flask, render_template
 
 from service.utility.logger import project_path
-app = Flask(__name__, template_folder=f'{project_path}templates')
+app = Flask(
+    __name__,
+    template_folder=f'{project_path}templates',
+    static_folder=f'{project_path}static'
+)
 # csrf = CSRFProtect()
 # csrf.init_app(app)
 app.config["SECRET_KEY"] = 'development key'
@@ -97,10 +101,10 @@ from web.rest_api.actors_api import actors_api
 from web.rest_api.movies_api import movies_api
 from service.core.wtf_forms import *
 
+
 app.register_blueprint(actors_api, url_prefix='/actors')
 app.register_blueprint(genres_api, url_prefix='/genres')
 app.register_blueprint(movies_api, url_prefix='/movies')
-
 
 
 @app.route('/EditDatabase', methods=['GET'])

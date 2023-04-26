@@ -52,7 +52,7 @@ def get_all():
 def create(data):
     try:
         result = Result()
-        form =  wtf_create_movie()
+        form = wtf_create_movie()
         if not form.validate():
             result.set_status_with_description(Result.BAD_REQUEST)
             return toJSON(result)
@@ -62,7 +62,7 @@ def create(data):
         upload_folder = f'{project_path}static/resources/movies-images/'
         image_file.save(os.path.join(upload_folder, filename))
 
-        movie = movies(name = data['name'], image = data['image'])
+        movie = movies(name=data['name'], image=data['image'])
         # actors_with_roles = [{'actor': actor_1, 'role': 'Neo'}, {'actor': actor_2, 'role': 'Morpheus'}]
         # genres = [genre1, genre2]
         # movie.actors = [movie_actor(id_actor=actor['actor'].id, role=actor['role']) for actor in actors_with_roles]

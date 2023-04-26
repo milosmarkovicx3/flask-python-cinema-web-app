@@ -19,7 +19,7 @@ def get_by_id(id):
 def get_by_title(title):
     try:
         log.info(f'title: {title}')
-        response =  db.session.query(movies).filter(movies.title == title).first()
+        response = db.session.query(movies).filter(movies.title == title).first()
         if response is None:
             return False
         else:
@@ -30,7 +30,7 @@ def get_by_title(title):
 
 def get_all():
     try:
-        response =  db.session.query(movies).order_by(movies.title).all()
+        response = db.session.query(movies).order_by(movies.title).all()
         if response is None:
             return False
         else:

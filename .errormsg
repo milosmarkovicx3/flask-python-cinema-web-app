@@ -1,0 +1,7 @@
+--------------------------------------------------------------
+ModuleNotFoundError: No module named 'MySQLdb'
+>>> pip3 install mysqlclient
+--------------------------------------------------------------
+ModuleNotFoundError: No module named 'flask_sqlalchemy'
+>>> pip3 install SQLAlchemy Flask-SQLAlchemy
+--------------------------------------------------------------
