@@ -10,25 +10,96 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='resources/images/arhiva_logo.ico') }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/index/style.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-solid-rounded/css/uicons-solid-rounded.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-bold-straight/css/uicons-bold-straight.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-solid-straight/css/uicons-solid-straight.css') }}">
+  <script src="{{ url_for('static', filename='javascript/index/js.js') }}" defer></script>
   <script src="{{ url_for('static', filename='javascript/jquery.js') }}" defer></script>
-  <script src="{{ url_for('static', filename='javascript/bootstrap.min.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='javascript/bootstrap.js') }}" defer></script>
 </head>
-<body>
-  <div class="container-sm">
-    <div class="row">
-        <div class="jumbotron">
-          <div class="container text-center">
-            <h1>Arhiv</h1>      
-            <p>Mozda neki okretac slika</p>
+<body style="background-image: url('{{ url_for('static', filename='resources/images/background-texture.jpg') }}'); background-size: 50px; background-repeat: repeat;">
+
+    <!--MODALS_POČETAK-->
+    <div>
+      <div class="modal fade" id="staticBackdropRegistation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropRegistationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropRegistationLabel">REGISTRACIJA</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <div id="passwordHelpBlock" class="form-text">
+                    Vaša lozinka mora sadržati minimum 5 karaktera, slovo, broj i specijalan znak.
+                  </div>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="modal fade" id="staticBackdropLogIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLogInLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLogInLabel">PRIJAVA</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--MODALS_KRAJ-->
+
+
+<div class="container-fluid" style="background-color: gray; opacity: 0.95;">
+  <div class="container">
+
+
+        <!--HEADER_POČETAK-->
+        <div class="container-fluid text-white">
+          <div class="row mb-3 p-0 align-items-center bg-black">
+            <div class="col-sm-3 p-0">
+              <img src="{{ url_for('static', filename='resources/index/0-logo-banner/logo-v-3.png') }}" class="d-block w-100 p-0" alt="LOGO_HEADER_SLIKA">
+            </div>
+            <div class="col-sm-9 text-center">
+              <p id="movie-quotes" class="active h2 text-light-emphasis">
+                "You either die a hero or you live long enough to see yourself become the villain." - The Dark Knight
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--HEADER_POČETAK-->
 
 
         <!--NAVIGACIJA_POČETAK-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-dark">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -36,19 +107,27 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li>
-                  <a id="nav-li-logo" href="#">
-                    <img id="nav-img-logo" src="{{ url_for('static', filename='resources/images/arhiva_logo.jpg') }}" alt="ARHIV-LOGO">
+                  <a id="nav-li-logo" href="{{ url_for('index') }}">
+                    <img style="width: 40px;" src="{{ url_for('static', filename='resources/images/arhiva_logo.jpg') }}" alt="ARHIV_LOGO">
                   </a>
                 </li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">POČETNA</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">POČETNA</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">REPERTOAR</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item"><a class="nav-link" href="#"><span class="fi fi-bs-list"></span> Registracija</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span class="fi fi-sr-user"></span> Prijava</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdropRegistation">
+                    <span class="fi fi-bs-list"></span> Registracija
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdropLogIn">
+                    <span class="fi fi-sr-user"></span> Prijava
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -56,90 +135,212 @@
         <!--NAVIGACIJA_KRAJ-->
 
 
+
         <!--IMG_SLIDER_POČETAK-->
-        <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselControls" class="carousel slide p-0 my-3 border border-dark" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{{ url_for('static', filename='resources/images/background1.jpg') }}" class="d-block w-100" alt="...">
+              <img src="{{ url_for('static', filename='resources/index/1-novosti-slider/slider-img-1.jpg') }}" class="d-block w-100" alt="SLIDER_SLIKA-1">
             </div>
             <div class="carousel-item">
-              <img src="{{ url_for('static', filename='resources/images/background2.jpg') }}" class="d-block w-100" alt="...">
+              <img src="{{ url_for('static', filename='resources/index/1-novosti-slider/slider-img-2.jpg') }}" class="d-block w-100" alt="SLIDER_SLIKA-2">
             </div>
             <div class="carousel-item">
-              <img src="{{ url_for('static', filename='resources/images/background3.jpg') }}" class="d-block w-100" alt="...">
+              <img src="{{ url_for('static', filename='resources/index/1-novosti-slider/slider-img-3.jpg') }}" class="d-block w-100" alt="SLIDER_SLIKA-3">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='resources/index/1-novosti-slider/slider-img-4.jpg') }}" class="d-block w-100" alt="SLIDER_SLIKA-4">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='resources/index/1-novosti-slider/slider-img-5.jpg') }}" class="d-block w-100" alt="SLIDER_SLIKA-5">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="fi-ss-angle-double-left text-danger h1" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="fi-ss-angle-double-right text-danger h1" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
         <!--IMG_SLIDER_KRAJ-->
 
-
-        <div class="container">    
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <!--NOVOSTI_3x2_POČETAK-->
+        <div class="container-fluid bg-dark text-white border border-dark">
+          <div class="container">
+            <h1 class="display-6 m-0 mt-2">DOGAĐAJI</h1>
+            <hr class="my-2">
+            <div class="row mt-4 text-center">
+              <div class="col-sm-4 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/2-novosti-3x2/novosti-img-1.jpg') }}" class="w-100" alt="novosti_img_1">
+                </a>
+                <h5 class="mb-0 mt-2">ONLINE KUPOVINA JE STIGLA U ARHIV!</h5>
               </div>
-            </div>
-            <div class="col-sm-4"> 
-              <div class="panel panel-danger">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              <div class="col-sm-4 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/2-novosti-3x2/novosti-img-2.jpg') }}" class="w-100" alt="novosti_img_2">
+                </a>
+                <h5 class="mb-0 mt-2">FILMSKI DAN ZA KORISNIKE ARHIV BONUS KARTICE!</h5>
               </div>
-            </div>
-            <div class="col-sm-4"> 
-              <div class="panel panel-success">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-              </div>
-            </div>
-          </div>
-        </div><br>
-
-        <div class="container">    
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-              </div>
-            </div>
-            <div class="col-sm-4"> 
-              <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-              </div>
-            </div>
-            <div class="col-sm-4"> 
-              <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+              <div class="col-sm-4 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/2-novosti-3x2/novosti-img-3.jpg') }}" class="w-100" alt="novosti_img_3">
+                </a>
+                <h5 class="mb-0 mt-2">BIOSKOP ZA CELU PORODICU!</h5>
               </div>
             </div>
           </div>
-        </div><br><br>
 
-        <footer class="container-fluid text-center">
-          <p>Online Store Copyright</p>  
-          <form class="form-inline">Get deals:
-            <input type="email" class="form-control" size="50" placeholder="Email Address">
-            <button type="button" class="btn btn-danger">Sign Up</button>
-          </form>
+          <div class="container">
+            <div class="row mt-4 text-center">
+              <div class="col-sm-4 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/2-novosti-3x2/novosti-img-4.jpg') }}" class="w-100" alt="novosti-img-4">
+                </a>
+                <h5 class="mb-0 mt-2">DOŽIVI FILM KAO NIKADA DO SADA!</h5>
+              </div>
+              <div class="col-sm-4 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/2-novosti-3x2/novosti-img-5.jpg') }}" class="w-100" alt="novosti-img-5">
+                </a>
+                <h5 class="mb-0 mt-2">ARHIV BONUS KARTICA - TVOJ KLUB POGODNOSTI!</h5>
+              </div>
+              <div class="col-sm-4 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/2-novosti-3x2/novosti-img-6.jpg') }}" class="w-100" alt="novosti-img-6">
+                </a>
+                <h5 class="mb-0 mt-2">PROSLAVI ROĐENDAN KAO NA FILMU!</h5>
+              </div>
+            </div>
+          </div>
+
+          <br>
+        </div>
+        <!--NOVOSTI_3x2_KRAJ-->
+
+        <!--IZDVAJAMO_POČETAK-->
+        <div class="container-fluid bg-dark text-white my-3 border border-dark">
+          <div class="container">
+            <h1 class="display-6 m-0 mt-2">IZDVAJAMO</h1>
+            <hr class="my-2">
+            <div class="row mt-4 text-center">
+              <div class="col-sm-3 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/3-izdvajamo/dracula_untold.png') }}" class="w-100" alt="dracula_untold">
+                </a>
+                <h5 class="mb-0 mt-2">Dracula Untold</h5>
+                <span class="text-secondary">(2014)</span>
+              </div>
+              <div class="col-sm-3 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/3-izdvajamo/public_enemies.png') }}" class="w-100" alt="public_enemies">
+                </a>
+                <h5 class="mb-0 mt-2">Public Enemies</h5>
+                <span class="text-secondary">(2009)</span>
+              </div>
+              <div class="col-sm-3 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/3-izdvajamo/the_deer_hunter.png') }}" class="w-100" alt="the_deer_hunter">
+                </a>
+                <h5 class="mb-0 mt-2">The Deer Hunter</h5>
+                <span class="text-secondary">(1978)</span>
+              </div>
+              <div class="col-sm-3 border border-dark">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/3-izdvajamo/warrior.jpg') }}" class="w-100" alt="warrior">
+                </a>
+                <h5 class="mb-0 mt-2">Warrior</h5>
+                <span class="text-secondary">(2011)</span>
+
+              </div>
+            </div>
+          </div>
+
+          <br>
+        </div>
+        <!--IZDVAJAMO_KRAJ-->
+
+        <!--FILMSKI_DAN_POČETAK-->
+        <div class="container-fluid bg-warning bg-gradient border border-dark">
+          <div class="container">
+            <div class="row mt-4 text-center">
+              <div class="col-sm-8 border border-dark p-0">
+                <a href="">
+                  <img src="{{ url_for('static', filename='resources/index/4-filmski-dan/filmski-dan.jpg') }}" class="w-100" alt="filmski_dan">
+                </a>
+              </div>
+              <div class="col-sm-4">
+                <h1 class="m-0 my-5 text-black">FILMSKI DAN U ARHIVU</h1>
+                <hr class="my-2">
+                <a href="" class="nav-link">
+                  <h2 class="m-0 my-5 text-danger">>> NA DETALJE</h2>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <br>
+        </div>
+        <!--FILMSKI_DAN_KRAJ-->
+
+        <footer class="container-fluid text-white bg-dark border border-dark mt-3">
+          <div class="row m-3 justify-content-between">
+            <div class="col-sm-3 p-0">
+              <h5>RADNO VREME</h5>
+              <p>
+                Radno vreme blagajne je od: <br>
+                15:00 - 22:00 radnim danom <br>
+                12:00 - 22:00 subota nedelja <br>
+                (prodaja karata na dan projekcije)
+              </p>
+            </div>
+            <div class="col-sm-3 p-0">
+              <h5>KONTAKTIRAJTE NAS</h5>
+              <p>
+                <span class="fi fi-ss-map-marker"></span>
+                <a href="https://goo.gl/maps/Uf6CNTXEZfVkkfwt7" target="_blank">Kneza Miloša 7, 11000 Beograd</a> <br>
+                <span class="fi fi-ss-envelope"></span>
+                <a href="mailto:office@arhiv.rs" target="_blank">office@arhiv.rs</a> <br>
+                <span class="fi fi-ss-phone-call"></span>
+                +381 11 32 36 517 <br>
+                <span class="fi fi-ss-phone-plus"></span>
+                +381 11 22 03 400
+              </p>
+            </div>
+            <div id="social" class="col-sm-2 p-0">
+              <h5>PRATITE NAS</h5>
+              <p>
+                <img src="{{ url_for('static', filename='resources/social-media-icons/facebook (6).png') }}" class="fi" alt="facebook">
+                <a href="https://www.facebook.com" target="_blank">Facebook</a> <br>
+                <img src="{{ url_for('static', filename='resources/social-media-icons/twitter (4).png') }}" class="fi" alt="twitter">
+                <a href="https://twitter.com/home" target="_blank">Twitter</a> <br>
+                <img src="{{ url_for('static', filename='resources/social-media-icons/instagram (3).png') }}" class="fi" alt="instagram">
+                <a href="https://www.instagram.com" target="_blank">Instagram</a> <br>
+                <img src="{{ url_for('static', filename='resources/social-media-icons/youtube (3).png') }}" class="fi" alt="youtube">
+                <a href="https://www.youtube.com" target="_blank">YouTube</a>
+              </p>
+            </div>
+            <div class="col-sm-3 p-0">
+              <h5>DODATNE INFORMACIJE</h5>
+              <p>
+                <span class="fi fi-ss-messages-question"></span>
+                <a href="">Često postavljena pitanja</a> <br>
+                <span class="fi fi-ss-shield-check"></span>
+                <a href="">Politika privatnosti</a> <br>
+                <span class="fi  fi-ss-settings"></span>
+                <a href="">Uslovi poslovanja</a> <br>
+                <span class="fi fi-ss-search-alt"></span>
+                <a href="">O nama</a> <br>
+                <span class="fi fi-ss-map"></span>
+                <a href="">Mapa sajta</a>
+              </p>
+            </div>
+          </div>
         </footer>
+
+
     </div>
   </div>
 

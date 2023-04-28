@@ -1,9 +1,20 @@
-
-/* #nav-li-logo{
-    padding: 0;
-    width: 80px;
-} */
-#nav-img-logo{
-    width: 40px;
+#movie-quotes {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
+#movie-quotes.active {
+  opacity: 1;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+#social img{
+    width: 20px;
+    position: relative;
+    top: -2px;
+    display: inline-block;
+}

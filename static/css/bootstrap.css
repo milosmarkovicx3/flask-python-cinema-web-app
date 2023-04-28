@@ -1,3 +1,9 @@
+/*
+1. skinuta animacija kada se koristi static modal, linija 5542
+2. promenjena vrednost overflow-y da se prikazuje skrol, linija 5501
+3. dodata klasa modal-md, linije 5638-5644
+*/
+
 @charset "UTF-8";
 /*!
  * Bootstrap  v5.3.0-alpha3 (https://getbootstrap.com/)
@@ -5493,7 +5499,8 @@ textarea.form-control-lg {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  overflow-y: scroll; 
   outline: 0;
 }
 
@@ -5515,9 +5522,13 @@ textarea.form-control-lg {
 .modal.show .modal-dialog {
   transform: none;
 }
-.modal.modal-static .modal-dialog {
+/* .modal.modal-static .modal-dialog {
   transform: scale(1.02);
-}
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+} */
 
 .modal-dialog-scrollable {
   height: calc(100% - var(--bs-modal-margin) * 2);
@@ -5623,6 +5634,13 @@ textarea.form-control-lg {
   }
   .modal-sm {
     --bs-modal-width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .modal-md,
+  .modal-lg,
+  .modal-xl {
+    --bs-modal-width: 600px;
   }
 }
 @media (min-width: 992px) {

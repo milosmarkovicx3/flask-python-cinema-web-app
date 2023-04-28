@@ -112,10 +112,30 @@ def EditDatabase():
     return render_template('EditDatabase.html', form_movie=wtf_create_movie(), form_actor=wtf_create_actor(), form_genre=wtf_create_genre())
 
 @app.route('/', methods=['GET'])
-def home_page():
+def index():
     return render_template('index.html')
 
 
+''' from werkzeug.utils import secure_filename
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/path/to/save/' + secure_filename(f.filename))
+ '''
+ 
+'''  foo = request.cookies.get$('key') '''
+
+''' foo = make_response(expression)
+foo.set_cookie('key', 'value')
+return foo '''
+
+''' @app.errorhandler(404)
+def bar(error):
+    return render_template('error.html'), 404 '''
+
+ 
 
 
 

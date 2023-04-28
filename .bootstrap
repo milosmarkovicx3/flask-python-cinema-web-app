@@ -1,0 +1,40 @@
+v5.0.3
+-----------------------------------------------------
+SPACING
+
+m (margin)
+t (top)
+x (start/end)
+y (top/bottom)
+0-5 (size)
+
+example:
+px-3    => padding top/bottom of size 3
+mx-auto => centriranje preko margina
+-----------------------------------------------------
+CONTAINER
+
+<576px  .container / .container-sm
+<768px  .container-md
+<992px  .container-lg
+<1200px .container-xl
+<1400px .container-xxl
+100%    .container-fluid
+-----------------------------------------------------
+GRID
+
+.row
+.col
+.col-
+.col-sm-
+1-12 (size)
+-----------------------------------------------------
+ALIGNMENT/+TEXT
+
+text-center
+text-white
+
+align-items-start/center/end
+align-self-start/center/end
+justify-content-start/center/end/around/between/evenly
+-----------------------------------------------------
