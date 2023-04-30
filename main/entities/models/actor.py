@@ -1,12 +1,12 @@
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import relationship
-from entities.models.movie_actor import movie_actor
+from entities.models.movies_actors import MoviesActors
 from entities.core.base import db
 
-class genres(db.Model):
-    __tablename__ = 'genres'
-    id = db.Column('id', Integer, primary_key = True)
-    name = db.Column('name', String(255))
+class Actor(db.Model):
+    __tablename__ = 'actor'
+    id = db.Column('id', Integer, primary_key=True)
+    name = db.Column('name', String(255), unique=True)
     image = db.Column('image', String(255))
 
     def __init__(self, name, image):

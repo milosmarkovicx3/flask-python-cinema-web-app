@@ -1,7 +1,8 @@
 from flask import jsonify
 from markupsafe import escape
 
-def toJSON(entity):
+
+def json(entity):
     return jsonify(entity.__repr__())
     #return escape(jsonify(result))
 

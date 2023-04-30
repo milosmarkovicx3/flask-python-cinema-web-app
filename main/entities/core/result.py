@@ -42,7 +42,7 @@ class Result:
             self._description = "INTERNAL_SERVER_ERROR"
 
     def set_description(self, description):
-            self._description = description
+        self._description = description
 
     def _repr_helper(self):
         if not isinstance(self._item, list):

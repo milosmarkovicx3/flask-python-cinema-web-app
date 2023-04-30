@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm, RecaptchaField
 from flask_wtf.file import FileAllowed
-from wtforms import StringField, IntegerField, TextAreaField, SubmitField, RadioField, SelectField, HiddenField, FileField
+from wtforms import StringField, SubmitField, RadioField, SelectField, HiddenField, FileField, PasswordField, EmailField
 from wtforms.validators import DataRequired, Email, Length, ValidationError
 
 def length(min=-1, max=-1):
@@ -27,6 +27,17 @@ def length(min=-1, max=-1):
 #         if not l.endswith('png') and not l.endswith('jpg') and not l.endswith('jpeg') :
 #             raise ValidationError(message)
 #     return _end_with
+
+
+class wtf_register(FlaskForm):
+    username = StringField("Korisničko ime", validators=[length(min=2, max=255)], render_kw={"placeholder": "npr. milosmarkovicx3"})
+    email = EmailField("Email adresa", validators=[length(min=10, max=255)], render_kw={"placeholder": "npr. milos.dj.markovic@gmail.com"})
+    passwd = PasswordField("Lozinka", validators=[length(min=5, max=50)], render_kw={"placeholder": "npr. arhiv1999?"})
+    # stavljam 50? jer kasnije treba da bude hash-ovana
+    first_name = StringField("Ime", validators=[length(min=2, max=255)], render_kw={"placeholder": "npr. Miloš"})
+    last_name = StringField("Prezime", validators=[length(min=2, max=255)], render_kw={"placeholder": "npr. Marković"})
+    conditions = StringField("Naslov: ")
+
 
 
 class wtf_create_movie(FlaskForm):

@@ -1,0 +1,114 @@
+2023-04-30 01:15:49,277 INFO    [actor_facade.py(get_by_id:12)] id: 1
+2023-04-30 01:19:13,252 ERROR   [base_impl.py(get_by_id:22)] BaseImpl.get_by_id() missing 1 required positional argument: 'id'
+2023-04-30 01:39:32,225 ERROR   [base_impl.py(get_by_id:23)] BaseFacade.get_by_id() missing 1 required positional argument: 'id'
+2023-04-30 01:40:03,528 ERROR   [base_impl.py(get_by_id:22)] BaseFacade.get_by_id() missing 1 required positional argument: 'id'
+2023-04-30 01:40:06,371 ERROR   [base_impl.py(get_by_id:22)] BaseFacade.get_by_id() missing 1 required positional argument: 'id'
+2023-04-30 01:42:23,454 INFO    [base_facade.py(get_by_id:13)] id: 1
+2023-04-30 01:46:16,226 INFO    [base_facade.py(get_by_id:13)] id: 1
+2023-04-30 01:47:10,338 INFO    [base_facade.py(get_by_id:13)] id: 1
+2023-04-30 01:47:10,350 ERROR   [base_facade.py(get_by_id:21)] __str__ returned non-string (type dict)
+2023-04-30 01:47:47,597 INFO    [base_facade.py(get_by_id:13)] id: 1
+2023-04-30 01:47:47,608 ERROR   [base_facade.py(get_by_id:21)] __repr__ returned non-string (type dict)
+2023-04-30 01:48:36,743 INFO    [base_facade.py(get_by_id:13)] id: 1
+2023-04-30 01:48:36,754 ERROR   [base_facade.py(get_by_id:21)] __str__ returned non-string (type dict)
+2023-04-30 01:48:45,663 INFO    [base_facade.py(get_by_id:13)] id: 1
+2023-04-30 01:48:45,664 ERROR   [base_facade.py(get_by_id:21)] __str__ returned non-string (type dict)
+2023-04-30 01:49:21,560 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:49:21,570 INFO    [base_facade.py(get_by_id:17)] <Response 454 bytes [200 OK]>
+2023-04-30 01:50:22,697 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:50:22,707 INFO    [base_impl.py(get_by_id:16)] <Response 542 bytes [200 OK]>
+2023-04-30 01:52:57,618 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:52:57,628 ERROR   [base_facade.py(get_by_id:23)] 'User' object has no attribute 'content'
+2023-04-30 01:53:45,243 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:53:45,253 ERROR   [base_facade.py(get_by_id:24)] __repr__ returned non-string (type dict)
+2023-04-30 01:54:41,745 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:54:41,755 ERROR   [base_facade.py(get_by_id:24)] __repr__ returned non-string (type dict)
+2023-04-30 01:56:10,438 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:56:10,449 INFO    [base_facade.py(get_by_id:17)] Milo�
+2023-04-30 01:58:23,639 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:58:23,649 INFO    [base_facade.py(get_by_id:17)] Milo�
+2023-04-30 01:58:25,971 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 01:58:25,972 INFO    [base_facade.py(get_by_id:17)] Milo�
+2023-04-30 02:02:50,784 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:02:50,794 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:06:28,969 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:06:28,979 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:06:28,979 ERROR   [base_impl.py(get_by_id:22)] 'function' object has no attribute 'dumps'
+2023-04-30 02:08:38,554 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:08:38,565 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:08:38,565 ERROR   [base_impl.py(get_by_id:22)] Object of type Result is not JSON serializable
+2023-04-30 02:11:10,578 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:11:10,588 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:11:10,589 ERROR   [base_impl.py(get_by_id:22)] Object of type Result is not JSON serializable
+2023-04-30 02:11:23,348 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:11:23,358 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:14:18,548 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:14:18,558 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:14:18,559 ERROR   [base_impl.py(get_by_id:22)] __repr__ returned non-string (type dict)
+2023-04-30 02:14:49,533 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:14:49,545 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:14:49,546 ERROR   [base_impl.py(get_by_id:22)] __repr__ returned non-string (type dict)
+2023-04-30 02:15:25,531 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:15:25,542 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:17:53,785 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:17:53,796 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:18:23,890 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:18:23,900 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:19:23,514 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:19:23,524 INFO    [base_facade.py(get_by_id:17)] Miloš
+2023-04-30 02:56:09,750 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:56:09,760 ERROR   [base_facade.py(get_by_id:23)] __str__ returned non-string (type dict)
+2023-04-30 02:56:12,160 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:56:12,161 ERROR   [base_facade.py(get_by_id:23)] __str__ returned non-string (type dict)
+2023-04-30 02:56:13,266 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:56:13,268 ERROR   [base_facade.py(get_by_id:23)] __str__ returned non-string (type dict)
+2023-04-30 02:56:43,832 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 02:56:47,579 INFO    [base_facade.py(get_by_id:15)] id: 1
+2023-04-30 03:09:08,374 ERROR   [base_impl.py(get_by_id:22)] MovieFacade.get_by_id() takes 1 positional argument but 2 were given
+2023-04-30 03:09:53,025 INFO    [movie_facade.py(get_by_id:15)] id: 1
+2023-04-30 04:47:04,775 ERROR   [user_impl.py(create:36)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 04:52:03,964 ERROR   [user_impl.py(create:36)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 04:54:27,475 ERROR   [user_impl.py(create:37)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 04:54:56,099 INFO    [user_api.py(create:19)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3Wmg.9xWb0M9MvjYLS4rGCII4_gClBOs'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'rhrtt535!'), ('register-first-name', 'faef'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 04:54:56,099 ERROR   [user_impl.py(create:37)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 04:59:17,698 ERROR   [actor_impl.py(get_by_name:27)] module 'entities.facade.actor_facade' has no attribute 'get_by_name'
+2023-04-30 05:00:18,098 ERROR   [actor_impl.py(get_by_name:27)] ActorFacade.get_by_name() takes 1 positional argument but 2 were given
+2023-04-30 05:01:23,781 INFO    [actor_facade.py(get_by_name:16)] name: Robert De Niro
+2023-04-30 05:06:34,782 ERROR   [user_impl.py(create:36)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 05:07:06,239 INFO    [user_impl.py(create:16)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 05:07:06,239 ERROR   [user_impl.py(create:37)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 05:09:56,910 INFO    [user_impl.py(create:16)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 05:09:56,911 ERROR   [user_impl.py(create:37)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 05:12:01,627 INFO    [user_impl.py(create:17)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 05:12:01,628 ERROR   [user_impl.py(create:38)] Traceart: Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 21, in create
+    first_name=data['register-first_name'],
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+, 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-04-30 05:15:10,286 INFO    [user_impl.py(create:17)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 05:15:10,293 ERROR   [user_facade.py(create:20)] __str__ returned non-string (type dict)
+2023-04-30 05:15:10,307 ERROR   [user_impl.py(create:38)] rollback
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\user_facade.py", line 13, in create
+    log.info(f'user: {user}')
+TypeError: __str__ returned non-string (type dict)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 30, in create
+    result.set_item(self.T.create(user))
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\user_facade.py", line 21, in create
+    db.rollback()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\extension.py", line 1005, in __getattr__
+    raise AttributeError(name)
+AttributeError: rollback
+
+2023-04-30 05:16:50,241 INFO    [user_impl.py(create:17)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 05:16:50,248 INFO    [user_facade.py(create:14)] user: <Response 418 bytes [200 OK]>
+2023-04-30 05:19:09,843 INFO    [user_impl.py(create:17)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 05:19:09,853 INFO    [user_facade.py(create:14)] user: <Response 418 bytes [200 OK]>
+2023-04-30 05:19:44,394 INFO    [user_impl.py(create:17)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 05:19:44,401 INFO    [user_facade.py(create:14)] user: User(id=None, first_name=oippkm, last_name=faefa, email=dwad@dawd.faea, username=dwada, password=hethe4525!!, date_of_birth=None, phone_number=None, profile_picture=None, is_superuser=False, date_joined=2023-04-30 05:19:44.394978, last_login_at=2023-04-30 05:19:44.394978, last_login_ip=None, login_count=1, confirmed_at=None)

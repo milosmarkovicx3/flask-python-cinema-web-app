@@ -11,7 +11,7 @@ project_path = "C:/Users/Markovic Milos/PycharmProjects/pythonProject/zavrsni-ra
 log_path = project_path + "log/"
 current_time = time.strftime("%Y-%m-%d")
 
-handler = TimedRotatingFileHandler(f'{log_path}server.log.{current_time}', when="d", interval=1, backupCount=30, utc=True)
+handler = TimedRotatingFileHandler(f'{log_path}server.log.{current_time}', when="d", interval=1, backupCount=30, utc=True, encoding='utf-8')
 
 handler.setLevel(logging.DEBUG)
 

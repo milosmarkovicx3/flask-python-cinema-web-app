@@ -1,12 +1,12 @@
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import relationship
-from entities.models.movie_actor import movie_actor
-from entities.models.movie_genre import movie_genre
+from entities.models.movies_actors import MoviesActors
+from entities.models.movies_genres import MoviesGenres
 from entities.core.base import db
 
-class movies(db.Model):
-    __tablename__ = 'movies'
-    id = db.Column('id', Integer, primary_key = True)
+class Movie(db.Model):
+    __tablename__ = 'movie'
+    id = db.Column('id', Integer, primary_key=True)
     title = db.Column('title', String(255))
     year = db.Column('year', String(255))
     duration = db.Column('duration', String(255))
@@ -14,8 +14,8 @@ class movies(db.Model):
     votes = db.Column('votes', String(255))
     poster = db.Column('poster', String(255))
 
-    actors = relationship('actors', secondary=movie_actor, backref='movies')
-    genres = relationship('genres', secondary=movie_genre, backref='movies')
+    actors = relationship('Actor', secondary=MoviesActors, backref='movie')
+    genres = relationship('Genre', secondary=MoviesGenres, backref='movie')
 
     def __init__(self, title, year, duration, rating, votes, poster):
         self.title = title
