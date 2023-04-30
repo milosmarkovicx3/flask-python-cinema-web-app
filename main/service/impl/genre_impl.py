@@ -19,14 +19,14 @@ class GenreImpl(BaseImpl):
         try:
             result = Result(item=gf.get_by_name(name))
             if result.get_item() is False:
-                result.set_status_with_description(Result.NOT_FOUND)
+                result.set_status(Result.NOT_FOUND)
             elif result.get_item() is None:
-                result.set_status_with_description(Result.INTERNAL_SERVER_ERROR)
+                result.set_status(Status.INTERNAL_SERVER_ERROR)
             return json(result)
         except Exception as e:
             log.error(e)
             result = Result()
-            result.set_status_with_description(Result.INTERNAL_SERVER_ERROR)
+            result.set_status(Status.INTERNAL_SERVER_ERROR)
             return json(result)
 
 
@@ -35,7 +35,7 @@ class GenreImpl(BaseImpl):
             result = Result()
             form =  wtf_create_genre()
             if not form.validate():
-                result.set_status_with_description(Result.BAD_REQUEST)
+                result.set_status(Status.BAD_REQUEST)
                 return json(result)
 
             image_file = data['actorFile']
@@ -47,12 +47,12 @@ class GenreImpl(BaseImpl):
             result.set_item(gf.create(genre))
 
             if result.get_item() is False:
-                result.set_status_with_description(Result.BAD_REQUEST)
+                result.set_status(Status.BAD_REQUEST)
             elif result.get_item() is None:
-                result.set_status_with_description(Result.INTERNAL_SERVER_ERROR)
+                result.set_status(Status.INTERNAL_SERVER_ERROR)
             return json(result)
         except Exception as e:
             log.error(e)
             result = Result()
-            result.set_status_with_description(Result.INTERNAL_SERVER_ERROR)
+            result.set_status(Status.INTERNAL_SERVER_ERROR)
             return json(result)

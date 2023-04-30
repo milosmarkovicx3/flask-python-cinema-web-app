@@ -112,3 +112,165 @@ AttributeError: rollback
 2023-04-30 05:19:09,853 INFO    [user_facade.py(create:14)] user: <Response 418 bytes [200 OK]>
 2023-04-30 05:19:44,394 INFO    [user_impl.py(create:17)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE3a_g.2okCbUDK5zD1ONQxE71kQ27YwK4'), ('register-username', 'dwada'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'hethe4525!!'), ('register-first-name', 'oippkm'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
 2023-04-30 05:19:44,401 INFO    [user_facade.py(create:14)] user: User(id=None, first_name=oippkm, last_name=faefa, email=dwad@dawd.faea, username=dwada, password=hethe4525!!, date_of_birth=None, phone_number=None, profile_picture=None, is_superuser=False, date_joined=2023-04-30 05:19:44.394978, last_login_at=2023-04-30 05:19:44.394978, last_login_ip=None, login_count=1, confirmed_at=None)
+2023-04-30 06:16:47,350 INFO    [user_api.py(find_by:13)] MASNA
+2023-04-30 06:17:38,996 INFO    [base_impl.py(find_by:14)] PROSAO
+2023-04-30 06:17:39,006 INFO    [base_impl.py(find_by:21)] PROSAO3
+2023-04-30 06:19:58,947 INFO    [base_impl.py(find_by:16)] None
+2023-04-30 06:25:16,280 ERROR   [base_impl.py(find_by:22)] Entity namespace for "user" has no property "value=1"
+2023-04-30 06:26:45,725 INFO    [base_facade.py(find_by:16)] value: value=1, column: id
+2023-04-30 06:27:43,926 INFO    [base_facade.py(find_by:16)] value: value=1&column=id, column: id
+2023-04-30 06:28:05,548 INFO    [base_facade.py(find_by:16)] value: 1, column: id
+2023-04-30 06:28:06,576 INFO    [base_facade.py(find_by:16)] value: 1, column: id
+2023-04-30 06:28:21,469 INFO    [base_facade.py(find_by:16)] value: 1, column: id
+2023-04-30 06:29:04,832 INFO    [base_facade.py(find_by:16)] value: Miloš, column: id
+2023-04-30 06:29:31,405 INFO    [base_facade.py(find_by:16)] value: Miloš, column: id
+2023-04-30 06:30:29,529 INFO    [base_facade.py(find_by:16)] value: Miloš, column: id
+2023-04-30 06:34:57,605 INFO    [base_facade.py(find_by:16)] value: Miloš, column: first_name
+2023-04-30 06:36:41,741 INFO    [base_facade.py(find_by:16)] value: 2, column: id
+2023-04-30 06:36:58,626 INFO    [base_facade.py(find_by:16)] value: Miloš, column: first_name
+2023-04-30 06:37:04,841 INFO    [base_facade.py(find_by:16)] value: 3, column: id
+2023-04-30 06:37:11,678 INFO    [base_facade.py(find_by:16)] value: 4, column: id
+2023-04-30 07:05:49,033 INFO    [user_impl.py(create:19)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE32Ww.QcPYxpXiK5PeHadQBl1xeCabY4g'), ('register-username', 'fda'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'afefae242@'), ('register-first-name', 'faef'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 07:05:49,033 INFO    [base_facade.py(find_by:16)] value: fda, column: username
+2023-04-30 07:05:49,044 INFO    [base_facade.py(find_by:16)] value: dwad@dawd.faea, column: email
+2023-04-30 07:05:49,059 ERROR   [user_impl.py(create:51)] Object of type Status is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 30, in create
+    return json(result)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\utility.py", line 6, in json
+    return jsonify(entity.__repr__())
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type Status is not JSON serializable
+
+2023-04-30 07:08:55,873 INFO    [user_impl.py(create:19)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE32Ww.QcPYxpXiK5PeHadQBl1xeCabY4g'), ('register-username', 'fda'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'afefae242@'), ('register-first-name', 'faef'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 07:08:55,873 INFO    [base_facade.py(find_by:16)] value: fda, column: username
+2023-04-30 07:08:55,883 INFO    [base_facade.py(find_by:16)] value: dwad@dawd.faea, column: email
+2023-04-30 07:08:55,886 ERROR   [user_impl.py(create:51)] Object of type Status is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 30, in create
+    return json(result)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\utility.py", line 6, in json
+    return jsonify(entity.__repr__())
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type Status is not JSON serializable
+
+2023-04-30 07:19:51,043 INFO    [user_impl.py(create:19)] 409SALA MALA
+2023-04-30 07:19:51,043 INFO    [user_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZE32Ww.QcPYxpXiK5PeHadQBl1xeCabY4g'), ('register-username', 'fda'), ('register-email', 'dwad@dawd.faea'), ('register-passwd', 'afefae242@'), ('register-first-name', 'faef'), ('register-last-name', 'faefa'), ('register-conditions', 'on')])
+2023-04-30 07:19:51,043 INFO    [base_facade.py(find_by:16)] value: fda, column: username
+2023-04-30 07:19:51,054 INFO    [base_facade.py(find_by:16)] value: dwad@dawd.faea, column: email
+2023-04-30 07:21:39,952 INFO    [base_facade.py(find_by:16)] value: 1, column: id
+2023-04-30 07:21:39,990 ERROR   [base_impl.py(find_by:23)] Object of type Status is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 21, in find_by
+    return json(result)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\utility.py", line 6, in json
+    return jsonify(entity.__repr__())
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type Status is not JSON serializable
+
+2023-04-30 07:22:05,720 INFO    [base_facade.py(find_by:16)] value: 1, column: id
+2023-04-30 07:22:05,733 ERROR   [base_impl.py(find_by:24)] Object of type Status is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 22, in find_by
+    return json(result)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\utility.py", line 6, in json
+    return jsonify(entity.__repr__())
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type Status is not JSON serializable
+
+2023-04-30 07:23:09,489 INFO    [base_facade.py(find_by:16)] value: 1, column: id
+2023-04-30 07:23:09,500 ERROR   [base_impl.py(find_by:24)] Object of type Status is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 22, in find_by
+    return json(result)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\utility.py", line 6, in json
+    return jsonify(entity.__repr__())
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type Status is not JSON serializable
+
+2023-04-30 07:26:08,045 INFO    [base_facade.py(find_by:16)] value: 1, column: id

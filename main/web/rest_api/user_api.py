@@ -7,10 +7,10 @@ from service.utility.utility import json
 user_api = Blueprint('user_api', __name__)
 ui = UserImpl()
 
-@user_api.route('/<int:id>', methods=['GET'])
-def get_by_id(id):
-    return json(ui.find_by())
-    # return ui.get_by_id(id)
+@user_api.route('/<value>', methods=['GET'])
+@user_api.route('/<value>/<column>', methods=['GET'])
+def find_by(value, column="id"):
+    return ui.find_by(value, column)
 
 @user_api.route('/', methods=['GET'])
 def get_all():

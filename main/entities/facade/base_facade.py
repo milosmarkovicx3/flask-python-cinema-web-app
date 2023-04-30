@@ -1,25 +1,23 @@
+import traceback
 from abc import ABC, abstractmethod
-
 from entities.core.base import db
 from service.utility.logger import log
-from service.utility.utility import json
-
 
 class BaseFacade(ABC):
     @abstractmethod
     def __init__(self, T):
         self.T = T
 
-    def find_by(self, value, column="id"):
+    def find_by(self, value, column):
         try:
-            log.info(f'id: {id}')
-            response = db.session.query(self.T).filter(self.T.id == id).first()
+            log.info(f'value: {value}, column: {column}')
+            response = db.session.query(self.T).filter_by(**{column: value}).first()
             if response is None:
                 return False
             else:
                 return response
         except Exception as e:
-            log.error(e)
+            log.error(f"{e}\n{traceback.format_exc()}")
             return None
 
     def get_all(self):
@@ -30,7 +28,7 @@ class BaseFacade(ABC):
             else:
                 return response
         except Exception as e:
-            log.error(e)
+            log.error(f"{e}\n{traceback.format_exc()}")
             return None
 
     def delete_by_id(self, id):
@@ -43,6 +41,6 @@ class BaseFacade(ABC):
             db.session.commit()
             return response
         except Exception as e:
-            log.error(e)
+            log.error(f"{e}\n{traceback.format_exc()}")
             db.rollback()
             return None

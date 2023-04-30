@@ -25,6 +25,9 @@ class Movie(db.Model):
         self.votes = votes
         self.poster = poster
 
+    def __str__(self):
+        return str(self.__repr__())
+
     def __repr__(self):
         return {
             "id": self.id,

@@ -38,7 +38,7 @@ class User(db.Model, UserMixin):
         self.confirmed_at = confirmed_at
 
     def __str__(self):
-        return f"User(id={self.id}, first_name={self.first_name}, last_name={self.last_name}, email={self.email}, username={self.username}, password={self.password}, date_of_birth={self.date_of_birth}, phone_number={self.phone_number}, profile_picture={self.profile_picture}, is_superuser={self.is_superuser}, date_joined={self.date_joined}, last_login_at={self.last_login_at}, last_login_ip={self.last_login_ip}, login_count={self.login_count}, confirmed_at={self.confirmed_at})"
+        return str(self.__repr__())
 
     def __repr__(self):
         return {
@@ -58,3 +58,4 @@ class User(db.Model, UserMixin):
             "login_count": self.login_count,
             "confirmed_at": str(self.confirmed_at)
         }
+

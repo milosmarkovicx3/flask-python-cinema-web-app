@@ -13,6 +13,9 @@ class Genre(db.Model):
         self.name = name
         self.image = image
 
+    def __str__(self):
+        return str(self.__repr__())
+
     def __repr__(self):
         return {
             "id": self.id,
