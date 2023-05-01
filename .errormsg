@@ -5,3 +5,7 @@ ModuleNotFoundError: No module named 'MySQLdb'
 ModuleNotFoundError: No module named 'flask_sqlalchemy'
 >>> pip3 install SQLAlchemy Flask-SQLAlchemy
 --------------------------------------------------------------
+Bootstrap:
+
+1. Modal neće da se prikaze: pomeriti ga skroz gore uz ivicu body/html taga
+--------------------------------------------------------------

@@ -1,4 +1,12 @@
 /*---------------------------------------------------------------------------------*/
+/* tekstura strane */
+body, .test{
+  background-image: url('../../resources/images/background-texture.jpg'); 
+  background-size: 50px; 
+  background-repeat: repeat;
+  opacity: 0.93;
+}
+/*---------------------------------------------------------------------------------*/
 /* animacija za citate na vrhu strane */
 #movie-quotes {
   opacity: 0;
