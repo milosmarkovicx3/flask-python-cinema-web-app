@@ -274,3 +274,61 @@ Traceback (most recent call last):
 TypeError: Object of type Status is not JSON serializable
 
 2023-04-30 07:26:08,045 INFO    [base_facade.py(find_by:16)] value: 1, column: id
+2023-04-30 08:03:17,594 INFO    [base_facade.py(find_by:13)] value: 1, column: id
+2023-04-30 09:36:40,062 ERROR   [user_impl.py(create:66)] type object 'typing.re' has no attribute 'search'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 23, in create
+    if (not basic_regex(data['register-username']) or
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\utils.py", line 17, in basic_regex
+    return re.search(basic_regex, value)
+AttributeError: type object 'typing.re' has no attribute 'search'
+
+2023-04-30 09:37:21,201 INFO    [base_facade.py(find_by:13)] value: Milos, column: username
+2023-04-30 09:37:21,210 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:40:52,919 INFO    [base_facade.py(find_by:13)] value: Milos, column: username
+2023-04-30 09:40:52,929 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:42:08,244 INFO    [base_facade.py(find_by:13)] value: Milos, column: username
+2023-04-30 09:42:08,254 INFO    [base_facade.py(find_by:15)] None
+2023-04-30 09:42:08,254 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:42:08,256 INFO    [base_facade.py(find_by:15)] {'id': 1, 'first_name': 'Miloš', 'last_name': 'Marković', 'email': 'milos.dj.markovic@gmail.com', 'username': 'shadow', 'password': '$pbkdf2-sha256$29000$i1EKoVQqBQBgjFFqzTlnbA$SNa22a/hBrc5cAVgHlpW8HwwObf5/LRp.Q67M71qtgQ', 'date_of_birth': 'None', 'phone_number': '0621817855', 'profile_picture': None, 'is_superuser': True, 'date_joined': '2023-04-30 01:11:03', 'last_login_at': '2023-04-30 01:11:03', 'last_login_ip': '109.93.191.6', 'login_count': 1, 'confirmed_at': '2023-04-30 01:11:03'}
+2023-04-30 09:43:22,030 INFO    [base_facade.py(find_by:13)] value: Milos, column: username
+2023-04-30 09:43:22,044 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:45:39,988 INFO    [base_facade.py(find_by:13)] value: Milos, column: username
+2023-04-30 09:45:40,000 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:45:40,002 INFO    [user_impl.py(create:43)] {'status': '409', 'description': 'Korisnik sa tom email adresom već postoji!', 'item': 'None'}
+2023-04-30 09:46:47,310 INFO    [base_facade.py(find_by:13)] value: ada, column: username
+2023-04-30 09:46:47,312 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:46:47,313 INFO    [user_impl.py(create:43)] {'status': '409', 'description': 'Korisnik sa tom email adresom već postoji!', 'item': 'None'}
+2023-04-30 09:47:49,492 INFO    [base_facade.py(find_by:13)] value: dwadaf, column: username
+2023-04-30 09:47:49,494 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:47:49,495 INFO    [user_impl.py(create:43)] {'status': '409', 'description': 'Korisnik sa tom email adresom već postoji!', 'item': 'None'}
+2023-04-30 09:49:12,251 INFO    [base_facade.py(find_by:13)] value: ethh, column: username
+2023-04-30 09:49:12,252 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:49:12,253 INFO    [user_impl.py(create:43)] {'status': '409', 'description': 'Korisnik sa tom email adresom već postoji!', 'item': 'None'}
+2023-04-30 09:51:11,695 INFO    [base_facade.py(find_by:13)] value: fda, column: username
+2023-04-30 09:51:11,696 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:51:11,697 INFO    [user_impl.py(create:43)] {'status': '409', 'description': 'Korisnik sa tom email adresom već postoji!', 'item': 'None'}
+2023-04-30 09:54:46,970 INFO    [base_facade.py(find_by:13)] value: efaf, column: username
+2023-04-30 09:54:46,979 INFO    [base_facade.py(find_by:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-04-30 09:55:29,994 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 09:55:44,268 INFO    [base_facade.py(find_by:13)] value: shadow2, column: username
+2023-04-30 09:55:44,270 INFO    [base_facade.py(find_by:13)] value: milosmarkovic@gmail.com, column: email
+2023-04-30 09:55:44,285 INFO    [user_facade.py(create:16)] user: {'id': None, 'first_name': 'qfqefq', 'last_name': 'faeaf', 'email': 'milosmarkovic@gmail.com', 'username': 'shadow2', 'password': '$pbkdf2-sha256$29000$MOacs1YqBcD4/79XqnUOAQ$sw2K0Z9BGF9zDSgvEsGky4aEAe0DwEfOlBcKjjHmtQo', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-04-30 09:55:44.285318', 'last_login_at': '2023-04-30 09:55:44.285318', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-04-30 11:53:18,758 INFO    [base_facade.py(find_by:13)] value: 1, column: id
+2023-04-30 11:53:23,966 INFO    [base_facade.py(find_by:13)] value: 4, column: id
+2023-04-30 13:05:11,046 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 13:06:16,185 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 13:07:05,228 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 14:57:56,346 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 17:09:10,517 INFO    [auth_api.py(logout:28)] log out: Miloš Marković
+2023-04-30 17:09:26,332 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 17:15:49,697 INFO    [auth_api.py(logout:28)] log out: Miloš Marković
+2023-04-30 17:16:14,682 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 17:16:50,749 INFO    [auth_api.py(logout:28)] log out: Miloš Marković
+2023-04-30 17:16:58,393 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 17:26:28,608 INFO    [auth_api.py(logout:28)] log out: Miloš Marković
+2023-04-30 17:26:31,335 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-04-30 17:28:31,416 INFO    [auth_api.py(logout:28)] log out: Miloš Marković
+2023-04-30 17:28:38,508 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 08:24:54,865 INFO    [auth_api.py(logout:28)] log out: Miloš Marković
+2023-05-01 08:32:24,493 INFO    [base_facade.py(find_by:13)] value: shadow , column: username

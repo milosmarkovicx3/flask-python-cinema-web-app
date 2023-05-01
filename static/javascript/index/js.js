@@ -1,5 +1,6 @@
 //------------------------------------------------------------------------------
-//logika za menjanje sadrzaja paragrafa namenjenom za citate
+//logika za menjanje sadrzaja paragrafa
+
 const quotes = [
   `"You either die a hero or you live long enough to see yourself become the villain." - The Dark Knight`,
   `"You are the Moon of my Life. That is all I know and all I need to know. And if this is a dream, I will kill the man who tries to wake me." - Game of Thrones`,
@@ -15,91 +16,66 @@ const quotes = [
   `"Remember today, little brother. Today, life is good."<br>- The Lord of the Rings: The Fellowship of the Ring`
 ];
 
-const quotesParagraph = document.querySelector('#movie-quotes');
+const quotesParagraph = $('#movie-quotes');
 let counter = 0;
 
 setInterval(() => {
   if (++counter >= quotes.length) counter = 0;
-  quotesParagraph.classList.remove('active');
+  quotesParagraph.removeClass('active');
   setTimeout(() => {
-    quotesParagraph.innerHTML = quotes[counter];
-    quotesParagraph.classList.add('active');
+    quotesParagraph.html(quotes[counter]);
+    quotesParagraph.addClass('active');
   }, 500);
 }, 7000);
 //------------------------------------------------------------------------------
+//logika za prikazivanje(toggle) ikonice pored inputa za lozinke u formama
 
+$(document).ready(function() {
+    $('#register-show-passwd').click(function() {
+        $('#register-passwd').prop('type', function(index, value) {
+            return value === 'password' ? 'text' : 'password';
+        });
+        $('#register-show-passwd').toggleClass('fi-rs-eye fi-rs-crossed-eye');
+    });
+
+    $('#login-show-passwd').on('click', function() {
+        $('#login-passwd').prop('type', function(_, type) {
+            return type === 'password' ? 'text' : 'password';
+        });
+        $(this).toggleClass('fi-rs-crossed-eye fi-rs-eye');
+    });
+});
 //------------------------------------------------------------------------------
-//logika za prikazivanje(toggle) lozinke u formi za registraciju i prijavu
-const registerIcon = document.querySelector('#register-show-passwd');
-const registerPasswd = document.querySelector('#register-passwd');
+// validacija za registrovanje korisnika
 
-registerIcon.addEventListener('click', () => {
-	registerPasswd.type = registerPasswd.type === 'password' ? 'text' : 'password';
-	if (registerIcon.classList.contains('fi-rs-crossed-eye')){
-	    registerIcon.classList.remove('fi-rs-crossed-eye');
-	    registerIcon.classList.add('fi-rs-eye');
-	}else{
-        registerIcon.classList.remove('fi-rs-eye');
-	    registerIcon.classList.add('fi-rs-crossed-eye');
-	}
-})
-
-const loginIcon = document.querySelector('#login-show-passwd');
-const loginPasswd = document.querySelector('#login-passwd');
-
-loginIcon.addEventListener('click', () => {
-	loginPasswd.type = loginPasswd.type === 'password' ? 'text' : 'password';
-	if (loginIcon.classList.contains('fi-rs-crossed-eye')){
-	    loginIcon.classList.remove('fi-rs-crossed-eye');
-	    loginIcon.classList.add('fi-rs-eye');
-	}else{
-        loginIcon.classList.remove('fi-rs-eye');
-	    loginIcon.classList.add('fi-rs-crossed-eye');
-	}
-})
-//------------------------------------------------------------------------------
-
-
-//------------------------------------------------------------------------------
-function validationRegister(){
-
-    let username = document.getElementById("register-username").value;
-    let email = document.getElementById("register-email").value;
-    let passwd = document.getElementById("register-passwd").value;
-    let first_name = document.getElementById("register-first-name").value;
-    let last_name = document.getElementById("register-last-name").value;
-    let conditions = document.getElementById("register-conditions").checked;
+function validationRegister() {
     const email_regex = /^(?=.{1,255}$)\w+(\w|((?<!\.)\.))*\w+\@\w+(\w|((?<!\.)\.))*\.\w{2,4}$/;
     const passwd_regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W]).{5,50}$/;
     const basic_regex = /^(?=.{1,255}$)\w{2,}/;
 
-    if(basic_regex.test(username)){ document.getElementById("register-username-lbl").innerHTML="Korisničko ime"; }
-    else{ document.getElementById("register-username-lbl").innerHTML="Korisničko ime<span class='text-danger float-end xyz'>*pogrešan unos<span>"; }
-    console.log(basic_regex.lastIndex);
-    if(email_regex.test(email)){ document.getElementById("register-email-lbl").innerHTML="Email adresa"; }
-    else{ document.getElementById("register-email-lbl").innerHTML="Email adresa<span class='text-danger float-end xyz'>*pogrešan unos<span>"; }
-
-    if(passwd_regex.test(passwd)){ document.getElementById("register-passwd-lbl").innerHTML="Lozinka"; }
-    else{ document.getElementById("register-passwd-lbl").innerHTML="Lozinka<span class='text-danger float-end xyz'>*pogrešan unos<span>"; }
-
-    if(basic_regex.test(first_name)){ document.getElementById("register-first-name-lbl").innerHTML="Ime"; }        
-    else{ document.getElementById("register-first-name-lbl").innerHTML="Ime<span class='text-danger float-end xyz'>*pogrešan unos<span>"; }
-    console.log(basic_regex.lastIndex);
-    if(basic_regex.test(last_name)){ document.getElementById("register-last-name-lbl").innerHTML="Prezime"; }        
-    else{ document.getElementById("register-last-name-lbl").innerHTML="Prezime<span class='text-danger float-end xyz'>*pogrešan unos<span>"; }
-    console.log(basic_regex.lastIndex);
-    let lbl_text = `Prihvatam <a href="" class="text-danger-emphasis text-decoration-none">politiku privatnosti</a> i
-                    <a href="" class="text-danger-emphasis text-decoration-none">uslove korišćenja</a>`; 
-    if(conditions){
-        document.getElementById("register-conditions-lbl").innerHTML= lbl_text;        
-    }else{ document.getElementById("register-conditions-lbl").innerHTML= lbl_text+"<span class='text-danger float-end xyz'>*pogrešan unos<span>"; }
-
-    let success = document.querySelectorAll('.xyz');
-
-    if(success.length == 0){
-        document.getElementById('register-close').click();
-        return true;
-    } 
+    $('#register-username-lbl').html(basic_regex.test($('#register-username').val()) ? 'Korisničko ime' : `Korisničko ime<span class="text-danger float-end xyz">*pogrešan unos</span>`);
+    $('#register-email-lbl').html(email_regex.test($('#register-email').val()) ? 'Email adresa' : `Email adresa<span class="text-danger float-end xyz">*pogrešan unos</span>`);
+    $('#register-passwd-lbl').html(passwd_regex.test($('#register-passwd').val()) ? 'Lozinka' : `Lozinka<span class="text-danger float-end xyz">*pogrešan unos</span>`);
+    $('#register-first-name-lbl').html(basic_regex.test($('#register-first-name').val()) ? 'Ime' : `Ime<span class="text-danger float-end xyz">*pogrešan unos</span>`);
+    $('#register-last-name-lbl').html(basic_regex.test($('#register-last-name').val()) ? 'Prezime' : `Prezime<span class="text-danger float-end xyz">*pogrešan unos</span>`);
+    const lbl_text = `Prihvatam <a href="" class="text-danger-emphasis text-decoration-none">politiku privatnosti</a> i <a href="" class="text-danger-emphasis text-decoration-none">uslove korišćenja</a>`;
+    $('#register-conditions-lbl').html($('#register-conditions').is(':checked') ? lbl_text : `${lbl_text}<span class="text-danger float-end xyz">*pogrešan unos</span>`);
+  
+    let success = $('.xyz');
+    if (success.length == 0) return true;  
     return false;
-}
+  }
+//------------------------------------------------------------------------------
+// validacija za prijavu korisnika
+
+  function validationLogin() {
+    const basic_regex = /^(?=.{1,50}$)\w{1,}/;
+
+    $('#login-username-lbl').html(basic_regex.test($('#login-username').val()) ? 'Korisničko ime' : `Korisničko ime<span class="text-danger float-end zyx">*pogrešan unos</span>`);    
+    $('#login-passwd-lbl').html(basic_regex.test($('#login-passwd').val()) ? 'Lozinka' : `Lozinka<span class="text-danger float-end zyx">*pogrešan unos</span>`);
+ 
+    const success = $('.zyx');
+    if (success.length === 0) return true;
+    return false;
+  }
 //------------------------------------------------------------------------------

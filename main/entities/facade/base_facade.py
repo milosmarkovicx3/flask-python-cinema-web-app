@@ -31,6 +31,19 @@ class BaseFacade(ABC):
             log.error(f"{e}\n{traceback.format_exc()}")
             return None
 
+    def create(self, entity):
+        try:
+            log.info(f'user: {entity}')
+            if not isinstance(entity, self.T):
+                return False
+            db.session.add(entity)
+            db.session.commit()
+            return entity
+        except Exception as e:
+            log.error(f"{e}\n{traceback.format_exc()}")
+            db.rollback()
+            return None
+
     def delete_by_id(self, id):
         try:
             log.info(f'id: {id}')

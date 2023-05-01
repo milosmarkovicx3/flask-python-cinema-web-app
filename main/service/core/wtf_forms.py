@@ -1,7 +1,11 @@
-from flask_wtf import FlaskForm, RecaptchaField
+from flask_wtf import FlaskForm, RecaptchaField, CSRFProtect
 from flask_wtf.file import FileAllowed
-from wtforms import StringField, SubmitField, RadioField, SelectField, HiddenField, FileField, PasswordField, EmailField
-from wtforms.validators import DataRequired, Email, Length, ValidationError
+from wtforms import StringField, SubmitField, FileField, PasswordField, EmailField
+from wtforms.validators import ValidationError
+
+
+
+
 
 def length(min=-1, max=-1):
     message = f"Unos mora biti dužine od {min} do {max} karaktera!"

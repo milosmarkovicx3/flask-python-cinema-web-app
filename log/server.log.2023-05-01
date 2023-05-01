@@ -1,0 +1,149 @@
+2023-05-01 09:48:26,324 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 09:48:26,324 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 09:52:09,458 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 09:52:09,458 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 09:58:47,875 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 09:58:47,876 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:01:38,125 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 10:01:38,125 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:08:53,710 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 10:08:53,710 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:09:21,783 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 10:09:21,784 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:10:49,539 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 10:10:49,539 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:16:45,123 INFO    [user_impl.py(login:76)] login: shadowfefe
+2023-05-01 10:16:45,123 INFO    [base_facade.py(find_by:13)] value: shadowfefe, column: username
+2023-05-01 10:17:47,794 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 10:17:47,794 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:24:05,959 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 10:24:05,959 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:24:41,693 INFO    [user_impl.py(login:76)] login: shadow
+2023-05-01 10:24:41,693 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 10:25:37,310 INFO    [user_impl.py(login:76)] login: shad2023-05-01 16:17:32,458 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 16:17:32,460 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 16:17:32,470 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 16:17:32,471 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 16:17:32,482 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 16:17:32,483 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 16:17:32,492 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 17:07:39,115 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 17:07:39,126 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 17:08:45,340 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 17:08:45,352 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 17:20:22,493 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-01 17:20:22,495 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 17:32:04,632 INFO    [base_facade.py(find_by:13)] value: shadow3, column: username
+2023-05-01 17:32:04,634 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 17:32:04,652 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': 'faef', 'last_name': 'faefa', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow3', 'password': '$pbkdf2-sha256$29000$i7HWOscYI4TQuvf./39vDQ$yayyq/kUhC.XIe36J0vm8GQS.1Ol8YoPwnwScRGjYnw', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 17:32:04.652554', 'last_login_at': '2023-05-01 17:32:04.652554', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-01 17:32:04,730 ERROR   [user_impl.py(create:79)] please run connect() first
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 65, in create
+    send_mail(msg_to=user.email,
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\mail.py", line 13, in send_mail
+    mail.send(msg)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 714, in login
+    self.ehlo_or_helo_if_needed()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 611, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 451, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 378, in putcmd
+    self.send(f'{s}{CRLF}')
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 365, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+2023-05-01 17:39:16,774 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 17:39:16,785 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 17:39:16,803 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': '3314', 'last_name': '1341', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow1', 'password': '$pbkdf2-sha256$29000$BsBYq/Vey5mztvYeQwihNA$qrYtDVZj5Ze7UFMrQ0hQ3MWXC8jwATz.zCDBmPxr648', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 17:39:16.802353', 'last_login_at': '2023-05-01 17:39:16.802353', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-01 17:39:16,831 ERROR   [user_impl.py(create:79)] please run connect() first
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 65, in create
+    send_mail(msg_to=user.email,
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\mail.py", line 14, in send_mail
+    mail.send(msg)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 714, in login
+    self.ehlo_or_helo_if_needed()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 611, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 451, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 378, in putcmd
+    self.send(f'{s}{CRLF}')
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 365, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+2023-05-01 17:40:36,648 INFO    [base_facade.py(find_by:13)] value: shadow3, column: username
+2023-05-01 17:40:36,658 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 17:40:36,675 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': 'ec', 'last_name': 'ea', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow3', 'password': '$pbkdf2-sha256$29000$xBiDUOpdq/V.D8HY23svhQ$7gI3RtTTtpDwu7K6BUMzWQcnNlW/7uQq3hfDJkmtuk8', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 17:40:36.675938', 'last_login_at': '2023-05-01 17:40:36.675938', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-01 17:40:36,699 ERROR   [user_impl.py(create:79)] please run connect() first
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 65, in create
+    send_mail(msg_to=user.email,
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\mail.py", line 14, in send_mail
+    mail.send(msg)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 714, in login
+    self.ehlo_or_helo_if_needed()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 611, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 451, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 378, in putcmd
+    self.send(f'{s}{CRLF}')
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 365, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+2023-05-01 18:37:21,035 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 18:37:21,045 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 18:37:21,062 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': 'wd', 'last_name': 'wdw', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow1', 'password': '$pbkdf2-sha256$29000$qJVyDqHUeo9xLkXIGSPkvA$Ny7vjTT3w0juZ9vtEwisEsd.96fuRDVBGlqGKYUFI0A', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 18:37:21.062151', 'last_login_at': '2023-05-01 18:37:21.062151', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-01 18:57:29,641 INFO    [template_api.py(get_image:17)] C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\web\rest_api
+2023-05-01 18:57:29,642 INFO    [template_api.py(get_image:19)] C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\web\rest_api\static/resources/images\arhiva_logo.jpg
+2023-05-01 18:57:52,424 INFO    [template_api.py(get_image:17)] C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\web\rest_api
+2023-05-01 18:57:52,425 INFO    [template_api.py(get_image:19)] C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\web\rest_api\static\resources\images\arhiva_logo.jpg
+2023-05-01 19:01:22,235 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 19:01:22,248 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 19:01:22,264 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': '3131', 'last_name': 'faefa', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow1', 'password': '$pbkdf2-sha256$29000$S2nNGaNUytmbcw6B8L63tg$pmCU4v.LPEwAgkebAHMczvHab0cQ/u3zlAJ0.MX5uwY', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 19:01:22.264643', 'last_login_at': '2023-05-01 19:01:22.264643', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-01 19:03:40,249 INFO    [base_facade.py(find_by:13)] value: shadowq, column: username
+2023-05-01 19:03:40,258 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 19:03:40,275 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': 'feqef', 'last_name': 'feqfq', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadowq', 'password': '$pbkdf2-sha256$29000$TwmhVIrROue815pT6p0zpg$159BMLJF8ldThx56.At88H8Osy1nWSpHUfmt.0l27Nc', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 19:03:40.275876', 'last_login_at': '2023-05-01 19:03:40.275876', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-01 19:13:50,526 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 19:13:50,536 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 19:13:50,553 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': 'fe', 'last_name': 'fe', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow1', 'password': '$pbkdf2-sha256$29000$EML435vzXsvZew9BKIVQyg$Ub5yEkMqlLjSMUyiVN9j5ih9.c1a.YZJBOOoDqXC.HQ', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 19:13:50.553347', 'last_login_at': '2023-05-01 19:13:50.553347', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-01 19:14:19,521 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 19:14:19,541 ERROR   [user_impl.py(confirm_email:133)] not a valid pbkdf2_sha256 hash
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\user_impl.py", line 120, in confirm_email
+    if user and pbkdf2_sha256.verify(username_hash, user.username):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\passlib\utils\handlers.py", line 788, in verify
+    self = cls.from_string(hash, **context)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\passlib\handlers\pbkdf2.py", line 65, in from_string
+    rounds, salt, chk = uh.parse_mc3(hash, cls.ident, handler=cls)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\passlib\utils\handlers.py", line 198, in parse_mc3
+    raise exc.InvalidHashError(handler)
+ValueError: not a valid pbkdf2_sha256 hash
+
+2023-05-01 19:16:45,490 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 19:22:09,792 INFO    [base_facade.py(find_by:13)] value: shadow1, column: username
+2023-05-01 19:22:09,803 INFO    [base_facade.py(find_by:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-01 19:22:09,820 INFO    [base_facade.py(create:36)] user: {'id': None, 'first_name': 'faef', 'last_name': 'faefa', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow1', 'password': '$pbkdf2-sha256$29000$tRZCqJVSag0hJESIUUqptQ$ULQ.W0gPps0nbH0FY71dLWb.x8KE5aZIcu1phBkpDSE', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-01 19:22:09.820193', 'last_login_at': '2023-05-01 19:22:09.820193', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}

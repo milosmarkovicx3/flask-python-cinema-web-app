@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from entities.core.result import Result
 from entities.core.status import Status
 from service.utility.logger import log
-from service.utility.utility import json
+from service.utility.utils import json
 
 
 class BaseImpl(ABC):

@@ -1,10 +1,11 @@
 import os
 from werkzeug.utils import secure_filename
 
+from entities.core.status import Status
 from entities.facade.movie_facade import MovieFacade
 from service.impl.base_impl import BaseImpl
 from service.utility.logger import log, project_path
-from service.utility.utility import json
+from service.utility.utils import json
 from entities.core.result import Result
 from entities.facade import movie_facade as mf
 from entities.models.movie import Movie
