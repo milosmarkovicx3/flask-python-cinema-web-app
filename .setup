@@ -1,3 +1,6 @@
+pip freeze > requirements.txt
+pip unistall -r requirements.txt -y
+
 ------------------------------------------------------------
 1. Promeniti vrednost 'project_path' promenljive u 'logger.py' klasi.
 ------------------------------------------------------------

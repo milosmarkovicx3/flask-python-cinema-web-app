@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <iframe src="stari_link.html" name="iframe_a" height="300px" width="100%" title="primer"></iframe>
-    <a href="novi_link" target="iframe_a">link</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block head %}
+<title>Arhiv | Repertoar</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/repertoire/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/repertoire/script.js') }}" defer></script>
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.repertoire') }}">REPERTOAR</a></li>
+<li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
+<li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
+<li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+{% endblock %}
+
+
+{% block content %} 
+
+{% endblock %}

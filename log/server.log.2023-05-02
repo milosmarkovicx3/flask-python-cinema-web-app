@@ -3,3 +3,15 @@
 2023-05-02 12:06:29,748 INFO    [user_impl.py(login:74)] login: shadow
 2023-05-02 12:06:29,749 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
 2023-05-02 12:06:37,415 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-02 12:58:51,060 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 12:58:56,567 INFO    [base_facade.py(find_by:13)] value: shadowh, column: username
+2023-05-02 13:06:24,739 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 13:06:28,245 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-02 13:06:28,245 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 14:37:00,526 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-02 14:37:01,821 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 14:37:05,901 INFO    [user_impl.py(login:74)] login: shadow5
+2023-05-02 14:37:05,901 INFO    [base_facade.py(find_by:13)] value: shadow5, column: username
+2023-05-02 14:37:07,046 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 14:37:07,211 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-02 14:37:07,212 INFO    [base_facade.py(find_by:13)] value: shadow, column: username

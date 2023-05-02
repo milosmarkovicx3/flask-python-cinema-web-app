@@ -5513,14 +5513,6 @@ textarea.form-control-lg {
 .modal.fade .modal-dialog {
   transition: transform 0.3s ease-out;
   transform: translate(0, -50px);
-  -webkit-transform: translate(0, -50px);
-  -moz-transform: translate(0, -50px);
-  -ms-transform: translate(0, -50px);
-  -o-transform: translate(0, -50px);
-  -webkit-transition: transform 0.3s ease-out;
-  -moz-transition: transform 0.3s ease-out;
-  -ms-transition: transform 0.3s ease-out;
-  -o-transition: transform 0.3s ease-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .modal.fade .modal-dialog {

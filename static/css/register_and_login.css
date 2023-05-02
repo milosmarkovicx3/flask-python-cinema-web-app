@@ -1,0 +1,17 @@
+/*---------------------------------------------------------------------------------*/
+/* pozicioniranje ikonice za prikazivanje(toggle) lozinke u formama  */
+.passwd-wrap {
+	position: relative;
+}
+#register-show-passwd,
+ #login-show-passwd{
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translateY(-50%);
+	cursor: pointer;
+	width: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+/*---------------------------------------------------------------------------------*/

@@ -12,10 +12,15 @@ template_api = Blueprint('template_api', __name__)
 def dashboard():
     return render_template('EditDatabase.html', form_movie=wtf_create_movie(), form_actor=wtf_create_actor(), form_genre=wtf_create_genre())
 
-@template_api.route('/logo')
-def get_image():
-    image_path = os.path.join(project_path, 'static\\resources\\images', 'arhiva_logo.jpg')
-    return send_file(image_path, mimetype='image/jpg')
+# @template_api.route('/logo')
+# def get_image():
+#     image_path = os.path.join(project_path, 'static\\resources\\images', 'arhiva_logo.jpg')
+#     return send_file(image_path, mimetype='image/jpg')
+
 @template_api.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+
+@template_api.route('/repertoar', methods=['GET'])
+def repertoire():
+    return render_template('repertoire.html')

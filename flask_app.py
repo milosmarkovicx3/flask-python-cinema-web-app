@@ -3,7 +3,6 @@ from flask import Flask
 from dotenv import load_dotenv
 from entities.core.base import db
 from service.core.wtf_forms import csrf
-from service.utility.logger import project_path
 from service.utility.mail import mail
 from web.rest_api.auth_api import login_manager, auth_api
 from web.rest_api.template_api import template_api
@@ -12,11 +11,9 @@ from web.rest_api.actor_api import actor_api
 from web.rest_api.movie_api import movie_api
 from web.rest_api.user_api import user_api
 
-app = Flask(
-    __name__,
-    template_folder=f'{project_path}templates',
-    static_folder=f'{project_path}static'
-)
+app = Flask(__name__)
+# template_folder=f'{project_path}templates',
+# static_folder=f'{project_path}static'
 
 load_dotenv()
 
@@ -64,6 +61,6 @@ db.create_all()
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port='5000', debug=True)  # produkcija debug=False
+    app.run(host='127.0.0.1', port=5000, debug=True)  # produkcija debug=False
 
 
