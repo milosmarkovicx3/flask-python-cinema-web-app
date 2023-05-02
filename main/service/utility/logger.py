@@ -1,5 +1,4 @@
 # https://docs.python.org/3/library/logging.html#logging.Formatter
-import os, sys
 import logging
 import time
 from logging.handlers import TimedRotatingFileHandler

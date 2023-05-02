@@ -1,11 +1,12 @@
 import os
-
 from flask import render_template, Blueprint, send_file
-from flask_login import login_required, current_user
+from flask_login import login_required
 from service.core.wtf_forms import wtf_create_movie, wtf_create_actor, wtf_create_genre
-from service.utility.logger import log, project_path
+from service.utility.logger import project_path
+
 
 template_api = Blueprint('template_api', __name__)
+
 @template_api.route('/EditDatabase', methods=['GET'])
 @login_required
 def dashboard():

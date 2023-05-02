@@ -1,0 +1,5 @@
+2023-05-02 11:52:35,796 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 12:06:28,116 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 12:06:29,748 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-02 12:06:29,749 INFO    [base_facade.py(find_by:13)] value: shadow, column: username
+2023-05-02 12:06:37,415 INFO    [user_impl.py(logout:101)] log out: Miloš Marković

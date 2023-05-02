@@ -8,7 +8,7 @@ from entities.facade.user_facade import UserFacade
 from entities.models.user import User
 from service.impl.base_impl import BaseImpl
 from service.utility.logger import log
-from service.utility.mail import send_mail, send_mail_confirm_email
+from service.utility.mail import send_mail_confirm_email
 from service.utility.utils import basic_regex, email_regex, passwd_regex
 
 
@@ -43,10 +43,7 @@ class UserImpl(BaseImpl):
                     flash('email_exist', 'error')
 
                 flash('register_fail', 'error')
-                session['form_data'] = {
-                    'register-email': email
-                }
-                return redirect(request.referrer or url_for('index'))
+                return redirect(request.referrer or url_for('template_api.index'))
 
             passwd_hash = pbkdf2_sha256.hash(passwd)
 
@@ -77,7 +74,7 @@ class UserImpl(BaseImpl):
             log.info(f'login: {username}')
             user = self.T.find_by(username, "username")
 
-            if user and pbkdf2_sha256.verify(password, user.password):
+            if user and pbkdf2_sha256.verify(secret=password, hash=user.password):
                 login_user(user)
 
                 user.last_login_at = datetime.now()
@@ -85,10 +82,9 @@ class UserImpl(BaseImpl):
                 user.last_login_ip = request.remote_addr
                 db.session.commit()
 
-                session.pop('form_data', None)
                 if remember:
                     response = make_response(redirect(request.referrer or url_for('template_api.index')))
-                    response.set_cookie('archive', 'true', max_age=604800) # 1 nedelja
+                    response.set_cookie('archive', 'true', max_age=604800)  # 7 dana
                     return response
                 return redirect(request.referrer or url_for('template_api.index'))
 
@@ -117,14 +113,14 @@ class UserImpl(BaseImpl):
     def confirm_email(self, email, username_hash):
         try:
             user = self.T.find_by(email, "email")
-            if user and pbkdf2_sha256.verify(user.username, username_hash):
+            if user and pbkdf2_sha256.verify(secret=user.username, hash=username_hash):
                 user.confirmed_at = datetime.now()
                 db.session.commit()
             return '''
                     <html>
                         <body>
                             <script>
-                                alert('Vaša email adresa je verifikovana!');
+                                alert('Vaša email adresa je uspešno verifikovana!');
                             </script>
                         </body>
                     </html>

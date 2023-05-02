@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="Marković Miloš, milos.dj.markovic@gmail.com">
-  <link rel="shortcut icon" href="{{ url_for('static', filename='resources/images/arhiva_logo.ico') }}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='resources/images/arhiv_logo.ico') }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/index/style.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
@@ -18,6 +18,7 @@
   <script src="{{ url_for('static', filename='javascript/jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='javascript/bootstrap.bundle.min.js') }}"></script>  
   <script src="{{ url_for('static', filename='javascript/index/js.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='javascript/register_and_login.js') }}" defer></script>
 </head>
 <body>
 
@@ -29,7 +30,8 @@
         <div class="modal-dialog modal-md modal-dialog-centered">
           <div class="modal-content bg-body-secondary">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLoginLabel">PRIJAVA
+              <h1 class="modal-title fs-5" id="staticBackdropLoginLabel">
+                PRIJAVA
                 {% if 'login_fail' in get_flashed_messages() %}
                 <span class="text-danger"> (POGREŠNI KREDENCIJALI)</span>
                 {% endif %}
@@ -70,7 +72,12 @@
         <div class="modal-dialog modal-md modal-dialog-centered">
           <div class="modal-content bg-body-secondary">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropRegistationLabel">REGISTRACIJA</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropRegistationLabel">
+                REGISTRACIJA
+                {% if 'register_fail' in get_flashed_messages() %}
+                <span class="text-danger"> (POGREŠNI UNOS)</span>
+                {% endif %}
+              </h1>
               <button type="button" id="register-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ url_for('user_api.create') }}" method="post" onsubmit="return validationRegister()" id="register-form">
@@ -140,7 +147,6 @@
 <div class="container-fluid" style="background-color: gray;">
   <div class="container">
 
-
         <!--HEADER_POČETAK-->
         <div class="container-fluid text-white">
           <div class="row mb-3 p-0 align-items-center bg-black">
@@ -156,7 +162,6 @@
         </div>
         <!--HEADER_POČETAK-->
 
-
         <!--NAVIGACIJA_POČETAK-->
         <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark border border-dark">
           <div class="container-fluid">
@@ -167,7 +172,7 @@
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li>
                   <a id="nav-li-logo" href="{{ url_for('template_api.index') }}">
-                    <img style="width: 40px;" src="{{ url_for('static', filename='resources/images/arhiva_logo.jpg') }}" alt="ARHIV_LOGO">
+                    <img style="width: 40px;" src="{{ url_for('static', filename='resources/images/arhiv_logo.jpg') }}" alt="ARHIV_LOGO">
                   </a>
                 </li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
@@ -214,8 +219,6 @@
           </div>
         </nav>
         <!--NAVIGACIJA_KRAJ-->
-
-
 
         <!--IMG_SLIDER_POČETAK-->
         <div id="carouselControls" class="carousel slide p-0 my-3 border border-dark" data-bs-ride="carousel">
@@ -422,6 +425,7 @@
           <hr>
           <p class="text-center">© 2019-2023 Arhiv, Inc</p>
         </footer>
+
     </div>
   </div>
   {% if 'login_fail' in get_flashed_messages() %}

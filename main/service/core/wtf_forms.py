@@ -5,7 +5,7 @@ from wtforms.validators import ValidationError
 
 
 
-
+csrf = CSRFProtect()
 
 def length(min=-1, max=-1):
     message = f"Unos mora biti dužine od {min} do {max} karaktera!"

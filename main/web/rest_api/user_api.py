@@ -1,8 +1,6 @@
 from service.impl.user_impl import UserImpl
 from flask import Blueprint, request
 
-from service.utility.logger import log
-from service.utility.utils import json
 
 user_api = Blueprint('user_api', __name__)
 ui = UserImpl()
