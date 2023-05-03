@@ -9,7 +9,7 @@
 
 {% block nav %}
 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire') }}">REPERTOAR</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire_search', page=1) }}">REPERTOAR</a></li>
 <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
 <li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
 <li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
@@ -49,7 +49,7 @@
 <!--NOVOSTI_3x2_POČETAK-->
 <div class="container-fluid bg-dark text-white border border-dark">
   <div class="container">
-    <h1 class="display-6 m-0 mt-2">DOGAĐAJI</h1>
+    <h1 class="display-7 m-0 mt-2">DOGAĐAJI</h1>
     <hr class="my-2">
     <div class="row mt-4 text-center">
       <div class="col-sm-4 border border-dark">
@@ -103,7 +103,8 @@
 <!--IZDVAJAMO_POČETAK-->
 <div class="container-fluid bg-dark text-white my-3 border border-dark">
   <div class="container">
-    <h1 class="display-6 m-0 mt-2">IZDVAJAMO</h1>
+
+    <h1 class="display-7 m-0 mt-2">IZDVAJAMO</h1>
     <hr class="my-2">
     <div class="row mt-4 text-center">
       <div class="col-sm-3 border border-dark">
@@ -136,8 +137,8 @@
 
       </div>
     </div>
-  </div>
 
+  </div>
   <br>
 </div>
 <!--IZDVAJAMO_KRAJ-->

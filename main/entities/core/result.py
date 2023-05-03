@@ -32,10 +32,10 @@ class Result:
         return {
             "status": self._status,
             "description": self._description,
-            "item": self._repr_helper_method()
+            "item": self.__repr_helper_method__()
         }
 
-    def _repr_helper_method(self):
+    def __repr_helper_method__(self):
         if not isinstance(self._item, list):
             return self._item.__repr__()
         _list = []

@@ -1,9 +1,11 @@
 import os
+
+from flask import session
 from werkzeug.utils import secure_filename
 
 from entities.core.status import Status
 from entities.facade.movie_facade import MovieFacade
-from service.impl.base_impl import BaseImpl
+from service.impl.base_impl import BaseImpl, __result_handler__
 from service.utility.logger import log, project_path
 from service.utility.utils import json
 from entities.core.result import Result
@@ -11,24 +13,10 @@ from entities.facade import movie_facade as mf
 from entities.models.movie import Movie
 from service.core.wtf_forms import wtf_create_movie
 
+
 class MovieImpl(BaseImpl):
     def __init__(self):
         super().__init__(MovieFacade)
-
-    def get_by_title(title):
-        try:
-            result = Result(item=mf.get_by_title(title))
-            if result.get_item() is False:
-                result.set_status(Result.NOT_FOUND)
-            elif result.get_item() is None:
-                result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
-        except Exception as e:
-            log.error(e)
-            result = Result()
-            result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
-
 
     def create(data):
         try:
@@ -61,3 +49,13 @@ class MovieImpl(BaseImpl):
             result.set_status(Status.INTERNAL_SERVER_ERROR)
             return json(result)
 
+    def repertoire_search(self, search_input, imdb_rating, timeline, genre_name, sort_method, page, per_page):
+        search_input = search_input if search_input else None
+        imdb_rating = imdb_rating if imdb_rating else None
+        timeline = int(timeline) if timeline else None
+        genre_name = genre_name if genre_name else None
+        sort_method = sort_method if sort_method else None
+        page = int(page) if page else 1
+        per_page = int(per_page) if per_page else 20
+
+        return self.T.repertoire_search(search_input, imdb_rating, timeline, genre_name, sort_method, page, per_page)

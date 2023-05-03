@@ -24,31 +24,47 @@ function validationRegister() {
     const passwd_regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W]).{5,50}$/;
     const basic_regex = /^(?=.{1,255}$)\w{2,}/;
 
+    username = $('#register-username');
+    email = $('#register-email');
+    passwd = $('#register-passwd');
+    first_name = $('#register-first-name');
+    last_name = $('#register-last-name');
+    conditions = $('#register-conditions');
+
     if(!$username_exist)
-    $('#register-username-lbl').html(basic_regex.test($('#register-username').val()) ? 'Korisničko ime' : `Korisničko ime<span class="text-danger float-end xyz">*pogrešan unos/format</span>`);
+    if(!basic_regex.test(username.val())){
+      username.addClass('is-invalid register-stop'); 
+      $('#register-username-msg').html('Izarerite korisničko ime.');
+    }else{ username.removeClass('is-invalid register-stop');  }   
+    
     if(!$email_exist)
-    $('#register-email-lbl').html(email_regex.test($('#register-email').val()) ? 'Email adresa' : `Email adresa<span class="text-danger float-end xyz">*pogrešan unos/format</span>`);
-    $('#register-passwd-lbl').html(passwd_regex.test($('#register-passwd').val()) ? 'Lozinka' : `Lozinka<span class="text-danger float-end xyz">*pogrešan unos/format</span>`);
-    $('#register-first-name-lbl').html(basic_regex.test($('#register-first-name').val()) ? 'Ime' : `Ime<span class="text-danger float-end xyz">*pogrešan unos/format</span>`);
-    $('#register-last-name-lbl').html(basic_regex.test($('#register-last-name').val()) ? 'Prezime' : `Prezime<span class="text-danger float-end xyz">*pogrešan unos/format</span>`);
-    const lbl_text = `Prihvatam <a href="" class="text-danger-emphasis text-decoration-none">politiku privatnosti</a> i <a href="" class="text-danger-emphasis text-decoration-none">uslove korišćenja</a>`;
-    $('#register-conditions-lbl').html($('#register-conditions').is(':checked') ? lbl_text : `${lbl_text}<span class="text-danger float-end xyz">*pogrešan unos/format</span>`);
-  
-    const success = $('.xyz');
-    if (success.length == 0) return true;  
-    return false;
-  }
-//------------------------------------------------------------------------------
-// validacija za prijavu korisnika
+    if(!basic_regex.test(email.val())){
+      email.addClass('is-invalid register-stop'); 
+      $('#register-email-msg').html('Unesite email adresu.');
+    }else if(!email_regex.test(email.val())){
+      email.addClass('is-invalid register-stop'); 
+      $('#register-email-msg').html('Email adresa uneta u pogrešnom formatu.'); 
+    }else{ email.removeClass('is-invalid register-stop');  } 
 
-  function validationLogin() {
-    const basic_regex = /^(?=.{1,50}$)\w{1,}/;
+    if(!basic_regex.test(passwd.val())){
+      passwd.addClass('is-invalid register-stop'); 
+      $('#register-passwd-msg').html('Izaberite lozinku.');
+    }else if(!passwd_regex.test(passwd.val())){
+      passwd.addClass('is-invalid register-stop'); 
+      $('#register-passwd-msg').html('Vaša lozinka mora sadržati minimum 5 karaktera, slovo, broj i specijalan znak.'); 
+    }else{ passwd.removeClass('is-invalid register-stop');  } 
 
-    $('#login-username-lbl').html(basic_regex.test($('#login-username').val()) ? 'Korisničko ime' : `Korisničko ime<span class="text-danger float-end zyx">*pogrešan unos/format</span>`);    
-    $('#login-passwd-lbl').html(basic_regex.test($('#login-passwd').val()) ? 'Lozinka' : `Lozinka<span class="text-danger float-end zyx">*pogrešan unos/format</span>`);
- 
-    const success = $('.zyx');
-    if (success.length === 0) return true;
+    if(!basic_regex.test(first_name.val())){ first_name.addClass('is-invalid register-stop'); }
+    else{ first_name.removeClass('is-invalid register-stop'); } 
+
+    if(!basic_regex.test(last_name.val())){ last_name.addClass('is-invalid register-stop'); }
+    else{ last_name.removeClass('is-invalid register-stop'); } 
+
+    if(!conditions.is(':checked')){ conditions.addClass('is-invalid register-stop'); }
+    else{ conditions.removeClass('is-invalid register-stop');  } 
+
+    const validated = $('.register-stop');
+    if (validated.length == 0) return true;  
     return false;
   }
 //------------------------------------------------------------------------------
@@ -58,7 +74,7 @@ var $username_exist = false;
 
 $(document).ready(function() {
     const $username_input = $('#register-username');
-    const $username_lbl = $('#register-username-lbl');  
+    const $username_msg = $('#register-username-msg'); 
     
     $username_input.on('input', function() {
       const username = $username_input.val();      
@@ -68,10 +84,12 @@ $(document).ready(function() {
         method: 'get',
         success: function(response) {
           if (response.status == '200') {
-            $username_lbl.html('Korisničko ime<span class="text-danger float-end xyz">*već postoji u sistemu</span>');  
+            $username_msg.html('Izabrano korisničko ime već postoji u sistemu.'); 
+            $username_input.addClass('is-invalid register-stop'); 
             $username_exist = true    
           }else if ($username_exist){
-            $username_lbl.html('Korisničko ime'); 
+            $username_msg.html('Izarerite korisničko ime.'); 
+            $username_input.removeClass('is-invalid register-stop'); 
             $username_exist = false
           }
         },
@@ -88,7 +106,7 @@ var $email_exist = false;
 
 $(document).ready(function() {
     const $email_input = $('#register-email');
-    const $email_lbl = $('#register-email-lbl');  
+    const $email_msg = $('#register-email-msg');  
     
     
     $email_input.on('input', function() {
@@ -99,11 +117,13 @@ $(document).ready(function() {
         method: 'get',
         success: function(response) {
           if (response.status == '200') {
-            $email_lbl.html('Email adresa<span class="text-danger float-end xyz">*već postoji u sistemu</span>');  
-            $email_exist = true    
+            $email_msg.html('Uneta email adresa već postoji u sistemu.');
+            $email_input.addClass('is-invalid register-stop'); 
+            $email_exist = true;    
           }else if ($email_exist){
-            $email_lbl.html('Email adresa'); 
-            $email_exist = false
+            $email_msg.html('Unesite email adresu.');
+            $email_input.removeClass('is-invalid register-stop'); 
+            $email_exist = false;
           }
         },
         error: function(error) {

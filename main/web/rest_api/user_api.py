@@ -1,25 +1,30 @@
 from service.impl.user_impl import UserImpl
 from flask import Blueprint, request
 
+from service.utility.logger import log
 
 user_api = Blueprint('user_api', __name__)
 ui = UserImpl()
 
 @user_api.route('/<string:value>', methods=['GET'])
 @user_api.route('/<string:value>/<string:column>', methods=['GET'])
-def find_by(value, column="id"):
-    return ui.find_by(value, column)
+def find(value, column="id"):
+    return ui.find(value, column)
 
 @user_api.route('/', methods=['GET'])
-def get_all():
-    return ui.get_all()
+def find_all():
+    kwargs = {}
+    for key, value in request.args.items():
+        kwargs[key] = value
+    return ui.find_all(**kwargs)
 
 @user_api.route('/', methods=['POST'])
 def create():
     return ui.create(data=request.form)
 
-@user_api.route('/<int:id>', methods=['DELETE'])
-def delete_by_id(id):
-    return ui.delete_by_id(id)
+@user_api.route('/<string:value>', methods=['DELETE'])
+@user_api.route('/<string:value>/<string:column>', methods=['DELETE'])
+def delete(value, column="id"):
+    return ui.delete(value, column)
 
 

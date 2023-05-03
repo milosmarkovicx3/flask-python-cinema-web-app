@@ -2,6 +2,7 @@
 1. skinuta animacija kada se koristi static modal, linija 5542
 2. promenjena vrednost overflow-y da se prikazuje skrol, linija 5501
 3. dodata klasa modal-md, linije 5638-5644
+4. dodata klasa display-7, linije 669-678
 */
 
 @charset "UTF-8";
@@ -663,6 +664,17 @@ progress {
 @media (min-width: 1200px) {
   .display-6 {
     font-size: 2.5rem;
+  }
+}
+
+.display-7 {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+@media (min-width: 1200px) {
+  .display-7 {
+    font-size: 2rem;
   }
 }
 

@@ -25,8 +25,8 @@ class UserImpl(BaseImpl):
             last_name = data['register-last-name']
             conditions = data.get('register-conditions')
 
-            find_username = self.T.find_by(username, "username")
-            find_email = self.T.find_by(email, "email")
+            find_username = self.T.find(username, "username")
+            find_email = self.T.find(email, "email")
 
             if (not basic_regex(username) or
                     not email_regex(email) or
@@ -36,11 +36,6 @@ class UserImpl(BaseImpl):
                     not conditions or
                     find_username or
                     find_email):
-
-                if find_username:
-                    flash('username_exist', 'error')
-                if find_email:
-                    flash('email_exist', 'error')
 
                 flash('register_fail', 'error')
                 return redirect(request.referrer or url_for('template_api.index'))
@@ -72,7 +67,7 @@ class UserImpl(BaseImpl):
             remember = data.get('login-conditions')
 
             log.info(f'login: {username}')
-            user = self.T.find_by(username, "username")
+            user = self.T.find(username, "username")
 
             if user and pbkdf2_sha256.verify(secret=password, hash=user.password):
                 login_user(user)
@@ -112,7 +107,7 @@ class UserImpl(BaseImpl):
 
     def confirm_email(self, email, username_hash):
         try:
-            user = self.T.find_by(email, "email")
+            user = self.T.find(email, "email")
             if user and pbkdf2_sha256.verify(secret=user.username, hash=username_hash):
                 user.confirmed_at = datetime.now()
                 db.session.commit()

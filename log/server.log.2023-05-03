@@ -1,0 +1,288 @@
+2023-05-03 00:07:35,529 INFO    [base_facade.py(find_all:22)] 
+2023-05-03 00:07:46,738 INFO    [base_facade.py(find_all:22)] 
+2023-05-03 00:10:40,695 INFO    [base_facade.py(find_all:22)] args: 
+2023-05-03 00:10:59,094 INFO    [base_facade.py(find_all:22)] args: 
+2023-05-03 00:11:10,548 INFO    [base_facade.py(find_all:22)] args: 
+2023-05-03 00:12:01,285 INFO    [base_facade.py(find_all:22)] args: 
+2023-05-03 00:15:14,447 ERROR   [base_facade.py(find_all:30)] 'title' is an invalid keyword argument for str()
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 22, in find_all
+    log.info(f'args: {str(**kwargs)}')
+TypeError: 'title' is an invalid keyword argument for str()
+
+2023-05-03 00:22:17,046 INFO    [movie_api.py(find_all:18)] title Dracula Untold?votes=104K
+2023-05-03 00:22:28,294 INFO    [movie_api.py(find_all:18)] title Dracula Untold
+2023-05-03 00:22:28,294 INFO    [movie_api.py(find_all:18)] votes 104K
+2023-05-03 00:24:57,593 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:11:08,231 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:12:34,038 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:13:08,313 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:17:05,725 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:17:49,196 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:18:53,799 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:19:12,432 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:19:24,619 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:19:59,076 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:20:29,852 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:20:43,823 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:21:35,063 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:21:47,388 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:22:04,323 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 01:43:47,934 ERROR   [movie_facade.py(custom_search:79)] type object 'Movie' has no attribute 'name'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 56, in custom_search
+    Movie.name.like(f'%{search_input}%'),
+AttributeError: type object 'Movie' has no attribute 'name'
+
+2023-05-03 15:48:03,890 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 17:28:19,269 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 17:28:36,834 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 17:28:38,570 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 19:11:57,504 INFO    [base_facade.py(find:13)] value: custom, column: id
+2023-05-03 19:13:05,230 INFO    [movie_api.py(repertoire_search:42)] prosa123
+2023-05-03 19:24:59,387 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 19:58:53,019 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 19:59:17,605 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 20:00:34,480 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 20:01:07,220 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 20:02:22,785 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 20:02:55,969 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 20:06:27,128 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+    movies = query.paginate(page=page, per_page=per_page, error_out=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
+    return QueryPagination(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\pagination.py", line 123, in _prepare_page_args
+    if page < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2023-05-03 20:48:55,968 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:48:57,133 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:48:59,444 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:00,855 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:04,376 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:05,345 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:14,225 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:32,296 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:33,340 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:38,759 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:49:39,522 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:50:24,154 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:52:39,247 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:52:48,571 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:53:40,639 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:58:02,975 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:58:03,775 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:59:38,345 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 20:59:39,249 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:00:41,743 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:00:44,499 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:00:45,396 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:03:13,491 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:03:16,744 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:04:47,576 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:05:01,055 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:16:05,285 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:16:54,983 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:16:57,105 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:23:34,950 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:23:53,968 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:24:10,596 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:29:34,233 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:29:57,984 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:30:00,719 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:30:02,440 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:30:03,822 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:30:07,345 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:33:01,622 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:33:03,394 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:37:13,199 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:37:19,007 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:41:17,161 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:53:14,472 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:53:47,940 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:54:13,318 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:54:53,563 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:55:04,707 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:55:05,650 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:55:53,660 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:56:05,613 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:56:08,078 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:57:33,643 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 21:57:35,999 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:09:17,552 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:09:42,053 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+    query = query.filter(Movie.rating.between(timeline, timeline + 10))
+TypeError: can only concatenate str (not "int") to str
+
+2023-05-03 22:14:01,780 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+    query = query.filter(Movie.rating.between(timeline, timeline + 10))
+TypeError: can only concatenate str (not "int") to str
+
+2023-05-03 22:14:21,287 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:14:45,497 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:14:53,501 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:09,236 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:12,509 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:15,270 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:18,014 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:20,253 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:22,782 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:26,376 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:31,372 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:38,330 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:41,695 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:45,972 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:15:51,477 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:16:46,521 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:19:17,204 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:20:24,567 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:21:35,665 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:21:57,346 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:22:03,462 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:22:19,607 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:22:22,714 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:22:29,223 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:22:34,912 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:23:25,069 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:23:46,584 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:24:00,508 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:24:22,151 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:32:03,549 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:32:39,331 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:32:40,433 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:32:43,126 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:37:40,717 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:37:44,882 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:45:15,431 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:45:17,956 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:46:50,639 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:46:57,987 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:46:59,380 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:47:18,112 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:47:19,714 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:47:31,044 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:47:35,140 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:47:41,999 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:47:54,421 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:47:58,148 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:48:04,612 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:51:26,234 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:51:32,760 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+    query = query.filter(Movie.rating.between(timeline, timeline + 10))
+TypeError: can only concatenate str (not "int") to str
+
+2023-05-03 22:51:36,161 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+    query = query.filter(Movie.rating.between(timeline, timeline + 10))
+TypeError: can only concatenate str (not "int") to str
+
+2023-05-03 22:53:53,458 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:53:58,222 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:54:59,498 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:58:11,202 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 22:58:58,495 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 23:02:01,250 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 23:02:42,238 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-03 23:04:37,095 INFO    [base_facade.py(find:13)] value: a, column: username
+2023-05-03 23:04:40,582 INFO    [base_facade.py(find:13)] value: username, column: id
+2023-05-03 23:04:41,752 INFO    [base_facade.py(find:13)] value: r, column: username
+2023-05-03 23:04:41,858 INFO    [base_facade.py(find:13)] value: ra, column: username
+2023-05-03 23:04:41,995 INFO    [base_facade.py(find:13)] value: rad, column: username
+2023-05-03 23:04:42,113 INFO    [base_facade.py(find:13)] value: radi, column: username
+2023-05-03 23:04:42,373 INFO    [base_facade.py(find:13)] value: radi , column: username
+2023-05-03 23:04:42,752 INFO    [base_facade.py(find:13)] value: radi l, column: username
+2023-05-03 23:04:43,175 INFO    [base_facade.py(find:13)] value: radi li, column: username
+2023-05-03 23:04:43,206 INFO    [base_facade.py(find:13)] value: radi li , column: username
+2023-05-03 23:04:43,378 INFO    [base_facade.py(find:13)] value: radi li s, column: username
+2023-05-03 23:04:43,538 INFO    [base_facade.py(find:13)] value: radi li st, column: username
+2023-05-03 23:04:43,618 INFO    [base_facade.py(find:13)] value: radi li sta, column: username
+2023-05-03 23:04:43,726 INFO    [base_facade.py(find:13)] value: radi li sta , column: username
+2023-05-03 23:04:45,008 INFO    [base_facade.py(find:13)] value: username, column: id

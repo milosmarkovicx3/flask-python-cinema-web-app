@@ -1,3 +1,4 @@
+# https://flask.palletsprojects.com/en/2.3.x/security/#security-csp
 import os
 from flask import Flask
 from dotenv import load_dotenv
