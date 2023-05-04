@@ -28,9 +28,9 @@
     <!--MODALS_POČETAK-->    
     <div>
         <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLoginLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content bg-body-secondary">
-            <div class="modal-header">
+        <div class="modal-dialog modal-md modal-dialog-centered border-5 border-danger">
+            <div class="modal-content bg-body-secondary modal-texture">
+            <div class="modal-header ">
                 <h1 class="modal-title fs-5" id="staticBackdropLoginLabel">
                 PRIJAVA
                 {% if 'login_fail' in get_flashed_messages() %}
@@ -72,7 +72,7 @@
         </div>
         <div class="modal fade" id="staticBackdropRegistation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropRegistationLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content bg-body-secondary">
+            <div class="modal-content bg-body-secondary modal-texture">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="staticBackdropRegistationLabel">
                 REGISTRACIJA
@@ -132,8 +132,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                <button type="submit" class="btn btn-success">Potvrdi</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Otkaži</button>
+                    <button type="submit" class="btn btn-success">Potvrdi</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Otkaži</button>
                 </div>
             </form>
             </div>
@@ -143,150 +143,152 @@
     <!--MODALS_KRAJ-->
     {% endif %}        
 
-<div class="container-fluid" style="background-color: gray;">
-    <div class="container">
+<div id="texture" class="min-vh-100">
+    <div id="background" class="container-fluid min-vh-100">
+        <div class="container">
 
-        <!--HEADER_POČETAK-->
-        <div class="container-fluid text-white">
-            <div class="row mb-3 p-0 align-items-center bg-black">
-            <div class="col-sm-3 p-0">
-                <img src="{{ url_for('static', filename='resources/index/0-logo-banner/logo-v-4.png') }}" class="d-block w-100 p-0" alt="LOGO_HEADER_SLIKA">
-            </div>
-            <div class="col-sm-9 text-center">
-                <p id="movie-quotes" class="active h2 text-light-emphasis">
-                "You either die a hero or you live long enough to see yourself become the villain." - The Dark Knight
-                </p>
-            </div>
-            </div>
-        </div>
-        <!--HEADER_POČETAK-->
-
-        <!--NAVIGACIJA_POČETAK-->
-        <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark border border-dark">
-            <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                <li>
-                    <a id="nav-li-logo" href="{{ url_for('template_api.index') }}">
-                    <img style="width: 40px;" src="{{ url_for('static', filename='resources/images/arhiv_logo.jpg') }}" alt="ARHIV_LOGO">
-                    </a>
-                </li>
-                {% block nav %}
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire') }}">REPERTOAR</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
-                {% endblock %}
-                </ul>
-                {% if current_user.is_authenticated %}
-                <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    {% if current_user.profile_picture %}
-                    <img src="{{ url_for('static', filename='resources/images/' + current_user.profile_picture) }}" alt="" width="26" height="26" class="rounded-circle me-2">
-                    {% else %}
-                    <img src="{{ url_for('static', filename='resources/images/avatar_profile_picture.png') }}" alt="" width="26" height="26" class="rounded-circle me-2">
-                    {% endif %}
-                    {{ current_user.first_name|upper }}
-                    {{ current_user.last_name|upper }}
-                </a> 
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    {% if current_user.is_superuser %}
-                    <li><a class="dropdown-item" href="#"><span class="fi fi-rs-list"></span>&nbsp; Admin panel</a></li>
-                    {% else %}
-                    
-                    {% endif %}
-                    <li><a class="dropdown-item" href="#"><span class="fi fi-sr-user"></span>&nbsp; Profil</a></li>
-                    <li><a class="dropdown-item" href="#"><span class="fi fi-rs-message-code"></span>&nbsp; Rezervacije</a></li>
-                    <li><a class="dropdown-item" href="#"><span class="fi fi-rs-settings"></span>&nbsp; Podešavanja</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{{ url_for('auth_api.logout') }}" id="log-out"><span class="fi fi-rs-exit"></span>&nbsp; Odjavi se</a></li>
-                </ul>
+            <!--HEADER_POČETAK-->
+            <div class="container-fluid text-white">
+                <div class="row mb-3 p-0 align-items-center bg-black border-black">
+                <div class="col-sm-3 p-0">
+                    <img src="{{ url_for('static', filename='resources/index/0-logo-banner/logo-v-4.png') }}" class="d-block w-100 p-0" alt="LOGO_HEADER_SLIKA">
                 </div>
-                {% else %}
-                <ul class="nav navbar-nav navbar-right not-logged">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdropRegistation">
-                    <span class="fi fi-bs-list"></span> Registracija
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="login-click" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin">
-                    <span class="fi fi-sr-user"></span> Prijava
-                    </a>
-                </li>
-                </ul>
-                {% endif %}           
+                <div class="col-sm-9 text-center">
+                    <p id="movie-quotes" class="active h2 text-light-emphasis">
+                    "You either die a hero or you live long enough to see yourself become the villain." - The Dark Knight
+                    </p>
+                </div>
+                </div>
             </div>
-            </div>
-        </nav>
-        <!--NAVIGACIJA_KRAJ-->
+            <!--HEADER_POČETAK-->
 
-        {% block content %}
-        {% endblock %}
+            <!--NAVIGACIJA_POČETAK-->
+            <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark border-black">
+                <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li>
+                        <a id="nav-li-logo" href="{{ url_for('template_api.index') }}">
+                        <img style="width: 40px;" src="{{ url_for('static', filename='resources/images/arhiv_logo.jpg') }}" alt="ARHIV_LOGO">
+                        </a>
+                    </li>
+                    {% block nav %}
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire') }}">REPERTOAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+                    {% endblock %}
+                    </ul>
+                    {% if current_user.is_authenticated %}
+                    <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if current_user.profile_picture %}
+                        <img src="{{ url_for('static', filename='resources/images/' + current_user.profile_picture) }}" alt="" width="26" height="26" class="rounded-circle me-2">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='resources/images/avatar_profile_picture.png') }}" alt="" width="26" height="26" class="rounded-circle me-2">
+                        {% endif %}
+                        {{ current_user.first_name|upper }}
+                        {{ current_user.last_name|upper }}
+                    </a> 
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        {% if current_user.is_superuser %}
+                        <li><a class="dropdown-item" href="#"><span class="fi fi-rs-list"></span>&nbsp; Admin panel</a></li>
+                        {% else %}
+                        
+                        {% endif %}
+                        <li><a class="dropdown-item" href="#"><span class="fi fi-sr-user"></span>&nbsp; Profil</a></li>
+                        <li><a class="dropdown-item" href="#"><span class="fi fi-rs-message-code"></span>&nbsp; Rezervacije</a></li>
+                        <li><a class="dropdown-item" href="#"><span class="fi fi-rs-settings"></span>&nbsp; Podešavanja</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ url_for('auth_api.logout') }}" id="log-out"><span class="fi fi-rs-exit"></span>&nbsp; Odjavi se</a></li>
+                    </ul>
+                    </div>
+                    {% else %}
+                    <ul class="nav navbar-nav navbar-right not-logged">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdropRegistation">
+                        <span class="fi fi-bs-list"></span> Registracija
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="login-click" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin">
+                        <span class="fi fi-sr-user"></span> Prijava
+                        </a>
+                    </li>
+                    </ul>
+                    {% endif %}           
+                </div>
+                </div>
+            </nav>
+            <!--NAVIGACIJA_KRAJ-->
 
-        <footer class="container-fluid text-white bg-dark border border-dark mt-3">
-            <div class="row m-3 mb-0 justify-content-between">
-            <div class="col-sm-3 p-0">
-                <h5>RADNO VREME</h5>
-                <p>
-                Radno vreme blagajne je od: <br>
-                15:00 - 22:00 radnim danom <br>
-                12:00 - 22:00 subota nedelja <br>
-                (prodaja karata na dan projekcije)
-                </p>
-            </div>
-            <div class="col-sm-3 p-0">
-                <h5>KONTAKTIRAJTE NAS</h5>
-                <p>
-                <span class="fi fi-ss-map-marker"></span>
-                <a href="https://goo.gl/maps/Uf6CNTXEZfVkkfwt7" target="_blank">Kneza Miloša 7, 11000 Beograd</a> <br>
-                <span class="fi fi-ss-envelope"></span>
-                <a href="mailto:office@arhiv.rs" target="_blank">office@arhiv.rs</a> <br>
-                <span class="fi fi-ss-phone-call"></span>
-                +381 11 32 36 517 <br>
-                <span class="fi fi-ss-phone-plus"></span>
-                +381 11 22 03 400
-                </p>
-            </div>
-            <div id="social" class="col-sm-2 p-0">
-                <h5>PRATITE NAS</h5>
-                <p>
-                <img src="{{ url_for('static', filename='resources/social-media-icons/facebook (6).png') }}" class="fi" alt="facebook">
-                <a href="https://www.facebook.com" target="_blank">Facebook</a> <br>
-                <img src="{{ url_for('static', filename='resources/social-media-icons/twitter (4).png') }}" class="fi" alt="twitter">
-                <a href="https://twitter.com/home" target="_blank">Twitter</a> <br>
-                <img src="{{ url_for('static', filename='resources/social-media-icons/instagram (3).png') }}" class="fi" alt="instagram">
-                <a href="https://www.instagram.com" target="_blank">Instagram</a> <br>
-                <img src="{{ url_for('static', filename='resources/social-media-icons/youtube (3).png') }}" class="fi" alt="youtube">
-                <a href="https://www.youtube.com" target="_blank">YouTube</a>
-                </p>
-            </div>
-            <div class="col-sm-3 p-0">
-                <h5>DODATNE INFORMACIJE</h5>
-                <p>
-                <span class="fi fi-ss-messages-question"></span>
-                <a href="">Često postavljena pitanja</a> <br>
-                <span class="fi fi-ss-shield-check"></span>
-                <a href="">Politika privatnosti</a> <br>
-                <span class="fi  fi-ss-settings"></span>
-                <a href="">Uslovi korišćenja</a> <br>
-                <span class="fi fi-ss-search-alt"></span>
-                <a href="">O nama</a> <br>
-                <span class="fi fi-ss-map"></span>
-                <a href="">Mapa sajta</a>
-                </p>
-            </div>
-            </div>
-            <hr class="m-0">
-            <p class="text-center my-2">© 2019-2023 Arhiv, Inc</p>
-        </footer>
+            {% block content %}
+            {% endblock %}
 
+            <footer class="container-fluid text-white bg-dark border-black mt-3">
+                <div class="row m-3 mb-0 justify-content-between">
+                <div class="col-sm-3 p-0">
+                    <h5>RADNO VREME</h5>
+                    <p>
+                    Radno vreme blagajne je od: <br>
+                    15:00 - 22:00 radnim danom <br>
+                    12:00 - 22:00 subota nedelja <br>
+                    (prodaja karata na dan projekcije)
+                    </p>
+                </div>
+                <div class="col-sm-3 p-0">
+                    <h5>KONTAKTIRAJTE NAS</h5>
+                    <p>
+                    <span class="fi fi-ss-map-marker"></span>
+                    <a href="https://goo.gl/maps/Uf6CNTXEZfVkkfwt7" target="_blank">Kneza Miloša 7, 11000 Beograd</a> <br>
+                    <span class="fi fi-ss-envelope"></span>
+                    <a href="mailto:office@arhiv.rs" target="_blank">office@arhiv.rs</a> <br>
+                    <span class="fi fi-ss-phone-call"></span>
+                    +381 11 32 36 517 <br>
+                    <span class="fi fi-ss-phone-plus"></span>
+                    +381 11 22 03 400
+                    </p>
+                </div>
+                <div id="social" class="col-sm-2 p-0">
+                    <h5>PRATITE NAS</h5>
+                    <p>
+                    <img src="{{ url_for('static', filename='resources/social-media-icons/facebook (6).png') }}" class="fi" alt="facebook">
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a> <br>
+                    <img src="{{ url_for('static', filename='resources/social-media-icons/twitter (4).png') }}" class="fi" alt="twitter">
+                    <a href="https://twitter.com/home" target="_blank">Twitter</a> <br>
+                    <img src="{{ url_for('static', filename='resources/social-media-icons/instagram (3).png') }}" class="fi" alt="instagram">
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a> <br>
+                    <img src="{{ url_for('static', filename='resources/social-media-icons/youtube (3).png') }}" class="fi" alt="youtube">
+                    <a href="https://www.youtube.com" target="_blank">YouTube</a>
+                    </p>
+                </div>
+                <div class="col-sm-3 p-0">
+                    <h5>DODATNE INFORMACIJE</h5>
+                    <p>
+                    <span class="fi fi-ss-messages-question"></span>
+                    <a href="">Često postavljena pitanja</a> <br>
+                    <span class="fi fi-ss-shield-check"></span>
+                    <a href="">Politika privatnosti</a> <br>
+                    <span class="fi  fi-ss-settings"></span>
+                    <a href="">Uslovi korišćenja</a> <br>
+                    <span class="fi fi-ss-search-alt"></span>
+                    <a href="">O nama</a> <br>
+                    <span class="fi fi-ss-map"></span>
+                    <a href="">Mapa sajta</a>
+                    </p>
+                </div>
+                </div>
+                <hr class="m-0">
+                <p class="text-center my-2">© 2019-2023 Arhiv, Inc</p>
+            </footer>
+
+        </div>
     </div>
-    </div>
+</div>
     {% if 'login_fail' in get_flashed_messages() %}
     <script defer>
     $(document).ready(function() {

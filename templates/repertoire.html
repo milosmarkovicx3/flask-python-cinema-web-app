@@ -19,7 +19,7 @@
 
 {% block content %} 
 <!--PRETRAGA_POČETAK-->
-<div class="container-fluid bg-dark text-white mt-3 pt-3 pb-4 border border-dark">
+<div class="container-fluid bg-dark text-white mt-3 pt-3 pb-4 border-black">
     <div class="container">
         <form class="row" action="" method="get">
 
@@ -28,38 +28,38 @@
             </div>
 
             <div class="col-10">
-              <input type="search" value="{{ '' if form['search_input'] == None else form['search_input']  }}" class="form-control py-1 px-2 consolas" id="search_input" name="search_input" placeholder=":pretraga po nazivu filma, žanra, glumca ili godini">
+              <input type="search" value="{{ '' if form['search_input'] == None else form['search_input']  }}" class="form-control border-black py-1 px-2 consolas" id="search_input" name="search_input" placeholder=":pretraga po nazivu filma, žanra, glumca ili godini">
             </div>
 
             <div class="col-2">
-                <button type="submit" class="btn btn-success w-100 py-1 px-2">PRETRAŽI</button>
+                <button type="submit" class="btn btn-success w-100 border-black py-1 px-2">PRETRAŽI</button>
             </div>
 
             <div class="col-md-3">
               <label for="genre_name" class="form-label my-1">ŽANR</label>
-              <select id="genre_name" name="genre_name" class="form-select py-1 px-2 consolas">
+              <select id="genre_name" name="genre_name" class="form-select border-black py-1 px-2 consolas">
                 <option value="" {{ 'selected' if form['genre_name'] == '' else '' }}>---IZABERITE ŽANR---</option>
-                <option value="Action" {{ 'selected' if form['genre_name'] == 'Action' else '' }}>Action</option>
-                <option value="Adventure" {{ 'selected' if form['genre_name'] == 'Adventure' else '' }}>Adventure</option>
-                <option value="Comedy" {{ 'selected' if form['genre_name'] == 'Comedy' else '' }}>Comedy</option>
-                <option value="Crime" {{ 'selected' if form['genre_name'] == 'Crime' else '' }}>Crime</option>                            
-                <option value="Drama" {{ 'selected' if form['genre_name'] == 'Drama' else '' }}>Drama</option>
-                <option value="Fantasy" {{ 'selected' if form['genre_name'] == 'Fantasy' else '' }}>Fantasy</option>
-                <option value="History" {{ 'selected' if form['genre_name'] == 'History' else '' }}>History</option>
-                <option value="Horror" {{ 'selected' if form['genre_name'] == 'Horror' else '' }}>Horror</option>                            
-                <option value="Mystery" {{ 'selected' if form['genre_name'] == 'Mystery' else '' }}>Mystery</option>
-                <option value="Romance" {{ 'selected' if form['genre_name'] == 'Romance' else '' }}>Romance</option>
-                <option value="Science fiction" {{ 'selected' if form['genre_name'] == 'Science fiction' else '' }}>Science fiction</option>
-                <option value="Thriller" {{ 'selected' if form['genre_name'] == 'Thriller' else '' }}>Thriller</option>                            
-                <option value="War" {{ 'selected' if form['genre_name'] == 'War' else '' }}>War</option>
-                <option value="Western" {{ 'selected' if form['genre_name'] == 'Western' else '' }}>Western</option>
+                <option value="Action" {{ 'selected' if form['genre_name'] == 'Action' else '' }}>> Action</option>
+                <option value="Adventure" {{ 'selected' if form['genre_name'] == 'Adventure' else '' }}>> Adventure</option>
+                <option value="Comedy" {{ 'selected' if form['genre_name'] == 'Comedy' else '' }}>> Comedy</option>
+                <option value="Crime" {{ 'selected' if form['genre_name'] == 'Crime' else '' }}>> Crime</option>
+                <option value="Drama" {{ 'selected' if form['genre_name'] == 'Drama' else '' }}>> Drama</option>
+                <option value="Fantasy" {{ 'selected' if form['genre_name'] == 'Fantasy' else '' }}>> Fantasy</option>
+                <option value="History" {{ 'selected' if form['genre_name'] == 'History' else '' }}>> History</option>
+                <option value="Horror" {{ 'selected' if form['genre_name'] == 'Horror' else '' }}>> Horror</option>
+                <option value="Mystery" {{ 'selected' if form['genre_name'] == 'Mystery' else '' }}>> Mystery</option>
+                <option value="Romance" {{ 'selected' if form['genre_name'] == 'Romance' else '' }}>> Romance</option>
+                <option value="Science fiction" {{ 'selected' if form['genre_name'] == 'Science fiction' else '' }}>> Science fiction</option>
+                <option value="Thriller" {{ 'selected' if form['genre_name'] == 'Thriller' else '' }}>> Thriller</option>
+                <option value="War" {{ 'selected' if form['genre_name'] == 'War' else '' }}>> War</option>
+                <option value="Western" {{ 'selected' if form['genre_name'] == 'Western' else '' }}>> Western</option>
               </select>
                          
             </div>
 
             <div class="col-md-3">
               <label for="imdb_rating" class="form-labe my-1">IMDB REJTING</label>
-              <select id="imdb_rating" name="imdb_rating" class="form-select py-1 px-2 consolas">
+              <select id="imdb_rating" name="imdb_rating" class="form-select border-black py-1 px-2 consolas">
                   <option value="" {{ 'selected' if form['imdb_rating'] == '' else '' }}>---IZABERITE REJTING---</option>
                   <option value="9" {{ 'selected' if form['imdb_rating'] == '9' else '' }}> > 9+</option>
                   <option value="8" {{ 'selected' if form['imdb_rating'] == '8' else '' }}> > 8+</option>
@@ -71,7 +71,7 @@
 
             <div class="col-md-3">
               <label for="timeline" class="form-label my-1">PERIOD</label>
-              <select id="timeline" name="timeline" class="form-select py-1 px-2 consolas">
+              <select id="timeline" name="timeline" class="form-select border-black py-1 px-2 consolas">
                   <option value="" {{ 'selected' if form['timeline'] == '' else '' }}>---IZABERITE PERIOD---</option>
                   <option value="2020" {{ 'selected' if form['timeline'] == '2020' else '' }}> > 2020-<script>document.write(new Date().getFullYear())</script></option>
                   <option value="2010" {{ 'selected' if form['timeline'] == '2010' else '' }}> > 2010-2020</option>
@@ -86,7 +86,7 @@
 
             <div class="col-md-3">
                 <label for="sort_method" class="form-label my-1">SORTIRAJ PO</label>
-                <select id="sort_method" name="sort_method" class="form-select py-1 px-2 consolas">
+                <select id="sort_method" name="sort_method" class="form-select border-black py-1 px-2 consolas">
                   <option value="" {{ 'selected' if form['sort_method'] == '' else '' }}>---IZABERITE OPCIJU---</option>
                   <option value="title_asc" {{ 'selected' if form['sort_method'] == 'title_asc' else '' }}>> NAZIV (rastući)</option>
                   <option value="title_desc" {{ 'selected' if form['sort_method'] == 'title_desc' else '' }}>> NAZIV (opadajući)</option>
@@ -105,17 +105,19 @@
 <!--PRETRAGA_KRAJ-->
 
 <!--FILMOVI_PREGLED_POČETAK-->
-<div class="container-fluid bg-dark text-white mt-3 pt-3 pb-4 border border-dark">
+<div class="container-fluid bg-dark text-white mt-3 border-black">
     <div class="container">
 
       <h1 class="display-7 m-0 mt-2">REZULTATI PRETRAGE</h1>
       <hr class="my-2">
 
-      <div class="row mt-4 text-center">
+      <div class="row mt-4 text-center ">
         {% for movie in pagination %}
-        <div class="col-sm-2 border border-dark">
+        <div class="col-sm-2 border-5 border-danger">
           <a href="">
-            <img src="{{ url_for('static', filename='resources/movies-posters/' + movie.poster) }}" class="w-100" alt="{{ movie.poster }}">
+            <img src="{{ url_for('static', filename='resources/movies-posters/' + movie.poster) }}" 
+            style="border: 1px solid black!important;"
+            class="w-100  movie-hover border-5 border-danger" alt="{{ movie.poster }}">
           </a>
           <h5 class="mb-0 mt-2">{{ movie.title }}</h5>
           <span class="text-secondary">({{ movie.year }})</span>

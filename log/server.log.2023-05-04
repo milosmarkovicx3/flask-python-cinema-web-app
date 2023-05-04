@@ -1,0 +1,6 @@
+2023-05-04 01:29:54,381 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-04 01:29:54,381 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-04 01:29:57,734 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
+2023-05-04 02:46:27,392 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-04 02:50:05,879 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-04 02:50:05,879 INFO    [base_facade.py(find:13)] value: shadow, column: username

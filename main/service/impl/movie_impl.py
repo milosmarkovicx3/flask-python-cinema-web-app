@@ -56,6 +56,6 @@ class MovieImpl(BaseImpl):
         genre_name = genre_name if genre_name else None
         sort_method = sort_method if sort_method else None
         page = int(page) if page else 1
-        per_page = int(per_page) if per_page else 20
+        per_page = int(per_page) if per_page else 12
 
         return self.T.repertoire_search(search_input, imdb_rating, timeline, genre_name, sort_method, page, per_page)

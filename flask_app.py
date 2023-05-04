@@ -1,6 +1,6 @@
 # https://flask.palletsprojects.com/en/2.3.x/security/#security-csp
 import os
-from flask import Flask
+from flask import Flask, render_template
 from dotenv import load_dotenv
 from entities.core.base import db
 from service.core.wtf_forms import csrf
@@ -49,7 +49,9 @@ def apply_caching(response):
     response.headers["HTTP-HEADER"] = "VALUE"
     return response
 
-
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 login_manager.init_app(app)
