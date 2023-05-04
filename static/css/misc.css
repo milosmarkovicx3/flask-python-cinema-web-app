@@ -1,12 +1,21 @@
 /*---------------------------------------------------------------------------------*/
-.border-black {
-  border: 1px solid black!important;
+.consolas {
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+/*---------------------------------------------------------------------------------*/
+/* sprecavanje dragovanja slika na klik */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
 /*---------------------------------------------------------------------------------*/
 /* tekstura strane */
 #texture {
   background-image: url('../resources/images/background-texture.jpg'); 
-  background-size: 50px; 
   background-repeat: repeat;
 }
 
@@ -18,7 +27,6 @@
 /* tekstura modala */
 .modal-texture::before{
   background-image: url('../resources/images/background-texture.jpg'); 
-  background-size: 50px; 
   background-repeat: repeat;
   content: '';
   position: absolute;
@@ -33,13 +41,49 @@
 }
 /*---------------------------------------------------------------------------------*/
 /* animacija za citate na vrhu strane */
-#movie-quotes {
+#quote, #quote-from {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
 }
 
-#movie-quotes.active {
+#quote.active, #quote-from.active {
   opacity: 1;
+}
+/*---------------------------------------------------------------------------------*/
+/* css za citate na vrhu strane */
+@font-face {
+  font-family: 'Autography';
+  src: url('../resources/fonts/Autography.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#quote{
+  margin: 0;
+  color: #444;
+  font-family: "Hoefler Text", Georgia, Garamond, Times, serif;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-size: 1.7em;
+  font-variant: small-caps;  
+}
+
+#quote-from{
+  margin: 0;
+  margin-right: 30px;
+  font-family: 'Autography', sans-serif;
+  font-size: 30px;
+  text-align: right;  
+}
+
+
+#quote-from-hover:hover {
+  color: cornflowerblue;
 }
 /*---------------------------------------------------------------------------------*/
 /* footer linkovi i ikonice */
@@ -53,5 +97,18 @@ footer a{
     position: relative;
     top: -2px;
     display: inline-block;
+}
+/*---------------------------------------------------------------------------------*/
+/* transformacija na hover kod pregleda slika */
+.img-zoom-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.img-zoom-hover:hover {
+  transform: scale(1.08);
+  -webkit-transform: scale(1.08);
+  -moz-transform: scale(1.08);
+  -ms-transform: scale(1.08);
+  -o-transform: scale(1.08);
 }
 /*---------------------------------------------------------------------------------*/

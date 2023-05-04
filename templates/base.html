@@ -148,22 +148,21 @@
         <div class="container">
 
             <!--HEADER_POČETAK-->
-            <div class="container-fluid text-white">
-                <div class="row mb-3 p-0 align-items-center bg-black border-black">
-                <div class="col-sm-3 p-0">
-                    <img src="{{ url_for('static', filename='resources/index/0-logo-banner/logo-v-4.png') }}" class="d-block w-100 p-0" alt="LOGO_HEADER_SLIKA">
-                </div>
-                <div class="col-sm-9 text-center">
-                    <p id="movie-quotes" class="active h2 text-light-emphasis">
-                    "You either die a hero or you live long enough to see yourself become the villain." - The Dark Knight
-                    </p>
-                </div>
+            <div class="container-fluid">
+                <div class="row mb-3 p-0 align-items-center border-black border bg-white user-select-none" >
+                    <div class="col-sm-3 p-0 border-end border-black">
+                        <img src="{{ url_for('static', filename='resources/images/lion_intro.gif') }}" class="w-100 p-0" alt="lion_intro.gif">
+                    </div>
+                    <div class="col-sm-9 ">                        
+                        <p id="quote" class="active">"You either die a hero or you live long enough to see yourself become the villain."</p>
+                        <p id="quote-from" class="active"><span id="quote-from-hover">- The Dark Knight</span></p>           
+                    </div>
                 </div>
             </div>
             <!--HEADER_POČETAK-->
 
             <!--NAVIGACIJA_POČETAK-->
-            <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark border-black">
+            <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark border-black border">
                 <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -187,9 +186,9 @@
                     <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         {% if current_user.profile_picture %}
-                        <img src="{{ url_for('static', filename='resources/images/' + current_user.profile_picture) }}" alt="" width="26" height="26" class="rounded-circle me-2">
+                        <img src="{{ url_for('static', filename='resources/images/' + current_user.profile_picture) }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
                         {% else %}
-                        <img src="{{ url_for('static', filename='resources/images/avatar_profile_picture.png') }}" alt="" width="26" height="26" class="rounded-circle me-2">
+                        <img src="{{ url_for('static', filename='resources/images/avatar_profile_picture.png') }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
                         {% endif %}
                         {{ current_user.first_name|upper }}
                         {{ current_user.last_name|upper }}
@@ -229,7 +228,7 @@
             {% block content %}
             {% endblock %}
 
-            <footer class="container-fluid text-white bg-dark border-black mt-3">
+            <footer class="container-fluid text-white bg-dark border-black border mt-3">
                 <div class="row m-3 mb-0 justify-content-between">
                 <div class="col-sm-3 p-0">
                     <h5>RADNO VREME</h5>

@@ -1,16 +1,1 @@
-.consolas {
-    font-family: Consolas, monospace;
-    font-size: 14px;
-  }
 
-.movie-hover {
-  transition: all 0.2s ease-in-out;
-}
-
-.movie-hover:hover {
-  transform: scale(1.08);
-  -webkit-transform: scale(1.08);
-  -moz-transform: scale(1.08);
-  -ms-transform: scale(1.08);
-  -o-transform: scale(1.08);
-}

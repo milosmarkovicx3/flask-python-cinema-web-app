@@ -1,0 +1,14 @@
+/*---------------------------------------------------------------------------------*/
+/* transformacija na hover kod pregleda slika */
+.img-zoom-lower-hover {
+    transition: all 0.2s ease-in-out;
+}
+  
+.img-zoom-lower-hover:hover {
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    -o-transform: scale(1.04);
+}
+/*---------------------------------------------------------------------------------*/
