@@ -1,9 +1,8 @@
-from service.impl.user_impl import UserImpl
 from flask import Blueprint, request
+from main.service.impl.user_impl import UserImpl
 
-from service.utility.logger import log
 
-user_api = Blueprint('user_api', __name__)
+user_api = Blueprint('user_api', __name__, url_prefix='/user')
 ui = UserImpl()
 
 @user_api.route('/<string:value>', methods=['GET'])

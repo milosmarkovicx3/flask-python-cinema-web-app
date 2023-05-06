@@ -1,10 +1,5 @@
-import traceback
-
-from entities.facade.base_facade import BaseFacade
-from entities.models.user import User
-from service.utility.logger import log
-from entities.core.base import db
-from service.utility.utils import json
+from main.entities.facade.base_facade import BaseFacade
+from main.entities.models.user import User
 
 
 class UserFacade(BaseFacade):

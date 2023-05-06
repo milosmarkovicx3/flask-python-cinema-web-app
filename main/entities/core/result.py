@@ -1,10 +1,13 @@
-from entities.core.status import Status
+from main.entities.core.status import Status
 
 class Result:
-    def __init__(self, item=None, status=Status.OK):
+    def __init__(self, item=None, status=Status.OK, description=None):
         self._item = item
         self._status = status.value
-        self._description = status.name
+        if description is not None:
+            self._description = description
+        else:
+            self._description = status.name
 
     def get_item(self):
         return self._item

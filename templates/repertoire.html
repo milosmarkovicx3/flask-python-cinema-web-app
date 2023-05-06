@@ -22,7 +22,7 @@
 <div class="container-fluid bg-dark text-white mt-3 pt-3 pb-4 border-black border">
     <div class="container">
         <form class="row" action="" method="get">
-
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="col-12">
               <label for="search_input" class="form-label my-1">PRETRAGA</label>
             </div>
@@ -115,7 +115,7 @@
         {% for movie in pagination %}
         <div class="col-sm-2 border-5 border-danger">
           <a href="">
-            <img src="{{ url_for('static', filename='resources/movies-posters/' + movie.poster) }}" 
+            <img src="{{ url_for('static', filename='resources/movie-posters/' + movie.poster) }}"
             style="border: 1px solid black!important;"
             class="w-100 img-zoom-hover border-5 border-danger" alt="{{ movie.poster }}">
           </a>

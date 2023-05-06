@@ -1,35 +1,17 @@
 import os
 from werkzeug.utils import secure_filename
-
-from entities.core.status import Status
-from entities.facade.actor_facade import ActorFacade
-from service.impl.base_impl import BaseImpl
-from service.utility.logger import log, project_path
-from service.utility.utils import json
-from entities.core.result import Result
-from entities.facade import actor_facade as af
-from entities.models.actor import Actor
-from service.core.wtf_forms import wtf_create_actor
+from main.entities.core.status import Status
+from main.entities.models.actor import Actor
+from main.entities.facade.actor_facade import ActorFacade
+from main.entities.core.result import Result
+from main.service.impl.base_impl import BaseImpl
+from main.service.utility.logger import log
+from main.service.utility.utils import json
 
 
 class ActorImpl(BaseImpl):
     def __init__(self):
         super().__init__(ActorFacade)
-
-    def get_by_name(self, name):
-        try:
-            result = Result(item=self.T.get_by_name(name))
-            if result.get_item() is False:
-                result.set_status(Result.NOT_FOUND)
-            elif result.get_item() is None:
-                result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
-        except Exception as e:
-            log.error(e)
-            result = Result()
-            result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
-
 
     def create(self, data):
         try:

@@ -1,26 +1,26 @@
-from service.impl.genre_impl import GenreImpl
 from flask import Blueprint, request
+from main.service.impl.genre_impl import GenreImpl
 
-genre_api = Blueprint('genre_api', __name__)
+genre_api = Blueprint('genre_api', __name__, url_prefix='/genre')
 gi = GenreImpl()
-@genre_api.route('/<int:id>', methods=['GET'])
-def get_by_id(id):
-    return gi.get_by_id(id)
 
-@genre_api.route('/<string:name>', methods=['GET'])
-def get_by_name(name):
-    return gi.get_by_name(name)
+@genre_api.route('/<string:value>', methods=['GET'])
+@genre_api.route('/<string:value>/<string:column>', methods=['GET'])
+def find(value, column="id"):
+    return gi.find(value, column)
 
 @genre_api.route('/', methods=['GET'])
-def get_all():
-    return gi.get_all()
+def find_all():
+    kwargs = {k: v for k, v in request.args.items() if v is not None}
+    return gi.find_all(kwargs)
 
 @genre_api.route('/', methods=['POST'])
 def create():
-    return gi.create(request.form)
+    return gi.create(data=request.form)
 
-@genre_api.route('/<int:id>', methods=['DELETE'])
-def delete_by_id(id):
-    return gi.delete_by_id(id)
+@genre_api.route('/<string:value>', methods=['DELETE'])
+@genre_api.route('/<string:value>/<string:column>', methods=['DELETE'])
+def delete(value, column="id"):
+    return gi.delete(value, column)
 
 

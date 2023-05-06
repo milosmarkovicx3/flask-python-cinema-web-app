@@ -1,9 +1,9 @@
 import traceback
 from abc import ABC, abstractmethod
-from entities.core.result import Result
-from entities.core.status import Status
-from service.utility.logger import log
-from service.utility.utils import json
+from main.entities.core.result import Result
+from main.entities.core.status import Status
+from main.service.utility.logger import log
+from main.service.utility.utils import json
 
 class BaseImpl(ABC):
     @abstractmethod
@@ -13,8 +13,8 @@ class BaseImpl(ABC):
     def find(self, value, column):
         return __result_handler__(item=self.T.find(value, column))
 
-    def find_all(self, **kwargs):
-        return __result_handler__(item=self.T.find_all(**kwargs))
+    def find_all(self, kwargs):
+        return __result_handler__(item=self.T.find_all(kwargs))
 
     def delete(self, value, column):
         return __result_handler__(item=self.T.delete(value, column))
@@ -30,7 +30,6 @@ def __result_handler__(item):
         return json(result)
     except Exception as e:
         log.error(f"{e}\n{traceback.format_exc()}")
-        result = Result()
-        result.set_status(Status.INTERNAL_SERVER_ERROR)
+        result = Result(Status.INTERNAL_SERVER_ERROR)
         return json(result)
 

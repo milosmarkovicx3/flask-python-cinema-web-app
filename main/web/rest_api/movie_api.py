@@ -1,7 +1,8 @@
-from service.impl.movie_impl import MovieImpl
 from flask import Blueprint, request
+from main.service.impl.movie_impl import MovieImpl
+from main.service.utility.logger import log
 
-movie_api = Blueprint('movie_api', __name__)
+movie_api = Blueprint('movie_api', __name__, url_prefix='/movie')
 mi = MovieImpl()
 
 
@@ -13,15 +14,13 @@ def find(value, column="id"):
 
 @movie_api.route('/', methods=['GET'])
 def find_all():
-    kwargs = {}
-    for key, value in request.args.items():
-        kwargs[key] = value
-    return mi.find_all(**kwargs)
+    kwargs = {k: v for k, v in request.args.items() if v is not None}
+    return mi.find_all(kwargs)
 
 
 @movie_api.route('/', methods=['POST'])
 def create():
-    return mi.create(data=request.form)
+    return mi.create(data=request.form, files=request.files)
 
 
 @movie_api.route('/<string:value>', methods=['DELETE'])

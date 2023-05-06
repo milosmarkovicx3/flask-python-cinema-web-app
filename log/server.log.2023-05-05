@@ -1,0 +1,931 @@
+2023-05-05 00:57:07,873 ERROR   [base_facade.py(find_all:40)] 'method'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 28, in find_all
+    if kwargs['method'] == 'like':
+KeyError: 'method'
+
+2023-05-05 00:59:12,069 ERROR   [base_facade.py(find_all:42)] type object 'Movie' has no attribute 'kwargs'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 36, in find_all
+    query = query.filter(self.T.kwargs['column'].between(kwargs['value1'], kwargs['value2']))
+AttributeError: type object 'Movie' has no attribute 'kwargs'
+
+2023-05-05 01:16:59,510 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire_search
+    timeline = int(kwargs['timeline'])
+ValueError: invalid literal for int() with base 10: ''
+
+2023-05-05 01:17:01,200 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire_search
+    timeline = int(kwargs['timeline'])
+ValueError: invalid literal for int() with base 10: ''
+
+2023-05-05 01:19:33,258 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire_search
+    timeline = int(kwargs['timeline'])
+ValueError: invalid literal for int() with base 10: ''
+
+2023-05-05 01:21:11,567 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: 'robert'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 57, in repertoire_search
+    search_input = int(kwargs['search_input'])
+ValueError: invalid literal for int() with base 10: 'robert'
+
+2023-05-05 01:27:38,183 ERROR   [base_facade.py(find_all:43)] type object 'Actor' has no attribute 'title'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 27, in find_all
+    column = getattr(self.T, kwargs['column'])
+AttributeError: type object 'Actor' has no attribute 'title'
+
+2023-05-05 01:37:10,467 INFO    [base_facade.py(find:13)] value: v, column: title
+2023-05-05 01:37:10,604 INFO    [base_facade.py(find:13)] value: vd, column: title
+2023-05-05 01:37:14,145 INFO    [base_facade.py(find:13)] value: v, column: title
+2023-05-05 01:37:15,405 INFO    [base_facade.py(find:13)] value: title, column: id
+2023-05-05 01:37:17,868 INFO    [base_facade.py(find:13)] value: P, column: title
+2023-05-05 01:37:18,338 INFO    [base_facade.py(find:13)] value: Pu, column: title
+2023-05-05 01:37:18,864 INFO    [base_facade.py(find:13)] value: Pub, column: title
+2023-05-05 01:37:19,045 INFO    [base_facade.py(find:13)] value: Publ, column: title
+2023-05-05 01:37:19,394 INFO    [base_facade.py(find:13)] value: Publi, column: title
+2023-05-05 01:37:19,511 INFO    [base_facade.py(find:13)] value: Public, column: title
+2023-05-05 01:37:19,753 INFO    [base_facade.py(find:13)] value: Public , column: title
+2023-05-05 01:37:20,076 INFO    [base_facade.py(find:13)] value: Public e, column: title
+2023-05-05 01:37:20,224 INFO    [base_facade.py(find:13)] value: Public en, column: title
+2023-05-05 01:37:20,387 INFO    [base_facade.py(find:13)] value: Public ene, column: title
+2023-05-05 01:37:20,606 INFO    [base_facade.py(find:13)] value: Public enem, column: title
+2023-05-05 01:37:20,715 INFO    [base_facade.py(find:13)] value: Public enemi, column: title
+2023-05-05 01:37:20,831 INFO    [base_facade.py(find:13)] value: Public enemie, column: title
+2023-05-05 01:37:21,076 INFO    [base_facade.py(find:13)] value: Public enemies, column: title
+2023-05-05 01:37:23,875 INFO    [base_facade.py(find:13)] value: Public enemie, column: title
+2023-05-05 01:37:25,420 INFO    [base_facade.py(find:13)] value: Public enemies, column: title
+2023-05-05 01:37:27,709 INFO    [base_facade.py(find:13)] value: title, column: id
+2023-05-05 17:50:25,672 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 19:06:11,173 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 19:54:27,894 INFO    [base_facade.py(find:13)] value: T, column: title
+2023-05-05 19:54:27,955 INFO    [base_facade.py(find:13)] value: TE, column: title
+2023-05-05 19:54:28,238 INFO    [base_facade.py(find:13)] value: TES, column: title
+2023-05-05 19:54:28,418 INFO    [base_facade.py(find:13)] value: TEST, column: title
+2023-05-05 19:58:19,562 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 19:58:19,849 INFO    [base_facade.py(find:13)] value: aa, column: title
+2023-05-05 20:03:10,164 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 20:03:10,422 INFO    [base_facade.py(find:13)] value: aa, column: title
+2023-05-05 20:04:41,595 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 20:04:41,825 INFO    [base_facade.py(find:13)] value: aa, column: title
+2023-05-05 20:05:19,113 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 20:05:19,296 INFO    [base_facade.py(find:13)] value: aa, column: title
+2023-05-05 20:06:37,370 INFO    [movie_api.py(create:23)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFVFXQ.Verc6_jXuaAGiO0W7jJdqqjOBPo'), ('title', 'aa'), ('year', '11'), ('duration', '22'), ('rating', '33'), ('votes', '44'), ('trailer', 'afe'), ('genres', '[object Map]'), ('actors', '[object Map]')])
+2023-05-05 20:08:54,854 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 20:08:55,043 INFO    [base_facade.py(find:13)] value: aa, column: title
+2023-05-05 20:09:04,226 INFO    [movie_api.py(create:23)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFVGNQ.xHdylOroVLNaYZjYLwkGxuMIOXg'), ('title', 'aa'), ('year', '11'), ('duration', '11'), ('rating', '11'), ('votes', '11'), ('trailer', 'eaw'), ('genres', '[[1,""]]'), ('actors', '[[1,"a"]]')])
+2023-05-05 20:23:12,336 INFO    [base_facade.py(find:13)] value: t, column: title
+2023-05-05 20:23:12,368 INFO    [base_facade.py(find:13)] value: te, column: title
+2023-05-05 20:23:12,660 INFO    [base_facade.py(find:13)] value: tes, column: title
+2023-05-05 20:23:12,776 INFO    [base_facade.py(find:13)] value: test, column: title
+2023-05-05 20:23:53,919 ERROR   [movie_impl.py(create:57)] [Errno 2] No such file or directory: 'C:\\Users\\Markovic Milos\\PycharmProjects\\pythonProject\\zavrsni-rad\\static\\resources\\movies-images\\milosmarkovicx3.png'
+2023-05-05 20:25:41,031 ERROR   [movie_impl.py(create:57)] 'list' object has no attribute 'items'
+2023-05-05 20:27:47,490 INFO    [movie_impl.py(create:35)] [[1,"OBITO"]]
+2023-05-05 20:27:47,492 INFO    [movie_impl.py(create:36)] [[1, 'OBITO']]
+2023-05-05 20:27:47,492 INFO    [movie_impl.py(create:37)] {1: 'OBITO'}
+2023-05-05 20:27:47,500 ERROR   [movie_impl.py(create:61)] 'list' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 56, in create
+    movie.actors = [MoviesActors(id_actor=key, role=value) for key, value in actors.items()]
+AttributeError: 'list' object has no attribute 'items'
+
+2023-05-05 20:28:46,976 ERROR   [movie_impl.py(create:58)] dictionary update sequence element #0 has length 1; 2 is required
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 33, in create
+    genres = dict(data['genres'])
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+
+2023-05-05 20:29:57,084 INFO    [movie_impl.py(create:33)] [[1,""]]
+2023-05-05 20:29:57,085 ERROR   [movie_impl.py(create:60)] dictionary update sequence element #0 has length 1; 2 is required
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 34, in create
+    genres = dict(data['genres'])
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+
+2023-05-05 20:31:53,179 INFO    [base_facade.py(find:13)] value: f, column: title
+2023-05-05 20:31:53,277 INFO    [base_facade.py(find:13)] value: fe, column: title
+2023-05-05 20:31:59,468 INFO    [base_facade.py(find:13)] value: t, column: title
+2023-05-05 20:31:59,545 INFO    [base_facade.py(find:13)] value: te, column: title
+2023-05-05 20:31:59,786 INFO    [base_facade.py(find:13)] value: tes, column: title
+2023-05-05 20:31:59,883 INFO    [base_facade.py(find:13)] value: test, column: title
+2023-05-05 20:32:27,159 INFO    [base_facade.py(find:13)] value: f, column: title
+2023-05-05 20:32:27,181 INFO    [base_facade.py(find:13)] value: fe, column: title
+2023-05-05 20:32:27,247 INFO    [base_facade.py(find:13)] value: fea, column: title
+2023-05-05 20:32:39,904 INFO    [movie_impl.py(create:33)] [[1,"X"]]
+2023-05-05 20:32:39,905 ERROR   [movie_impl.py(create:60)] dictionary update sequence element #0 has length 1; 2 is required
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 34, in create
+    genres = dict(data['genres'])
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+
+2023-05-05 20:41:01,146 ERROR   [movie_impl.py(create:58)] not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 53, in create
+    movie.actors = [MoviesActors(id_actor=key, role=value) for key, value in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 53, in <listcomp>
+    movie.actors = [MoviesActors(id_actor=key, role=value) for key, value in actors]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2023-05-05 20:48:41,580 ERROR   [movie_impl.py(create:65)] not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 56, in create
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 56, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2023-05-05 20:50:57,377 ERROR   [movie_impl.py(create:67)] not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 56, in create
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 56, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2023-05-05 20:52:07,151 INFO    [movie_impl.py(create:57)] MASNA
+2023-05-05 20:52:07,152 ERROR   [movie_impl.py(create:67)] not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 58, in create
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 58, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2023-05-05 20:52:53,753 INFO    [movie_impl.py(create:57)] MASNA
+2023-05-05 20:52:53,754 INFO    [movie_impl.py(create:58)] [[1,"fea"]]
+2023-05-05 20:52:53,754 INFO    [movie_impl.py(create:59)] 11
+2023-05-05 20:52:53,754 ERROR   [movie_impl.py(create:69)] not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 60, in create
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 60, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2023-05-05 20:57:56,185 INFO    [movie_impl.py(create:56)] 11
+2023-05-05 20:57:56,185 INFO    [movie_impl.py(create:57)] 11
+2023-05-05 20:57:56,185 ERROR   [movie_impl.py(create:67)] not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 58, in create
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 58, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2023-05-05 20:59:15,407 INFO    [movie_impl.py(create:56)] 11
+2023-05-05 20:59:15,407 INFO    [movie_impl.py(create:57)] 11
+2023-05-05 20:59:15,407 ERROR   [movie_impl.py(create:67)] not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 58, in create
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 58, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=key, role=value) for key, value in actors]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2023-05-05 21:00:59,388 ERROR   [movie_impl.py(create:58)] string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 53, in create
+    movie.actors = [MoviesActors(actor_id=actor[0], role=actor[1]) for actor in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 53, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=actor[0], role=actor[1]) for actor in actors]
+IndexError: string index out of range
+
+2023-05-05 21:03:22,698 ERROR   [movie_impl.py(create:58)] 'Table' object is not callable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 53, in create
+    movie.actors = [MoviesActors(actor_id=actor[0], role=actor[1]) for actor in actors]
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 53, in <listcomp>
+    movie.actors = [MoviesActors(actor_id=actor[0], role=actor[1]) for actor in actors]
+TypeError: 'Table' object is not callable
+
+2023-05-05 21:27:19,787 ERROR   [movie_impl.py(create:64)] string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 56, in create
+    db.session.execute(MoviesActors.insert().values(movie_id=movie.id, actor_id=actor[0], role=actor[1]))
+IndexError: string index out of range
+
+2023-05-05 21:52:58,461 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-05 21:52:58,694 INFO    [base_facade.py(find:13)] value: aa, column: title
+2023-05-05 21:53:30,513 ERROR   [movie_impl.py(create:62)] (MySQLdb.OperationalError) (1048, "Column 'movie_id' cannot be null")
+[SQL: INSERT INTO movies_actors (movie_id, actor_id, role) VALUES (%s, %s, %s)]
+[parameters: (None, 1, 'afw')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1048, "Column 'movie_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 55, in create
+    db.session.execute(MoviesActors.insert().values(movie_id=movie.id, actor_id=actor[0], role=actor[1]))
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 724, in execute
+    return self._proxied.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2231, in execute
+    return self._execute_internal(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2135, in _execute_internal
+    result = conn.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb.OperationalError) (1048, "Column 'movie_id' cannot be null")
+[SQL: INSERT INTO movies_actors (movie_id, actor_id, role) VALUES (%s, %s, %s)]
+[parameters: (None, 1, 'afw')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2023-05-05 22:02:02,944 ERROR   [movie_impl.py(create:71)] (MySQLdb.OperationalError) (1048, "Column 'movie_id' cannot be null")
+[SQL: INSERT INTO movies_actors (movie_id, actor_id, role) VALUES (%s, %s, %s)]
+[parameters: (None, 1, 'afw')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1048, "Column 'movie_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 57, in create
+    db.session.execute(MoviesActors.insert().values(movie_id=movie.id, actor_id=actor[0], role=actor[1]))
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 724, in execute
+    return self._proxied.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2231, in execute
+    return self._execute_internal(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2135, in _execute_internal
+    result = conn.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb.OperationalError) (1048, "Column 'movie_id' cannot be null")
+[SQL: INSERT INTO movies_actors (movie_id, actor_id, role) VALUES (%s, %s, %s)]
+[parameters: (None, 1, 'afw')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2023-05-05 22:16:32,517 ERROR   [movie_impl.py(create:76)] Unconsumed column names: role
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 64, in create
+    db.session.execute(stmt, params={})
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 724, in execute
+    return self._proxied.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2231, in execute
+    return self._execute_internal(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2135, in _execute_internal
+    result = conn.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1629, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 649, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 288, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 1424, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 865, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 910, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\visitors.py", line 143, in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 5644, in visit_insert
+    crud_params_struct = crud._get_crud_params(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\crud.py", line 335, in _get_crud_params
+    raise exc.CompileError(
+sqlalchemy.exc.CompileError: Unconsumed column names: role
+
+2023-05-05 22:21:45,686 INFO    [base_facade.py(find:13)] value: aaa, column: title
+2023-05-05 22:21:45,818 INFO    [base_facade.py(find:13)] value: aaaf, column: title
+2023-05-05 22:21:45,951 INFO    [base_facade.py(find:13)] value: aaafa, column: title
+2023-05-05 22:21:48,578 ERROR   [movie_impl.py(create:77)] (MySQLdb.IntegrityError) (1062, "Duplicate entry 'milosmarkovicx3.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('aaafa', '123', '13', '13', '13', 'milosmarkovicx3.png', 'fa')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1062, "Duplicate entry 'milosmarkovicx3.png' for key 'image'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 57, in create
+    db.session.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 553, in commit
+    return self._proxied.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1905, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1220, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1195, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4153, in flush
+    self._flush(objects)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4289, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4250, in _flush
+    flush_context.execute()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1208, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.IntegrityError: (MySQLdb.IntegrityError) (1062, "Duplicate entry 'milosmarkovicx3.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('aaafa', '123', '13', '13', '13', 'milosmarkovicx3.png', 'fa')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2023-05-05 22:38:19,639 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 22:38:19,698 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Movie(movie)], expression 'movie_actors' failed to locate a name ("name 'movie_actors' is not defined"). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 532, in __call__
+    x = eval(self.arg, globals(), self._dict)
+  File "<string>", line 1, in <module>
+NameError: name 'movie_actors' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1631, in do_init
+    self._process_dependent_arguments()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1673, in _process_dependent_arguments
+    rel_arg._resolve_against_registry(self._clsregistry_resolvers[1])
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 261, in _resolve_against_registry
+    self.resolved = clsregistry_resolver(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 539, in __call__
+    self._raise_for_name(n.args[0], n)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Movie(movie)], expression 'movie_actors' failed to locate a name ("name 'movie_actors' is not defined"). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+
+2023-05-05 23:08:54,939 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:13:51,641 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:20:23,657 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:20:23,682 ERROR   [base_facade.py(find:17)] Could not determine join condition between parent/child tables on relationship Movie.actors - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2421, in _determine_joins
+    self.primaryjoin = join_condition(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\util.py", line 123, in join_condition
+    return Join._join_condition(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\selectable.py", line 1360, in _join_condition
+    raise exc.NoForeignKeysError(
+sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships between 'movie' and 'actor'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1634, in do_init
+    self._setup_join_conditions()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1881, in _setup_join_conditions
+    self._join_condition = jc = JoinCondition(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2308, in __init__
+    self._determine_joins()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2442, in _determine_joins
+    raise sa_exc.NoForeignKeysError(
+sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship Movie.actors - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+
+2023-05-05 23:33:53,139 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:33:53,154 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Movie(movie)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\_collections.py", line 346, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+KeyError: 'MovieActors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1632, in do_init
+    self._setup_entity()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1851, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Movie(movie)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+
+2023-05-05 23:46:02,235 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:46:02,243 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Movie(movie)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\_collections.py", line 346, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+KeyError: 'MovieActors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1632, in do_init
+    self._setup_entity()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1851, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Movie(movie)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+
+2023-05-05 23:48:47,739 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:48:47,749 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\_collections.py", line 346, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+KeyError: 'MovieActors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1590, in _add_reverse_property
+    other._setup_entity()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1851, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+
+2023-05-05 23:51:04,217 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:51:04,227 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\_collections.py", line 346, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+KeyError: 'MovieActors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1590, in _add_reverse_property
+    other._setup_entity()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1851, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+
+2023-05-05 23:51:45,500 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:51:45,510 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\_collections.py", line 346, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+KeyError: 'MovieActors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1590, in _add_reverse_property
+    other._setup_entity()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1851, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+
+2023-05-05 23:54:25,610 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:54:25,620 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\_collections.py", line 346, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+KeyError: 'MovieActors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1590, in _add_reverse_property
+    other._setup_entity()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1851, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Actor(actor)], expression 'MovieActors' failed to locate a name ('MovieActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.actor.Actor'> class after both dependent classes have been defined.
+
+2023-05-05 23:55:03,189 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:56:03,975 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:56:05,637 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:56:07,045 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:56:16,161 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:56:16,169 ERROR   [base_facade.py(find:17)] When initializing mapper Mapper[Movie(movie)], expression 'MoviesActors' failed to locate a name ('MoviesActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\_collections.py", line 346, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+KeyError: 'MoviesActors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1632, in do_init
+    self._setup_entity()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1851, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Movie(movie)], expression 'MoviesActors' failed to locate a name ('MoviesActors'). If this is a class name, consider adding this relationship() to the <class 'main.entities.models.movie.Movie'> class after both dependent classes have been defined.
+
+2023-05-05 23:58:51,847 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:59:01,813 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-05 23:59:56,567 INFO    [base_facade.py(find:13)] value: 1, column: id

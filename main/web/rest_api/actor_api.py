@@ -1,27 +1,29 @@
-from service.impl.actor_impl import ActorImpl
 from flask import Blueprint, request
+from main.service.impl.actor_impl import ActorImpl
 
-actor_api = Blueprint('actor_api', __name__)
+
+actor_api = Blueprint('actor_api', __name__, url_prefix='/actor')
 ai = ActorImpl()
 
-@actor_api.route('/<int:id>', methods=['GET'])
-def get_by_id(id):
-    return ai.get_by_id(id)
 
-@actor_api.route('/<string:name>', methods=['GET'])
-def get_by_name(name):
-    return ai.get_by_name(name)
+@actor_api.route('/<string:value>', methods=['GET'])
+@actor_api.route('/<string:value>/<string:column>', methods=['GET'])
+def find(value, column="id"):
+    return ai.find(value, column)
+
 
 @actor_api.route('/', methods=['GET'])
-def get_all():
-    return ai.get_all()
+def find_all():
+    kwargs = {k: v for k, v in request.args.items() if v is not None}
+    return ai.find_all(kwargs)
 
 @actor_api.route('/', methods=['POST'])
 def create():
-    return ai.create(request.form)
+    return ai.create(data=request.form)
 
-@actor_api.route('/<int:id>', methods=['DELETE'])
-def delete_by_id(id):
-    return ai.delete_by_id(id)
+@actor_api.route('/<string:value>', methods=['DELETE'])
+@actor_api.route('/<string:value>/<string:column>', methods=['DELETE'])
+def delete(value, column="id"):
+    return ai.delete(value, column)
 
 

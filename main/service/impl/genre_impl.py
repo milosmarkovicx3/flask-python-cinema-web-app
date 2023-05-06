@@ -1,37 +1,20 @@
 import os
 from werkzeug.utils import secure_filename
-
-from entities.core.status import Status
-from entities.facade.genre_facade import GenreFacade
-from service.impl.base_impl import BaseImpl
-from service.utility.logger import log, project_path
-from service.utility.utils import json
-from entities.core.result import Result
-from entities.facade import genre_facade as gf
-from entities.models.genre import Genre
-from service.core.wtf_forms import wtf_create_genre
-
+from main.entities.core.status import Status
+from main.entities.facade import genre_facade as gf
+from main.entities.models.genre import Genre
+from main.entities.facade.genre_facade import GenreFacade
+from main.entities.core.result import Result
+from main.service.impl.base_impl import BaseImpl
+from main.service.utility.logger import log
+from main.service.utility.utils import json
 
 class GenreImpl(BaseImpl):
     def __init__(self):
         super().__init__(GenreFacade)
 
-    def get_by_name(name):
-        try:
-            result = Result(item=gf.get_by_name(name))
-            if result.get_item() is False:
-                result.set_status(Result.NOT_FOUND)
-            elif result.get_item() is None:
-                result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
-        except Exception as e:
-            log.error(e)
-            result = Result()
-            result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
 
-
-    def create(data):
+    def create(self, data):
         try:
             result = Result()
             form =  wtf_create_genre()

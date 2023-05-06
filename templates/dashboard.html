@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% from "macros.html" import render_pagination with context %}
+
+{% block head %}
+<title>Arhiv | Admin panel</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/dashboard/script.js') }}" defer></script>
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
+<li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('template_api.repertoire_search', page=1) }}">REPERTOAR</a></li>
+<li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
+<li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
+<li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-dark text-white mt-3 border-black border">
+  <div class="container">
+
+    <!--LOKALNA_NAVIGACIJA_POČETAK-->
+    <nav class="my-3">
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-movie-tab" data-bs-toggle="tab" data-bs-target="#nav-movie" type="button" role="tab" aria-controls="nav-movie" aria-selected="true">FILM</button>
+        <button class="nav-link" id="nav-actor-tab" data-bs-toggle="tab" data-bs-target="#nav-actor" type="button" role="tab" aria-controls="nav-actor" aria-selected="false">GLUMAC</button>
+        <button class="nav-link" id="nav-genre-tab" data-bs-toggle="tab" data-bs-target="#nav-genre" type="button" role="tab" aria-controls="nav-genre" aria-selected="false">ŽANR</button>
+      </div>
+    </nav>
+    <!--LOKALNA_NAVIGACIJA_KRAJ-->
+
+    <div class="tab-content" id="nav-tabContent">
+
+      <!--FILM_FORMA_POČETAK-->
+      <div class="tab-pane fade show active" id="nav-movie" role="tabpanel" aria-labelledby="nav-movie-tab" tabindex="0">
+        <form id="movie-form" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+          <div class="col-md-12">
+            <label for="title" class="form-label">NASLOV FILMA: </label>
+            <input type="text" class="form-control consolas border border-black" id="title" name="title" placeholder="npr. Star Wars: Episode IV - A New Hope">
+            <div id="title-msg" class="invalid-feedback">
+              Unesite naziv filma.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="year" class="form-label">GODINA IZDANJA: </label>
+            <input type="text" class="form-control consolas border border-black" id="year" name="year" placeholder="npr. 1977">
+            <div class="invalid-feedback">
+              Unesite godinu izdanja.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="duration" class="form-label">TRAJANJE FILMA: </label>
+            <input type="text" class="form-control consolas border border-black" id="duration" name="duration" placeholder="npr. 2h 1m">
+            <div class="invalid-feedback">
+              Unesite trajanje filma.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="rating" class="form-label">REJTING: </label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control consolas border border-black" id="rating" name="rating" aria-describedby="inputGroupPrepend" placeholder="npr. 8.6">              
+              <span class="input-group-text border border-black" id="inputGroupPrepend">@imdb</span>
+              <div class="invalid-feedback">
+                Unesite rejting filma.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="votes" class="form-label">BROJ GLASOVA: </label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control consolas border border-black" id="votes" name="votes" placeholder="npr. 104000">
+              <span class="input-group-text border border-black" id="inputGroupPrepend">@imdb</span>
+              <div class="invalid-feedback">
+                Unesite broj glasova.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="poster" class="form-label">POSTER (2:3): </label>
+            <div class="input-group has-validation">
+              <input type="text" id="poster-input-msg" class="form-control consolas border border-black" placeholder="npr. C:\\fakepath\\star_wars_iv.png" disabled>
+              <input type="file" class="form-control d-none" id="poster" name="poster" accept=".png, .jpg, .jpeg">
+              <span class="input-group-text border border-black" id="choose-file">Izaberite fajl</span>
+              <div id="poster-msg" class="invalid-feedback">
+                Izaberite poster filma.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="trailer" class="form-label">TRAILER: </label>
+            <input type="text" class="form-control consolas border border-black" id="trailer" name="trailer" placeholder="npr. https://www.youtube.com/watch?v=jHEpgsjknCs">
+            <div class="invalid-feedback">
+              Unesite link do trailera filma.
+            </div>
+          </div>
+        </form>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label for="genre-search" class="form-label">ŽANROVI: </label>
+            <input type="search" class="form-control consolas border border-black" id="genre-search" placeholder="npr. Fantasy">
+            <div id="genres-list" class="container bg-dark consolas p-0"></div>
+            <div class="invalid-feedback">
+              Izaberite žanrove za dati film.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="actor-search" class="form-label">GLUMCI: </label>
+            <input type="search" class="form-control consolas border border-black" id="actor-search" placeholder="npr. Mark Hamill">
+            <div id="actors-list" class="container bg-dark consolas p-0"></div>
+            <div id="actors-list-msg" class="invalid-feedback">
+              Izaberite glumce za dati film.
+            </div>
+          </div>
+        </div>
+
+          <div class="col-12 my-3 d-flex justify-content-end">
+            <button class="btn btn-success consolas border border-black me-3" type="submit" form="movie-form">POTVRDI</button>
+            <button id="reset-movie-form" class="btn btn-danger consolas border border-black" type="reset" form="movie-form">RESET</button>
+          </div>
+        
+      </div>
+      <!--FILM_FORMA_KRAJ-->
+
+      <!--GLUMAC_FORMA_POČETAK-->
+      <div class="tab-pane fade" id="nav-actor" role="tabpanel" aria-labelledby="nav-actor-tab" tabindex="0">
+
+      </div>
+      <!--GLUMAC_FORMA_KRAJ-->
+
+      <!--ŽANR_FORMA_POČETAK-->
+      <div class="tab-pane fade" id="nav-genre" role="tabpanel" aria-labelledby="nav-genre-tab" tabindex="0">
+
+      </div>
+      <!--ŽANR_FORMA_KRAJ-->
+
+    </div>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

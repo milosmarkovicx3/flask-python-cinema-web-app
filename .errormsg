@@ -7,5 +7,20 @@ ModuleNotFoundError: No module named 'flask_sqlalchemy'
 --------------------------------------------------------------
 Bootstrap:
 
-1. Modal neće da se prikaze: pomeriti ga skroz gore uz ivicu body/html taga
+1. Modal neće da se prikaze
+
+FIX: pomeriti ga skroz gore uz ivicu body/html taga
+--------------------------------------------------------------
+SQLAlchemy
+
+1. Message: 'When initializing mapper Mapper[Movie(movie)], expression \'MoviesActors\' failed to locate a name (\'MoviesActors\').
+If this is a class name, consider adding this relationship() to the <class \'main.entities.models.movie.Movie\'> class after both dependent classes have been defined.
+
+FIX: uraditi import iako će biti siv u pycharmu, jer je to neophodno zbog redosleda učitavanja
+https://stackoverflow.com/questions/9088957/sqlalchemy-cannot-find-a-class-name
+--------------------------------------------------------------
+2.   AttributeError: 'InstrumentedList' object has no attribute 'actor_id'
+2.1. AttributeError: '_AssociationList' object has no attribute 'id'
+
+FIX: response.actor.actor.name umesto response.actor[0].actor.name, za sve mora for petlja
 --------------------------------------------------------------

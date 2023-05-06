@@ -3,13 +3,13 @@ from datetime import datetime
 from flask import make_response, redirect, request, url_for, session, flash
 from flask_login import login_user, current_user, logout_user
 from passlib.handlers.pbkdf2 import pbkdf2_sha256
-from entities.core.base import db
-from entities.facade.user_facade import UserFacade
-from entities.models.user import User
-from service.impl.base_impl import BaseImpl
-from service.utility.logger import log
-from service.utility.mail import send_mail_confirm_email
-from service.utility.utils import basic_regex, email_regex, passwd_regex
+from main.entities.core.base import db
+from main.entities.facade.user_facade import UserFacade
+from main.entities.models.user import User
+from main.service.impl.base_impl import BaseImpl
+from main.service.utility.logger import log
+from main.service.utility.mail import send_mail_confirm_email
+from main.service.utility.utils import basic_regex, email_regex, passwd_regex
 
 
 class UserImpl(BaseImpl):

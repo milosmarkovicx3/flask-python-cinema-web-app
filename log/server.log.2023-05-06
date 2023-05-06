@@ -1,0 +1,523 @@
+2023-05-06 00:01:00,927 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:02:28,271 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:04:17,561 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:07:10,570 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:08:14,768 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:10:51,489 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:11:37,235 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:12:11,936 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:17:30,228 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:17:30,237 ERROR   [base_facade.py(find:17)] Mapper 'Mapper[Movie(movie)]' has no property 'actors'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2479, in get_property
+    return self._props[key]
+KeyError: 'actors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1569, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2481, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Movie(movie)]' has no property 'actors'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+
+2023-05-06 00:18:55,189 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:18:55,197 ERROR   [base_facade.py(find:17)] Mapper 'Mapper[Movie(movie)]' has no property 'actors'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2479, in get_property
+    return self._props[key]
+KeyError: 'actors'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1569, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2481, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Movie(movie)]' has no property 'actors'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+
+2023-05-06 00:19:56,853 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:20:41,322 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:22:37,897 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:22:47,131 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:24:08,081 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:26:08,985 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:26:19,967 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:28:34,296 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:28:36,066 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:28:39,635 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:40:41,340 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:40:41,349 ERROR   [base_facade.py(find:17)] reverse_property 'actors_association' on relationship MoviesGenres.movie references relationship Movie.actors_association, which does not reference mapper Mapper[MoviesGenres(movies_genres)]
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 14, in find
+    response = db.session.query(self.T).filter_by(**{column: value}).first()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 1589, in query
+    return self._proxied.query(*entities, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2799, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\relationships.py", line 1593, in _add_reverse_property
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: reverse_property 'actors_association' on relationship MoviesGenres.movie references relationship Movie.actors_association, which does not reference mapper Mapper[MoviesGenres(movies_genres)]
+
+2023-05-06 00:41:50,457 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:47:36,919 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:47:39,653 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:52:15,718 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:56:50,243 INFO    [base_facade.py(find:13)] value: d, column: title
+2023-05-06 00:56:50,321 INFO    [base_facade.py(find:13)] value: dw, column: title
+2023-05-06 00:56:50,355 INFO    [base_facade.py(find:13)] value: dwa, column: title
+2023-05-06 00:57:14,802 ERROR   [movie_impl.py(create:80)] (MySQLdb.IntegrityError) (1062, "Duplicate entry 'logo.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('dwa', '12', '12', '12', 'wda', 'logo.png', 'wda')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1062, "Duplicate entry 'logo.png' for key 'image'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 59, in create
+    db.session.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 553, in commit
+    return self._proxied.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1905, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1220, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1195, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4153, in flush
+    self._flush(objects)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4289, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4250, in _flush
+    flush_context.execute()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1208, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.IntegrityError: (MySQLdb.IntegrityError) (1062, "Duplicate entry 'logo.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('dwa', '12', '12', '12', 'wda', 'logo.png', 'wda')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2023-05-06 00:58:03,089 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 00:58:12,298 ERROR   [movie_impl.py(create:80)] (MySQLdb.IntegrityError) (1062, "Duplicate entry 'logo.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('dwa', '12', '12', '12', '12', 'logo.png', 'wda')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1062, "Duplicate entry 'logo.png' for key 'image'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 59, in create
+    db.session.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 553, in commit
+    return self._proxied.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1905, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1220, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1195, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4153, in flush
+    self._flush(objects)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4289, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4250, in _flush
+    flush_context.execute()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1208, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.IntegrityError: (MySQLdb.IntegrityError) (1062, "Duplicate entry 'logo.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('dwa', '12', '12', '12', '12', 'logo.png', 'wda')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2023-05-06 00:59:04,086 ERROR   [movie_impl.py(create:80)] 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 61, in create
+    abort(404)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+2023-05-06 01:04:36,019 INFO    [base_facade.py(find:13)] value: dwaf, column: title
+2023-05-06 01:04:36,062 INFO    [base_facade.py(find:13)] value: dwafa, column: title
+2023-05-06 01:04:36,578 INFO    [base_facade.py(find:13)] value: dwafaa, column: title
+2023-05-06 01:04:37,493 INFO    [base_facade.py(find:13)] value: a, column: title
+2023-05-06 01:04:38,431 INFO    [base_facade.py(find:13)] value: ad, column: title
+2023-05-06 01:04:39,283 INFO    [base_facade.py(find:13)] value: d, column: title
+2023-05-06 01:04:39,506 INFO    [base_facade.py(find:13)] value: dw, column: title
+2023-05-06 01:04:39,694 INFO    [base_facade.py(find:13)] value: dwa, column: title
+2023-05-06 01:04:41,462 INFO    [base_facade.py(find:13)] value: dwaa, column: title
+2023-05-06 01:04:43,042 INFO    [base_facade.py(find:13)] value: dwaad, column: title
+2023-05-06 01:06:04,660 INFO    [base_facade.py(find:13)] value: f, column: title
+2023-05-06 01:06:04,713 INFO    [base_facade.py(find:13)] value: fa, column: title
+2023-05-06 01:06:04,766 INFO    [base_facade.py(find:13)] value: fae, column: title
+2023-05-06 01:06:04,901 INFO    [base_facade.py(find:13)] value: faef, column: title
+2023-05-06 01:06:05,039 INFO    [base_facade.py(find:13)] value: faefa, column: title
+2023-05-06 01:06:21,448 ERROR   [movie_impl.py(create:80)] (MySQLdb.IntegrityError) (1062, "Duplicate entry 'avatar_profile_picture.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('faefa', '312', '12', '13', '131', 'avatar_profile_picture.png', 'afaf')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1062, "Duplicate entry 'avatar_profile_picture.png' for key 'image'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 60, in create
+    db.session.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 553, in commit
+    return self._proxied.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1905, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1220, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1195, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4153, in flush
+    self._flush(objects)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4289, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4250, in _flush
+    flush_context.execute()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1208, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.IntegrityError: (MySQLdb.IntegrityError) (1062, "Duplicate entry 'avatar_profile_picture.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('faefa', '312', '12', '13', '131', 'avatar_profile_picture.png', 'afaf')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2023-05-06 01:06:45,917 ERROR   [movie_impl.py(create:80)] (MySQLdb.IntegrityError) (1062, "Duplicate entry 'avatar_profile_picture.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('faefa', '312', '12', '13', '131', 'avatar_profile_picture.png', 'afaf')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1062, "Duplicate entry 'avatar_profile_picture.png' for key 'image'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 60, in create
+    db.session.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 553, in commit
+    return self._proxied.commit()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1905, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1220, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1195, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4153, in flush
+    self._flush(objects)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4289, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4250, in _flush
+    flush_context.execute()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1208, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.IntegrityError: (MySQLdb.IntegrityError) (1062, "Duplicate entry 'avatar_profile_picture.png' for key 'image'")
+[SQL: INSERT INTO movie (title, year, duration, rating, votes, poster, trailer) VALUES (%s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('faefa', '312', '12', '13', '131', 'avatar_profile_picture.png', 'afaf')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2023-05-06 01:21:22,328 ERROR   [movie_impl.py(create:82)] 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 60, in create
+    abort(404)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+2023-05-06 01:24:28,663 INFO    [base_facade.py(find:13)] value: t, column: title
+2023-05-06 01:24:28,715 INFO    [base_facade.py(find:13)] value: te, column: title
+2023-05-06 01:24:29,026 INFO    [base_facade.py(find:13)] value: tes, column: title
+2023-05-06 01:24:29,124 INFO    [base_facade.py(find:13)] value: test, column: title
+2023-05-06 01:47:47,025 INFO    [base_facade.py(find:13)] value: s, column: title
+2023-05-06 01:47:47,065 INFO    [base_facade.py(find:13)] value: sd, column: title
+2023-05-06 01:47:47,072 INFO    [base_facade.py(find:13)] value: sdf, column: title
+2023-05-06 01:47:47,080 INFO    [base_facade.py(find:13)] value: sdfa, column: title
+2023-05-06 01:47:47,237 INFO    [base_facade.py(find:13)] value: sdfaf, column: title
+2023-05-06 01:59:03,066 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-06 02:01:38,563 INFO    [base_facade.py(find:13)] value: 1, column: id

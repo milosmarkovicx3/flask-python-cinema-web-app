@@ -7,3 +7,34 @@
 2023-05-04 16:29:26,316 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
 2023-05-04 16:29:31,576 INFO    [user_impl.py(login:69)] login: shadow
 2023-05-04 16:29:31,576 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-04 17:51:18,947 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
+2023-05-04 17:51:26,039 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-04 17:51:26,039 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-04 17:51:36,943 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
+2023-05-04 17:51:44,931 INFO    [base_facade.py(find:13)] value: shadow1, column: username
+2023-05-04 17:51:46,027 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-04 17:51:46,917 INFO    [base_facade.py(find:13)] value: shadow1, column: username
+2023-05-04 17:51:49,249 INFO    [base_facade.py(find:13)] value: shadow1!, column: username
+2023-05-04 17:51:50,508 INFO    [base_facade.py(find:13)] value: g, column: email
+2023-05-04 17:51:50,747 INFO    [base_facade.py(find:13)] value: ga, column: email
+2023-05-04 17:51:50,992 INFO    [base_facade.py(find:13)] value: gar, column: email
+2023-05-04 17:51:51,935 INFO    [base_facade.py(find:13)] value: ga, column: email
+2023-05-04 17:51:52,120 INFO    [base_facade.py(find:13)] value: g, column: email
+2023-05-04 17:51:52,270 INFO    [base_facade.py(find:13)] value: email, column: id
+2023-05-04 17:51:52,943 INFO    [base_facade.py(find:13)] value: m, column: email
+2023-05-04 17:51:53,041 INFO    [base_facade.py(find:13)] value: mi, column: email
+2023-05-04 17:51:54,475 INFO    [base_facade.py(find:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-04 17:52:11,377 INFO    [base_facade.py(find:13)] value: shadow1!, column: username
+2023-05-04 17:52:11,378 INFO    [base_facade.py(find:13)] value: milosmarkovicc1@gmail.com, column: email
+2023-05-04 17:52:11,394 INFO    [base_facade.py(create:34)] user: {'id': None, 'first_name': 'Losmi', 'last_name': 'GANG', 'email': 'milosmarkovicc1@gmail.com', 'username': 'shadow1!', 'password': '$pbkdf2-sha256$29000$bM0Z45zT2pvTes.5VwrBGA$a.UiQcJT3qG0YTysuseQ4MR5bHX25cD6vm3AfGuMd3k', 'date_of_birth': 'None', 'phone_number': None, 'profile_picture': None, 'is_superuser': False, 'date_joined': '2023-05-04 17:52:11.394156', 'last_login_at': '2023-05-04 17:52:11.394156', 'last_login_ip': None, 'login_count': 1, 'confirmed_at': 'None'}
+2023-05-04 17:52:52,465 INFO    [user_impl.py(login:69)] login: shadow1!
+2023-05-04 17:52:52,465 INFO    [base_facade.py(find:13)] value: shadow1!, column: username
+2023-05-04 17:54:36,957 INFO    [user_impl.py(logout:96)] log out: Losmi GANG
+2023-05-04 17:54:39,501 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-04 17:54:39,501 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-04 19:22:03,285 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
+2023-05-04 19:30:13,924 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-04 19:30:13,925 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-04 21:31:57,167 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
+2023-05-04 21:32:13,748 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-04 21:32:13,749 INFO    [base_facade.py(find:13)] value: shadow, column: username

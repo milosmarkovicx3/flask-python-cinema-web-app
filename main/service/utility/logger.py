@@ -2,12 +2,12 @@
 import logging
 import time
 from logging.handlers import TimedRotatingFileHandler, SMTPHandler
+from config import PROJECT_ROOT
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
-project_path = "C:/Users/Markovic Milos/PycharmProjects/pythonProject/zavrsni-rad/"
-log_path = project_path + "log/"
+log_path = PROJECT_ROOT + "\\log\\"
 current_time = time.strftime("%Y-%m-%d")
 
 handler = TimedRotatingFileHandler(f'{log_path}server.log.{current_time}', when="d", interval=1, backupCount=30, utc=True, encoding='utf-8')

@@ -1,4 +1,4 @@
-from entities.core.base import db
+from main.entities.core.base import db
 from flask_login import UserMixin
 from sqlalchemy import DateTime, Integer, String, Boolean
 
