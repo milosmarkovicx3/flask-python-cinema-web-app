@@ -528,3 +528,40 @@ Traceback (most recent call last):
     log.info(str(response))
 TypeError: __repr__ returned non-string (type dict)
 
+2023-05-07 20:09:22,316 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
+2023-05-07 20:09:29,242 INFO    [user_impl.py(login:69)] login: shadow1!
+2023-05-07 20:09:29,242 INFO    [base_facade.py(find:13)] value: shadow1!, column: username
+2023-05-07 20:09:31,375 INFO    [user_impl.py(logout:96)] log out: Losmi GANG
+2023-05-07 20:09:33,706 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-07 20:09:33,706 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-07 20:13:49,995 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-07 20:14:14,258 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-07 20:14:21,809 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:24:35,131 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:28:39,054 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:29:32,761 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:31:14,059 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:32:38,070 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:34:14,564 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:35:49,618 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:38:14,554 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:39:47,737 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:42:24,784 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:42:40,972 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:43:52,460 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:46:59,753 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:53:15,924 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:55:31,563 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:58:00,453 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 20:59:37,102 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:00:35,199 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:05:17,285 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:07:43,172 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:15:31,584 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:19:21,883 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:23:23,622 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:24:18,427 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:28:10,267 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:29:15,566 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:29:55,347 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-07 21:30:41,363 INFO    [base_facade.py(find:13)] value: 1, column: id

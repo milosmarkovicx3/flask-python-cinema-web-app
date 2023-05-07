@@ -10,16 +10,16 @@ class BaseImpl(ABC):
         self.T = T()
 
     def find(self, value, column):
-        return __result_handler__(item=self.T.find(value, column))
+        return _result_handler(item=self.T.find(value, column))
 
     def find_all(self, kwargs):
-        return __result_handler__(item=self.T.find_all(kwargs))
+        return _result_handler(item=self.T.find_all(kwargs))
 
     def delete(self, value, column):
-        return __result_handler__(item=self.T.delete(value, column))
+        return _result_handler(item=self.T.delete(value, column))
 
 
-def __result_handler__(item):
+def _result_handler(item):
     try:
         result = Result(item=item)
         if result.get_item() is False:

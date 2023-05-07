@@ -32,6 +32,19 @@ class Result:
     def set_description(self, description):
         self._description = description
 
+    def response(self):
+        """
+        Zamena za flask.jsonify, jer je tamo default-no ponašanje da se
+        sortiraju vrednosti u json formatu.
+        :param sort_keys: Potvrđujemo da nećemo sortiranje.
+        :param indent: Unosimo uvučeni deo teksta za vrednosti, umesto
+        samo jednog prostog paragrafa za ceo json izlaz.
+        :param ensure_ascii: Parametar koji omogućava prikaz UTF-8 slova.
+        :return: Flask response, čiji je tip vraćenih podataka json.
+        """
+        json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+        return Response(json_data, content_type='application/json')
+
     def __str__(self):
         return str(self.__dict__)
 
@@ -39,9 +52,23 @@ class Result:
         return {
             "status": self._status,
             "description": self._description,
-            "item": self._item.__repr__()
+            "item": self._repr_helper_method(self._item)
         }
 
-    def response(self):
-        json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
-        return Response(json_data, content_type='application/json')
+    def _repr_helper_method(self, temp):
+        """
+        Kada se self.item lista, a ne jedan objekat.
+        :param temp: Bilo koja potencijalna lista objekata.
+        :return: Listu rečnika koji predstavljaju konvertovane objekte.
+        """
+        if not isinstance(temp, list):
+            return temp.__repr__()
+        _list = []
+        for item in temp:
+            if isinstance(item, list):
+                _sub_list = self._repr_helper_method(item)
+                _list.append(_sub_list)
+            else:
+                _list.append(item.__repr__())
+        return _list
+

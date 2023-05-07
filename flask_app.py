@@ -3,12 +3,7 @@ import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
 from main.entities.core.base import db
-from main.entities.facade.hall_facade import HallFacade
-from main.entities.facade.seat_facade import SeatFacade
-from main.entities.facade.seat_type_facade import SeatTypeFacade
-from main.entities.models.seat import Seat
 from main.service.core.wtf_forms import csrf
-from main.service.impl.seat_impl import SeatImpl
 from main.service.utility.mail import mail
 from main.web.rest_api.auth_api import login_manager, auth_api
 from main.web.rest_api.resource_api import resource_api
@@ -53,6 +48,7 @@ app.register_blueprint(resource_api)
 def apply_caching(response):
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["HTTP-HEADER"] = "VALUE"
+    response.headers["Cache-Control"] = "public, max-age=60, must-revalidate"
     return response
 
 @app.errorhandler(404)

@@ -2,7 +2,9 @@ import enum
 
 class Status(enum.Enum):
     OK = "200"
-    '''resurs nije modifovan od poslednje posete, koristi kešerin'''
+    """
+    Resurs nije modifovan od poslednje posete, koristi kešerin.
+    """
     NOT_MODIFIED = "304"
     BAD_REQUEST = "400"
     UNAUTHORIZED = "401"

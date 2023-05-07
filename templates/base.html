@@ -186,9 +186,9 @@
                     <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         {% if current_user.profile_picture %}
-                        <img src="{{ url_for('static', filename='resources/images/' + current_user.profile_picture) }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
+                        <img src="{{ url_for('static', filename='resources/user-profile-pictures/' + current_user.profile_picture) }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
                         {% else %}
-                        <img src="{{ url_for('static', filename='resources/images/avatar_profile_picture.png') }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
+                        <img src="{{ url_for('static', filename='resources/user-profile-pictures/avatar_profile_picture.png') }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
                         {% endif %}
                         {{ current_user.first_name|upper }}
                         {{ current_user.last_name|upper }}

@@ -16,16 +16,20 @@
   <div class="container">
     <h1 class="display-7 m-0 mt-2">{{ movie.title }} ({{ movie.year }}) [{{ movie.duration }}]</h1>
     <hr class="my-2">
+
     <div class="row mt-4 px-2">
+
       <div class="col-sm-3 p-0 pe-3">
         <img src="{{ url_for('static', filename='resources/movie-posters/' + movie.poster) }}" class="w-100 border-black border" alt="{{ movie.poster }}">
       </div>
       <div class="col-sm-9 p-0 bg-black border-black border">
         <iframe src="{{ movie.trailer }}" class="h-100 w-100" allow="autoplay;" allowfullscreen></iframe>
       </div>
-      <div class="col-sm-3 row">
-          <div class="col-sm-12 p-0">
-            <h3 class="display-7">Žanrovi:</h3>
+
+      <div class="col-sm-3 p-0 pe-3">
+          <div class="w-100 p-0">
+            <h3 class="display-7 mt-3 mb-0">Žanrovi:</h3>
+            <hr>
           </div>
         {% for genre in movie.genres %}
           <div class="col-sm-2 p-0">
@@ -36,10 +40,25 @@
           </div>
         {% endfor %}
       </div>
-      <div class="col-sm-7">
 
+      <div class="col-sm-9 p-0">
+          <div class="w-100 p-0">
+            <h3 class="display-7 mt-3 mb-0">Glumci:</h3>
+            <hr>
+          </div>
+        {% for actor in movie.actors %}
+          <div class="col-sm-1 p-0">
+            <img src="{{ url_for('static', filename='resources/actor-images/' + actor.image) }}" class="w-100 border-black border" alt="{{ actor.image }}">
+          </div>
+          <div class="col-sm-11">
+            {{ actor.name }} ({{ actor.role }})
+          </div>
+        {% endfor %}
       </div>
+
     </div>
+
+
   </div>
 </div>
 

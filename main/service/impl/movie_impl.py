@@ -13,7 +13,7 @@ from main.entities.facade.movie_facade import MovieFacade
 from main.entities.core.result import Result
 from main.entities.models.movies_actors import MoviesActors
 from main.entities.models.movies_genres import MoviesGenres
-from main.service.impl.base_impl import BaseImpl, __result_handler__
+from main.service.impl.base_impl import BaseImpl, _result_handler
 from main.service.utility.logger import log
 
 
@@ -59,7 +59,7 @@ class MovieImpl(BaseImpl):
 
             db.session.commit()
 
-            return __result_handler__(item=movie)
+            return _result_handler(item=movie)
         except Exception as e:
             db.session.rollback()
             db.session.delete(movie)
