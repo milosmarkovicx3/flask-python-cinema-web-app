@@ -13,9 +13,8 @@ from main.entities.facade.movie_facade import MovieFacade
 from main.entities.core.result import Result
 from main.entities.models.movies_actors import MoviesActors
 from main.entities.models.movies_genres import MoviesGenres
-from main.service.impl.base_impl import BaseImpl
+from main.service.impl.base_impl import BaseImpl, __result_handler__
 from main.service.utility.logger import log
-from main.service.utility.utils import json
 
 
 class MovieImpl(BaseImpl):
@@ -24,7 +23,7 @@ class MovieImpl(BaseImpl):
 
 
     def create(self, data, files):
-        global savepoint, filename, movie
+        filename, movie = '', ''
         try:
             title = data['title']
             year = data['year']
@@ -34,7 +33,7 @@ class MovieImpl(BaseImpl):
             poster = files['poster']
             trailer = data['trailer']
 
-            # jer se dobija kao json string
+            # jer se dobija kao json string iako kada se uradi log sve prikazuje lepo
             actors = loads(data['actors'])
             genres = loads(data['genres'])
 
@@ -43,7 +42,7 @@ class MovieImpl(BaseImpl):
                 poster.save(os.path.join(f'{STATIC_DIR_PATH}\\resources\\movie-posters\\', filename))
             else:
                 result = Result(status=Status.BAD_REQUEST, description='Došlo je do greške prilikom optremanja postera.')
-                return json(result)
+                return result.response()
 
             movie = Movie(title=title, year=year, duration=duration, rating=rating, votes=votes, poster=poster.filename, trailer=trailer )
 
@@ -60,12 +59,7 @@ class MovieImpl(BaseImpl):
 
             db.session.commit()
 
-            result = Result(item=movie)
-            if result.get_item() is False:
-                result.set_status(Status.NOT_FOUND)
-            elif result.get_item() is None:
-                result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
+            return __result_handler__(item=movie)
         except Exception as e:
             db.session.rollback()
             db.session.delete(movie)
@@ -73,7 +67,7 @@ class MovieImpl(BaseImpl):
             os.remove(os.path.join(f'{STATIC_DIR_PATH}\\resources\\movie-posters\\', filename))
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
-            return json(result)
+            return result.response()
 
     def repertoire_search(self, kwargs):
         try:

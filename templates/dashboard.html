@@ -5,7 +5,11 @@
 <title>Arhiv | Admin panel</title>
 <meta name="description" content="">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/movie_form.css') }}">
 <script src="{{ url_for('static', filename='javascript/dashboard/script.js') }}" defer></script>
+<script src="{{ url_for('static', filename='javascript/dashboard/movie_form.js') }}" defer></script>
+<script src="{{ url_for('static', filename='javascript/dashboard/actor_form.js') }}" defer></script>
+<script src="{{ url_for('static', filename='javascript/dashboard/genre_form.js') }}" defer></script>
 {% endblock %}
 
 {% block nav %}
@@ -18,8 +22,18 @@
 
 
 {% block content %}
-<div class="container-fluid bg-dark text-white mt-3 border-black border">
-  <div class="container">
+<div id="loading-animation-container" class="container-fluid bg-dark text-white mt-3 p-0 border-black border">
+
+  <!--SLANJE_ANIMACIJA_POČETAK-->
+  <div id="loader">
+    <div>
+      <div id="loader-wheel"></div>
+      <div id="loader-text">100%</div>
+    </div>
+  </div>
+  <!--SLANJE_ANIMACIJA_POČETAK-->
+
+  <div class="container px-3">
 
     <!--LOKALNA_NAVIGACIJA_POČETAK-->
     <nav class="my-3">
@@ -36,6 +50,7 @@
       <!--FILM_FORMA_POČETAK-->
       <div class="tab-pane fade show active" id="nav-movie" role="tabpanel" aria-labelledby="nav-movie-tab" tabindex="0">
         <form id="movie-form" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
+
           <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
           <div class="col-md-12">
@@ -45,6 +60,7 @@
               Unesite naziv filma.
             </div>
           </div>
+
           <div class="col-md-3">
             <label for="year" class="form-label">GODINA IZDANJA: </label>
             <input type="text" class="form-control consolas border border-black" id="year" name="year" placeholder="npr. 1977">
@@ -52,6 +68,7 @@
               Unesite godinu izdanja.
             </div>
           </div>
+
           <div class="col-md-3">
             <label for="duration" class="form-label">TRAJANJE FILMA: </label>
             <input type="text" class="form-control consolas border border-black" id="duration" name="duration" placeholder="npr. 2h 1m">
@@ -59,47 +76,53 @@
               Unesite trajanje filma.
             </div>
           </div>
+
           <div class="col-md-3">
             <label for="rating" class="form-label">REJTING: </label>
             <div class="input-group has-validation">
-              <input type="text" class="form-control consolas border border-black" id="rating" name="rating" aria-describedby="inputGroupPrepend" placeholder="npr. 8.6">              
-              <span class="input-group-text border border-black" id="inputGroupPrepend">@imdb</span>
+              <input type="text" class="form-control consolas border border-black" id="rating" name="rating" placeholder="npr. 8.6">              
+              <span class="input-group-text border border-black">@imdb</span>
               <div class="invalid-feedback">
                 Unesite rejting filma.
               </div>
             </div>
           </div>
+
           <div class="col-md-3">
             <label for="votes" class="form-label">BROJ GLASOVA: </label>
             <div class="input-group has-validation">
               <input type="text" class="form-control consolas border border-black" id="votes" name="votes" placeholder="npr. 104000">
-              <span class="input-group-text border border-black" id="inputGroupPrepend">@imdb</span>
+              <span class="input-group-text border border-black">@imdb</span>
               <div class="invalid-feedback">
                 Unesite broj glasova.
               </div>
             </div>
           </div>
+
           <div class="col-md-6">
             <label for="poster" class="form-label">POSTER (2:3): </label>
             <div class="input-group has-validation">
               <input type="text" id="poster-input-msg" class="form-control consolas border border-black" placeholder="npr. C:\\fakepath\\star_wars_iv.png" disabled>
               <input type="file" class="form-control d-none" id="poster" name="poster" accept=".png, .jpg, .jpeg">
-              <span class="input-group-text border border-black" id="choose-file">Izaberite fajl</span>
+              <span class="input-group-text border border-black" id="choose-poster">Izaberite fajl</span>
               <div id="poster-msg" class="invalid-feedback">
                 Izaberite poster filma.
               </div>
             </div>
           </div>
+
           <div class="col-md-6">
             <label for="trailer" class="form-label">TRAILER: </label>
-            <input type="text" class="form-control consolas border border-black" id="trailer" name="trailer" placeholder="npr. https://www.youtube.com/watch?v=jHEpgsjknCs">
+            <input type="text" class="form-control consolas border border-black" id="trailer" name="trailer" placeholder="npr. https://drive.google.com/file/d/1TRmA_JtH5UEcX/preview">
             <div class="invalid-feedback">
               Unesite link do trailera filma.
             </div>
           </div>
+
         </form>
 
         <div class="row">
+
           <div class="col-md-6">
             <label for="genre-search" class="form-label">ŽANROVI: </label>
             <input type="search" class="form-control consolas border border-black" id="genre-search" placeholder="npr. Fantasy">
@@ -108,6 +131,7 @@
               Izaberite žanrove za dati film.
             </div>
           </div>
+
           <div class="col-md-6">
             <label for="actor-search" class="form-label">GLUMCI: </label>
             <input type="search" class="form-control consolas border border-black" id="actor-search" placeholder="npr. Mark Hamill">
@@ -116,12 +140,13 @@
               Izaberite glumce za dati film.
             </div>
           </div>
+
         </div>
 
-          <div class="col-12 my-3 d-flex justify-content-end">
-            <button class="btn btn-success consolas border border-black me-3" type="submit" form="movie-form">POTVRDI</button>
-            <button id="reset-movie-form" class="btn btn-danger consolas border border-black" type="reset" form="movie-form">RESET</button>
-          </div>
+        <div class="col-12 my-3 d-flex justify-content-end">
+          <button class="btn btn-success consolas border border-black me-3" type="submit" form="movie-form">POTVRDI</button>
+          <button id="reset-movie-form" class="btn btn-danger consolas border border-black" type="reset" form="movie-form">RESET</button>
+        </div>
         
       </div>
       <!--FILM_FORMA_KRAJ-->
@@ -129,11 +154,73 @@
       <!--GLUMAC_FORMA_POČETAK-->
       <div class="tab-pane fade" id="nav-actor" role="tabpanel" aria-labelledby="nav-actor-tab" tabindex="0">
 
+        <form id="actor-form" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
+
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+          <div class="col-md-6">
+            <label for="actor-name" class="form-label">IME I PREZIME GLUMCA:  </label>
+            <input type="text" class="form-control consolas border border-black" id="actor-name" name="actor-name" placeholder="npr. Robert De Niro">
+            <div id="actor-name-msg" class="invalid-feedback">
+              Unesite ime i prezime glumca.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="actor-image" class="form-label">SLIKA (1:1): </label>
+            <div class="input-group has-validation">
+              <input type="text" id="actor-image-input-msg" class="form-control consolas border border-black" placeholder="npr. C:\\fakepath\\robert_de_niro.png" disabled>
+              <input type="file" class="form-control d-none" id="actor-image" name="actor-image" accept=".png, .jpg, .jpeg">
+              <span class="input-group-text border border-black" id="choose-actor-image">Izaberite fajl</span>
+              <div id="actor-image-msg" class="invalid-feedback">
+                Izaberite sliku glumca.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 my-3 d-flex justify-content-end">
+            <button class="btn btn-success consolas border border-black me-3" type="submit">POTVRDI</button>
+            <button class="btn btn-danger consolas border border-black" type="reset">RESET</button>
+          </div>
+
+        </form>
+
       </div>
       <!--GLUMAC_FORMA_KRAJ-->
 
       <!--ŽANR_FORMA_POČETAK-->
       <div class="tab-pane fade" id="nav-genre" role="tabpanel" aria-labelledby="nav-genre-tab" tabindex="0">
+
+        <form id="genre-form" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
+
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+          <div class="col-md-6">
+            <label for="genre-name" class="form-label">NAZIV ŽANRA:  </label>
+            <input type="text" class="form-control consolas border border-black" id="genre-name" name="genre-name" placeholder="npr. Action">
+            <div id="genre-name-msg" class="invalid-feedback">
+              Unesite naziv žanra.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="genre-image" class="form-label">SLIKA (1:1): </label>
+            <div class="input-group has-validation">
+              <input type="text" id="genre-image-input-msg" class="form-control consolas border border-black" placeholder="npr. C:\\fakepath\\action.png" disabled>
+              <input type="file" class="form-control d-none" id="genre-image" name="genre-image" accept=".png, .jpg, .jpeg">
+              <span class="input-group-text border border-black" id="choose-genre-image">Izaberite fajl</span>
+              <div id="genre-image-msg" class="invalid-feedback">
+                Izaberite sliku glumca.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 my-3 d-flex justify-content-end">
+            <button class="btn btn-success consolas border border-black me-3" type="submit">POTVRDI</button>
+            <button class="btn btn-danger consolas border border-black" type="reset">RESET</button>
+          </div>
+
+        </form>
 
       </div>
       <!--ŽANR_FORMA_KRAJ-->
@@ -142,7 +229,4 @@
   </div>
 
 </div>
-
-
-
 {% endblock %}

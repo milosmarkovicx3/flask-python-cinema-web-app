@@ -1,7 +1,6 @@
 from sqlalchemy import Integer, String
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.orm import relationship
-
 from main.entities.core.base import db
 
 class Actor(db.Model):

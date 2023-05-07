@@ -1,14 +1,13 @@
 from sqlalchemy import Integer, String
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.orm import relationship
-
 from main.entities.core.base import db
 
 class Genre(db.Model):
     __tablename__ = 'genre'
     id = db.Column('id', Integer, primary_key=True)
     name = db.Column('name', String(255), unique=True)
-    image = db.Column('image', String(255))
+    image = db.Column('image', String(255), unique=True)
 
     movies_association = relationship('MoviesGenres', back_populates='genre')
     movies = association_proxy('movies_association', 'movie')

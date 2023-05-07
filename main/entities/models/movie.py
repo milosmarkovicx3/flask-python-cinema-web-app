@@ -1,9 +1,9 @@
 from sqlalchemy import Integer, String
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.orm import relationship
-#NE BRISATI IMPORT
+# NE BRISATI IMPORT
 from main.entities.models.movies_genres import MoviesGenres
-#NE BRISATI IMPORT
+# NE BRISATI IMPORT
 from main.entities.models.movies_actors import MoviesActors
 from main.entities.core.base import db
 
@@ -23,7 +23,7 @@ class Movie(db.Model):
     actors = association_proxy('actors_association', 'actor')
 
     genres_association = relationship('MoviesGenres', back_populates='movie')
-    genres = association_proxy('actors_association', 'genre')
+    genres = association_proxy('genres_association', 'genre')
 
     def __init__(self, title, year, duration, rating, votes, poster, trailer):
         self.title = title
@@ -46,8 +46,19 @@ class Movie(db.Model):
             "rating": self.rating,
             "votes": self.votes,
             "poster": self.poster,
-            "trailer": self.trailer
+            "trailer": self.trailer,
+            "actors": [
+                {"id": ma.actor.id,
+                 "name": ma.actor.name,
+                 "image": ma.actor.image,
+                 "role": ma.role
+                 } for ma in self.actors_association
+            ],
+            "genres": [
+                {"id": mg.genre.id,
+                 "name": mg.genre.name,
+                 "image": mg.genre.image
+                 } for mg in self.genres_association
+            ]
         }
-
-
 

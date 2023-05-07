@@ -19,7 +19,7 @@ def find_all():
 
 @actor_api.route('/', methods=['POST'])
 def create():
-    return ai.create(data=request.form)
+    return ai.create(data=request.form, files=request.files)
 
 @actor_api.route('/<string:value>', methods=['DELETE'])
 @actor_api.route('/<string:value>/<string:column>', methods=['DELETE'])

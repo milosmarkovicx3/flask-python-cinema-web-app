@@ -11,12 +11,10 @@ class MoviesActors(db.Model):
     movie = relationship('Movie', back_populates='actors_association')
     actor = relationship('Actor', back_populates='movies_association')
 
-    def __init__(self, id, movie_id, actor_id, role):
-        self.id = id
+    def __init__(self, movie_id, actor_id, role):
         self.movie_id = movie_id
         self.actor_id = actor_id
         self.role = role
-
 
     def __str__(self):
         return str(self.__repr__())

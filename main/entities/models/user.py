@@ -2,7 +2,6 @@ from main.entities.core.base import db
 from flask_login import UserMixin
 from sqlalchemy import DateTime, Integer, String, Boolean
 
-
 class User(db.Model, UserMixin):
     __tablename__ = "user"
     id = db.Column('id', Integer(), primary_key=True)
@@ -17,7 +16,7 @@ class User(db.Model, UserMixin):
     is_superuser = db.Column('is_superuser', Boolean)
     date_joined = db.Column('date_joined', DateTime())
     last_login_at = db.Column('last_login_at', DateTime())
-    last_login_ip = db.Column('last_login_ip', String(100))
+    last_login_ip = db.Column('last_login_ip', String(255))
     login_count = db.Column('login_count', Integer)
     confirmed_at = db.Column('confirmed_at', DateTime())
 

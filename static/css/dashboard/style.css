@@ -1,37 +1,57 @@
 /*---------------------------------------------------------------------------------*/
 /* stil za tab lokalnu navigaciju */
 #nav-tab button{
-    color: #fff!important;    
+    color: #fff;    
 }
 
 #nav-tab .active{
-    color: #444!important;
-    background-color: #fff!important;
+    color: #444;
+    background-color: #fff;
 }
 /*---------------------------------------------------------------------------------*/
 /* za input tipa file */
-#choose-file:hover{
+
+[id^='choose-']:hover{
     background-color: grey;  
 }
 /*---------------------------------------------------------------------------------*/
-/* pretraga glumaca i žanrova */
-#actor-list, #genre-list{
-    height: 200px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-}
-/*---------------------------------------------------------------------------------*/
-/* doterivanje liste glumaca kod dodavanja filma*/
-#actors-list input::placeholder{
-    color: rgb(194, 62, 62);
+/* animacija tokom slanje forme */
+#loading-animation-container{
+    position: relative;
 }
 
-#actors-list input{
-    color: rgb(62, 194, 71);
-    font-size: 1.5em;
-    text-indent: 10px;
+#loader {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(76, 68, 68);
+    opacity: 0.8;
+    z-index: 1;
+}
+  
+#loader-wheel {
+  animation: spin 1s infinite linear;
+  border: 2px solid rgba(30, 30, 30, 0.5);
+  border-left: 4px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  margin-bottom: 10px;
+  width: 50px;
+}
+
+#loader-text{
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 /*---------------------------------------------------------------------------------*/

@@ -3,7 +3,6 @@ from abc import ABC, abstractmethod
 from main.entities.core.result import Result
 from main.entities.core.status import Status
 from main.service.utility.logger import log
-from main.service.utility.utils import json
 
 class BaseImpl(ABC):
     @abstractmethod
@@ -27,9 +26,9 @@ def __result_handler__(item):
             result.set_status(Status.NOT_FOUND)
         elif result.get_item() is None:
             result.set_status(Status.INTERNAL_SERVER_ERROR)
-        return json(result)
+        return result.response()
     except Exception as e:
         log.error(f"{e}\n{traceback.format_exc()}")
         result = Result(Status.INTERNAL_SERVER_ERROR)
-        return json(result)
+        return result.response()
 

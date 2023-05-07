@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Arhiv | {{ movie.title }} </title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/movie_form.css') }}">
+<script src="{{ url_for('static', filename='javascript/dashboard/script.js') }}" defer></script>
+<script src="{{ url_for('static', filename='javascript/dashboard/movie_form.js') }}" defer></script>
+<script src="{{ url_for('static', filename='javascript/dashboard/actor_form.js') }}" defer></script>
+<script src="{{ url_for('static', filename='javascript/dashboard/genre_form.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-dark text-white border-black border mt-3">
+  <div class="container">
+    <h1 class="display-7 m-0 mt-2">{{ movie.title }} ({{ movie.year }}) [{{ movie.duration }}]</h1>
+    <hr class="my-2">
+    <div class="row mt-4 px-2">
+      <div class="col-sm-3 p-0 pe-3">
+        <img src="{{ url_for('static', filename='resources/movie-posters/' + movie.poster) }}" class="w-100 border-black border" alt="{{ movie.poster }}">
+      </div>
+      <div class="col-sm-9 p-0 bg-black border-black border">
+        <iframe src="{{ movie.trailer }}" class="h-100 w-100" allow="autoplay;" allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-3 row">
+          <div class="col-sm-12 p-0">
+            <h3 class="display-7">Žanrovi:</h3>
+          </div>
+        {% for genre in movie.genres %}
+          <div class="col-sm-2 p-0">
+            <img src="{{ url_for('static', filename='resources/genre-images/' + genre.image) }}" class="w-100 border-black border" alt="{{ genre.image }}">
+          </div>
+          <div class="col-sm-10">
+            {{ genre.name }}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="col-sm-7">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

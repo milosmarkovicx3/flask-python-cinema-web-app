@@ -1,4 +1,8 @@
+from json import dumps
+from flask import Response
 from main.entities.core.status import Status
+
+
 
 class Result:
     def __init__(self, item=None, status=Status.OK, description=None):
@@ -29,25 +33,15 @@ class Result:
         self._description = description
 
     def __str__(self):
-        return str(self.__repr__())
+        return str(self.__dict__)
 
     def __repr__(self):
         return {
             "status": self._status,
             "description": self._description,
-            "item": self.__repr_helper_method__()
+            "item": self._item.__repr__()
         }
 
-    def __repr_helper_method__(self):
-        if not isinstance(self._item, list):
-            return self._item.__repr__()
-        _list = []
-        for item in self._item:
-            if isinstance(item, list):
-                _sub_list = []
-                for sub_item in item:
-                    _sub_list.append(sub_item.__repr__())
-                _list.append(_sub_list)
-            else:
-                _list.append(item.__repr__())
-        return _list
+    def response(self):
+        json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+        return Response(json_data, content_type='application/json')

@@ -1,0 +1,22 @@
+/*---------------------------------------------------------------------------------*/
+/* pretraga glumaca i žanrova */
+#actor-list, #genre-list{
+    height: 200px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+/*---------------------------------------------------------------------------------*/
+/* doterivanje liste glumaca kod dodavanja uloga*/
+#actors-list input::placeholder{
+    color: rgb(194, 62, 62);
+}
+
+#actors-list input{
+    color: rgb(62, 194, 71);
+    font-size: 1.5em;
+    text-indent: 10px;
+}
+/*---------------------------------------------------------------------------------*/

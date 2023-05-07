@@ -1,42 +1,36 @@
 import os
+import traceback
 from werkzeug.utils import secure_filename
+from config import STATIC_DIR_PATH
 from main.entities.core.status import Status
-from main.entities.facade import genre_facade as gf
 from main.entities.models.genre import Genre
 from main.entities.facade.genre_facade import GenreFacade
 from main.entities.core.result import Result
-from main.service.impl.base_impl import BaseImpl
+from main.service.impl.base_impl import BaseImpl, __result_handler__
 from main.service.utility.logger import log
-from main.service.utility.utils import json
 
 class GenreImpl(BaseImpl):
     def __init__(self):
         super().__init__(GenreFacade)
 
-
-    def create(self, data):
+    def create(self, data, files):
+        filename = ''
         try:
-            result = Result()
-            form =  wtf_create_genre()
-            if not form.validate():
-                result.set_status(Status.BAD_REQUEST)
-                return json(result)
+            name = data['genre-name']
+            image = files['genre-image']
 
-            image_file = data['actorFile']
-            filename = secure_filename(image_file.filename)
-            upload_folder = f'{project_path}static/resources/genres-images/'
-            image_file.save(os.path.join(upload_folder, filename))
+            if image:
+                filename = secure_filename(image.filename)
+                image.save(os.path.join(f'{STATIC_DIR_PATH}\\resources\\genre-images\\', filename))
+            else:
+                result = Result(status=Status.BAD_REQUEST, description='Došlo je do greške prilikom optremanja slike.')
+                return result.response()
 
-            genre = Genre(name = data['name'], image = data['image'])
-            result.set_item(gf.create(genre))
-
-            if result.get_item() is False:
-                result.set_status(Status.BAD_REQUEST)
-            elif result.get_item() is None:
-                result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
+            genre = Genre(name=name, image=image.filename)
+            return __result_handler__(item=self.T.create(genre))
         except Exception as e:
-            log.error(e)
-            result = Result()
-            result.set_status(Status.INTERNAL_SERVER_ERROR)
-            return json(result)
+            os.remove(os.path.join(f'{STATIC_DIR_PATH}\\resources\\genre-images\\', filename))
+            log.error(f"{e}\n{traceback.format_exc()}")
+            result = Result(status=Status.INTERNAL_SERVER_ERROR)
+            return result.response()
+

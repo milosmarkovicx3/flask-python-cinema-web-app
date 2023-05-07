@@ -3,7 +3,12 @@ import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
 from main.entities.core.base import db
+from main.entities.facade.hall_facade import HallFacade
+from main.entities.facade.seat_facade import SeatFacade
+from main.entities.facade.seat_type_facade import SeatTypeFacade
+from main.entities.models.seat import Seat
 from main.service.core.wtf_forms import csrf
+from main.service.impl.seat_impl import SeatImpl
 from main.service.utility.mail import mail
 from main.web.rest_api.auth_api import login_manager, auth_api
 from main.web.rest_api.resource_api import resource_api
@@ -43,6 +48,7 @@ app.register_blueprint(template_api)
 app.register_blueprint(auth_api)
 app.register_blueprint(resource_api)
 
+
 @app.after_request
 def apply_caching(response):
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
@@ -54,8 +60,6 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 
-
-
 login_manager.init_app(app)
 login_manager.login_view = "template_api.index"
 mail.init_app(app)
@@ -65,7 +69,10 @@ app.app_context().push()
 db.create_all()
 
 
+
+
+
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)  # produkcija debug=False
-
 
