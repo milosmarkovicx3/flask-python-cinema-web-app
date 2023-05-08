@@ -28,6 +28,7 @@ GRID
 .col-
 .col-sm-
 1-12 (size)
+*container pre row logika
 -----------------------------------------------------
 ALIGNMENT/+TEXT
 
@@ -38,4 +39,5 @@ text-white
 align-items-start/center/end
 align-self-start/center/end
 justify-content-start/center/end/around/between/evenly
+*blok mora biti tipa flex
 -----------------------------------------------------

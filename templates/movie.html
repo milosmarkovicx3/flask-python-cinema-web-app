@@ -3,12 +3,8 @@
 {% block head %}
 <title>Arhiv | {{ movie.title }} </title>
 <meta name="description" content="">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/style.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/movie_form.css') }}">
-<script src="{{ url_for('static', filename='javascript/dashboard/script.js') }}" defer></script>
-<script src="{{ url_for('static', filename='javascript/dashboard/movie_form.js') }}" defer></script>
-<script src="{{ url_for('static', filename='javascript/dashboard/actor_form.js') }}" defer></script>
-<script src="{{ url_for('static', filename='javascript/dashboard/genre_form.js') }}" defer></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/movie/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/movie/script.js') }}" defer></script>
 {% endblock %}
 
 {% block content %}
@@ -26,35 +22,59 @@
         <iframe src="{{ movie.trailer }}" class="h-100 w-100" allow="autoplay;" allowfullscreen></iframe>
       </div>
 
-      <div class="col-sm-3 p-0 pe-3">
-          <div class="w-100 p-0">
-            <h3 class="display-7 mt-3 mb-0">Žanrovi:</h3>
-            <hr>
-          </div>
+      <!--ŽANROVI_POČETAK-->
+      <div class="col-sm-3 p-0 pe-3 mb-2">
+        <div class="w-100 p-0">
+          <h3 class="display-8 mt-3 mb-0">Žanrovi:</h3>
+          <hr>
+        </div>
+        <div class="container">
         {% for genre in movie.genres %}
-          <div class="col-sm-2 p-0">
-            <img src="{{ url_for('static', filename='resources/genre-images/' + genre.image) }}" class="w-100 border-black border" alt="{{ genre.image }}">
-          </div>
-          <div class="col-sm-10">
-            {{ genre.name }}
+          <div class="row mb-2">
+              <div class="col-sm-2 p-0">
+                <img src="{{ url_for('static', filename='resources/genre-images/' + genre.image) }}" class="w-100 border-black border" alt="{{ genre.image }}">
+              </div>
+              <div class="col-sm-10">
+                <span class="display-8">{{ genre.name }}</span>
+              </div>
           </div>
         {% endfor %}
+        </div>
       </div>
+      <!--ŽANROVI_KRAJ-->
 
+      <!--GLUMCI_POČETAK-->
       <div class="col-sm-9 p-0">
+
           <div class="w-100 p-0">
-            <h3 class="display-7 mt-3 mb-0">Glumci:</h3>
+            <h3 class="display-8 mt-3 mb-0">Glumci:</h3>
             <hr>
           </div>
-        {% for actor in movie.actors %}
-          <div class="col-sm-1 p-0">
-            <img src="{{ url_for('static', filename='resources/actor-images/' + actor.image) }}" class="w-100 border-black border" alt="{{ actor.image }}">
-          </div>
-          <div class="col-sm-11">
-            {{ actor.name }} ({{ actor.role }})
-          </div>
-        {% endfor %}
+
+        <div class="container">
+          <div class="row mb-2">
+          {% for actor in movie.actors %}
+
+            <div class="col-sm-4 mb-3 p-0">
+              <div class="container row p-0">
+
+                  <div class="col-sm-3">
+                    <img src="{{ url_for('static', filename='resources/actor-images/' + actor.image) }}" class="w-100 border-black border" alt="{{ actor.image }}">
+                  </div>
+                  <div class="col-sm-9 p-0 ">
+                    <span class="display-8 text-nowrap">{{ actor.name }}</span>
+                    <br>
+                    <span class="text-secondary">({{ actor.role }})</span>
+                  </div>
+
+              </div>
+            </div>
+          {% endfor %}
+           </div>
+        </div>
+
       </div>
+      <!--GLUMCI_KRAJ-->
 
     </div>
 

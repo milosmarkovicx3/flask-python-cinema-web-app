@@ -1,3 +1,5 @@
+import logging
+
 from flask import render_template, Blueprint, request, abort
 from main.entities.facade.movie_facade import MovieFacade
 from main.service.impl.movie_impl import MovieImpl
@@ -18,7 +20,7 @@ def index():
 
 @template_api.route('/film/<int:id>', methods=['GET'])
 def movie(id):
-    movie = mf.find(id, 'id')
+    movie = mf.find(id, 'id').__repr__()
     return render_template('movie.html', movie=movie) if movie else abort(404)
 
 

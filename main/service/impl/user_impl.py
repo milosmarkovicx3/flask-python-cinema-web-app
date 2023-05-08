@@ -1,5 +1,5 @@
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
 from flask import make_response, redirect, request, url_for, session, flash
 from flask_login import login_user, current_user, logout_user
 from passlib.handlers.pbkdf2 import pbkdf2_sha256
@@ -49,8 +49,7 @@ class UserImpl(BaseImpl):
                 username=username,
                 password=passwd_hash,
                 date_joined=datetime.now(),
-                last_login_at=datetime.now(),
-                login_count=1
+                login_count=0
             )
 
             if self.T.create(user):
@@ -72,20 +71,26 @@ class UserImpl(BaseImpl):
             if user and pbkdf2_sha256.verify(secret=password, hash=user.password):
                 login_user(user)
 
+                login_user(user, remember=True, duration=timedelta(days=365)) if remember else login_user(user)
+
                 user.last_login_at = datetime.now()
                 user.login_count += 1
                 user.last_login_ip = request.remote_addr
+                """    
+                Koristi se u svrhe izlogovanja korisnika kada se prijavi sa različitog uređaja.
+                Postoji funkcija 'check_auth_token' koja se poziva pre svakog eksternog poziva
+                korisnika sa uslovom da je prethodno ulogovan, gde se zatim proverava vrednost 
+                'device_auth_token' kolone u bazi i u slučaju da se vrednosti razlikuju sistem
+                će izlogovati korisnika.                
+                """
+                auth_token = user.get_auth_token()
+                user.device_auth_token = auth_token
                 db.session.commit()
+                session['auth_token'] = auth_token
 
-                if remember:
-                    response = make_response(redirect(request.referrer or url_for('template_api.index')))
-                    response.set_cookie('archive', 'true', max_age=604800)  # 7 dana
-                    return response
                 return redirect(request.referrer or url_for('template_api.index'))
-
             else:
                 flash('login_fail', 'error')
-                session['form_data'] = data
                 return redirect(request.referrer or url_for('template_api.index'))
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")

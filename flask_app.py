@@ -2,10 +2,11 @@
 import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
+from flask_login import current_user
 from main.entities.core.base import db
 from main.service.core.wtf_forms import csrf
 from main.service.utility.mail import mail
-from main.web.rest_api.auth_api import login_manager, auth_api
+from main.web.rest_api.auth_api import login_manager, auth_api, check_auth_token, ping
 from main.web.rest_api.resource_api import resource_api
 from main.web.rest_api.template_api import template_api
 from main.web.rest_api.genre_api import genre_api
@@ -43,6 +44,15 @@ app.register_blueprint(template_api)
 app.register_blueprint(auth_api)
 app.register_blueprint(resource_api)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        check_auth_token()
+        ping()
 
 @app.after_request
 def apply_caching(response):
@@ -50,10 +60,6 @@ def apply_caching(response):
     response.headers["HTTP-HEADER"] = "VALUE"
     response.headers["Cache-Control"] = "public, max-age=60, must-revalidate"
     return response
-
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
 
 
 login_manager.init_app(app)
@@ -63,10 +69,6 @@ csrf.init_app(app)
 db.init_app(app)
 app.app_context().push()
 db.create_all()
-
-
-
-
 
 
 if __name__ == '__main__':

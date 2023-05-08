@@ -1,0 +1,30 @@
+2023-05-08 02:15:16,882 INFO    [user_impl.py(logout:105)] log out: Miloš Marković
+2023-05-08 02:15:21,848 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-08 02:15:21,848 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-08 02:15:21,904 INFO    [user_impl.py(logout:105)] log out: Miloš Marković
+2023-05-08 02:15:27,639 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-08 02:15:27,640 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-08 02:15:27,695 INFO    [user_impl.py(logout:105)] log out: Miloš Marković
+2023-05-08 02:21:38,210 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-08 02:21:38,210 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-08 02:21:38,275 INFO    [user_impl.py(logout:105)] log out: Miloš Marković
+2023-05-08 02:30:03,698 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-08 02:30:03,699 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-08 02:32:04,872 INFO    [user_impl.py(logout:105)] log out: Miloš Marković
+2023-05-08 02:32:07,030 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-08 02:32:07,030 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-08 02:32:09,477 INFO    [user_impl.py(logout:105)] log out: Miloš Marković
+2023-05-08 02:32:11,854 INFO    [user_impl.py(login:69)] login: shadow
+2023-05-08 02:32:11,854 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-08 02:47:05,780 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 02:47:17,184 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-08 02:50:03,148 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 02:50:52,159 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 03:19:58,346 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 03:20:32,569 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-08 03:20:56,250 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-08 03:22:54,666 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-08 03:22:59,524 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 03:23:07,563 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-08 03:23:14,378 INFO    [base_facade.py(find:13)] value: 4, column: id
+2023-05-08 03:23:21,448 INFO    [base_facade.py(find:13)] value: 5, column: id
