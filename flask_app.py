@@ -7,6 +7,7 @@ from main.entities.core.base import db
 from main.service.core.wtf_forms import csrf
 from main.service.utility.mail import mail
 from main.web.rest_api.auth_api import login_manager, auth_api, check_auth_token, ping
+from main.web.rest_api.projection_api import projection_api
 from main.web.rest_api.resource_api import resource_api
 from main.web.rest_api.template_api import template_api
 from main.web.rest_api.genre_api import genre_api
@@ -43,6 +44,9 @@ app.register_blueprint(user_api)
 app.register_blueprint(template_api)
 app.register_blueprint(auth_api)
 app.register_blueprint(resource_api)
+app.register_blueprint(projection_api)
+
+
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -58,7 +62,7 @@ def before_request():
 def apply_caching(response):
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["HTTP-HEADER"] = "VALUE"
-    response.headers["Cache-Control"] = "public, max-age=60, must-revalidate"
+    response.headers["Cache-Control"] = "public, max-age=300, must-revalidate"
     return response
 
 

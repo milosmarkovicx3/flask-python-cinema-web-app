@@ -1,5 +1,13 @@
 v5.3.0
 -----------------------------------------------------
+FONT
+
+fs-1(6)
+fw-bold/bolder/semibold/medium/normal/light/lighter
+fst-italic/normal
+lh-1/sm/base/lg
+text-decoration-none
+-----------------------------------------------------
 SPACING
 
 m (margin)

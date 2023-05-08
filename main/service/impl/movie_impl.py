@@ -1,5 +1,7 @@
+import datetime
 import os
 import traceback
+from datetime import datetime, time
 from json import loads
 from sqlalchemy import or_
 from werkzeug.utils import secure_filename
@@ -21,6 +23,22 @@ class MovieImpl(BaseImpl):
     def __init__(self):
         super().__init__(MovieFacade)
 
+    def find(self, value, column):
+        try:
+            movie = self.T.find(value=value, column=column)
+            if movie:
+                for p in movie.projections:
+                    if p.date_to < datetime.now().date():
+                        log.info(f'projekcija za brisanje: {p}')
+                        movie.projections.remove(p)
+                        db.session.delete(p)
+                        db.session.commit()
+
+            return _result_handler(movie)
+        except Exception as e:
+            log.error(f"{e}\n{traceback.format_exc()}")
+            result = Result(status=Status.INTERNAL_SERVER_ERROR)
+            return result.response()
 
     def create(self, data, files):
         filename, movie = '', ''
@@ -69,24 +87,21 @@ class MovieImpl(BaseImpl):
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
             return result.response()
 
-    def repertoire_search(self, kwargs):
+    def repertoire_search(self, imdb_rating=None, timeline=None, genre_name=None, search_input=None, sort_method=None, page=1, per_page=12):
         try:
             query = db.session.query(Movie)
 
-            if 'imdb_rating' in kwargs and kwargs['imdb_rating'] != '':
-                imdb_rating = kwargs['imdb_rating']
+            if imdb_rating is not None:
                 query = query.filter(Movie.rating >= imdb_rating)
 
-            if 'timeline' in kwargs and kwargs['timeline'] != '':
-                timeline = int(kwargs['timeline'])
+            if timeline is not None:
+                timeline = int(timeline)
                 query = query.filter(Movie.year.between(timeline, timeline + 10))
 
-            if 'genre_name' in kwargs and kwargs['genre_name'] != '':
-                genre_name = kwargs['genre_name']
+            if genre_name is not None:
                 query = query.filter(Movie.genres.any(Genre.name == genre_name))
 
-            if 'search_input' in kwargs and kwargs['search_input'] != '':
-                search_input = kwargs['search_input']
+            if search_input is not None:
                 query = query.filter(or_(
                     Movie.title.like(f'%{search_input}%'),
                     Movie.year.like(f'%{search_input}%'),
@@ -94,8 +109,7 @@ class MovieImpl(BaseImpl):
                     Movie.actors.any(Actor.name.like(f'%{search_input}%'))
                 ))
 
-            if 'sort_method' in kwargs and kwargs['sort_method'] != '':
-                sort_method = kwargs['sort_method']
+            if sort_method is not None:
                 sort_map = {
                     'title_asc': Movie.title.asc(),
                     'title_desc': Movie.title.desc(),
@@ -109,12 +123,10 @@ class MovieImpl(BaseImpl):
                 if sort_method in sort_map:
                     query = query.order_by(sort_map[sort_method])
 
-            page = int(kwargs['page']) if 'page' in kwargs and kwargs['page'] != '' else 1
-            per_page = int(kwargs['per_page']) if 'per_page' in kwargs and kwargs['per_page'] != '' else 12
-
-            movies = query.paginate(page=page, per_page=per_page, error_out=False)
+            movies = query.paginate(page=int(page), per_page=int(per_page), error_out=False)
 
             return movies
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
             return None
+

@@ -10,10 +10,27 @@
 {% block content %}
 <div class="container-fluid bg-dark text-white border-black border mt-3">
   <div class="container">
-    <h1 class="display-7 m-0 mt-2">{{ movie.title }} ({{ movie.year }}) [{{ movie.duration }}]</h1>
-    <hr class="my-2">
+    <div class="d-flex justify-content-between">
+    <h1 class="d-inline-block display-7 m-0 mt-3">
+      {{ movie.title }} ({{ movie.year }}) [{{ movie.duration }}]
+    </h1>
+      <!--OCENE_GLOBALNO_POČETAK-->
+      <div id="current-votes" class="d-inline-block mt-2 p-1 ">
+            <div class="d-flex align-items-center">
+                <span class="fi fi-ss-star fs-4 me-2" style="color: rgb(209, 209, 15)"></span>
+                <div class="fs-5 lh-1">
+                  {{ movie.rating }}<span class="text-secondary">/10</span>
+                  <div>
+                    <span class="fs-6 text-secondary">{{ movie.votes | vote_count }}</span>
+                  </div>
+                </div>
+            </div>
+      </div>
+      <!--OCENE_GLOBALNO_KRAJ-->
+    </div>
+    <hr class="m-0 mt-2">
 
-    <div class="row mt-4 px-2">
+    <div class="row mt-3 px-2">
 
       <div class="col-sm-3 p-0 pe-3">
         <img src="{{ url_for('static', filename='resources/movie-posters/' + movie.poster) }}" class="w-100 border-black border" alt="{{ movie.poster }}">
@@ -28,6 +45,7 @@
           <h3 class="display-8 mt-3 mb-0">Žanrovi:</h3>
           <hr>
         </div>
+        
         <div class="container">
         {% for genre in movie.genres %}
           <div class="row mb-2">
@@ -77,10 +95,21 @@
       <!--GLUMCI_KRAJ-->
 
     </div>
+  </div>
+</div>
+
+
+<div class="container-fluid bg-dark text-white border-black border mt-3">
+  <div class="container">
+    <h1 class="display-8 my-2">
+      Vremenski raspored svih projekcija:
+    </h1>
+
+    <hr class="m-0 mt-2">
+
 
 
   </div>
 </div>
-
 
 {% endblock %}

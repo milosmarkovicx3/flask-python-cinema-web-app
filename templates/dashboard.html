@@ -10,6 +10,7 @@
 <script src="{{ url_for('static', filename='javascript/dashboard/movie_form.js') }}" defer></script>
 <script src="{{ url_for('static', filename='javascript/dashboard/actor_form.js') }}" defer></script>
 <script src="{{ url_for('static', filename='javascript/dashboard/genre_form.js') }}" defer></script>
+<script src="{{ url_for('static', filename='javascript/dashboard/projection_form.js') }}" defer></script>
 {% endblock %}
 
 {% block nav %}
@@ -41,6 +42,7 @@
         <button class="nav-link active" id="nav-movie-tab" data-bs-toggle="tab" data-bs-target="#nav-movie" type="button" role="tab" aria-controls="nav-movie" aria-selected="true">FILM</button>
         <button class="nav-link" id="nav-actor-tab" data-bs-toggle="tab" data-bs-target="#nav-actor" type="button" role="tab" aria-controls="nav-actor" aria-selected="false">GLUMAC</button>
         <button class="nav-link" id="nav-genre-tab" data-bs-toggle="tab" data-bs-target="#nav-genre" type="button" role="tab" aria-controls="nav-genre" aria-selected="false">ŽANR</button>
+        <button class="nav-link" id="nav-projection-tab" data-bs-toggle="tab" data-bs-target="#nav-projection" type="button" role="tab" aria-controls="nav-projection" aria-selected="false">PROJEKCIJA</button>
       </div>
     </nav>
     <!--LOKALNA_NAVIGACIJA_KRAJ-->
@@ -224,6 +226,74 @@
 
       </div>
       <!--ŽANR_FORMA_KRAJ-->
+
+      <!--PROJEKCIJA_FORMA_POČETAK-->
+      <div class="tab-pane fade" id="nav-projection" role="tabpanel" aria-labelledby="nav-projection-tab" tabindex="0">
+
+        <form id="projection-form" class="row g-3 needs-validation" novalidate>
+
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+          <div class="col-md-8">
+              <label for="projection-movie" class="form-label my-1">NAZIV FILMA</label>
+              <select id="projection-movie" name="projection-movie" class="form-select border-black border py-1 px-2 consolas">
+                  <option value="" disabled selected>npr. Public Enemies</option>
+                  {% for movie in movies %}
+                  <option value="{{ movie.id }}">{{ movie.title }}</option>
+                  {% endfor %}
+              </select>
+            <div class="invalid-feedback">
+              Izaberite naziv filma.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+              <label for="projection-hall" class="form-label my-1">NAZIV SALE</label>
+              <select id="projection-hall" name="projection-hall" class="form-select border-black border py-1 px-2 consolas">
+                  <option value="" disabled selected>npr. Sala 1</option>
+                  {% for hall in halls %}
+                  <option value="{{ hall.id }}">{{ hall.name }}</option>
+                  {% endfor %}
+              </select>
+              <div class="invalid-feedback">
+                Izaberite naziv sale.
+              </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="projection-from" class="form-label">PROJEKCIJA OD: </label>
+            <input type="date" class="form-control consolas border border-black" id="projection-from" name="projection-from" placeholder="npr. 1977">
+            <div class="invalid-feedback">
+              Izaberite prvi dan projekcije.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="projection-to" class="form-label">PROJEKCIJA DO: </label>
+            <input type="date" class="form-control consolas border border-black" id="projection-to" name="projection-to" placeholder="npr. 1977">
+            <div class="invalid-feedback">
+              Izaberite poslednji dan projekcije.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="projection-time" class="form-label">VREME PROJEKCIJE: </label>
+            <input type="time" class="form-control consolas border border-black" id="projection-time" name="projection-time" placeholder="npr. 1977">
+            <div class="invalid-feedback">
+              Izaberite vreme projekcije.
+            </div>
+          </div>
+
+
+          <div class="col-12 my-3 d-flex justify-content-end">
+            <button class="btn btn-success consolas border border-black me-3" type="submit">POTVRDI</button>
+            <button class="btn btn-danger consolas border border-black" type="reset">RESET</button>
+          </div>
+
+        </form>
+
+      </div>
+      <!--PROJEKCIJA_FORMA_KRAJ-->
 
     </div>
   </div>

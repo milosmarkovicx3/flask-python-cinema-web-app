@@ -28,3 +28,235 @@
 2023-05-08 03:23:07,563 INFO    [base_facade.py(find:13)] value: 3, column: id
 2023-05-08 03:23:14,378 INFO    [base_facade.py(find:13)] value: 4, column: id
 2023-05-08 03:23:21,448 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-08 14:50:47,178 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:45:22,644 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:45:32,718 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-08 15:48:07,305 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:49:40,301 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:49:48,970 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:50:15,271 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:52:42,717 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:52:50,227 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:57:43,543 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 15:58:29,276 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:03:24,416 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:03:27,596 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:04:44,915 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:05:35,986 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:05:47,590 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:05:49,841 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:09:36,176 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:09:42,176 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:09:49,469 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:10:07,878 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:10:12,914 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:11:05,348 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:11:28,383 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:11:35,272 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:11:41,785 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:12:05,474 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:20:54,515 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:21:46,033 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:22:02,119 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 16:25:20,066 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:19:31,918 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-08 17:19:31,923 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-08 17:19:31,925 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-08 17:25:35,579 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:25:38,635 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:26:32,165 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:26:48,543 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:53:41,719 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:53:52,904 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:54:12,544 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 17:57:52,253 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:27:56,468 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:28:52,902 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:32:53,701 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:33:02,932 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:40:11,351 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:40:19,504 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:40:27,132 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:40:33,419 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:40:57,843 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:42:28,568 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:43:07,637 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:44:20,220 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:44:34,156 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:45:09,219 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:45:17,331 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:45:22,840 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:46:14,834 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:46:34,982 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:46:57,827 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:47:05,540 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:47:23,326 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:48:04,267 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:48:16,860 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:48:25,376 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:48:33,642 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:48:43,109 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:49:48,771 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:50:34,602 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:52:11,465 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:52:20,055 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:52:32,100 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:52:33,461 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:52:36,028 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:52:41,494 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:53:16,079 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:53:17,714 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:54:10,870 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:55:15,871 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:55:24,216 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:56:00,144 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:56:03,197 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:56:42,028 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:57:36,261 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:57:47,760 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:58:03,232 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:58:04,948 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:58:22,135 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:58:40,769 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:59:41,021 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 18:59:50,694 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:00:45,036 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:01:00,179 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:02:11,396 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:02:30,891 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:03:02,583 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:03:10,226 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:03:17,064 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:03:42,767 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:04:00,698 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:04:07,032 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:05:02,620 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:05:27,947 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:05:35,286 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:05:44,499 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:06:41,562 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:06:48,770 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:06:55,257 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:07:59,000 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:08:33,237 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:08:43,931 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:08:57,494 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:09:08,052 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:09:26,374 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:09:39,331 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:09:47,735 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:10:50,364 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:11:01,719 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:11:35,001 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:12:10,263 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:12:40,733 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:14:07,566 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:16:32,522 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:16:40,146 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:16:43,186 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:16:56,577 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:17:18,585 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:17:24,662 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:18:14,386 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:19:03,310 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:20:23,490 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:20:46,207 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:21:12,339 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:21:20,340 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:22:12,086 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:22:23,879 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:22:56,932 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:23:33,709 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:24:41,861 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:24:52,451 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:25:12,744 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:25:44,751 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:25:47,513 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 19:26:32,327 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-08 19:28:28,903 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-08 19:28:54,204 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-08 20:28:46,362 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 20:28:46,472 ERROR   [base_impl.py(_result_handler:31)] (MySQLdb.OperationalError) (1054, "Unknown column 'movies_reviews.create_at' in 'field list'")
+[SQL: SELECT movies_reviews.id AS movies_reviews_id, movies_reviews.user_id AS movies_reviews_user_id, movies_reviews.movie_id AS movies_reviews_movie_id, movies_reviews.comment AS movies_reviews_comment, movies_reviews.rating AS movies_reviews_rating, movies_reviews.create_at AS movies_reviews_create_at 
+FROM movies_reviews 
+WHERE %s = movies_reviews.movie_id]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'movies_reviews.create_at' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method(self._item)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 65, in _repr_helper_method
+    return temp.__repr__()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\movie.py", line 81, in __repr__
+    } for mur in self.users_reviews_association
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\attributes.py", line 557, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\attributes.py", line 1070, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\attributes.py", line 1105, in _fire_loader_callables
+    return self.callable_(state, passive)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\strategies.py", line 972, in _load_for_state
+    return self._emit_lazyload(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\strategies.py", line 1135, in _emit_lazyload
+    result = session.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2231, in execute
+    return self._execute_internal(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2126, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\context.py", line 292, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 918, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb.OperationalError) (1054, "Unknown column 'movies_reviews.create_at' in 'field list'")
+[SQL: SELECT movies_reviews.id AS movies_reviews_id, movies_reviews.user_id AS movies_reviews_user_id, movies_reviews.movie_id AS movies_reviews_movie_id, movies_reviews.comment AS movies_reviews_comment, movies_reviews.rating AS movies_reviews_rating, movies_reviews.create_at AS movies_reviews_create_at 
+FROM movies_reviews 
+WHERE %s = movies_reviews.movie_id]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2023-05-08 20:30:11,717 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 20:37:33,322 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-08 20:37:34,418 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-08 20:41:27,373 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-08 21:58:08,165 INFO    [base_facade.py(find:13)] value: column=, column: id
+2023-05-08 22:27:40,263 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-09 00:01:44,098 INFO    [base_facade.py(find:13)] value: 2, column: id

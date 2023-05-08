@@ -1,4 +1,3 @@
-from sqlalchemy.orm import relationship
 from main.entities.core.base import db
 
 class MoviesGenres(db.Model):
@@ -7,8 +6,8 @@ class MoviesGenres(db.Model):
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'))
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
 
-    movie = relationship('Movie', back_populates='genres_association')
-    genre = relationship('Genre', back_populates='movies_association')
+    movie = db.relationship('Movie', back_populates='genres_association')
+    genre = db.relationship('Genre', back_populates='movies_association')
 
     def __init__(self, movie_id, genre_id):
         self.movie_id = movie_id

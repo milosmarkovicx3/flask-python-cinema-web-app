@@ -83,7 +83,7 @@ class UserImpl(BaseImpl):
                 'device_auth_token' kolone u bazi i u slučaju da se vrednosti razlikuju sistem
                 će izlogovati korisnika.                
                 """
-                auth_token = user.get_auth_token()
+                auth_token = user.generate_auth_token()
                 user.device_auth_token = auth_token
                 db.session.commit()
                 session['auth_token'] = auth_token

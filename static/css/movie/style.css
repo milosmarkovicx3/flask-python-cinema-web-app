@@ -1,4 +1,8 @@
-.font-2{
-    font-size: x-large;
-    
+#current-votes:hover{
+    background-color: rgb(43, 46, 50);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }

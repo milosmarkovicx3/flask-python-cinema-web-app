@@ -1,13 +1,12 @@
-from sqlalchemy import Integer
 from main.entities.core.base import db
 
 class Seat(db.Model):
     __tablename__ = 'seat'
-    id = db.Column('id', Integer, primary_key=True)
-    hall_id = db.Column('hall_id', Integer, db.ForeignKey('hall.id'), nullable=False)
-    seat_type_id = db.Column('seat_type_id', Integer, db.ForeignKey('seat_type.id'), nullable=False)
-    row = db.Column('row', Integer, nullable=False)
-    number = db.Column('number', Integer, nullable=False)
+    id = db.Column('id', db.Integer, primary_key=True)
+    hall_id = db.Column('hall_id', db.Integer, db.ForeignKey('hall.id'), nullable=False)
+    seat_type_id = db.Column('seat_type_id', db.Integer, db.ForeignKey('seat_type.id'), nullable=False)
+    row = db.Column('row', db.Integer, nullable=False)
+    number = db.Column('number', db.Integer, nullable=False)
 
     def __init__(self, hall_id, seat_type_id, row, number):
         self.hall_id = hall_id

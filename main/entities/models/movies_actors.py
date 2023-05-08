@@ -1,4 +1,3 @@
-from sqlalchemy.orm import relationship
 from main.entities.core.base import db
 
 class MoviesActors(db.Model):
@@ -8,8 +7,8 @@ class MoviesActors(db.Model):
     actor_id = db.Column(db.Integer, db.ForeignKey('actor.id'))
     role = db.Column(db.String(255))
 
-    movie = relationship('Movie', back_populates='actors_association')
-    actor = relationship('Actor', back_populates='movies_association')
+    movie = db.relationship('Movie', back_populates='actors_association')
+    actor = db.relationship('Actor', back_populates='movies_association')
 
     def __init__(self, movie_id, actor_id, role):
         self.movie_id = movie_id

@@ -51,7 +51,7 @@ def check_auth_token():
     po sebi izloguje već ulogovane korisnike, ako se neko u među-
     vremenu prijavio sa njihovim nalogom na drugog uređaju.
     """
-    if current_user.is_authenticated and session.get('auth_token') != current_user.device_auth_token:
+    if current_user.is_authenticated and session.get('auth_token') != current_user.auth_token:
         ui.logout()
 
 @login_required

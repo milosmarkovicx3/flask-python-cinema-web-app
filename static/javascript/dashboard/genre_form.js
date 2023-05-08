@@ -9,7 +9,7 @@ $(document).ready(function() {
         $("#genre-image-input-msg").val($("#genre-image").val());
     })
   });
-  //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //validacija i slanje žanr forme
 
 $(document).ready(function() {

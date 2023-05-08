@@ -1,33 +1,34 @@
 from datetime import datetime
-
 from passlib.handlers.pbkdf2 import pbkdf2_sha256
+from sqlalchemy.ext.associationproxy import association_proxy
 
 from main.entities.core.base import db
 from flask_login import UserMixin
-from sqlalchemy import DateTime, Integer, String, Boolean
 
 class User(db.Model, UserMixin):
     __tablename__ = "user"
-    id = db.Column('id', Integer(), primary_key=True)
-    first_name = db.Column('first_name', String(255), nullable=False)
-    last_name = db.Column('last_name', String(255), nullable=False)
-    email = db.Column('email', String(255), unique=True, nullable=False)
-    username = db.Column('username', String(255), unique=True, nullable=False)
-    password = db.Column('password', String(255), nullable=False)
-    date_of_birth = db.Column('date_of_birth', DateTime())
-    phone_number = db.Column('phone_number', String(255))
-    profile_picture = db.Column('profile_picture', String(255))
-    is_superuser = db.Column('is_superuser', Boolean)
-    date_joined = db.Column('date_joined', DateTime())
-    last_login_at = db.Column('last_login_at', DateTime())
-    last_login_ip = db.Column('last_login_ip', String(255))
-    last_seen = db.Column('last_seen', DateTime())
-    login_count = db.Column('login_count', Integer)
-    confirmed_at = db.Column('confirmed_at', DateTime())
-    device_auth_token = db.Column('device_auth_token', String(255))
+    id = db.Column('id', db.Integer(), primary_key=True)
+    first_name = db.Column('first_name', db.String(255), nullable=False)
+    last_name = db.Column('last_name', db.String(255), nullable=False)
+    email = db.Column('email', db.String(255), unique=True, nullable=False)
+    username = db.Column('username', db.String(255), unique=True, nullable=False)
+    password = db.Column('password', db.String(255), nullable=False)
+    date_of_birth = db.Column('date_of_birth', db.DateTime())
+    phone_number = db.Column('phone_number', db.String(255))
+    profile_picture = db.Column('profile_picture', db.String(255))
+    is_superuser = db.Column('is_superuser', db.Boolean)
+    date_joined = db.Column('date_joined', db.DateTime())
+    last_login_at = db.Column('last_login_at', db.DateTime())
+    last_login_ip = db.Column('last_login_ip', db.String(255))
+    last_seen = db.Column('last_seen', db.DateTime())
+    login_count = db.Column('login_count', db.Integer)
+    confirmed_at = db.Column('confirmed_at', db.DateTime())
+    auth_token = db.Column('auth_token', db.String(255))
 
+    movie_review_association = db.relationship('MoviesReviews', back_populates='user')
+    movie_review = association_proxy('movie_review_association', 'movie')
 
-    def __init__(self, first_name, last_name, email, username, password, date_of_birth=None, phone_number=None, profile_picture=None, is_superuser=False, date_joined=None, last_login_at=None, last_login_ip=None, last_seen=None, login_count=None, confirmed_at=None, device_auth_token=None):
+    def __init__(self, first_name, last_name, email, username, password, date_of_birth=None, phone_number=None, profile_picture=None, is_superuser=False, date_joined=None, last_login_at=None, last_login_ip=None, last_seen=None, login_count=None, confirmed_at=None, auth_token=None):
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
@@ -43,7 +44,7 @@ class User(db.Model, UserMixin):
         self.last_seen = last_seen
         self.login_count = login_count
         self.confirmed_at = confirmed_at
-        self.device_auth_token = device_auth_token
+        self.auth_token = auth_token
 
     def __str__(self):
         return str(self.__repr__())
@@ -66,10 +67,10 @@ class User(db.Model, UserMixin):
             "last_seen": str(self.last_seen),
             "login_count": self.login_count,
             "confirmed_at": str(self.confirmed_at),
-            "device_auth_token": self.device_auth_token
+            "auth_token": self.auth_token
         }
 
-    def get_auth_token(self):
+    def generate_auth_token(self):
         data = (str(self.id) + self.username + str(datetime.now())).encode('utf-8')
         return pbkdf2_sha256.hash(data)
 

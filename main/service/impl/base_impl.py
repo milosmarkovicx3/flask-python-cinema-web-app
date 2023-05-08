@@ -13,7 +13,7 @@ class BaseImpl(ABC):
         return _result_handler(item=self.T.find(value, column))
 
     def find_all(self, kwargs):
-        return _result_handler(item=self.T.find_all(kwargs))
+        return _result_handler(item=self.T.find_all(**kwargs))
 
     def delete(self, value, column):
         return _result_handler(item=self.T.delete(value, column))

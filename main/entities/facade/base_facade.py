@@ -17,27 +17,29 @@ class BaseFacade(ABC):
             log.error(f"{e}\n{traceback.format_exc()}")
             return None
 
-    def find_all(self, kwargs):
+    def find_all(self, column=None, value1=None, value2=None, method=None, max=None):
         try:
             query = self.T.query
 
-            if 'column' not in kwargs:
-                return False
+            if column is None:
+                response = query.all()
+                return False if response is None else response
 
-            column = getattr(self.T, kwargs['column'])
+            column = getattr(self.T, column)
 
-            if 'value1' in kwargs:
-                if 'method' in kwargs:
-                    if kwargs['method'] == 'like':
-                        query = query.filter(column.like(f"%{kwargs['value1']}%"))
-                    elif kwargs['method'] == 'less':
-                        query = query.filter(column <= kwargs['value1'])
-                    elif kwargs['method'] == 'higher':
-                        query = query.filter(column >= kwargs['value1'])
-                elif 'value2' in kwargs:
-                    query = query.filter(column.between(kwargs['value1'], kwargs['value2']))
-                if 'max' in kwargs:
-                    query = query.limit(kwargs['max'])
+            if value1 is not None:
+                if method is not None:
+                    if method == 'like':
+                        query = query.filter(column.like(f"%{value1}%"))
+                    elif method == 'less':
+                        query = query.filter(column <= value1)
+                    elif method == 'higher':
+                        query = query.filter(column >= value2)
+                elif value2 is not None:
+                    query = query.filter(column.between(value1, value2))
+
+            if max is not None:
+                query = query.limit(max)
 
             response = query.all()
             return False if response is None else response

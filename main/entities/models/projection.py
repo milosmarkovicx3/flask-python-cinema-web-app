@@ -1,14 +1,13 @@
-from sqlalchemy import Integer, DateTime, Date, Time
 from main.entities.core.base import db
 
 class Projection(db.Model):
     __tablename__ = 'projection'
-    id = db.Column('id', Integer, primary_key=True)
-    hall_id = db.Column('hall_id', Integer, db.ForeignKey('hall.id'), nullable=False)
-    movie_id = db.Column('movie_id', Integer, db.ForeignKey('movie.id'), nullable=False)
-    date_from = db.Column('date_from', Date(), nullable=False)
-    date_to = db.Column('date_to', Date(), nullable=False)
-    time = db.Column('time', Time(), nullable=False)
+    id = db.Column('id', db.Integer, primary_key=True)
+    hall_id = db.Column('hall_id', db.Integer, db.ForeignKey('hall.id'), nullable=False)
+    movie_id = db.Column('movie_id', db.Integer, db.ForeignKey('movie.id'), nullable=False)
+    date_from = db.Column('date_from', db.Date(), nullable=False)
+    date_to = db.Column('date_to', db.Date(), nullable=False)
+    time = db.Column('time', db.Time(), nullable=False)
 
     def __init__(self, hall_id, movie_id, date_from, date_to, time):
         self.hall_id = hall_id
