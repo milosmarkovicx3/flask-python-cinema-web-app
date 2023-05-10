@@ -59,7 +59,7 @@ class UserImpl(BaseImpl):
 
             if self.T.create(user):
                 send_mail_confirm_email(msg_to=user.email, token=pbkdf2_sha256.hash(user.username))
-                return _result_handler(user)
+                return _result_handler(item=user)
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)

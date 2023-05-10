@@ -22,13 +22,13 @@ class BaseImpl(ABC):
 def _result_handler(item):
     try:
         result = Result(item=item)
-        if result.get_item() is False:
+        if item is False:
             result.set_status(Status.NOT_FOUND)
-        elif result.get_item() is None:
+        elif item is None:
             result.set_status(Status.INTERNAL_SERVER_ERROR)
         return result.response()
     except Exception as e:
         log.error(f"{e}\n{traceback.format_exc()}")
-        result = Result(Status.INTERNAL_SERVER_ERROR)
+        result = Result(status=Status.INTERNAL_SERVER_ERROR)
         return result.response()
 

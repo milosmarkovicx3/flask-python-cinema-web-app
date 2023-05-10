@@ -46,25 +46,25 @@ class Result:
         return Response(json_data, content_type='application/json')
 
     def __str__(self):
-        return str(self.__dict__)
+        return str(self.__repr__())
 
     def __repr__(self):
         return {
             "status": self._status,
             "description": self._description,
-            "item": self._repr_helper_method(self._item)
+            "item": self._repr_helper_method()
         }
 
-    def _repr_helper_method(self, temp):
+    def _repr_helper_method(self):
         """
         Kada se self.item lista, a ne jedan objekat.
-        :param temp: Bilo koja potencijalna lista objekata.
+        :param self._item: Bilo koja potencijalna lista objekata.
         :return: Listu rečnika koji predstavljaju konvertovane objekte.
         """
-        if not isinstance(temp, list):
-            return temp.__repr__()
+        if not isinstance(self._item, list):
+            return self._item.__repr__()
         _list = []
-        for item in temp:
+        for item in self._item:
             if isinstance(item, list):
                 _sub_list = self._repr_helper_method(item)
                 _list.append(_sub_list)

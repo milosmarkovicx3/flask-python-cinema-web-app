@@ -34,7 +34,7 @@ class MovieImpl(BaseImpl):
                         db.session.delete(p)
                         db.session.commit()
 
-            return _result_handler(movie)
+            return _result_handler(item=movie)
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)

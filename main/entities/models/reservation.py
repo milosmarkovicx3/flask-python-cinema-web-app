@@ -2,6 +2,7 @@ from datetime import datetime
 from main.entities.core.base import db
 
 class Reservation(db.Model):
+    SEAT_TYPE = 6
     __tablename__ = 'reservation'
     id = db.Column('id', db.Integer, primary_key=True)
     projection_id = db.Column('projection_id', db.Integer, db.ForeignKey('projection.id'), nullable=False)

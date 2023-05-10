@@ -41,7 +41,7 @@ class Movie(db.Model):
     Ovaj vid spajanja klasa zahteva deklaraciju samo u parent klasi.
     relationship - one to many preko stranog ključa
     :param 1: Naziv dečije klase koja sadrži strani ključ.
-    :param 2: Referenca (kao vid promenljive) preko koje dete klasa može da pristupi parent klasi.
+    :param 2: Naziv tabele u kojoj se trenutno nalazimo.
     """
     projections = db.relationship('Projection', backref='movie')
 
@@ -64,7 +64,7 @@ class Movie(db.Model):
             "year": self.year,
             "duration": self.duration,
             "rating": self.rating,
-            "votes": self.format_vote_count(self.votes),
+            "votes": self.format_vote_count(),
             "poster": self.poster,
             "trailer": self.trailer,
             "actors": [
@@ -91,11 +91,11 @@ class Movie(db.Model):
             ]
         }
 
-    def format_vote_count(self, vote_count):
-        if vote_count >= 1000000:
-            return '{:.1f}M'.format(vote_count / 1000000)
+    def format_vote_count(self):
+        if self.votes >= 1000000:
+            return '{:.1f}M'.format(self.votes / 1000000)
         else:
-            return '{}K'.format(round(vote_count / 1000))
+            return '{}K'.format(round(self.votes / 1000))
 
     def projections_for_next_week(self):
         today = datetime.now().date()

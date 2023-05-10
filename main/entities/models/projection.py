@@ -1,4 +1,6 @@
 from main.entities.core.base import db
+from main.entities.models.reservation import Reservation
+
 
 class Projection(db.Model):
     __tablename__ = 'projection'
@@ -8,6 +10,8 @@ class Projection(db.Model):
     date_from = db.Column('date_from', db.Date(), nullable=False)
     date_to = db.Column('date_to', db.Date(), nullable=False)
     time = db.Column('time', db.Time(), nullable=False)
+
+    reservations = db.relationship('Reservation', backref='projection')
 
     def __init__(self, hall_id, movie_id, date_from, date_to, time):
         self.hall_id = hall_id
@@ -24,7 +28,31 @@ class Projection(db.Model):
             "id": self.id,
             "hall_id": self.hall_id,
             "movie_id": self.movie_id,
-            "date_from": str(self.date_from),
-            "date_to": str(self.date_to),
-            "time": str(self.time)
+            "date_from": self.date_from.strftime('%d.%m.%Y'),
+            "date_to": self.date_to.strftime('%d.%m.%Y'),
+            "time": str(self.time)[:5],
+            "seats": self.get_seats_for_projection()
+
         }
+
+    def get_seats_for_projection(self):
+        seats = []
+        reservations = [reservation.id for reservation in self.reservations]
+        for seat in self.hall.seats:
+            if seat.id in reservations:
+                seats.append([seat.row, seat.number, Reservation.SEAT_TYPE])
+            else:
+                seats.append([seat.row, seat.number, seat.seat_type_id])
+
+        return seats
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Arhiv | Projekcija </title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/projection/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/projection/script.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-dark text-white border-black border mt-3">
+  <div class="container">
+        <h1 class="display-8 my-2">
+          ODABERITE SEDIŠTE:
+        </h1>
+        <hr class="m-0 mt-3">
+
+  </div>
+</div>
+
+
+{% endblock %}

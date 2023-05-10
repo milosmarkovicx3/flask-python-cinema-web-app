@@ -263,3 +263,82 @@ AttributeError: 'User' object has no attribute 'image'
 2023-05-10 04:21:43,894 INFO    [base_facade.py(find:13)] value: 1, column: id
 2023-05-10 04:28:01,050 INFO    [base_facade.py(find:13)] value: 1, column: id
 2023-05-10 04:38:59,217 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 05:04:54,687 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 05:18:20,533 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 05:32:37,935 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 13:35:27,443 INFO    [user_impl.py(logout:107)] log out: Miloš Marković
+2023-05-10 13:35:27,448 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 13:35:30,274 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-10 13:35:30,274 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 13:35:30,428 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 14:32:54,825 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 14:32:54,830 ERROR   [base_impl.py(_result_handler:31)] 'InstrumentedList' object has no attribute 'seat_id'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method(self._item)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 65, in _repr_helper_method
+    return temp.__repr__()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\projection.py", line 34, in __repr__
+    "seats": self.get_seats_for_projection()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\projection.py", line 40, in get_seats_for_projection
+    reservations = [self.reservations.seat_id]
+AttributeError: 'InstrumentedList' object has no attribute 'seat_id'
+
+2023-05-10 14:41:21,699 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 14:41:21,703 ERROR   [base_impl.py(_result_handler:31)] 'int' object has no attribute 'seats'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 65, in _repr_helper_method
+    return self._item.__repr__()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\projection.py", line 34, in __repr__
+    "seats": self.get_seats_for_projection()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\projection.py", line 41, in get_seats_for_projection
+    for seat in self.hall_id.seats:
+AttributeError: 'int' object has no attribute 'seats'
+
+2023-05-10 14:42:37,580 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 14:43:10,179 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-10 15:11:26,630 ERROR   [base_facade.py(find:18)] kurcina
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 13, in find
+    raise Exception("kurcina")
+Exception: kurcina
+
+2023-05-10 15:12:22,045 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-10 15:12:22,048 ERROR   [base_impl.py(_result_handler:33)] kurcina
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 25, in _result_handler
+    raise Exception("kurcina")
+Exception: kurcina
+
+2023-05-10 15:15:09,651 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-10 15:15:09,654 ERROR   [base_impl.py(_result_handler:33)] kurcina
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 25, in _result_handler
+    raise Exception("kurcina")
+Exception: kurcina
+
+2023-05-10 15:15:19,773 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 15:15:19,774 ERROR   [base_impl.py(_result_handler:33)] kurcina
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 25, in _result_handler
+    raise Exception("kurcina")
+Exception: kurcina
+
+2023-05-10 15:24:16,939 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 15:24:16,941 ERROR   [base_impl.py(_result_handler:33)] kurcina
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 25, in _result_handler
+    raise Exception("kurcina")
+Exception: kurcina
+
+2023-05-10 15:25:32,408 INFO    [base_facade.py(find:13)] value: 1, column: id

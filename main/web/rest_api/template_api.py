@@ -1,18 +1,15 @@
-from datetime import datetime, timedelta
-
-from flask import render_template, Blueprint, request, abort, jsonify
-
+from flask import render_template, Blueprint, request, abort
 from main.entities.facade.hall_facade import HallFacade
 from main.entities.facade.movie_facade import MovieFacade
-from main.service.impl.base_impl import _result_handler
+from main.entities.facade.projection_facade import ProjectionFacade
 from main.service.impl.movie_impl import MovieImpl
-from main.service.utility.logger import log
 from main.web.rest_api.auth_api import admin_required
 
 template_api = Blueprint('template_api', __name__, url_prefix='/')
 mi = MovieImpl()
 mf = MovieFacade()
 hf = HallFacade()
+pf = ProjectionFacade()
 
 @template_api.route('/admin-panel', methods=['GET'])
 @admin_required
@@ -27,14 +24,13 @@ def index():
 
 @template_api.route('/film/<int:id>', methods=['GET'])
 def movie(id):
-    movie = mf.find(id, 'id').__repr__()
-    return render_template('movie.html', movie=movie) if movie else abort(404)
+    entity = mf.find(id, 'id').__repr__()
+    return render_template('movie.html', movie=entity) if entity else abort(404)
 
-@template_api.route('/film/projekcija/<int:id>', methods=['GET'])
+@template_api.route('/projekcija/<int:id>', methods=['GET'])
 def projection(id):
-    return ''
-    movie = mf.find(id, 'id').__repr__()
-    return render_template('movie.html', movie=movie) if movie else abort(404)
+    entity = pf.find(id, 'id').__repr__()
+    return render_template('projection.html', projection=entity) if entity else abort(404)
 
 
 @template_api.route('/repertoar', methods=['GET'])
