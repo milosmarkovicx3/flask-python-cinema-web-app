@@ -23,7 +23,10 @@ class GenreImpl(BaseImpl):
                 filename = secure_filename(image.filename)
                 image.save(os.path.join(f'{STATIC_DIR_PATH}\\resources\\genre-images\\', filename))
             else:
-                result = Result(status=Status.BAD_REQUEST, description='Došlo je do greške prilikom optremanja slike.')
+                result = Result(
+                    status=Status.BAD_REQUEST,
+                    description='\nError: došlo je do greške prilikom optremanja slike.'
+                )
                 return result.response()
 
             genre = Genre(name=name, image=image.filename)

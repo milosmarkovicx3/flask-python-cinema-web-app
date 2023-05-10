@@ -12,10 +12,8 @@ def find(value, column="id"):
 
 @user_api.route('/', methods=['GET'])
 def find_all():
-    kwargs = {}
-    for key, value in request.args.items():
-        kwargs[key] = value
-    return ui.find_all(**kwargs)
+    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
+    return ui.find_all(kwargs)
 
 @user_api.route('/', methods=['POST'])
 def create():

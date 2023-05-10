@@ -70,7 +70,7 @@ $(document).ready(function() {
                 alert("Glumac je uspešno kreiran.");
                 $(this)[0].reset();
             }else{
-                alert("Došlo je do greške prilikom kreiranja glumca.");
+                alert("Došlo je do greške prilikom kreiranja glumca." + response.description);
                 console.log(response);
             }            
         },

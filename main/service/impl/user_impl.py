@@ -4,9 +4,11 @@ from flask import make_response, redirect, request, url_for, session, flash
 from flask_login import login_user, current_user, logout_user
 from passlib.handlers.pbkdf2 import pbkdf2_sha256
 from main.entities.core.base import db
+from main.entities.core.result import Result
+from main.entities.core.status import Status
 from main.entities.facade.user_facade import UserFacade
 from main.entities.models.user import User
-from main.service.impl.base_impl import BaseImpl
+from main.service.impl.base_impl import BaseImpl, _result_handler
 from main.service.utility.logger import log
 from main.service.utility.mail import send_mail_confirm_email
 from main.service.utility.utils import basic_regex, email_regex, passwd_regex
@@ -37,8 +39,11 @@ class UserImpl(BaseImpl):
                     find_username or
                     find_email):
 
-                flash('register_fail', 'error')
-                return redirect(request.referrer or url_for('template_api.index'))
+                result = Result(
+                    status=Status.BAD_REQUEST,
+                    description="\nError: loš zahtev, poslate pogrešne vrednosti."
+                )
+                return result.response()
 
             passwd_hash = pbkdf2_sha256.hash(passwd)
 
@@ -54,10 +59,11 @@ class UserImpl(BaseImpl):
 
             if self.T.create(user):
                 send_mail_confirm_email(msg_to=user.email, token=pbkdf2_sha256.hash(user.username))
-                return redirect(request.referrer or url_for('template_api.index'))
+                return _result_handler(user)
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
-            return redirect(request.referrer or url_for('template_api.index'))
+            result = Result(status=Status.INTERNAL_SERVER_ERROR)
+            return result.response()
 
     def login(self, data):
         try:
@@ -84,7 +90,7 @@ class UserImpl(BaseImpl):
                 će izlogovati korisnika.                
                 """
                 auth_token = user.generate_auth_token()
-                user.device_auth_token = auth_token
+                user.auth_token = auth_token
                 db.session.commit()
                 session['auth_token'] = auth_token
 

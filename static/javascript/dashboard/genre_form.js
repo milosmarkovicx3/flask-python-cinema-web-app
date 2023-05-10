@@ -71,7 +71,7 @@ $(document).ready(function() {
                 alert("Žanr je uspešno kreiran.");
                 $(this)[0].reset();
             }else{
-                alert("Došlo je do greške prilikom kreiranja žanra.");
+                alert("Došlo je do greške prilikom kreiranja žanra." + response.description);
                 console.log(response);
             }            
         },

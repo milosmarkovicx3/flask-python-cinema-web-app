@@ -13,7 +13,7 @@ from main.entities.models.genre import Genre
 from main.entities.models.movie import Movie
 from main.entities.facade.movie_facade import MovieFacade
 from main.entities.core.result import Result
-from main.entities.models.movies_actors import MoviesActors
+from main.entities.models.role import Role
 from main.entities.models.movies_genres import MoviesGenres
 from main.service.impl.base_impl import BaseImpl, _result_handler
 from main.service.utility.logger import log
@@ -59,7 +59,10 @@ class MovieImpl(BaseImpl):
                 filename = secure_filename(poster.filename)
                 poster.save(os.path.join(f'{STATIC_DIR_PATH}\\resources\\movie-posters\\', filename))
             else:
-                result = Result(status=Status.BAD_REQUEST, description='Došlo je do greške prilikom optremanja postera.')
+                result = Result(
+                    status=Status.BAD_REQUEST,
+                    description='\nError: došlo je do greške prilikom optremanja postera.'
+                )
                 return result.response()
 
             movie = Movie(title=title, year=year, duration=duration, rating=rating, votes=votes, poster=poster.filename, trailer=trailer )
@@ -68,7 +71,7 @@ class MovieImpl(BaseImpl):
             db.session.commit()
 
             for actor in actors:
-                ma = MoviesActors(movie_id=movie.id, actor_id=actor[0], role=actor[1])
+                ma = Role(movie_id=movie.id, actor_id=actor[0], role=actor[1])
                 db.session.add(ma)
 
             for genre in genres:

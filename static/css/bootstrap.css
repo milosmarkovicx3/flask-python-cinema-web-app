@@ -1,8 +1,10 @@
 /*
 1. skinuta animacija kada se koristi static modal, linija 5542
-2. promenjena vrednost overflow-y da se prikazuje skrol, linija 5501
+2. promenjena vrednost overflow-y da se prikazuje skrol, linija 5501 i 5527
+    linije vrv međusobno pomeraju jedne druge
 3. dodata klasa modal-md, linije 5638-5644
-4. dodate klase display-7 i display-8, linije 669-691
+4. dodate klase display-7/8, linije 669-691
+5. dodate klase fs-7/8, linije 8496-8502
 */
 
 @charset "UTF-8";
@@ -5522,8 +5524,7 @@ textarea.form-control-lg {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  /* overflow-y: auto; */
-  overflow-y: scroll; 
+  overflow-y: visible; 
   outline: 0;
 }
 
@@ -8491,6 +8492,14 @@ textarea.form-control-lg {
 
 .fs-6 {
   font-size: 1rem !important;
+}
+
+.fs-7 {
+  font-size: 0.75rem !important;
+}
+
+.fs-8 {
+  font-size: 0.5rem !important;
 }
 
 .fst-italic {

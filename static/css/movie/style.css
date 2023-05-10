@@ -1,8 +1,17 @@
-#current-votes:hover{
+.projection-background{
     background-color: rgb(43, 46, 50);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    border: 1px solid black;
 }
+.projection-background:hover{
+    background-color: rgb(67, 71, 75);
+}
+
+.star-hover-effect {
+    color: gray;
+}
+

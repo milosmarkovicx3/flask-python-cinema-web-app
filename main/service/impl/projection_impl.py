@@ -1,4 +1,7 @@
 import traceback
+from datetime import datetime, timedelta
+
+from sqlalchemy import and_, between, not_
 
 from main.entities.core.result import Result
 from main.entities.core.status import Status
@@ -19,7 +22,24 @@ class ProjectionImpl(BaseImpl):
             hall_id = data['projection-hall']
             date_from = data['projection-from']
             date_to = data['projection-to']
-            time = data['projection-time']
+            time = datetime.strptime(data['projection-time'], '%H:%M').time()
+
+            start_time = (datetime.combine(datetime.min, time) - timedelta(minutes=165)).time()
+            end_time = (datetime.combine(datetime.min, time) + timedelta(minutes=180)).time()
+
+            query = Projection.query.filter(
+                and_(
+                    between(Projection.time, start_time, end_time),
+                    Projection.date_from <= date_to
+                )
+            )
+            projection = query.first()
+
+            if projection:
+                result = Result(
+                    status=Status.BAD_REQUEST,
+                    description=f'projekcija u datom terminu već postoji.\n{projection.__repr__()}')
+                return result.response()
 
             projection = Projection(movie_id=movie_id, hall_id=hall_id, date_from=date_from, date_to=date_to, time=time)
 

@@ -37,3 +37,302 @@ TypeError: can't compare datetime.datetime to datetime.date
 2023-05-09 01:16:15,976 INFO    [base_facade.py(find:13)] value: 1, column: id
 2023-05-09 01:16:48,733 INFO    [base_facade.py(find:13)] value: 1, column: id
 2023-05-09 01:16:53,574 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 01:17:12,585 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 01:46:05,233 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:25:39,848 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:26:20,604 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:30:02,888 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:31:06,227 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:35:14,840 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:35:34,958 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:35:52,172 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:42:57,629 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:44:42,281 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:44:42,285 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:44:42,287 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:45:01,605 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:45:01,609 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:45:01,611 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:47:39,945 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:47:39,949 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:47:39,950 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:48:55,425 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:48:55,426 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:48:55,427 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-11', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:49:15,982 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:49:15,984 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-11', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:49:15,984 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-11', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:49:42,077 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:49:42,078 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-12', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:49:42,079 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:50:29,463 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:50:29,467 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-12', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:50:29,468 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:51:01,521 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:51:01,523 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:51:01,523 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:55:30,859 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:55:30,862 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:55:30,864 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:55:34,663 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:55:34,665 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:55:34,666 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:56:10,602 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:56:10,604 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '21:45:00'}
+2023-05-09 03:56:10,605 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 03:59:03,732 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 03:59:03,734 INFO    [template_api.py(masna:76)] {'id': 1, 'hall_id': 2, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '12:45:00'}
+2023-05-09 03:59:03,735 INFO    [template_api.py(masna:76)] {'id': 2, 'hall_id': 1, 'movie_id': 1, 'date_from': '2023-05-09', 'date_to': '2024-05-09', 'time': '20:00:00'}
+2023-05-09 04:04:59,244 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 04:08:01,422 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 04:09:07,842 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 04:09:18,067 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 04:24:15,507 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 04:24:37,475 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 04:24:37,483 ERROR   [base_impl.py(_result_handler:31)] 1
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method(self._item)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 65, in _repr_helper_method
+    return temp.__repr__()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\movie.py", line 85, in __repr__
+    "projections": self.projections_for_next_week(),
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\movie.py", line 141, in projections_for_next_week
+    _list[day]["hall_time"] = sorted(_list[day]["hall_time"], key=lambda x: x[1])
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\movie.py", line 141, in <lambda>
+    _list[day]["hall_time"] = sorted(_list[day]["hall_time"], key=lambda x: x[1])
+KeyError: 1
+
+2023-05-09 04:27:44,475 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:07:25,228 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:08:41,103 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:09:04,055 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:12:26,763 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:12:42,705 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:13:05,119 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:14:04,506 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:14:25,438 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:15:08,553 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:15:45,921 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:16:22,106 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:16:32,366 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:16:56,198 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:17:56,478 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:18:20,942 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:19:21,671 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:21:18,160 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:21:48,148 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:22:05,790 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:22:49,325 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:23:18,266 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:24:19,970 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:24:49,550 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:25:22,488 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:26:09,821 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:27:26,673 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:27:42,075 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:27:59,613 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:29:08,489 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:29:23,762 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:29:50,409 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:30:21,300 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:34:20,378 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:34:42,879 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:34:52,983 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:36:03,196 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:37:38,137 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:39:19,667 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:39:55,133 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:40:11,585 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:40:20,703 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:43:44,975 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:44:03,616 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:44:12,618 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:44:46,558 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:45:06,143 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:45:53,769 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:46:46,395 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:48:08,414 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:48:20,937 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:49:52,179 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:52:11,269 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:52:44,576 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:53:38,446 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:54:50,229 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 09:55:53,274 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-09 09:59:38,622 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 10:01:07,187 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 10:55:43,925 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 18:39:35,927 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-09 18:44:18,462 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '3'), ('projection-hall', '1'), ('projection-from', '2021-01-15'), ('projection-to', '2024-06-15'), ('projection-time', '18:00')])
+2023-05-09 18:44:18,463 ERROR   [projection_impl.py(create:65)] combine() argument 2 must be datetime.time, not str
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\projection_impl.py", line 28, in create
+    start_time = (datetime.combine(datetime.min, time) - timedelta(minutes=165)).time()
+TypeError: combine() argument 2 must be datetime.time, not str
+
+2023-05-09 18:47:04,661 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '3'), ('projection-hall', '1'), ('projection-from', '2021-01-15'), ('projection-to', '2024-06-15'), ('projection-time', '18:00')])
+2023-05-09 18:47:04,673 ERROR   [projection_impl.py(create:66)] time data '18:00' does not match format '%H:%M:%S'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\projection_impl.py", line 25, in create
+    time = datetime.strptime(data['projection-time'], '%H:%M:%S').time()
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '18:00' does not match format '%H:%M:%S'
+
+2023-05-09 18:47:40,673 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '3'), ('projection-hall', '1'), ('projection-from', '2021-01-15'), ('projection-to', '2024-06-15'), ('projection-time', '18:00')])
+2023-05-09 18:47:40,675 ERROR   [projection_impl.py(create:66)] 'ProjectionFacade' object has no attribute 'query'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\projection_impl.py", line 32, in create
+    query = self.T.query(Projection).filter(
+AttributeError: 'ProjectionFacade' object has no attribute 'query'
+
+2023-05-09 18:48:52,608 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '3'), ('projection-hall', '1'), ('projection-from', '2021-01-15'), ('projection-to', '2024-06-15'), ('projection-time', '18:00')])
+2023-05-09 18:48:52,610 ERROR   [projection_impl.py(create:66)] 'Query' object is not callable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\projection_impl.py", line 32, in create
+    query = self.T.T.query(Projection).filter(
+TypeError: 'Query' object is not callable
+
+2023-05-09 18:50:02,893 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '3'), ('projection-hall', '1'), ('projection-from', '2021-01-15'), ('projection-to', '2024-06-15'), ('projection-time', '18:00')])
+2023-05-09 18:50:02,897 INFO    [base_facade.py(create:52)] create: {'id': None, 'hall_id': '1', 'movie_id': '3', 'date_from': '2021-01-15', 'date_to': '2024-06-15', 'time': '18:00:00'}
+2023-05-09 18:51:16,776 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '5'), ('projection-hall', '2'), ('projection-from', '2021-06-04'), ('projection-to', '2024-02-15'), ('projection-time', '11:00')])
+2023-05-09 18:53:21,597 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '5'), ('projection-hall', '2'), ('projection-from', '2021-06-26'), ('projection-to', '2024-02-15'), ('projection-time', '11:00')])
+2023-05-09 18:54:13,702 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '5'), ('projection-hall', '2'), ('projection-from', '2021-06-26'), ('projection-to', '2023-05-23'), ('projection-time', '11:00')])
+2023-05-09 18:54:38,541 INFO    [projection_impl.py(create:20)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFp4RA.AnY9T9a0vX9Ap2hUlzDN8K6GFdY'), ('projection-movie', '5'), ('projection-hall', '2'), ('projection-from', '2023-05-22'), ('projection-to', '2023-05-23'), ('projection-time', '11:00')])
+2023-05-09 18:57:05,060 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-09 18:57:16,065 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 18:58:23,363 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 18:58:34,550 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 18:58:52,429 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 18:59:47,893 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 19:00:01,084 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 19:02:31,127 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 19:02:55,577 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 19:18:48,192 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 19:19:50,907 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:42:27,872 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:46:05,758 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:46:54,439 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:49:09,124 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:49:33,422 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:50:16,310 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:51:01,856 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:51:41,815 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:51:48,034 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:52:32,496 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:52:45,437 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:53:12,668 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:53:46,217 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:55:50,268 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:56:04,618 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:56:51,092 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 20:57:17,280 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:02:14,381 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:02:32,346 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:03:23,024 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:05:04,725 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:05:27,040 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:10:02,447 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:10:49,852 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:11:32,420 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:12:23,235 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:12:45,205 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:13:17,817 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:14:33,214 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:14:51,944 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:21:21,026 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:21:55,755 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:22:56,388 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:23:27,541 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:25:19,829 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:26:21,782 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:27:53,641 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:29:28,619 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:31:28,076 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:36:16,807 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:36:56,580 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:39:15,650 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:57:48,475 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:58:16,173 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:58:52,656 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:59:08,933 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 21:59:18,248 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:40:40,410 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:41:06,196 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:43:42,384 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:44:33,548 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:44:54,324 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:45:11,701 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:45:29,339 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:46:14,221 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:46:30,059 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:47:45,418 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:48:18,825 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:48:31,130 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:48:47,940 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:49:20,791 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:49:59,847 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:51:05,007 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:51:55,202 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:52:17,220 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 22:52:55,984 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:08:50,397 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:10:02,522 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:20:30,121 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:21:41,447 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:23:52,727 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:24:08,515 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:24:20,512 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:24:32,814 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:24:49,667 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:25:05,357 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:26:26,261 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:27:39,489 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:27:52,230 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:28:27,643 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:29:12,383 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:30:24,111 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:31:05,585 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:32:09,192 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:35:24,840 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:38:58,192 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:40:27,741 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:41:04,094 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:41:32,728 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:43:53,721 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:44:23,485 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:47:11,450 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:49:40,606 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:52:24,850 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:52:57,569 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:53:23,515 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:53:33,266 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:55:25,950 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:56:49,111 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:56:58,838 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:57:27,965 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:58:37,157 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-09 23:59:05,133 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:04:59,159 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:07:10,425 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:07:46,706 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:11:08,284 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:11:30,794 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:11:50,968 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:14:38,142 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:15:00,703 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:16:56,897 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:17:13,214 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:17:25,660 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:17:40,733 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:17:57,669 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:18:32,239 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:19:06,751 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:20:12,311 INFO    [base_facade.py(find:13)] value: 1, column: id

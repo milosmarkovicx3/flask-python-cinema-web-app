@@ -1,9 +1,10 @@
+from datetime import datetime, timedelta
 from sqlalchemy.ext.associationproxy import association_proxy
 from main.entities.core.base import db
 # -NE-BRISATI-IMPORTE------------------------------------------
 from main.entities.models.movies_genres import MoviesGenres
-from main.entities.models.movies_actors import MoviesActors
-from main.entities.models.movies_reviews import MoviesReviews
+from main.entities.models.role import Role
+from main.entities.models.review import Review
 # -------------------------------------------------------------
 
 
@@ -27,14 +28,14 @@ class Movie(db.Model):
     :param 1: Naziv promenljive u trenutnoj klasi preko koje smo povezani sa veznom klasom.
     :param 2: Naziv promenljive u veznoj klasi koja predstavlja direktu vezu sa drugu klasom.
     """
-    actors_association = db.relationship('MoviesActors', back_populates='movie')
+    actors_association = db.relationship('Role', back_populates='movie')
     actors = association_proxy('actors_association', 'actor')
 
     genres_association = db.relationship('MoviesGenres', back_populates='movie')
     genres = association_proxy('genres_association', 'genre')
 
-    users_reviews_association = db.relationship('MoviesReviews', back_populates='movie')
-    users_reviews = association_proxy('users_reviews_association', 'user')
+    reviews_association = db.relationship('Review', back_populates='movie')
+    reviews = association_proxy('reviews_association', 'user')
 
     """
     Ovaj vid spajanja klasa zahteva deklaraciju samo u parent klasi.
@@ -63,7 +64,7 @@ class Movie(db.Model):
             "year": self.year,
             "duration": self.duration,
             "rating": self.rating,
-            "votes": self.votes,
+            "votes": self.format_vote_count(self.votes),
             "poster": self.poster,
             "trailer": self.trailer,
             "actors": [
@@ -79,18 +80,77 @@ class Movie(db.Model):
                  "image": mg.genre.image
                  } for mg in self.genres_association
             ],
-            "projections": [
-                {"date_from": str(p.date_from),
-                 "date_to": str(p.date_to),
-                 "time": str(p.time),
-                 "hall_name": p.hall.name
-                 } for p in self.projections
-            ],
-            "users_reviews": [
-                {"user_id": mur.user.username,
+            "projections": self.projections_for_next_week(),
+            "reviews": [
+                {"user_username": mur.user.username,
+                 "user_image": mur.user.image,
                  "comment": mur.comment,
                  "rating": mur.rating,
-                 "created_at": str(mur.created_at)
-                 } for mur in self.users_reviews_association
+                 "created_at": mur.created_at.strftime('%d.%m.%Y')
+                 } for mur in self.reviews_association
             ]
         }
+
+    def format_vote_count(self, vote_count):
+        if vote_count >= 1000000:
+            return '{:.1f}M'.format(vote_count / 1000000)
+        else:
+            return '{}K'.format(round(vote_count / 1000))
+
+    def projections_for_next_week(self):
+        today = datetime.now().date()
+        week_from_today = today + timedelta(days=4)
+
+        day_name = {
+            0: 'PONEDELJAK',
+            1: 'UTORAK',
+            2: 'SREDA',
+            3: 'ČETVRTAK',
+            4: 'PETAK',
+            5: 'SUBOTA',
+            6: 'NEDELJA'
+        }
+        _list = {}
+
+        for projection in self.projections:
+            date_from = projection.date_from
+            date_to = projection.date_to
+            if today > date_from:
+                date_from = today
+            if week_from_today < date_to:
+                date_to = week_from_today
+
+            for i in (date_from + timedelta(n) for n in range((date_to - date_from).days + 1)):
+
+                day_index = i.weekday()
+                key = i.strftime('%d.%m.%Y')
+                if key not in _list:
+                    _list[key] = {
+                        "day_name": "",
+                        "hall_time": []
+                    }
+                    if i == today:
+                        _list[key]["day_name"] = f'DANAS, {day_name[day_index][:3]}'
+                    elif i == today + timedelta(days=1):
+                        _list[key]["day_name"] = f'SUTRA, {day_name[day_index][:3]}'
+                    else:
+                        _list[key]["day_name"] = day_name[day_index]
+
+                _list[key]["hall_time"].append({
+                    "id": projection.id,
+                    "hall_name": projection.hall.name,
+                    "time": str(projection.time)[:5]
+                })
+
+        for day in _list:
+            _list[day]["hall_time"] = sorted(_list[day]["hall_time"], key=lambda x: x["time"])
+
+        return _list
+
+
+
+
+
+
+
+

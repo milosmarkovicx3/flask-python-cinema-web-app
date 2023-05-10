@@ -8,7 +8,7 @@ class Actor(db.Model):
     name = db.Column('name', db.String(255), unique=True)
     image = db.Column('image', db.String(255))
 
-    movies_association = db.relationship('MoviesActors', back_populates='actor')
+    movies_association = db.relationship('Role', back_populates='actor')
     movies = association_proxy('movies_association', 'movie')
 
     def __init__(self, name, image):

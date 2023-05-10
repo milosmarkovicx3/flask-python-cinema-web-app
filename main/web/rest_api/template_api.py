@@ -1,8 +1,12 @@
-from flask import render_template, Blueprint, request, abort
+from datetime import datetime, timedelta
+
+from flask import render_template, Blueprint, request, abort, jsonify
 
 from main.entities.facade.hall_facade import HallFacade
 from main.entities.facade.movie_facade import MovieFacade
+from main.service.impl.base_impl import _result_handler
 from main.service.impl.movie_impl import MovieImpl
+from main.service.utility.logger import log
 from main.web.rest_api.auth_api import admin_required
 
 template_api = Blueprint('template_api', __name__, url_prefix='/')
@@ -26,6 +30,12 @@ def movie(id):
     movie = mf.find(id, 'id').__repr__()
     return render_template('movie.html', movie=movie) if movie else abort(404)
 
+@template_api.route('/film/projekcija/<int:id>', methods=['GET'])
+def projection(id):
+    return ''
+    movie = mf.find(id, 'id').__repr__()
+    return render_template('movie.html', movie=movie) if movie else abort(404)
+
 
 @template_api.route('/repertoar', methods=['GET'])
 def repertoire_search():
@@ -43,7 +53,4 @@ def format_vote_count(vote_count):
     Globalna sintaksa bi bila '@app.template_filter'.
     Upotreba '{{ movie.votes | vote_count }}'.
     """
-    if vote_count >= 1000000:
-        return '{:.1f}M'.format(vote_count/1000000)
-    else:
-        return '{}K'.format(round(vote_count/1000))
+    return ''

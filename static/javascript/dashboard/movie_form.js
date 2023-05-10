@@ -133,7 +133,8 @@ $(document).ready(function() {
                 actors_added_to_movie = new Map();
                 genres_added_to_movie = new Map();
             }else{
-                alert("Došlo je do greške prilikom kreiranja filma.");
+                alert("Došlo je do greške prilikom kreiranja filma." + response.description);
+
                 console.log(response);
             }            
         },

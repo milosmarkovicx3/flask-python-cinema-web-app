@@ -1,0 +1,265 @@
+2023-05-10 00:36:10,195 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-10 00:36:43,099 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:38:35,547 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:39:00,619 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 00:58:10,767 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:10:54,006 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:11:00,337 INFO    [base_facade.py(create:52)] create: {'id': None, 'user_id': '1', 'movie_id': '1', 'comment': 'Film mi se svideo iz razloga što u klasičnim filmovima vampire predstavljaju kao loše karaktere bez ikakvog dodatnog akcenta na njihovu prošlost, dok je Vlad u početku prikazan kao običan porodičan čovek koji usled neočekivanih okolnosti biva prinuđen da se bori za svoje najbliže svakim mogućim sredstvom.', 'rating': '9', 'created_at': '2023-05-10'}
+2023-05-10 01:11:13,520 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:11:42,204 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 01:11:42,209 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:13:36,575 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:13:40,390 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:18:00,597 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:18:37,624 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:19:01,053 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:24:41,044 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:32:40,585 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:33:12,769 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:48:12,631 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:48:12,669 ERROR   [base_impl.py(_result_handler:31)] 'Movie' object has no attribute 'users_reviews_association'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method(self._item)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 65, in _repr_helper_method
+    return temp.__repr__()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\movie.py", line 90, in __repr__
+    } for mur in self.users_reviews_association
+AttributeError: 'Movie' object has no attribute 'users_reviews_association'
+
+2023-05-10 01:48:51,238 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 01:48:51,276 ERROR   [base_impl.py(_result_handler:31)] 'User' object has no attribute 'image'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method(self._item)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 65, in _repr_helper_method
+    return temp.__repr__()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\movie.py", line 84, in __repr__
+    "reviews": [
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\movie.py", line 86, in <listcomp>
+    "user_image": mur.user.image,
+AttributeError: 'User' object has no attribute 'image'
+
+2023-05-10 01:51:11,726 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:06:03,681 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:24:44,582 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:24:55,431 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:27:03,369 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:27:37,195 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:28:28,629 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:29:02,140 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:29:24,729 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:30:05,609 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:31:10,568 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:31:48,709 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:32:26,739 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:32:55,900 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:33:39,954 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:37:06,537 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:40:31,116 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:40:49,930 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:41:08,440 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:41:33,070 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:43:17,723 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:45:43,359 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:45:51,732 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:47:30,146 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:48:04,798 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:48:40,323 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:49:13,289 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:49:44,240 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:50:04,397 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:50:27,856 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:51:02,765 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:51:38,552 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:52:03,346 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:52:57,788 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 02:52:57,789 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 02:52:57,831 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 02:52:57,832 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:53:08,370 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 02:53:08,371 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 02:53:08,413 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 02:53:08,413 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:53:27,974 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 02:53:27,974 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 02:53:28,012 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 02:54:44,222 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 02:54:44,222 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 02:54:44,431 INFO    [auth_api.py(check_auth_token:56)] sta?
+2023-05-10 02:54:44,431 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 02:54:44,431 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:55:55,538 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 02:56:04,128 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 02:56:04,128 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 02:56:06,142 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 02:56:06,142 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:00:00,198 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:00:00,198 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:00:00,256 INFO    [user_impl.py(login:90)] $pbkdf2-sha256$29000$v1fKuTcmxFirVUrpnTPGmA$kejJ46fOEklvX2kt6T3XhZnG90CQQ5RMv3mn4l.icrg
+2023-05-10 03:00:00,264 INFO    [user_impl.py(logout:102)] log out: Miloš Marković
+2023-05-10 03:00:00,264 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:02:44,517 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:02:44,518 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:02:44,583 INFO    [auth_api.py(check_auth_token:55)] $pbkdf2-sha256$29000$HcO4N2astfZeS6k1JuQcYw$uXW8fe6SevBfh5X6BAuVhEDni7sAgD2OGBcFYiSd5IA
+2023-05-10 03:02:44,583 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 03:02:44,584 INFO    [base_facade.py(find:13)] value: 1, column: id
+
+2023-05-10 03:04:22,820 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:04:22,820 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:04:22,883 INFO    [user_impl.py(login:91)] pri logovanju kreriran: $pbkdf2-sha256$29000$XMsZgxBCKKXUes9Z6x2D0A$gwmVnPYX9MiTI0q6VjzNlnSvH1iYafYe1fcuk80HA5c
+2023-05-10 03:04:22,889 INFO    [auth_api.py(check_auth_token:55)] trenuti, pre log outa: $pbkdf2-sha256$29000$XMsZgxBCKKXUes9Z6x2D0A$gwmVnPYX9MiTI0q6VjzNlnSvH1iYafYe1fcuk80HA5c
+2023-05-10 03:04:22,890 INFO    [user_impl.py(logout:103)] log out: Miloš Marković
+2023-05-10 03:04:22,890 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:07:40,004 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:07:40,004 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:07:40,067 INFO    [auth_api.py(check_auth_token:55)] u kompu: $pbkdf2-sha256$29000$ea91jpEyZmwtxbi31tp77w$8F.qW09.i/gy3/8ipt1.FEkAFpLO8zgUT29H.dkd6p4
+2023-05-10 03:07:40,067 INFO    [auth_api.py(check_auth_token:56)] u bazi: $pbkdf2-sha256$29000$b.39HwMAoBSC8H4vRahVqg$fn5papV2aoIfgMiPBPmy24qPulk2jRRO5pl7Ua3G8xw
+2023-05-10 03:07:40,067 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 03:07:40,068 INFO    [base_facade.py(find:13)] value: 1, column: id
+
+
+2023-05-10 03:10:09,024 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:10:09,024 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:10:09,084 INFO    [user_impl.py(login:91)] pri logovanju kreriran: $pbkdf2-sha256$29000$nROiNIYwhrAWYqyVkjImZA$zKTGSX8k9GgO/uNvbNPrZ9J7vWddX2SU5xwgE9vIG5k
+2023-05-10 03:10:09,089 INFO    [auth_api.py(check_auth_token:55)] u kompu: $pbkdf2-sha256$29000$nROiNIYwhrAWYqyVkjImZA$zKTGSX8k9GgO/uNvbNPrZ9J7vWddX2SU5xwgE9vIG5k
+2023-05-10 03:10:09,089 INFO    [auth_api.py(check_auth_token:56)] u bazi: $pbkdf2-sha256$29000$b.39HwMAoBSC8H4vRahVqg$fn5papV2aoIfgMiPBPmy24qPulk2jRRO5pl7Ua3G8xw
+2023-05-10 03:10:09,090 INFO    [user_impl.py(logout:103)] log out: Miloš Marković
+2023-05-10 03:10:09,090 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:11:08,411 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:11:08,411 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:11:08,479 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:11:27,818 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:11:34,497 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:12:05,368 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 03:12:05,372 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:12:07,179 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:12:07,179 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:12:07,218 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:13:30,746 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:13:39,190 INFO    [base_facade.py(create:52)] create: {'id': None, 'user_id': '1', 'movie_id': '1', 'comment': 'kkk', 'rating': '10', 'created_at': '2023-05-10'}
+2023-05-10 03:13:42,354 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:14:25,746 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:14:41,785 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:14:55,326 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:15:46,605 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:16:45,895 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:17:24,083 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:17:53,587 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:18:12,919 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:18:48,059 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:19:10,595 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:19:23,999 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-10 03:20:01,686 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-10 03:22:42,131 INFO    [base_facade.py(find:13)] value: 4, column: id
+2023-05-10 03:25:00,997 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 03:25:01,001 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:36:23,883 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:36:40,964 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:36:44,910 INFO    [base_facade.py(find:13)] value: d, column: username
+2023-05-10 03:36:45,297 INFO    [base_facade.py(find:13)] value: da, column: username
+2023-05-10 03:36:49,553 INFO    [base_facade.py(find:13)] value: username, column: id
+2023-05-10 03:37:24,494 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:37:59,333 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:38:06,115 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:39:03,803 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:39:26,209 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:39:38,929 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:40:09,381 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:41:09,482 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:42:07,967 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:44:42,004 INFO    [user_impl.py(login:68)] login: shadow
+2023-05-10 03:44:42,004 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-10 03:44:42,049 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:54:27,238 INFO    [user_impl.py(logout:101)] log out: Miloš Marković
+2023-05-10 03:54:27,242 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:54:36,384 INFO    [base_facade.py(find:13)] value: M, column: username
+2023-05-10 03:54:36,793 INFO    [base_facade.py(find:13)] value: username, column: id
+2023-05-10 03:54:37,044 INFO    [base_facade.py(find:13)] value: m, column: username
+2023-05-10 03:54:37,115 INFO    [base_facade.py(find:13)] value: mi, column: username
+2023-05-10 03:54:37,379 INFO    [base_facade.py(find:13)] value: mil, column: username
+2023-05-10 03:54:37,534 INFO    [base_facade.py(find:13)] value: milo, column: username
+2023-05-10 03:54:37,614 INFO    [base_facade.py(find:13)] value: milos, column: username
+2023-05-10 03:54:37,766 INFO    [base_facade.py(find:13)] value: milosm, column: username
+2023-05-10 03:54:37,861 INFO    [base_facade.py(find:13)] value: milosma, column: username
+2023-05-10 03:54:37,955 INFO    [base_facade.py(find:13)] value: milosmar, column: username
+2023-05-10 03:54:38,312 INFO    [base_facade.py(find:13)] value: milosmark, column: username
+2023-05-10 03:54:38,386 INFO    [base_facade.py(find:13)] value: milosmarko, column: username
+2023-05-10 03:54:38,459 INFO    [base_facade.py(find:13)] value: milosmarkov, column: username
+2023-05-10 03:54:38,602 INFO    [base_facade.py(find:13)] value: milosmarkovi, column: username
+2023-05-10 03:54:38,658 INFO    [base_facade.py(find:13)] value: milosmarkovic, column: username
+2023-05-10 03:54:45,628 INFO    [base_facade.py(find:13)] value: milosmarkovicx, column: username
+2023-05-10 03:54:46,065 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 03:54:49,823 INFO    [base_facade.py(find:13)] value: m, column: email
+2023-05-10 03:54:49,896 INFO    [base_facade.py(find:13)] value: mi, column: email
+2023-05-10 03:54:50,129 INFO    [base_facade.py(find:13)] value: mil, column: email
+2023-05-10 03:54:50,280 INFO    [base_facade.py(find:13)] value: milo, column: email
+2023-05-10 03:54:50,366 INFO    [base_facade.py(find:13)] value: milos, column: email
+2023-05-10 03:54:50,550 INFO    [base_facade.py(find:13)] value: milosm, column: email
+2023-05-10 03:54:50,662 INFO    [base_facade.py(find:13)] value: milosma, column: email
+2023-05-10 03:54:50,729 INFO    [base_facade.py(find:13)] value: milosmar, column: email
+2023-05-10 03:54:50,822 INFO    [base_facade.py(find:13)] value: milosmark, column: email
+2023-05-10 03:54:50,888 INFO    [base_facade.py(find:13)] value: milosmarko, column: email
+2023-05-10 03:54:51,002 INFO    [base_facade.py(find:13)] value: milosmarkov, column: email
+2023-05-10 03:54:51,100 INFO    [base_facade.py(find:13)] value: milosmarkovi, column: email
+2023-05-10 03:54:51,234 INFO    [base_facade.py(find:13)] value: milosmarkovic, column: email
+2023-05-10 03:54:51,397 INFO    [base_facade.py(find:13)] value: milosmarkovicx, column: email
+2023-05-10 03:54:51,727 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: email
+2023-05-10 03:54:52,347 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@, column: email
+2023-05-10 03:54:52,671 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@g, column: email
+2023-05-10 03:54:53,430 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gm, column: email
+2023-05-10 03:54:53,549 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gma, column: email
+2023-05-10 03:54:53,664 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmai, column: email
+2023-05-10 03:54:53,893 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail, column: email
+2023-05-10 03:54:54,341 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail., column: email
+2023-05-10 03:54:54,514 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.c, column: email
+2023-05-10 03:54:54,622 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.co, column: email
+2023-05-10 03:54:54,673 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 03:55:37,367 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 03:55:37,369 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 03:55:37,386 INFO    [base_facade.py(create:52)] create: {'id': None, 'first_name': 'Miloš', 'last_name': 'Marković', 'email': 'milosmarkovicx3@gmail.com', 'username': 'milosmarkovicx3', 'password': '$pbkdf2-sha256$29000$7l2LcQ5hLEWI0fp/T2kNAQ$.JDpqHvQ9BLdiXSaDvS9t0eZWFgWEdldosOpkASsvR8', 'date_of_birth': 'None', 'phone_number': None, 'image': None, 'is_superuser': False, 'date_joined': '2023-05-10 03:55:37.386138', 'last_login_at': 'None', 'last_login_ip': None, 'last_seen': 'None', 'login_count': 0, 'confirmed_at': 'None', 'auth_token': None}
+2023-05-10 03:55:42,895 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 03:58:22,114 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 03:58:22,138 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:01:24,037 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:01:24,059 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:03:57,569 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:03:57,592 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:03:57,593 INFO    [user_impl.py(create:33)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZFr5Uw.ExTETwMbr9UjY2dFDFCWz47FxGE'), ('register-username', 'milosmarkovicx3'), ('register-email', 'milosmarkovicx3@gmail.com'), ('register-passwd', 'Losmim123!'), ('register-first-name', 'Miloš'), ('register-last-name', 'Marković'), ('register-conditions', 'on')])
+2023-05-10 04:05:38,619 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:05:38,642 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:06:04,459 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:06:04,484 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:06:26,719 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:06:26,742 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:08:01,952 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:08:01,975 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:08:01,976 ERROR   [user_impl.py(create:46)] kurcina7
+2023-05-10 04:08:07,100 ERROR   [user_impl.py(create:48)] kurcina8
+2023-05-10 04:10:08,963 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:10:08,985 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:10:08,986 INFO    [user_impl.py(create:33)] {'id': 15, 'first_name': 'Miloš', 'last_name': 'Marković', 'email': 'milosmarkovicx3@gmail.com', 'username': 'milosmarkovicx3', 'password': '$pbkdf2-sha256$29000$7l2LcQ5hLEWI0fp/T2kNAQ$.JDpqHvQ9BLdiXSaDvS9t0eZWFgWEdldosOpkASsvR8', 'date_of_birth': 'None', 'phone_number': None, 'image': None, 'is_superuser': False, 'date_joined': '2023-05-10 03:55:37', 'last_login_at': 'None', 'last_login_ip': None, 'last_seen': 'None', 'login_count': 0, 'confirmed_at': 'None', 'auth_token': None}
+2023-05-10 04:10:08,987 INFO    [user_impl.py(create:34)] {'id': 15, 'first_name': 'Miloš', 'last_name': 'Marković', 'email': 'milosmarkovicx3@gmail.com', 'username': 'milosmarkovicx3', 'password': '$pbkdf2-sha256$29000$7l2LcQ5hLEWI0fp/T2kNAQ$.JDpqHvQ9BLdiXSaDvS9t0eZWFgWEdldosOpkASsvR8', 'date_of_birth': 'None', 'phone_number': None, 'image': None, 'is_superuser': False, 'date_joined': '2023-05-10 03:55:37', 'last_login_at': 'None', 'last_login_ip': None, 'last_seen': 'None', 'login_count': 0, 'confirmed_at': 'None', 'auth_token': None}
+2023-05-10 04:11:01,225 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:11:01,247 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:11:01,249 INFO    [user_impl.py(create:33)] False
+2023-05-10 04:11:01,249 INFO    [user_impl.py(create:34)] False
+2023-05-10 04:11:01,264 INFO    [base_facade.py(create:52)] create: {'id': None, 'first_name': 'Miloš', 'last_name': 'Marković', 'email': 'milosmarkovicx3@gmail.com', 'username': 'milosmarkovicx3', 'password': '$pbkdf2-sha256$29000$yRnj/H.v1do7R8hZSwnh/A$2F5CT5ARx49kaZhJ7uCD7SMs6XkXaWMdOCq26Z9ptyY', 'date_of_birth': 'None', 'phone_number': None, 'image': None, 'is_superuser': False, 'date_joined': '2023-05-10 04:11:01.264128', 'last_login_at': 'None', 'last_login_ip': None, 'last_seen': 'None', 'login_count': 0, 'confirmed_at': 'None', 'auth_token': None}
+2023-05-10 04:16:24,104 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-10 04:17:16,341 INFO    [user_impl.py(login:74)] login: milosmarkovicx3
+2023-05-10 04:17:16,341 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-10 04:17:16,388 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 04:18:26,629 INFO    [base_facade.py(create:52)] create: {'id': None, 'user_id': '2', 'movie_id': '1', 'comment': 'Jaka pričica!', 'rating': '8', 'created_at': '2023-05-10'}
+2023-05-10 04:18:28,684 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 04:21:10,785 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 04:21:43,894 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 04:28:01,050 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-10 04:38:59,217 INFO    [base_facade.py(find:13)] value: 1, column: id

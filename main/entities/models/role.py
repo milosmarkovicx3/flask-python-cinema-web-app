@@ -1,7 +1,7 @@
 from main.entities.core.base import db
 
-class MoviesActors(db.Model):
-    __tablename__ = 'movies_actors'
+class Role(db.Model):
+    __tablename__ = 'role'
     id = db.Column(db.Integer, primary_key=True)
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'))
     actor_id = db.Column(db.Integer, db.ForeignKey('actor.id'))

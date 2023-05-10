@@ -1,9 +1,9 @@
 from functools import wraps
-
 from flask import request, Blueprint, session, abort
-from flask_login import login_required, LoginManager, current_user, user_logged_in
+from flask_login import login_required, LoginManager, current_user
 from main.entities.models.user import User
 from main.service.impl.user_impl import UserImpl
+from main.service.utility.logger import log
 
 auth_api = Blueprint('auth_api', __name__, url_prefix='/')
 login_manager = LoginManager()

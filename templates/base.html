@@ -21,15 +21,14 @@
     {% block head %}
     {% endblock %}
 </head>
-<body>        
-
+<body>
     {% if current_user.is_authenticated %}    
     {% else %}
     <!--MODALS_POČETAK-->    
     <div>
         <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLoginLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered border-5 border-danger">
-            <div class="modal-content bg-body-secondary modal-texture">
+            <div class="modal-content bg-body-secondary modal-texture border border-black">
             <div class="modal-header ">
                 <h1 class="modal-title fs-5" id="staticBackdropLoginLabel">
                 PRIJAVA
@@ -63,8 +62,8 @@
                     </div>              
                 </div>
                 <div class="modal-footer">
-                <button type="submit" class="btn btn-success">Potvrdi</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Otkaži</button>
+                <button type="submit" class="btn btn-success border border-black">Potvrdi</button>
+                <button type="button" class="btn btn-danger border border-black" data-bs-dismiss="modal">Otkaži</button>
                 </div>
             </form>
             </div>
@@ -72,17 +71,12 @@
         </div>
         <div class="modal fade" id="staticBackdropRegistation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropRegistationLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content bg-body-secondary modal-texture">
+            <div class="modal-content bg-body-secondary modal-texture border border-black">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropRegistationLabel">
-                REGISTRACIJA
-                {% if 'register_fail' in get_flashed_messages() %}
-                <span class="text-danger"> (POGREŠNI UNOS)</span>
-                {% endif %}
-                </h1>
+                <h1 class="modal-title fs-5" id="staticBackdropRegistationLabel">REGISTRACIJA</h1>
                 <button type="button" id="register-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="needs-validation" action="{{ url_for('user_api.create') }}" method="post" onsubmit="return validationRegister()" id="register-form">
+            <form id="register-form" action="" class="needs-validation" >
                 <div class="modal-body pb-0">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <div class="mb-2">
@@ -132,8 +126,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Potvrdi</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Otkaži</button>
+                    <button type="submit" class="btn btn-success border border-black">Potvrdi</button>
+                    <button type="button" class="btn btn-danger border border-black" data-bs-dismiss="modal">Otkaži</button>
                 </div>
             </form>
             </div>
@@ -185,10 +179,10 @@
                     {% if current_user.is_authenticated %}
                     <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% if current_user.profile_picture %}
-                        <img src="{{ url_for('static', filename='resources/user-profile-pictures/' + current_user.profile_picture) }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
+                        {% if current_user.image %}
+                        <img src="{{ url_for('static', filename='resources/user-images/' + current_user.image) }}" alt="profile_picture" width="28" height="28" class="rounded-circle me-2 border border-black">
                         {% else %}
-                        <img src="{{ url_for('static', filename='resources/user-profile-pictures/avatar_profile_picture.png') }}" alt="" width="28" height="28" class="rounded-circle me-2 border border-black">
+                        <img src="{{ url_for('static', filename='resources/user-images/avatar_profile_picture.png') }}" alt="profile_picture" width="28" height="28" class="rounded-circle me-2 border border-black">
                         {% endif %}
                         {{ current_user.first_name|upper }}
                         {{ current_user.last_name|upper }}
@@ -292,15 +286,6 @@
     <script defer>
     $(document).ready(function() {
         let modal = $('#staticBackdropLogin');
-        let modalTrigger = new bootstrap.Modal(modal);
-        modalTrigger.show();
-    });
-    </script>
-    {% endif %}
-    {% if 'register_fail' in get_flashed_messages() %}
-    <script defer>
-    $(document).ready(function() {
-        let modal = $('#staticBackdropRegistation');
         let modalTrigger = new bootstrap.Modal(modal);
         modalTrigger.show();
     });
