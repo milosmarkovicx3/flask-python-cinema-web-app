@@ -99,48 +99,37 @@ class Movie(db.Model):
 
     def projections_for_next_week(self):
         today = datetime.now().date()
-        week_from_today = today + timedelta(days=4)
+        five_days_from_today = today + timedelta(days=4)
 
-        day_name = {
-            0: 'PONEDELJAK',
-            1: 'UTORAK',
-            2: 'SREDA',
-            3: 'ČETVRTAK',
-            4: 'PETAK',
-            5: 'SUBOTA',
-            6: 'NEDELJA'
-        }
+        day_name = {0: 'PONEDELJAK', 1: 'UTORAK', 2: 'SREDA', 3: 'ČETVRTAK', 4: 'PETAK', 5: 'SUBOTA', 6: 'NEDELJA'}
         _list = {}
 
         for projection in self.projections:
-            date_from = projection.date_from
-            date_to = projection.date_to
-            if today > date_from:
-                date_from = today
-            if week_from_today < date_to:
-                date_to = week_from_today
+            date = projection.date
+            time = projection.time
 
-            for i in (date_from + timedelta(n) for n in range((date_to - date_from).days + 1)):
+            if date > five_days_from_today or (date == today and time < datetime.now().time()):
+                continue
 
-                day_index = i.weekday()
-                key = i.strftime('%d.%m.%Y')
-                if key not in _list:
-                    _list[key] = {
-                        "day_name": "",
-                        "hall_time": []
-                    }
-                    if i == today:
-                        _list[key]["day_name"] = f'DANAS, {day_name[day_index][:3]}'
-                    elif i == today + timedelta(days=1):
-                        _list[key]["day_name"] = f'SUTRA, {day_name[day_index][:3]}'
-                    else:
-                        _list[key]["day_name"] = day_name[day_index]
+            day_index = date.weekday()
+            key = date.strftime('%d.%m.%Y')
+            if key not in _list:
+                _list[key] = {
+                    "day_name": "",
+                    "hall_time": []
+                }
+                if date == today:
+                    _list[key]["day_name"] = f'DANAS, {day_name[day_index][:3]}'
+                elif date == today + timedelta(days=1):
+                    _list[key]["day_name"] = f'SUTRA, {day_name[day_index][:3]}'
+                else:
+                    _list[key]["day_name"] = day_name[day_index]
 
-                _list[key]["hall_time"].append({
-                    "id": projection.id,
-                    "hall_name": projection.hall.name,
-                    "time": str(projection.time)[:5]
-                })
+            _list[key]["hall_time"].append({
+                "id": projection.id,
+                "hall_name": projection.hall.name,
+                "time": str(time)[:5]
+            })
 
         for day in _list:
             _list[day]["hall_time"] = sorted(_list[day]["hall_time"], key=lambda x: x["time"])

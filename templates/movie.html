@@ -115,7 +115,9 @@
       <span class="text-secondary fs-7">{{ projection_date }}</span>
     </div>
         {% for single_showing in projection.hall_time %}
-        <a class="col-sm-2 nav-link projection-background me-4 px-3" href="{{ url_for('template_api.projection', id=single_showing.id ) }}" target="_blank">
+        <a class="col-sm-2 nav-link projection-background me-4 px-3"
+           href="{{ url_for('template_api.projection', projection_id=single_showing.id, date=projection_date) }}"
+           target="_blank">
           <span>{{ single_showing.time }}</span>
           <br>
           <span class="text-danger">{{ single_showing.hall_name }}</span>

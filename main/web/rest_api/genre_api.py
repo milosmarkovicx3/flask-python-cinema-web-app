@@ -16,7 +16,7 @@ def find_all():
 
 @genre_api.route('/', methods=['POST'])
 def create():
-    return gi.create(data=request.form, files=request.files)
+    return gi.create(request.form, request.files)
 
 @genre_api.route('/<string:value>', methods=['DELETE'])
 @genre_api.route('/<string:value>/<string:column>', methods=['DELETE'])

@@ -1,10 +1,11 @@
 import traceback
 from datetime import datetime, timedelta
+import re
 
-from sqlalchemy import and_, between, not_
-
+from main.entities.core.base import db
 from main.entities.core.result import Result
 from main.entities.core.status import Status
+from main.entities.facade.movie_facade import MovieFacade
 from main.entities.facade.projection_facade import ProjectionFacade
 from main.entities.models.projection import Projection
 from main.service.impl.base_impl import BaseImpl, _result_handler
@@ -17,34 +18,44 @@ class ProjectionImpl(BaseImpl):
 
     def create(self, data):
         try:
-            log.info(str(data))
             movie_id = data['projection-movie']
             hall_id = data['projection-hall']
-            date_from = data['projection-from']
-            date_to = data['projection-to']
+            date_from = datetime.strptime(data['projection-from'], '%Y-%m-%d').date()
+            date_to = datetime.strptime(data['projection-to'], '%Y-%m-%d').date()
             time = datetime.strptime(data['projection-time'], '%H:%M').time()
 
-            start_time = (datetime.combine(datetime.min, time) - timedelta(minutes=165)).time()
-            end_time = (datetime.combine(datetime.min, time) + timedelta(minutes=180)).time()
+            mf = MovieFacade()
+            movie = mf.find(column='id', value=movie_id)
 
-            query = Projection.query.filter(
-                and_(
-                    between(Projection.time, start_time, end_time),
-                    Projection.date_from <= date_to
-                )
-            )
-            projection = query.first()
+            hours = re.search(r'(\d+)h', movie.duration).group(1)
+            minutes = re.search(r'(\d+)m', movie.duration).group(1)
+            total_minutes = int(hours) * 60 + int(minutes)
 
-            if projection:
-                result = Result(
-                    status=Status.BAD_REQUEST,
-                    description=f'projekcija u datom terminu već postoji.\n{projection.__repr__()}')
-                return result.response()
+            time_after = datetime.combine(datetime.today(), time) + timedelta(minutes=total_minutes)
 
-            projection = Projection(movie_id=movie_id, hall_id=hall_id, date_from=date_from, date_to=date_to, time=time)
+            current_date = date_from
+            while current_date <= date_to:
+                projection = Projection.query\
+                    .filter(Projection.hall_id == hall_id)\
+                    .filter(Projection.date == current_date)\
+                    .filter(Projection.time.between(time, time_after.time()))\
+                    .first()
 
-            return _result_handler(item=self.T.create(projection))
+                if projection:
+                    result = Result(
+                        status=Status.BAD_REQUEST,
+                        description=f'\nError: projekcija u datom terminu već postoji.\n{projection.__str__()}')
+                    return result.response()
+
+                projection = Projection(hall_id=hall_id, movie_id=movie_id, date=current_date, time=time)
+                db.session.add(projection)
+                current_date += timedelta(days=1)
+
+            db.session.commit()
+
+            return _result_handler(item=True)
         except Exception as e:
+            db.session.rollback()
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
             return result.response()

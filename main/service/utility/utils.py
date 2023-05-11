@@ -13,5 +13,3 @@ def basic_regex(value):
     regex = r'^(?=.{1,255}$)\w{2,}'
     return re.search(regex, value)
 
-
-

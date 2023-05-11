@@ -3,6 +3,7 @@ from main.entities.facade.hall_facade import HallFacade
 from main.entities.facade.movie_facade import MovieFacade
 from main.entities.facade.projection_facade import ProjectionFacade
 from main.service.impl.movie_impl import MovieImpl
+from main.service.utility import jinja2_filters
 from main.web.rest_api.auth_api import admin_required
 
 template_api = Blueprint('template_api', __name__, url_prefix='/')
@@ -27,11 +28,10 @@ def movie(id):
     entity = mf.find(id, 'id').__repr__()
     return render_template('movie.html', movie=entity) if entity else abort(404)
 
-@template_api.route('/projekcija/<int:id>', methods=['GET'])
-def projection(id):
-    entity = pf.find(id, 'id').__repr__()
-    return render_template('projection.html', projection=entity) if entity else abort(404)
-
+@template_api.route('/projekcija/<int:projection_id>/<string:date>', methods=['GET'])
+def projection(projection_id, date):
+    entity = pf.find(projection_id, 'id').__repr__()
+    return render_template('projection.html', projection=entity, date=date) if entity else abort(404)
 
 @template_api.route('/repertoar', methods=['GET'])
 def repertoire_search():
@@ -42,11 +42,15 @@ def repertoire_search():
                            endpoint='template_api.repertoire_search',
                            form=kwargs)
 
-@template_api.app_template_filter('vote_count')
-def format_vote_count(vote_count):
+@template_api.app_template_filter('enumerate')
+def enumerate_filter(iterable):
     """
-    Jinja2 filter za formatiranje prikaza glasova.
+    Jinja2 filter za lakše prolaženje proz petlju.
     Globalna sintaksa bi bila '@app.template_filter'.
-    Upotreba '{{ movie.votes | vote_count }}'.
     """
-    return ''
+    return enumerate(iterable)
+
+
+@template_api.app_template_filter('format_date')
+def get_formated_date_name(date):
+    return jinja2_filters.get_formated_date_name_filter(date)

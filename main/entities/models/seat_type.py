@@ -4,6 +4,7 @@ class SeatType(db.Model):
     __tablename__ = 'seat_type'
     id = db.Column('id', db.Integer, primary_key=True)
     type = db.Column('type', db.String(255), nullable=False)
+    image = db.Column('image', db.String(255), nullable=False)
 
     seats = db.relationship('Seat', backref='seat_type')
 

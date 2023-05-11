@@ -11,7 +11,7 @@ ui = UserImpl()
 
 @auth_api.route('/login', methods=['POST'])
 def login():
-    return ui.login(data=request.form)
+    return ui.login(request.form)
 
 @auth_api.route('/logout', methods=['GET', 'POST'])
 @login_required

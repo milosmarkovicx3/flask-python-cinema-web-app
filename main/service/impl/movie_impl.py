@@ -23,23 +23,6 @@ class MovieImpl(BaseImpl):
     def __init__(self):
         super().__init__(MovieFacade)
 
-    def find(self, value, column):
-        try:
-            movie = self.T.find(value=value, column=column)
-            if movie:
-                for p in movie.projections:
-                    if p.date_to < datetime.now().date():
-                        log.info(f'projekcija za brisanje: {p}')
-                        movie.projections.remove(p)
-                        db.session.delete(p)
-                        db.session.commit()
-
-            return _result_handler(item=movie)
-        except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
-            result = Result(status=Status.INTERNAL_SERVER_ERROR)
-            return result.response()
-
     def create(self, data, files):
         filename, movie = '', ''
         try:

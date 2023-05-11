@@ -1,17 +1,21 @@
 v5.3.0
 -----------------------------------------------------
-FONT
+alert alert-success
 
+text-secondary/text-muted
+text-dark
+text-light/text-white
+-----------------------------------------------------
+h-25/50/75/100
+mw-100
+position-static
+-----------------------------------------------------
 fs-1(6)
 fw-bold/bolder/semibold/medium/normal/light/lighter
 fst-italic/normal
 lh-1/sm/base/lg
 text-decoration-none
 -----------------------------------------------------
-SPACING
-
-m (margin)
-t (top)
 x (start/end)
 y (top/bottom)
 0-5 (size)
@@ -20,8 +24,6 @@ example:
 px-3    => padding top/bottom of size 3
 mx-auto => centriranje preko margina
 -----------------------------------------------------
-CONTAINER
-
 <576px  .container / .container-sm
 <768px  .container-md
 <992px  .container-lg
@@ -29,8 +31,6 @@ CONTAINER
 <1400px .container-xxl
 100%    .container-fluid
 -----------------------------------------------------
-GRID
-
 .row
 .col
 .col-
@@ -38,9 +38,12 @@ GRID
 1-12 (size)
 *container pre row logika
 -----------------------------------------------------
-ALIGNMENT/+TEXT
+flex-row/flex-row-reverse
+flex-column
+flex-wrap
 
 float-end
+align-top/baseline/middle/bottom
 text-center
 text-white
 

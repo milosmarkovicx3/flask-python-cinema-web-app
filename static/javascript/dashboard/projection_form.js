@@ -53,7 +53,7 @@ $(document).ready(function() {
                 alert("Projekcija je uspešno kreirana.");
                 $(this)[0].reset();
             }else{
-                alert("Došlo je do greške prilikom kreiranja projekcije.\nError: " + response.description);
+                alert("Došlo je do greške prilikom kreiranja projekcije." + response.description);
                 console.log(response);
             }
         },

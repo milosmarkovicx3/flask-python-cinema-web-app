@@ -1,4 +1,5 @@
 from main.entities.core.base import db
+from main.entities.facade.seat_type_facade import SeatTypeFacade
 from main.entities.models.reservation import Reservation
 
 
@@ -7,42 +8,61 @@ class Projection(db.Model):
     id = db.Column('id', db.Integer, primary_key=True)
     hall_id = db.Column('hall_id', db.Integer, db.ForeignKey('hall.id'), nullable=False)
     movie_id = db.Column('movie_id', db.Integer, db.ForeignKey('movie.id'), nullable=False)
-    date_from = db.Column('date_from', db.Date(), nullable=False)
-    date_to = db.Column('date_to', db.Date(), nullable=False)
+    date = db.Column('date', db.Date(), nullable=False)
     time = db.Column('time', db.Time(), nullable=False)
 
     reservations = db.relationship('Reservation', backref='projection')
 
-    def __init__(self, hall_id, movie_id, date_from, date_to, time):
+    def __init__(self, hall_id, movie_id, date, time):
         self.hall_id = hall_id
         self.movie_id = movie_id
-        self.date_from = date_from
-        self.date_to = date_to
+        self.date = date
         self.time = time
 
     def __str__(self):
-        return str(self.__repr__())
+        return f'''Projection(
+                    id={self.id}, 
+                    hall_id={self.hall_id}, 
+                    movie_id={self.movie_id}, 
+                    date={self.date.strftime('%d.%m.%Y')}, 
+                    time={str(self.time)[:5]}
+                    )'''
 
     def __repr__(self):
         return {
             "id": self.id,
             "hall_id": self.hall_id,
+            "hall_name": self.hall.name,
             "movie_id": self.movie_id,
-            "date_from": self.date_from.strftime('%d.%m.%Y'),
-            "date_to": self.date_to.strftime('%d.%m.%Y'),
+            "date": self.date.strftime('%d.%m.%Y'),
             "time": str(self.time)[:5],
             "seats": self.get_seats_for_projection()
-
         }
 
     def get_seats_for_projection(self):
         seats = []
-        reservations = [reservation.id for reservation in self.reservations]
+        reservations = [reservation.seat_id for reservation in self.reservations]
+        stf = SeatTypeFacade()
+        reserved_type = stf.find(column='type', value='reserved')
+        if not reserved_type:
+            return
         for seat in self.hall.seats:
             if seat.id in reservations:
-                seats.append([seat.row, seat.number, Reservation.SEAT_TYPE])
+                seats.append({
+                    "id": seat.id,
+                    "row": seat.row,
+                    "number": seat.number,
+                    "type": reserved_type.id,
+                    "image": reserved_type.image
+                })
             else:
-                seats.append([seat.row, seat.number, seat.seat_type_id])
+                seats.append({
+                    "id": seat.id,
+                    "row": seat.row,
+                    "number": seat.number,
+                    "type": seat.seat_type_id,
+                    "image": seat.seat_type.image
+                })
 
         return seats
 

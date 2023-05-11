@@ -8,15 +8,106 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid bg-dark text-white border-black border mt-3">
+<div class="container-fluid bg-white border-black border mt-3">
   <div class="container">
-        <h1 class="display-8 my-2">
-          ODABERITE SEDIŠTE:
-        </h1>
-        <hr class="m-0 mt-3">
+      <div class="d-flex justify-content-between mt-2">
+        <span class="display-6">{{ projection.hall_name }}</span>
+        <span class="h5 align-self-end m-0">{{ date | format_date }} - {{ projection.time }} VREME</span>
+      </div>
+      <hr class="m-0 mt-3">
+        <script>
+            let projection_id = '{{ projection.id }}';
+            let csrf = '{{ csrf_token() }}';
+            let root_path = '{{ url_for('static', filename='resources/seat-images/') }}';
+        </script>
+      <div class="bg-white p-5 container row">
+          <!--LEVA_POLOVINA_POČETAK-->
+          <div class="col-sm-6">
+            <table class="bg-white text-secondary-emphasis consolas">
+                <tr>
+                    <td class="align-top pe-5"></td>
+                    <td class="text-center" colspan="69">
+                        <img src="{{ url_for('static', filename='resources/seat-images/screen.png') }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-top pe-5 pb-5"> </td>
+                    <td colspan="69" >
+                        <div class="border-top border-secondary" style="border-radius: 20% 20% 0 0; height: 50px;"></div>
+                    </td>
+                </tr>
+                <tr>
+                <td class="align-top pe-5">1</td>
+                {% for index, seat in projection.seats|enumerate %}
+                        {% if seat.type == 5 %}
+                            <td style="padding: 1px 0px 16px 2px;">
+                        {% elif seat.type == 6 %}
+                            <td style="padding: 1px 2px 16px 0px;">
+                        {% else %}
+                            <td class="pb-3">
+                        {% endif %}
+                           <img id="{{ seat.id }}"
+                                src="{{ url_for('static', filename='resources/seat-images/' + seat.image) }}"
+                                onclick="selectSeat(this, {{ seat.id }}, {{ seat.type }})"
+                           >
+                            </td>
+                        {% if loop.nextitem is defined and seat.row < projection.seats[index+1].row %}
+                        </tr><tr>
+                        <td class="align-top pe-5">{{ seat.row + 1 }}</td>
+                        {% endif %}
+                {% endfor %}
+                </tr>
+            </table>
+            </div>
+            <!--LEVA_POLOVINA_KRAJ-->
 
+            <!--DESNA_POLOVINA_POČETAK-->
+            <div class="col-sm-6 row">
+                <span class="display-7">Legenda:</span>
+                <hr class="m-0">
+                <div>
+                    <img src="{{ url_for('static', filename='resources/seat-images/normal.png') }}">
+                    - Slobodno
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='resources/seat-images/selected.png') }}">
+                    - Odabrano
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='resources/seat-images/reserved.png') }}">
+                    - Zauzeto
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='resources/seat-images/unavailable.png') }}">
+                    - Nedostupno
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='resources/seat-images/disabled.png') }}">
+                    - Sedišta za osobe sa invaliditetom
+                </div>
+                <div class="d-flex">
+                    <div class="d-flex justify-content-start align-items-start pt-1">
+                        <img src="{{ url_for('static', filename='resources/seat-images/love_left.png') }}">
+                        <img src="{{ url_for('static', filename='resources/seat-images/love_right.png') }}">
+                    </div>
+                    <span class="align-self-start">&#160- Ljubavna sedišta</span>
+
+
+                </div>
+
+            </div>
+            <!--DESNA_POLOVINA_KRAJ-->
+
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+              <span class="h5">
+                  Cena karte: 400rsd
+              <span id="ticket-info"></span>
+              </span>
+
+              <button id="reserve-button" class="alert alert-secondary py-2 ml-auto">REZERVIŠI</button>
+          </div>
   </div>
 </div>
-
-
 {% endblock %}

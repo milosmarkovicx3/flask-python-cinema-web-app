@@ -20,7 +20,7 @@ def find_all():
 
 @movie_api.route('/', methods=['POST'])
 def create():
-    return mi.create(data=request.form, files=request.files)
+    return mi.create(request.form, request.files)
 
 
 @movie_api.route('/<string:value>', methods=['DELETE'])

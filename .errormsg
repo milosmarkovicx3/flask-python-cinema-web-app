@@ -24,3 +24,7 @@ https://stackoverflow.com/questions/9088957/sqlalchemy-cannot-find-a-class-name
 
 FIX: response.actor.actor.name umesto response.actor[0].actor.name, za sve mora for petlja
 --------------------------------------------------------------
+BAD REQUEST
+
+FIX: Najčešće je u pitanju csrf token koji nedostaje ili je ne važeći.
+--------------------------------------------------------------

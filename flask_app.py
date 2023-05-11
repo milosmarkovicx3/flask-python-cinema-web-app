@@ -8,6 +8,7 @@ from main.service.core.wtf_forms import csrf
 from main.service.utility.mail import mail
 from main.web.rest_api.auth_api import login_manager, auth_api, check_auth_token, ping
 from main.web.rest_api.projection_api import projection_api
+from main.web.rest_api.reservation_api import reservation_api
 from main.web.rest_api.resource_api import resource_api
 from main.web.rest_api.review_api import review_api
 from main.web.rest_api.template_api import template_api
@@ -47,7 +48,7 @@ app.register_blueprint(auth_api)
 app.register_blueprint(resource_api)
 app.register_blueprint(projection_api)
 app.register_blueprint(review_api)
-
+app.register_blueprint(reservation_api)
 
 @app.errorhandler(404)
 def page_not_found(e):

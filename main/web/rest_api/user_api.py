@@ -17,7 +17,7 @@ def find_all():
 
 @user_api.route('/', methods=['POST'])
 def create():
-    return ui.create(data=request.form)
+    return ui.create(request.form)
 
 @user_api.route('/<string:value>', methods=['DELETE'])
 @user_api.route('/<string:value>/<string:column>', methods=['DELETE'])
