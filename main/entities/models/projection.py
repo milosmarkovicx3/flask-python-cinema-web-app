@@ -52,7 +52,8 @@ class Projection(db.Model):
                     "row": seat.row,
                     "number": seat.number,
                     "type": reserved_type.id,
-                    "image": reserved_type.image
+                    "image": reserved_type.image,
+                    "love": False if seat.seat_type_id != 5 else True
                 })
             else:
                 seats.append({

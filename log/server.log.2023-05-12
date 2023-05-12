@@ -1,0 +1,167 @@
+2023-05-12 04:08:33,244 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 04:08:35,984 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:08:35,988 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:13:36,939 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:13:36,941 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:13:58,856 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:13:58,858 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:14:42,446 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 04:14:42,448 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:16:28,331 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 04:16:28,333 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:16:57,816 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:16:57,818 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:17:39,792 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:17:39,795 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:18:17,213 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:18:17,216 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:18:19,051 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:18:19,053 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:27:25,009 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:27:25,014 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:27:27,156 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:27:27,158 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:27:29,415 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:27:29,416 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:28:23,910 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:28:23,911 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:28:59,464 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:28:59,466 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:37:42,313 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:37:42,317 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:39:55,636 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:39:55,638 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:41:23,141 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-12 04:41:23,144 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:46:52,796 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 04:46:52,798 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:46:58,997 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 04:46:58,999 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:47:02,805 INFO    [reservation_api.py(create:21)] masna
+2023-05-12 04:47:04,899 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 04:47:04,901 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 04:47:09,886 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 04:48:27,389 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 04:50:59,512 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 04:51:31,740 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 04:52:21,247 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:00:28,702 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:00:36,132 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:00:36,135 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:00:56,066 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:05:01,940 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:05:04,230 INFO    [base_facade.py(delete:67)] value: undefined, column: id
+2023-05-12 05:07:16,621 INFO    [base_facade.py(find:13)] value: 10, column: id
+2023-05-12 05:07:54,271 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:07:56,630 INFO    [base_facade.py(delete:67)] value: undefined, column: id
+2023-05-12 05:08:18,678 INFO    [base_facade.py(delete:67)] value: undefined, column: id
+2023-05-12 05:08:18,681 INFO    [base_facade.py(delete:69)] None
+2023-05-12 05:10:12,753 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:10:14,378 INFO    [base_facade.py(delete:67)] value: 10, column: id
+2023-05-12 05:10:17,225 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:11:36,405 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:11:41,997 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:13:46,503 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:17:58,572 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:18:13,047 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:18:13,052 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:18:19,498 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:18:19,500 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:18:25,868 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:18:25,870 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:19:34,158 INFO    [base_facade.py(find:13)] value: 1, column: user_id
+2023-05-12 05:20:17,467 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:20:17,470 INFO    [template_api.py(reservations:34)] prosao
+2023-05-12 05:20:30,223 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:20:30,226 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:20:32,179 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:20:45,460 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:20:48,485 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:22:05,890 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:22:08,068 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:25:28,831 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:25:40,973 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:26:28,831 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:26:32,032 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:26:33,586 INFO    [base_facade.py(delete:67)] value: 11, column: id
+2023-05-12 05:26:44,574 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:26:48,298 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:26:48,300 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:26:52,417 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:26:52,419 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:26:54,224 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:26:55,688 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:26:57,764 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:26:58,610 INFO    [base_facade.py(delete:67)] value: 12, column: id
+2023-05-12 05:27:00,204 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:27:01,276 INFO    [base_facade.py(delete:67)] value: 13, column: id
+2023-05-12 05:27:02,213 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:27:03,212 INFO    [base_facade.py(delete:67)] value: 14, column: id
+2023-05-12 05:27:04,731 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:27:08,672 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:27:08,674 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:27:12,189 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:27:12,191 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:27:16,364 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:27:16,367 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:27:19,200 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:27:19,203 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:27:22,076 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:27:23,790 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:27:26,804 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:32:27,560 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:33:12,475 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:33:36,318 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:33:48,672 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:33:57,516 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:34:08,818 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:34:10,134 INFO    [base_facade.py(delete:67)] value: 17, column: id
+2023-05-12 05:34:13,537 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:34:14,559 INFO    [base_facade.py(delete:67)] value: 15, column: id
+2023-05-12 05:34:15,585 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:34:16,598 INFO    [base_facade.py(delete:67)] value: 16, column: id
+2023-05-12 05:34:18,436 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:37:16,942 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:37:16,945 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:38:57,843 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:38:57,844 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:40:14,051 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:40:14,053 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:47:59,592 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:47:59,594 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:48:48,237 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:48:48,239 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:49:45,297 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:49:45,302 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:49:48,526 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:49:48,528 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:49:53,159 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:49:53,161 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:49:55,214 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:50:46,742 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:50:53,940 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:51:21,884 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:51:28,367 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:51:41,793 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:51:54,177 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:52:05,175 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:52:20,185 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:52:29,842 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:53:25,300 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:53:38,909 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:54:02,060 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:54:13,541 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:54:26,226 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:54:44,750 INFO    [base_facade.py(delete:67)] value: 18, column: id
+2023-05-12 05:54:45,735 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:54:46,606 INFO    [base_facade.py(delete:67)] value: 19, column: id
+2023-05-12 05:54:47,519 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:54:53,396 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 05:54:53,397 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 05:54:59,174 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:54:59,177 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:55:33,081 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:55:43,394 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 05:55:43,396 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 05:55:45,143 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 05:58:12,431 INFO    [base_facade.py(find:13)] value: 1, column: id

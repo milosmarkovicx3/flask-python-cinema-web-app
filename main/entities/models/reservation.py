@@ -30,13 +30,11 @@ class Reservation(db.Model):
             },
             "seat": {
                 "row": self.seat.row,
-                "number": self.check_love_seat()
+                "number": self.seat.number
             },
             "user_id": self.user_id,
             "created_at": self.created_at.strftime('%d.%m.%Y, %H:%M')
         }
 
-    def check_love_seat(self):
-        if self.seat.seat_type.type == 'love_left':
-            return self.seat_id
+
 

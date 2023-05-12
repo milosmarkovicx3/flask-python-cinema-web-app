@@ -16,10 +16,8 @@ class ReservationImpl(BaseImpl):
 
     def create(self, data):
         try:
-            log.info(str(data))
             projection_id = data['projection_id']
-            seat_id = data['selected_seat_id']
-            additinal_seat_id = data['additinal_selected_seat_id']
+            seat_id = data['seat_id']
 
             if not current_user.is_authenticated:
                 result = Result(
@@ -43,11 +41,6 @@ class ReservationImpl(BaseImpl):
 
             reservation = Reservation(projection_id=projection_id, seat_id=seat_id, user_id=user_id)
             db.session.add(reservation)
-
-            if additinal_seat_id:
-                reservation = Reservation(projection_id=projection_id, seat_id=additinal_seat_id, user_id=user_id)
-                db.session.add(reservation)
-
             db.session.commit()
 
             return _result_handler(item=True)

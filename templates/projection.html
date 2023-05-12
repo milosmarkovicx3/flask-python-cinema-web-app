@@ -15,11 +15,11 @@
         <span class="h5 align-self-end m-0">{{ date | format_date }} - {{ projection.time }} VREME</span>
       </div>
       <hr class="m-0 mt-3">
-        <script>
-            let projection_id = '{{ projection.id }}';
-            let csrf = '{{ csrf_token() }}';
-            let root_path = '{{ url_for('static', filename='resources/seat-images/') }}';
-        </script>
+      <form id="reservation-form">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="projection_id" value="{{ projection.id }}">
+          <input type="hidden" id="root_path" value="{{ url_for('static', filename='resources/seat-images/') }}">
+      </form>
       <div class="bg-white p-5 container row">
           <!--LEVA_POLOVINA_POČETAK-->
           <div class="col-sm-6">
@@ -39,18 +39,19 @@
                 <tr>
                 <td class="align-top pe-5">1</td>
                 {% for index, seat in projection.seats|enumerate %}
-                        {% if seat.type == 5 %}
-                            <td style="padding: 1px 0px 16px 2px;">
-                        {% elif seat.type == 6 %}
-                            <td style="padding: 1px 2px 16px 0px;">
-                        {% else %}
+                        <td {% if seat.type == 5 %} colspan="2" {% endif %} class="pb-3">
+
+                        <img id="{{ seat.id }}"
+                            src="{{ url_for('static', filename='resources/seat-images/' + seat.image) }}"
+                            onclick="selectSeat(this, {{ seat.id }}, {{ seat.type }}, '{{ seat.image }}')"
+                        >
+                            {% if seat.type == 6 and seat.love %}
                             <td class="pb-3">
-                        {% endif %}
-                           <img id="{{ seat.id }}"
-                                src="{{ url_for('static', filename='resources/seat-images/' + seat.image) }}"
-                                onclick="selectSeat(this, {{ seat.id }}, {{ seat.type }})"
-                           >
+                                <img src="{{ url_for('static', filename='resources/seat-images/' + seat.image) }}" >
                             </td>
+                            {% endif %}
+
+                        </td>
                         {% if loop.nextitem is defined and seat.row < projection.seats[index+1].row %}
                         </tr><tr>
                         <td class="align-top pe-5">{{ seat.row + 1 }}</td>
@@ -91,8 +92,7 @@
                 </div>
                 <div class="d-flex">
                     <div class="d-flex justify-content-start align-items-start pt-1">
-                        <img src="{{ url_for('static', filename='resources/seat-images/love_left.png') }}">
-                        <img src="{{ url_for('static', filename='resources/seat-images/love_right.png') }}">
+                        <img src="{{ url_for('static', filename='resources/seat-images/love.png') }}">
                     </div>
                     <span class="align-self-start">&#160- Ljubavna sedišta</span>
 
@@ -110,7 +110,7 @@
                     <span id="ticket-info"></span>
               </span>
 
-              <button id="reserve-button" class="btn btn-secondary border border-black">REZERVIŠI</button>
+              <button form="reservation-form" class="btn btn-secondary border border-black">REZERVIŠI</button>
           </div>
   </div>
 </div>

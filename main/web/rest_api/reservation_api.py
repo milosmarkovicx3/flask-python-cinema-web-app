@@ -1,6 +1,5 @@
 from flask import Blueprint, request
 from main.service.impl.reservation_impl import ReservationImpl
-from main.service.utility.logger import log
 
 reservation_api = Blueprint('reservation_api', __name__, url_prefix='/reservation')
 ri = ReservationImpl()
@@ -18,7 +17,6 @@ def find_all():
 
 @reservation_api.route('/', methods=['POST'])
 def create():
-    log.info('masna')
     return ri.create(request.form)
 
 @reservation_api.route('/<string:value>', methods=['DELETE'])
