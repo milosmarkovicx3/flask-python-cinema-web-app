@@ -194,7 +194,7 @@
                         
                         {% endif %}
                         <li><a class="dropdown-item" href="#"><span class="fi fi-sr-user"></span>&nbsp; Profil</a></li>
-                        <li><a class="dropdown-item" href="#"><span class="fi fi-rs-message-code"></span>&nbsp; Rezervacije</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('template_api.reservations') }}"><span class="fi fi-rs-message-code"></span>&nbsp; Rezervacije</a></li>
                         <li><a class="dropdown-item" href="#"><span class="fi fi-rs-settings"></span>&nbsp; Podešavanja</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ url_for('auth_api.logout') }}" id="log-out"><span class="fi fi-rs-exit"></span>&nbsp; Odjavi se</a></li>

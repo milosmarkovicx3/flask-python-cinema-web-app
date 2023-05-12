@@ -24,7 +24,13 @@ https://stackoverflow.com/questions/9088957/sqlalchemy-cannot-find-a-class-name
 
 FIX: response.actor.actor.name umesto response.actor[0].actor.name, za sve mora for petlja
 --------------------------------------------------------------
-BAD REQUEST
+BAD REQUEST <> CLIENT SIDE
 
 FIX: Najčešće je u pitanju csrf token koji nedostaje ili je ne važeći.
+--------------------------------------------------------------
+JSON
+
+1. Message: 'Object of type time is not JSON serializable
+
+FIX: Prebaciti datum i vreme u string.
 --------------------------------------------------------------

@@ -1,6 +1,5 @@
 from main.entities.core.base import db
 from main.entities.facade.seat_type_facade import SeatTypeFacade
-from main.entities.models.reservation import Reservation
 
 
 class Projection(db.Model):
@@ -25,7 +24,7 @@ class Projection(db.Model):
                     hall_id={self.hall_id}, 
                     movie_id={self.movie_id}, 
                     date={self.date.strftime('%d.%m.%Y')}, 
-                    time={str(self.time)[:5]}
+                    time={self.time.strftime('%H:%M')}
                     )'''
 
     def __repr__(self):
@@ -35,7 +34,7 @@ class Projection(db.Model):
             "hall_name": self.hall.name,
             "movie_id": self.movie_id,
             "date": self.date.strftime('%d.%m.%Y'),
-            "time": str(self.time)[:5],
+            "time": self.time.strftime('%H:%M'),
             "seats": self.get_seats_for_projection()
         }
 

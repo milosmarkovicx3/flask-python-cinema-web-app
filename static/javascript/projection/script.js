@@ -31,16 +31,20 @@ function selectSeat(img, id, type){
         $(`#${id+1}`).attr('src', `${root_path}selected_right.png`);
         additional_selected_seat_id = id+1;
         additional_selected_seat_type = 6
-        $('#ticket-info').text('(2x400rsd)')
+        $('#ticket-info').text('2x400rsd')
     }else if (type == 6){
         $(img).attr('src', `${root_path}selected_right.png`);
         $(`#${id-1}`).attr('src', `${root_path}selected_left.png`);
         additional_selected_seat_id = id-1;
         additional_selected_seat_type = 5;
-        $('#ticket-info').text('(2x400rsd)')
+        $('#ticket-info').text('2x400rsd')
     }else{        
         $(img).attr('src', `${root_path}selected.png`);
-        $('#ticket-info').text('(1x400rsd)')
+        if(type == 2){
+            $('#ticket-info').text('1x600rsd')
+        }else{
+            $('#ticket-info').text('1x400rsd')
+        }
     }
     selected_seat_id = id;
     selected_seat_type = type;

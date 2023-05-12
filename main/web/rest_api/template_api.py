@@ -1,9 +1,12 @@
 from flask import render_template, Blueprint, request, abort
+from flask_login import login_required, current_user
 from main.entities.facade.hall_facade import HallFacade
 from main.entities.facade.movie_facade import MovieFacade
 from main.entities.facade.projection_facade import ProjectionFacade
+from main.entities.facade.reservation_facade import ReservationFacade
 from main.service.impl.movie_impl import MovieImpl
 from main.service.utility import jinja2_filters
+from main.service.utility.utils import repr_helper_method
 from main.web.rest_api.auth_api import admin_required
 
 template_api = Blueprint('template_api', __name__, url_prefix='/')
@@ -11,6 +14,7 @@ mi = MovieImpl()
 mf = MovieFacade()
 hf = HallFacade()
 pf = ProjectionFacade()
+rf = ReservationFacade()
 
 @template_api.route('/admin-panel', methods=['GET'])
 @admin_required
@@ -18,6 +22,12 @@ def dashboard():
     movies = mf.find_all()
     halls = hf.find_all()
     return render_template('dashboard.html', movies=movies, halls=halls)
+
+@template_api.route('/rezervacije', methods=['GET'])
+@login_required
+def reservations():
+    entities = rf.find_all(column='user_id', value=current_user.id)
+    return render_template('reservations.html', reservations=repr_helper_method(entities))
 
 @template_api.route('/', methods=['GET'])
 def index():

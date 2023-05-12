@@ -128,7 +128,7 @@ class Movie(db.Model):
             _list[key]["hall_time"].append({
                 "id": projection.id,
                 "hall_name": projection.hall.name,
-                "time": str(time)[:5]
+                "time": time.strftime('%H:%M')
             })
 
         for day in _list:

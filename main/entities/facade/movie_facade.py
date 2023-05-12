@@ -14,28 +14,25 @@ class MovieFacade(BaseFacade):
 
     def find(self, value, column):
         try:
-            log.info(f'value: {value}, column: {column}')
-            movie = db.session.query(self.T).filter_by(**{column: value}).first()
-            projections_to_delete = []
+            movie = super().find(value, column)
 
-            if movie:
-                for p in movie.projections:
-                    if p.date < datetime.now().date() or (
-                            p.date == datetime.now().date()
-                            and p.time < datetime.now().time()
-                    ):
-                        log.info(f'projekcija za brisanje: {p}')
-                        projections_to_delete.append(p)
+            if not movie:
+                return False
 
-                for p in projections_to_delete:
-                    movie.projections.remove(p)
-                    db.session.delete(p)
+            old_projections_for_deletion = []
+            now = datetime.now()
 
-                db.session.commit()
+            for p in movie.projections:
+                if p.date < now.date() or (p.date == now.date() and p.time < now.time()):
+                    old_projections_for_deletion.append(p)
 
-                return movie
+            for p in old_projections_for_deletion:
+                movie.projections.remove(p)
+                db.session.delete(p)
 
-            return False
+            db.session.commit()
+            return movie
+
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
             return None

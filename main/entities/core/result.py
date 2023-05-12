@@ -1,7 +1,7 @@
 from json import dumps
 from flask import Response
 from main.entities.core.status import Status
-
+from main.service.utility.utils import repr_helper_method
 
 
 class Result:
@@ -52,23 +52,8 @@ class Result:
         return {
             "status": self._status,
             "description": self._description,
-            "item": self._repr_helper_method()
+            "item": repr_helper_method(self._item)
         }
 
-    def _repr_helper_method(self):
-        """
-        Kada se self.item lista, a ne jedan objekat.
-        :param self._item: Bilo koja potencijalna lista objekata.
-        :return: Listu rečnika koji predstavljaju konvertovane objekte.
-        """
-        if not isinstance(self._item, list):
-            return self._item.__repr__()
-        _list = []
-        for item in self._item:
-            if isinstance(item, list):
-                _sub_list = self._repr_helper_method(item)
-                _list.append(_sub_list)
-            else:
-                _list.append(item.__repr__())
-        return _list
+
 

@@ -8,6 +8,8 @@ class Seat(db.Model):
     row = db.Column('row', db.Integer, nullable=False)
     number = db.Column('number', db.Integer, nullable=False)
 
+    reservations = db.relationship('Reservation', backref='seat')
+
     def __init__(self, hall_id, seat_type_id, row, number):
         self.hall_id = hall_id
         self.seat_type_id = seat_type_id

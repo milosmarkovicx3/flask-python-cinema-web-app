@@ -2,7 +2,6 @@ from datetime import datetime
 from main.entities.core.base import db
 
 class Reservation(db.Model):
-    SEAT_TYPE = 6
     __tablename__ = 'reservation'
     id = db.Column('id', db.Integer, primary_key=True)
     projection_id = db.Column('projection_id', db.Integer, db.ForeignKey('projection.id'), nullable=False)
@@ -22,8 +21,22 @@ class Reservation(db.Model):
     def __repr__(self):
         return {
             "id": self.id,
-            "projection_id": self.projection_id,
-            "seat_id": self.seat_id,
+            "projection": {
+                "date": self.projection.date.strftime('%d.%m.%Y'),
+                "time": self.projection.time.strftime('%H:%M'),
+                "movie_title": self.projection.movie.title,
+                "movie_year": self.projection.movie.year,
+                "movie_poster": self.projection.movie.poster
+            },
+            "seat": {
+                "row": self.seat.row,
+                "number": self.check_love_seat()
+            },
             "user_id": self.user_id,
-            "created_at": str(self.created_at)
+            "created_at": self.created_at.strftime('%d.%m.%Y, %H:%M')
         }
+
+    def check_love_seat(self):
+        if self.seat.seat_type.type == 'love_left':
+            return self.seat_id
+

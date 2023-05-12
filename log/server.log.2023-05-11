@@ -2335,3 +2335,358 @@ ValueError: invalid literal for int() with base 10: 'undefined'
 2023-05-11 03:49:06,005 INFO    [base_facade.py(find:13)] value: reserved, column: type
 2023-05-11 03:49:12,489 INFO    [base_facade.py(find:13)] value: 18, column: id
 2023-05-11 03:49:12,491 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 18:44:50,554 INFO    [movie_facade.py(find:17)] value: 1, column: id
+2023-05-11 18:44:50,619 INFO    [movie_facade.py(find:27)] projekcija za brisanje: Projection(
+                    id=99, 
+                    hall_id=2, 
+                    movie_id=1, 
+                    date=11.05.2023, 
+                    time=12:45
+                    )
+2023-05-11 18:47:38,473 INFO    [base_facade.py(find:13)] value: 17, column: id
+2023-05-11 18:47:38,477 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 18:51:22,782 INFO    [base_facade.py(find:13)] value: 17, column: id
+2023-05-11 18:51:22,784 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 18:52:33,440 INFO    [base_facade.py(find:13)] value: 17, column: id
+2023-05-11 18:52:33,442 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 18:55:11,338 INFO    [base_facade.py(find:13)] value: 17, column: id
+2023-05-11 18:55:11,340 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 18:55:17,574 INFO    [base_facade.py(find:13)] value: 17, column: id
+2023-05-11 18:55:17,576 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 19:06:26,693 INFO    [base_facade.py(find:13)] value: 17, column: id
+2023-05-11 19:06:26,697 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 19:16:50,148 INFO    [base_facade.py(find:13)] value: 1, column: user_id
+2023-05-11 19:41:26,885 ERROR   [reservation_facade.py(find_all:58)] 'list' object has no attribute 'delete'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\reservation_facade.py", line 51, in find_all
+    response.delete(reservation)
+AttributeError: 'list' object has no attribute 'delete'
+
+2023-05-11 20:11:24,701 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:11:34,738 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-11 20:11:37,722 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 20:11:37,724 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 20:11:40,870 INFO    [reservation_api.py(create:21)] masna
+2023-05-11 20:11:40,870 INFO    [reservation_impl.py(create:19)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZF0v2Q.8CSqCw2oiPuWd_Jom2SQXJNN5gg'), ('selected_seat_id', '84'), ('additinal_selected_seat_id', ''), ('projection_id', '100')])
+2023-05-11 20:11:42,636 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 20:11:42,638 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 20:11:54,645 INFO    [reservation_api.py(create:21)] masna
+2023-05-11 20:11:54,645 INFO    [reservation_impl.py(create:19)] ImmutableMultiDict([('csrf_token', 'IjhiNDY0YmExM2RlYWFmZmMyYTFmNTg3MTk1MjE0Mjc0ZjM5MmQxNmUi.ZF0v3g.BiqUK9kUc0aakmR6MKN0ZNTwWy8'), ('selected_seat_id', '124'), ('additinal_selected_seat_id', '123'), ('projection_id', '100')])
+2023-05-11 20:11:55,906 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 20:11:55,908 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 20:12:14,253 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:12:14,258 ERROR   [base_impl.py(_result_handler:31)] 'int' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 72, in _repr_helper_method
+    _list.append(item.__repr__())
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\reservation.py", line 25, in __repr__
+    "id": self.projection_id.id,
+AttributeError: 'int' object has no attribute 'id'
+
+2023-05-11 20:12:52,047 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:12:52,055 ERROR   [base_impl.py(_result_handler:31)] 'Reservation' object has no attribute 'seat'
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 55, in __repr__
+    "item": self._repr_helper_method()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 72, in _repr_helper_method
+    _list.append(item.__repr__())
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\models\reservation.py", line 33, in __repr__
+    "row": self.seat.row,
+AttributeError: 'Reservation' object has no attribute 'seat'
+
+2023-05-11 20:14:15,149 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:14:15,175 ERROR   [base_impl.py(_result_handler:31)] Object of type date is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type date is not JSON serializable
+
+2023-05-11 20:15:59,457 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:15:59,470 ERROR   [base_impl.py(_result_handler:31)] Object of type date is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type date is not JSON serializable
+
+2023-05-11 20:19:25,430 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:19:25,441 ERROR   [base_impl.py(_result_handler:31)] Object of type time is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type time is not JSON serializable
+
+2023-05-11 20:20:59,639 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:21:24,719 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:21:24,730 ERROR   [base_impl.py(_result_handler:31)] Object of type time is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type time is not JSON serializable
+
+2023-05-11 20:23:17,986 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:23:17,997 ERROR   [base_impl.py(_result_handler:31)] Object of type time is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\base_impl.py", line 29, in _result_handler
+    return result.response()
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\core\result.py", line 45, in response
+    json_data = dumps(self.__repr__(), sort_keys=False, indent=4, ensure_ascii=False)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type time is not JSON serializable
+
+2023-05-11 20:23:31,652 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:25:45,784 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:26:51,665 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-11 20:27:16,229 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-11 20:27:23,554 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-11 20:28:01,400 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-11 20:28:01,401 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-11 20:29:19,735 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:29:30,690 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-11 20:29:30,692 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-11 20:29:49,656 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-11 20:29:49,657 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-11 20:31:20,320 INFO    [base_facade.py(find_all:22)] column: {'column': 'user_id', 'value': 1}, value: None, value_to: None, method: None, max: None
+2023-05-11 20:31:20,321 ERROR   [base_facade.py(find_all:49)] getattr(): attribute name must be string
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 29, in find_all
+    column = getattr(self.T, column)
+TypeError: getattr(): attribute name must be string
+
+2023-05-11 20:33:03,981 INFO    [base_facade.py(find_all:22)] column: {'column': 'user_id', 'value': 1}, value: None, value_to: None, method: None, max: None
+2023-05-11 20:33:03,981 INFO    [base_facade.py(find_all:29)] {'column': 'user_id', 'value': 1}
+2023-05-11 20:33:03,982 ERROR   [base_facade.py(find_all:50)] getattr(): attribute name must be string
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 30, in find_all
+    column = getattr(self.T, column)
+TypeError: getattr(): attribute name must be string
+
+2023-05-11 20:39:22,151 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:40:53,164 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-11 20:41:09,762 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-11 20:41:36,028 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-11 20:43:04,796 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:43:06,418 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:43:12,661 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:43:50,556 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:45:49,435 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:48:17,737 INFO    [base_facade.py(find:13)] value: 1, column: user_id
+2023-05-11 20:48:34,338 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:55:17,344 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:58:35,077 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 20:58:45,964 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-11 20:59:41,812 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:00:22,079 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:02:35,916 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:03:26,851 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:03:37,679 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:05:45,368 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:06:05,886 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:06:35,415 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:07:39,785 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:07:41,814 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:07:45,316 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:07:57,761 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:07:59,288 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:08:10,671 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:08:20,295 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:08:29,955 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:08:30,836 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:12:39,354 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:13:19,109 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:14:04,226 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:14:41,748 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:42:13,643 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:42:27,505 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:43:08,782 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:43:32,409 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:43:43,901 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:43:55,626 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:44:05,537 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:46:26,585 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:47:57,334 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:49:09,512 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:49:35,843 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:50:48,733 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:51:00,314 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:51:01,319 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:51:41,775 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 21:51:41,780 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 21:52:09,523 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 21:52:09,525 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 21:52:50,728 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 21:52:50,730 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 21:53:09,760 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 21:53:09,761 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 21:53:30,948 INFO    [base_facade.py(find:13)] value: 100, column: id
+2023-05-11 21:53:30,950 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-11 21:54:20,650 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:54:36,739 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:54:50,121 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:54:52,042 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:55:12,566 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:55:14,061 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:55:25,948 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:56:53,765 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:56:58,214 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:57:02,888 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:57:10,582 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:57:34,794 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:58:07,169 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 21:58:15,663 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:02:02,999 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:02:23,611 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:03:24,299 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:04:23,318 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:05:00,905 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:05:41,673 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:05:42,632 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:06:08,845 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:06:18,873 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:06:53,374 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:07:59,584 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:08:10,182 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:11:05,153 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:11:19,436 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:12:16,561 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:12:24,221 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 22:13:49,165 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 23:28:42,274 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 23:30:05,508 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-11 23:31:02,617 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 00:43:08,952 INFO    [user_impl.py(logout:107)] log out: Miloš Marković
+2023-05-12 00:43:16,854 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 00:43:19,741 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 00:43:19,743 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 03:23:45,342 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 03:23:47,428 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-12 03:23:47,428 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-12 03:23:47,471 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 03:23:49,901 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:24:16,191 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:24:18,033 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:24:21,017 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:26:08,565 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:26:10,338 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:26:29,280 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:26:46,395 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:27:08,176 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:27:09,608 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:27:19,742 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:27:28,474 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:27:37,514 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:27:49,564 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:27:50,931 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:28:26,438 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:28:48,559 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:39:24,650 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:39:52,164 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 03:40:08,940 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None

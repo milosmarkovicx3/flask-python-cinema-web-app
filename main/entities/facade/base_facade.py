@@ -17,8 +17,9 @@ class BaseFacade(ABC):
             log.error(f"{e}\n{traceback.format_exc()}")
             return None
 
-    def find_all(self, column=None, value1=None, value2=None, method=None, max=None):
+    def find_all(self, column=None, value=None, value_to=None, method=None, max=None):
         try:
+            log.info(f'column: {column}, value: {value}, value_to: {value_to}, method: {method}, max: {max}')
             query = self.T.query
 
             if column is None:
@@ -27,16 +28,17 @@ class BaseFacade(ABC):
 
             column = getattr(self.T, column)
 
-            if value1 is not None:
-                if method is not None:
-                    if method == 'like':
-                        query = query.filter(column.like(f"%{value1}%"))
-                    elif method == 'less':
-                        query = query.filter(column <= value1)
+            if value is not None:
+                if value_to is not None:
+                    query = query.filter(column.between(value, value_to))
+                elif method is not None:
+                    if method == 'less':
+                        query = query.filter(column <= value)
                     elif method == 'higher':
-                        query = query.filter(column >= value2)
-                elif value2 is not None:
-                    query = query.filter(column.between(value1, value2))
+                        query = query.filter(column >= value_to)
+                else:
+                    query = query.filter(column.like(f"%{value}%"))
+
 
             if max is not None:
                 query = query.limit(max)
