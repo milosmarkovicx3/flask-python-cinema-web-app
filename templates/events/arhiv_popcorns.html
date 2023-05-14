@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Besplatne kokice</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4 ">
+      <span class="display-7">BESPLATNE KOKICE: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-warning display-8 fw-semibold">KOKICE ZA ČLANOVE PORODIČNOG FILM KLUBA</h3>
+              <p class="fw-bold text-justify">
+                  - RAZLOG VIŠE DA UŽIVAŠ U OMILJENIM FILMOVIMA!
+              </p>
+              <hr>
+              <h3 class="text-warning display-8 fw-semibold">DETALJI</h3>
+              <p class="lh-sm text-justify">
+                  - Još jedna sjajna pogodnost za članove
+                  <span class="fw-bold">Porodičnog film kluba </span>!
+                  <span class="fw-bold">Osim snižene cene ulaznica </span>od sada uživaj i u
+                  <span class="fw-bold">besplatnim kokicama* </span>
+                  koje ti poklanjamo za potpuno uživanje u pokretnim slikama na velikom platnu. <br> <br>
+
+                  - Članstvo je dostupno svima mlađim od 14 godina, a
+                  <span class="fw-bold">Arhiv Porodična kartica </span>je besplatna i dobijaš je pri prvoj poseti
+                  bioskopu nakon REGISTRACIJE. Sakupljaj bonus bodove pri svakoj poseti Arhiv bioskopu i zameni ih za
+                  atraktivne nagrade. <br> <br>
+
+                  - Članovi Porodičnog film kluba mogu ostvariti cenu karte
+                  <span class="fw-bold">već od 300 dinara za kupovinu 3 ili 4 ulaznice</span>. <br> <br>
+
+                  - <span class="fw-bold">Vidimo se u Arhiv bioskopu!</span>
+              </p>
+              <hr>
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/pages/arhiv_popcorns/arhiv_popcorns.jpg') }}" class="w-100 border-black border" alt="Besplatne kokice">
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

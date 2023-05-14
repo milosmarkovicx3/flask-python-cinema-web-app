@@ -24,23 +24,23 @@ rf = ReservationFacade()
 def dashboard():
     movies = mf.find_all()
     halls = hf.find_all()
-    return render_template('dashboard.html', movies=movies, halls=halls)
+    return render_template('profile/dashboard.html', movies=movies, halls=halls)
 
 @template_api.route('/profil', methods=['GET'])
 @login_required
 def profile():
-    return render_template('profile.html')
+    return render_template('profile/profile.html')
 
 @template_api.route('/rezervacije', methods=['GET'])
 @login_required
 def reservations():
     entities = rf.find_all(column='user_id', value=current_user.id)
-    return render_template('reservations.html', reservations=repr_helper_method(entities))
+    return render_template('profile/reservations.html', reservations=repr_helper_method(entities))
 
 @template_api.route('/podešavanja', methods=['GET'])
 @login_required
 def settings():
-    return render_template('settings.html')
+    return render_template('profile/settings.html')
 # ----------------------------------------------------------------------------------------------------------------------
 
 # -GLAVNA-NAVIGACIJA----------------------------------------------------------------------------------------------------
@@ -55,6 +55,14 @@ def repertoire():
     paginate = mi.repertoire(**kwargs)
     if 'page' in kwargs: del kwargs['page']
     return render_template("repertoire.html", pagination=paginate, endpoint='template_api.repertoire', form=kwargs)
+
+@template_api.route('/članstvo', methods=['GET'])
+def membership():
+    return render_template('membership.html')
+
+@template_api.route('/događaji', methods=['GET'])
+def events():
+    return render_template('events.html')
 
 @template_api.route('/kontakt', methods=['GET'])
 def contact():
@@ -74,11 +82,31 @@ def projection(projection_id, date):
     return render_template('projection.html', projection=entity, date=date) if entity else abort(404)
 # ----------------------------------------------------------------------------------------------------------------------
 
-# -DOGAĐAJI-I-ČLANSTVO--------------------------------------------------------------------------------------------------
+# -DOGAĐAJI-------------------------------------------------------------------------------------------------------------
 
-@template_api.route('/članstvo', methods=['GET'])
-def membership():
-    return render_template('membership.html')
+@template_api.route('/online-kupovina', methods=['GET'])
+def online_shopping():
+    return render_template('events/online_shopping.html')
+
+@template_api.route('/proslavi-rođendan-kao-na-filmu', methods=['GET'])
+def arhiv_party():
+    return render_template('events/arhiv_party.html')
+
+@template_api.route('/arhiv-bonus-kartica', methods=['GET'])
+def bonus_card():
+    return render_template('events/bonus_card.html')
+
+@template_api.route('/specilajni-meni', methods=['GET'])
+def arhiv_meal():
+    return render_template('events/arhiv_meal.html')
+
+@template_api.route('/arhiv-porodica', methods=['GET'])
+def arhiv_family():
+    return render_template('events/arhiv_family.html')
+
+@template_api.route('/besplatne-kokice', methods=['GET'])
+def arhiv_popcorns():
+    return render_template('events/arhiv_popcorns.html')
 
 @template_api.route('/arhiv-utorak', methods=['GET'])
 def arhiv_tuesday():
@@ -89,15 +117,19 @@ def arhiv_tuesday():
 
 @template_api.route('/često-postavljana-pitanja', methods=['GET'])
 def faq():
-    return render_template('faq.html')
+    return render_template('footer/faq.html')
 
 @template_api.route('/politika-privatnosti', methods=['GET'])
 def privacy_politics():
-    return render_template('privacy_politics.html')
+    return render_template('footer/privacy_politics.html')
 
 @template_api.route('/uslovi-poslovanja', methods=['GET'])
 def terms_and_conditions():
-    return render_template('terms_and_conditions.html')
+    return render_template('footer/terms_and_conditions.html')
+
+@template_api.route('/o-nama', methods=['GET'])
+def about_us():
+    return render_template('footer/about_us.html')
 # ----------------------------------------------------------------------------------------------------------------------
 
 # -JINJA2-FILTERI-------------------------------------------------------------------------------------------------------

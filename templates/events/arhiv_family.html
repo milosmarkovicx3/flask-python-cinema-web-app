@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Arhiv porodica</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4 ">
+      <span class="display-7">ARHIV PORODICA: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-warning display-8 fw-semibold">BIOSKOP ZA CELU PORODICU!</h3>
+              <p class="fw-bold text-justify">
+                  - NE PROPUSTITE NAJAKTUELNIJE DEČIJE FILMOVE U ARHIV BIOSKOPIMA PO SPECIJALNOJ CENI KARTE ZA ČLANOVE
+                  PORODIČNOG FILM KULBA I NJIHOVE RODITELJE ILI PRATIOCE!
+              </p>
+              <hr>
+              <h3 class="text-warning display-8 fw-semibold">DETALJI</h3>
+              <p class="lh-sm text-justify">
+                    - Porodični film klub pruža zabavu i igru za čitavu porodicu. Članstvo je dostupno deci mlađoj od
+                    14 godina. Učlani se već danas u Arhiv Porodični film klub i iskoristi sve pogodnosti:
+                  <br> <br>
+                    <span class="fi fi-ss-check"></span>
+                  <span class="fw-bold"> Snižena cena karte </span>za sve <span class="fw-bold">članove kluba*</span> <br>
+                    <span class="fi fi-ss-check"></span>
+                  <span class="fw-bold"> Snižena cena </span>karte za roditelje ili pratioce dece, članova Porodičnog film kluba** <br>
+                    <span class="fi fi-ss-check"></span>
+                  MENI po fantastičnoj ceni od <span class="fw-bold">350 dinara</span> <br>
+                    <span class="fi fi-ss-check"></span>
+                  <span class="fw-bold">Redovno informisanje</span> o najaktuelnijim filmovima i događajima u bioskopu <br>
+
+                  <p class="lh-1 text-secondary text-justify">
+                    * Važeću Porodičnu film karticu je moguće iskoristiti samo za filmove preporučljive za osobe mlađe od 14 godina.  <br>
+                    **Roditelji ili pratioci deteta popust mogu iskoristiti za sve projekcije do 17 časova i to
+                    kupovinom jedne karte po sniženoj ceni.  <br>
+                    *** Bonus bodovi se mogu ostvariti za najviše 2 bioskopske ulaznice dnevno.
+                    Na blagajni hrane i pića bonus bodovi se mogu dobiti za najviše 4.000 dinara potrošenih dnevno.<br>
+                  </p>
+
+              </p>
+              <hr>
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/pages/arhiv_family/arhiv_family.jpg') }}" class="w-100 border-black border" alt="Arhiv porodica">
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

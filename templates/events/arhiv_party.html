@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Proslava rođendana</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4 ">
+      <span class="display-7">PROSLAVA ROĐENDANA: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-warning display-8 fw-semibold">PROSLAVI ROĐENDAN KAO NA FILMU!</h3>
+              <p class="fw-bold text-justify">
+                  - PROSLAVI ROĐENDAN SA PRIJATELJIMA U DRUŠTVU TVOJIH OMILJENIH FILMSKIH JUNAKA U ARHIV BIOSKOPIMA!
+              </p>
+              <hr>
+              <h3 class="text-warning display-8 fw-semibold">DETALJI</h3>
+              <p class="lh-sm text-justify">
+                  - Pozovi drugare na rođendan u tvoj omiljeni bioskop Arhiv i provedite se kao na filmu!
+                  Svi članovi Porodičnog film kluba imaju mogućnost proslave rođendana u bioskopu uz dodatne pogodnosti:
+                  <br> <br>
+                  - <span class="fw-bold">Besplatan rođendanski paket</span> za slavljenika koji obuhvata besplatnu
+                  bioskopsku ulaznicu i rođendanski meni. <br>
+                  - Bioskopske ulaznice i menije za prijatelje
+                  <span class="fw-bold">po sniženim cenama</span>. <br>
+                  - Organizovanje
+                  <span class="fw-bold">proslave rođendana u rođendaonici</span>
+                   uz minimalnu doplatu.
+              </p>
+              <hr>
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/pages/arhiv_party/arhiv_party.jpg') }}" class="w-100 border-black border" alt="Arhiv porodica"">
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

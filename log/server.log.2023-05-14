@@ -18,3 +18,7 @@
 2023-05-14 05:17:45,736 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
 2023-05-14 05:17:55,542 INFO    [base_facade.py(delete:69)] value: 29, column: id
 2023-05-14 05:17:57,011 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-14 23:52:25,322 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-14 23:52:46,028 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-14 23:52:50,332 INFO    [base_facade.py(find:13)] value: 12, column: id
+2023-05-14 23:52:57,516 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None

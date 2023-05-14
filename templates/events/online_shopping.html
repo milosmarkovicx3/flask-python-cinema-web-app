@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Online kupovina</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4 ">
+      <span class="display-7">ONLINE KUPOVINA: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-warning display-8 fw-semibold">ONLINE KUPOVINA JE STIGLA U ARHIV!</h3>
+              <p class="fw-bold text-justify">
+                  - ONLINE KUPOVINA PLATNIM KARTICAMA JE SADA DOSTUPNA NA NAŠOJ APLIKACIJI!
+                  NOVA ARHIV MOBILNA APLIKACIJA JE POSTALA JOŠ BOLJA!
+              </p>
+              <hr>
+              <h3 class="text-warning display-8 fw-semibold">DETALJI</h3>
+              <p class="lh-sm text-justify">
+                  - <span class="fw-bold">Nova Arhiv mobilna aplikacija</span> je postala još bolja!
+                  Sada imaš mogućnost
+                  <span class="fw-bold">online kupovine ulaznica platnim karticama</span>,
+                  koristeći našu novu aplikaciju. Bez čekanja na blagajni, bez štampanja ulaznica – jednostavno
+                  kupi ulaznice preko aplikacije, pokaži QR kod na pultu pre ulaska u salu i uživaj u filmu. Online
+                  kupovina ulaznica preko sajta i dalje je moguća samo Arhiv bonus karticom.
+                  <br> <br>
+                  - A za naše korisnike
+                  <span class="fw-bold">Arhiv bonus kartice</span>,
+                  imamo još dobrih vesti. Direktno iz aplikacije dopuni svoju Arhiv bonus karticu. Odaberi iznos
+                  koji želiš da uplatiš na svoju Arhiv bonus karticu, prebaci sredstva sa svog računa i iskoristi sve
+                  pogodnosti koje ti nudi naša lojalti kartica.
+              </p>
+              <hr>
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/pages/online_shopping/online_shopping.jpg') }}" class="w-100 border-black border" alt="Online kupovina">
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

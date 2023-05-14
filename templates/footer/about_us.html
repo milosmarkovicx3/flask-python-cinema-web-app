@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | O nama</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4 ">
+      <span class="display-7">ARHIV BIOSKOPI: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-warning display-8 fw-semibold">KAKO JE SVE POČELO?</h3>
+              <p class="text-justify">
+                  - Bioskop „Arhiv Cineplex “ je 2019. godine osnovala kompanija “Arhiv Group“, tada najmanja filmska
+                  distributerska kuća u Srbiji. Kompanija je pokrivala više od 10 odsto ukupnog domaćeg filmskog tržišta
+                  a čine je tri firme – “Arhiv Vision“ (ekskluzivni zastupnik bioskopskog programa holivudskih kompanija
+                  “Warner Bros“, “Sony Pictures“ i “20th Century Fox“), “Arhiv Video“ (ekskluzivni zastupnik video
+                  programa kompanija “Warner Home Video“, “20th Century Fox Video“, “Universal Home Entertainment“ i
+                  “BBC Home Entertainment“) i “Mirius Arhiv“ (zastupnik bioskopskog, video i TV programa brojnih
+                  nezavisnih kompanija). Bioskop “Arhiv Cineplex“ čine pet sala ukupnog kapaciteta od 478 sedišta,
+                  nazvane po velikim filmskim zvezdama – Merilin Monro (222 sedišta), Džejms Din (80), Rita Hejvort (76),
+                  Loren Bekol (50) i Hemfri Bogart (50). Arhiv je jedan od bolje tehnički opremljenih bioskopa u Beogradu.
+                  Poseduje tri sistema za reprodukciju digitalnog zvuka (standardi zvuka su SDDS, DTS, Dolby Digital EX
+                  i Dolby Surround) kao i sofisticiranu tehnologiju za fotografiju (Ernemann Cine GMBH / 35mm cine projektori).
+                  Isto tako poseduje i Dolby 3D (reprodukcija digitalnih 3D filmova)
+                  Sve sale su klimatizovane, a specijalizovana sedišta uvezena iz Francuske (quinette Gallay).
+                  U holu bioskopa se nalazi kafić, ukrašen motivima iz sedme umetnosti.
+
+              </p>
+              <hr>
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/pages/about_us/slika-1.jpg') }}" class="w-100 border-black border">
+              <img src="{{ url_for('static', filename='resources/pages/about_us/slika-2.jpg') }}" class="w-100 border-black border-start border-end border-bottom">
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

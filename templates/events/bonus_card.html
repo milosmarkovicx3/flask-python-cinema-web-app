@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Bonus kartica</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4 ">
+      <span class="display-7">BONUS KARTICA: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-warning display-8 fw-semibold">ARHIV BONUS KARTICA - TVOJ KLUB POGODNOSTI
+</h3>
+              <p class="fw-bold">
+                    1) 1 BONUS BOD za svaki potrošeni 1 DINAR, <br>
+                    2) popust na cenu bioskopskih ulaznica, <br>
+                    3) atraktivne nagrade u zamenu za bodove. <br>
+                    4) online kupovina ulaznica.
+              </p>
+              <hr>
+              <h3 class="text-warning display-8 fw-semibold">DETALJI</h3>
+              <p class="lh-sm text-justify">
+                  - Ostvari više pri svakoj poseti bioskopu! Za svaki
+                  <span class="fw-bold">1 dinar </span>potrošen na blagajni bioskopa pri kupovini
+                  ulaznica, hrane ili pića, dobijaš
+                  <span class="fw-bold">1 bonus bod</span>. Svoje bodove možeš zameniti za
+                  <span class="fw-bold">nagrade</span>,
+                  dok uplatom od najmanje 2.000 dinara na svoju Arhiv bonus karticu, možeš ostvariti pravo na
+                  sniženu cenu ulaznica.
+                  <br> <br>
+                  - Korišćenje Arhiv bonus kartice ti pruža mogućnost korišćenja sledećih pogodnosti:
+                  <br> <br>
+                  <span class="fi fi-ss-check"></span> 1 BONUS BOD za svaki potrošeni 1 DINAR <br>
+                  <span class="fi fi-ss-check"></span> atraktivne nagrade u zamenu za bodove <br>
+                  <span class="fi fi-ss-check"></span> popust na cenu bioskopskih ulaznica* <br>
+                  <span class="fi fi-ss-check"></span> bezgotovinsko plaćanje na blagajni bioskopa* <br>
+                  <span class="fi fi-ss-check"></span> preuzimanje ulaznica do 10 minuta pre filma* <br>
+
+                  <p class="text-secondary lh-1 text-justify">
+                    *Navedene pogodnosti odnose se na upotrebu Arhiv bonus kartice kao sredstva plaćanja.
+                    *Napomena: Bonus bodovi se mogu ostvariti za najviše 2 bioskopske ulaznice dnevno.
+                    Na blagajni hrane i pića bonus bodovi se mogu dobiti za najviše 4.000 dinara potrošenih dnevno.
+                    Neiskorišćeni bodovi ističu nakon 18 meseci.
+                  </p>
+
+                 <p class="lh-sm text-justify">
+                    - Verni posetioci bioskopa Arhiv imaju mogućnost da postanu vlasnici
+                    <span class="fw-bold">Arhiv black kartice, VIP kartice</span> čiji se status postiže ukoliko
+                    sakupite više od 30 ulaznica sa vašom Arhiv bonus karticom. I tada počinje prava zabava, sa duplo
+                    više pogodnosti i popustima.
+                 </p>
+
+
+              </p>
+              <hr>
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/pages/bonus_card/bonus_card.jpg') }}" class="w-100 border-black border" alt="Bonus kartica">
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

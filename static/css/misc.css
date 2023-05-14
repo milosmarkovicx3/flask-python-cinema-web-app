@@ -13,6 +13,10 @@
 .input-group-text{
     text-shadow: none;
 }
+
+.text-justify{
+    text-align: justify;
+}
 /*---------------------------------------------------------------------------------*/
 /* sprecavanje dragovanja slika na klik */
 img {

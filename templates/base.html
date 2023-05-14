@@ -171,7 +171,7 @@
                     {% block nav %}
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire') }}">REPERTOAR</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.events') }}">DOGAĐAJI</a></li>
                      <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.membership') }}">ČLANSTVO</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.contact') }}">KONTAKT</a></li>
                     {% endblock %}
@@ -269,9 +269,7 @@
                     <span class="fi  fi-ss-settings"></span>
                     <a href="{{ url_for('template_api.terms_and_conditions') }}">Uslovi korišćenja</a> <br>
                     <span class="fi fi-ss-search-alt"></span>
-                    <a href="">O nama</a> <br>
-                    <span class="fi fi-ss-map"></span>
-                    <a href="">Mapa sajta</a>
+                    <a href="{{ url_for('template_api.about_us') }}">O nama</a>
                     </p>
                 </div>
                 </div>

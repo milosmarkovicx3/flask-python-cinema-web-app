@@ -10,22 +10,23 @@
 
 
 {% block content %}
-<div class="container-fluid bg-dark border-black border mt-3">
-  <div class="container my-4 text-white">
-
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4">
       <span class="display-7">FILMSKI DAN U ARHIVU: </span>
       <hr>
       <div class="row">
           <div class="col-sm-6 fs-5">
-            <span class="text-warning">SNIŽENA CENA KARTE ZA SVE POSETIOCE!</span>
-              <br>
-              - Svaki utorak u bioskopu Arhihv je dan za film po sniženoj ceni!
-              Iskoristite prednosti i uživajte utorkom!
+            <h3 class="text-warning display-8 fw-semibold">SNIŽENA CENA KARTE ZA SVE POSETIOCE!</h3>
+              <p>
+                  - Svaki utorak u bioskopu Arhiv je
+                  <span class="fw-bold">dan za film po sniženoj ceni!</span>
+                  Iskoristite prednosti i uživajte utorkom!
+              </p>
               <hr>
-              <span class="text-warning">DETALJI</span>
-              <br>
-              - Cena pojedinačnih bioskopskih ulaznica je 20% manja, odnosno:
-              <br>
+              <h3 class="text-warning display-8 fw-semibold">DETALJI</h3>
+              <p>
+                - Cena pojedinačnih bioskopskih ulaznica je 20% manja, odnosno:
+              </p>
                   <table>
                   <tr>
                     <th>Cena klasičnih sedišta:</th>
@@ -47,13 +48,11 @@
                   </tr>
                 </table>
               <hr>
-
           </div>
           <div class="col-sm-6">
-              <img src="{{ url_for('static', filename='resources/index/4-filmski-dan/filmski-dan.jpg') }}" class="w-100 border-black border" alt="filmski_dan">
+              <img src="{{ url_for('static', filename='resources/pages/arhiv_tuesday/arhiv_tuesday.jpg') }}" class="w-100 border-black border" alt="Arhiv utorak">
           </div>
       </div>
-
   </div>
 </div>
 {% endblock %}

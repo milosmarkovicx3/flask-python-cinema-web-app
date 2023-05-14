@@ -16,7 +16,7 @@
 {% block nav %}
 <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
 <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('template_api.repertoire', page=1) }}">REPERTOAR</a></li>
-<li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.events') }}">DOGAĐAJI</a></li>
  <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.membership') }}">ČLANSTVO</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.contact') }}">KONTAKT</a></li>
 {% endblock %}

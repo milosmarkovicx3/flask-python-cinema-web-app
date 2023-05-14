@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Specijalni meni</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-light border-black border mt-3">
+  <div class="container my-4 ">
+      <span class="display-7">SPECIJALNI MENI: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-warning display-8 fw-semibold">ARHIV BONUS KARTICA ZA VIŠE POGODNOSTI</h3>
+              <p class="fw-bold text-justify">
+                  - POGODNOSTI ZA ČLANOVE BONUS KULBA U ARHIV BIOSKOPIMA!
+              </p>
+              <hr>
+              <h3 class="text-warning display-8 fw-semibold">DETALJI</h3>
+              <p class="lh-sm text-justify">
+                  -<span class="fw-bold"> Arhiv bonus kartica donosi još više pogodnosti.</span> <br> <br>
+                  -<span class="fw-bold"> Od sada će članovi našeg bonus kluba moći da uživaju u sjajnim menijima,
+                  osmišljenim po njihovom ukusu uz specijalnu sniženu cenu.</span> <br> <br>
+
+                  - Kokice ili naćos? Slobodno izaberi onaj po tvojoj meri, jer te očekuje meni koji sadrži
+                   <span class="fw-bold">velike kokice i točeno piće* od 0,75l po ceni od 530 dinara ili Naćos meni koji
+                   sadrži drugu omiljenu bioskopsku  grickalicu, naćos, dva sosa po izboru i točeno piće od 0,75l i to
+                   po ceni od 590 dinara!  </span> <br> <br>
+
+                  - Dovoljno je samo da budeš član našeg Arhiv bonus kluba, na blagajni pokažeš svoju karticu i ostvariš m
+                  ogućnost kupovine specijalnog menija po još specijalnijim cenama.
+              </p>
+              <hr>
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/pages/arhiv_meal/arhiv_meal.jpg') }}" class="w-100 border-black border" alt="Specijalni meni">
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}
