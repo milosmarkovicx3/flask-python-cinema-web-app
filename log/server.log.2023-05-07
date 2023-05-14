@@ -1,7 +1,7 @@
 2023-05-07 01:15:52,160 INFO    [user_impl.py(logout:96)] log out: Miloš Marković
-2023-05-07 01:18:54,515 ERROR   [movie_impl.py(repertoire_search:120)] Association proxy Movie.actors_association refers to an attribute 'genre' that is not directly mapped on class <class 'main.entities.models.movies_actors.MoviesActors'>; therefore this operation cannot proceed since we don't know what type of object is referred towards
+2023-05-07 01:18:54,515 ERROR   [movie_impl.py(repertoire:120)] Association proxy Movie.actors_association refers to an attribute 'genre' that is not directly mapped on class <class 'main.entities.models.movies_actors.MoviesActors'>; therefore this operation cannot proceed since we don't know what type of object is referred towards
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 94, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 94, in repertoire
     Movie.genres.any(Genre.name.like(f'%{search_input}%')),
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\ext\associationproxy.py", line 1141, in any
     self._ambiguous()
@@ -9,9 +9,9 @@ Traceback (most recent call last):
     raise AttributeError(
 AttributeError: Association proxy Movie.actors_association refers to an attribute 'genre' that is not directly mapped on class <class 'main.entities.models.movies_actors.MoviesActors'>; therefore this operation cannot proceed since we don't know what type of object is referred towards
 
-2023-05-07 01:19:12,848 ERROR   [movie_impl.py(repertoire_search:120)] Association proxy Movie.actors_association refers to an attribute 'genre' that is not directly mapped on class <class 'main.entities.models.movies_actors.MoviesActors'>; therefore this operation cannot proceed since we don't know what type of object is referred towards
+2023-05-07 01:19:12,848 ERROR   [movie_impl.py(repertoire:120)] Association proxy Movie.actors_association refers to an attribute 'genre' that is not directly mapped on class <class 'main.entities.models.movies_actors.MoviesActors'>; therefore this operation cannot proceed since we don't know what type of object is referred towards
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 87, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\impl\movie_impl.py", line 87, in repertoire
     query = query.filter(Movie.genres.any(Genre.name == genre_name))
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\ext\associationproxy.py", line 1141, in any
     self._ambiguous()

@@ -93,7 +93,7 @@ class Movie(db.Model):
 
     def format_vote_count(self):
         if self.votes >= 1000000:
-            return '{:.1f}M'.format(self.votes / 1000000)
+            return '{}M'.format(round(self.votes / 1000000))
         else:
             return '{}K'.format(round(self.votes / 1000))
 

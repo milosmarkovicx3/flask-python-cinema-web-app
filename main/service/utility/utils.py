@@ -1,4 +1,6 @@
+import os
 import re
+
 
 def email_regex(value):
     regex = r'^(?=.{1,255}$)\w+(\w|((?<!\.)\.))*\w+\@\w+(\w|((?<!\.)\.))*\.\w{2,4}$'
@@ -28,3 +30,10 @@ def repr_helper_method(root):
         else:
             _list.append(item.__repr__())
     return _list
+
+
+def find_directory_path(root_directory, directory_name):
+    for root, dirs, files in os.walk(root_directory):
+        if directory_name in dirs:
+            return os.path.join(root, directory_name)
+    return None

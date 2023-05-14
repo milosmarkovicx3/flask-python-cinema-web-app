@@ -10,10 +10,10 @@
 
 {% block nav %}
 <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.repertoire_search', page=1) }}">REPERTOAR</a></li>
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.repertoire', page=1) }}">REPERTOAR</a></li>
 <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
-<li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
-<li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+ <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.membership') }}">ČLANSTVO</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.contact') }}">KONTAKT</a></li>
 {% endblock %}
 
 
@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-10">
-              <input type="search" value="{{ '' if form['search_input'] == None else form['search_input']  }}" class="form-control border-black border py-1 px-2 consolas" id="search_input" name="search_input" placeholder=":pretraga po nazivu filma, žanra, glumca ili godini">
+              <input type="search" value="{{ '' if form['search_input'] == None else form['search_input']  }}" class="form-control border-black border py-1 px-2 consolas" id="search_input" name="search_input" placeholder=":pretraga po nazivu filma, imenu glumca ili godini izdanja">
             </div>
 
             <div class="col-2">
@@ -40,18 +40,17 @@
                 <option value="" {{ 'selected' if form['genre_name'] == '' else '' }}>> BEZ FILTERA</option>
                 <option value="Action" {{ 'selected' if form['genre_name'] == 'Action' else '' }}>> Action</option>
                 <option value="Adventure" {{ 'selected' if form['genre_name'] == 'Adventure' else '' }}>> Adventure</option>
-                <option value="Comedy" {{ 'selected' if form['genre_name'] == 'Comedy' else '' }}>> Comedy</option>
+                <option value="Biography" {{ 'selected' if form['genre_name'] == 'Comedy' else '' }}>> Biography</option>
                 <option value="Crime" {{ 'selected' if form['genre_name'] == 'Crime' else '' }}>> Crime</option>
                 <option value="Drama" {{ 'selected' if form['genre_name'] == 'Drama' else '' }}>> Drama</option>
                 <option value="Fantasy" {{ 'selected' if form['genre_name'] == 'Fantasy' else '' }}>> Fantasy</option>
                 <option value="History" {{ 'selected' if form['genre_name'] == 'History' else '' }}>> History</option>
                 <option value="Horror" {{ 'selected' if form['genre_name'] == 'Horror' else '' }}>> Horror</option>
-                <option value="Mystery" {{ 'selected' if form['genre_name'] == 'Mystery' else '' }}>> Mystery</option>
                 <option value="Romance" {{ 'selected' if form['genre_name'] == 'Romance' else '' }}>> Romance</option>
-                <option value="Science fiction" {{ 'selected' if form['genre_name'] == 'Science fiction' else '' }}>> Science fiction</option>
+                <option value="Science Fiction" {{ 'selected' if form['genre_name'] == 'Science fiction' else '' }}>> Science fiction</option>
+                <option value="Sport" {{ 'selected' if form['genre_name'] == 'Western' else '' }}>> Sport</option>
                 <option value="Thriller" {{ 'selected' if form['genre_name'] == 'Thriller' else '' }}>> Thriller</option>
                 <option value="War" {{ 'selected' if form['genre_name'] == 'War' else '' }}>> War</option>
-                <option value="Western" {{ 'selected' if form['genre_name'] == 'Western' else '' }}>> Western</option>
               </select>
                          
             </div>

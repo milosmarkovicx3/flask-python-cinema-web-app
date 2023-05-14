@@ -3,12 +3,12 @@ from datetime import datetime, timedelta
 import re
 
 from main.entities.core.base import db
-from main.entities.core.result import Result
+from main.entities.core.result import Result, result_handler
 from main.entities.core.status import Status
 from main.entities.facade.movie_facade import MovieFacade
 from main.entities.facade.projection_facade import ProjectionFacade
 from main.entities.models.projection import Projection
-from main.service.impl.base_impl import BaseImpl, _result_handler
+from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
 
 
@@ -53,7 +53,7 @@ class ProjectionImpl(BaseImpl):
 
             db.session.commit()
 
-            return _result_handler(item=True)
+            return result_handler(item=True)
         except Exception as e:
             db.session.rollback()
             log.error(f"{e}\n{traceback.format_exc()}")

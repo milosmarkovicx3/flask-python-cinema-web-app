@@ -17,6 +17,7 @@ hf = HallFacade()
 pf = ProjectionFacade()
 rf = ReservationFacade()
 
+# -OPCIJE-PROFILA-------------------------------------------------------------------------------------------------------
 
 @template_api.route('/admin-panel', methods=['GET'])
 @admin_required
@@ -25,42 +26,81 @@ def dashboard():
     halls = hf.find_all()
     return render_template('dashboard.html', movies=movies, halls=halls)
 
+@template_api.route('/profil', methods=['GET'])
+@login_required
+def profile():
+    return render_template('profile.html')
 
 @template_api.route('/rezervacije', methods=['GET'])
 @login_required
 def reservations():
     entities = rf.find_all(column='user_id', value=current_user.id)
-    if entities:
-        return render_template('reservations.html', reservations=repr_helper_method(entities))
-    return render_template('reservations.html')
+    return render_template('reservations.html', reservations=repr_helper_method(entities))
 
+@template_api.route('/podešavanja', methods=['GET'])
+@login_required
+def settings():
+    return render_template('settings.html')
+# ----------------------------------------------------------------------------------------------------------------------
+
+# -GLAVNA-NAVIGACIJA----------------------------------------------------------------------------------------------------
 
 @template_api.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
+@template_api.route('/repertoar', methods=['GET'])
+def repertoire():
+    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
+    paginate = mi.repertoire(**kwargs)
+    if 'page' in kwargs: del kwargs['page']
+    return render_template("repertoire.html", pagination=paginate, endpoint='template_api.repertoire', form=kwargs)
+
+@template_api.route('/kontakt', methods=['GET'])
+def contact():
+    return render_template('contact.html')
+# ----------------------------------------------------------------------------------------------------------------------
+
+# -FILM-GRUPA-----------------------------------------------------------------------------------------------------------
 
 @template_api.route('/film/<int:id>', methods=['GET'])
 def movie(id):
     entity = mf.find(id, 'id').__repr__()
     return render_template('movie.html', movie=entity) if entity else abort(404)
 
-
 @template_api.route('/projekcija/<int:projection_id>/<string:date>', methods=['GET'])
 def projection(projection_id, date):
     entity = pf.find(projection_id, 'id').__repr__()
     return render_template('projection.html', projection=entity, date=date) if entity else abort(404)
+# ----------------------------------------------------------------------------------------------------------------------
 
+# -DOGAĐAJI-I-ČLANSTVO--------------------------------------------------------------------------------------------------
 
-@template_api.route('/repertoar', methods=['GET'])
-def repertoire_search():
-    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
-    paginate_object = mi.repertoire_search(**kwargs)
-    return render_template("repertoire.html",
-                           pagination=paginate_object,
-                           endpoint='template_api.repertoire_search',
-                           form=kwargs)
+@template_api.route('/članstvo', methods=['GET'])
+def membership():
+    return render_template('membership.html')
 
+@template_api.route('/arhiv-utorak', methods=['GET'])
+def arhiv_tuesday():
+    return render_template('events/arhiv_tuesday.html')
+# ----------------------------------------------------------------------------------------------------------------------
+
+# -FOOTER---------------------------------------------------------------------------------------------------------------
+
+@template_api.route('/često-postavljana-pitanja', methods=['GET'])
+def faq():
+    return render_template('faq.html')
+
+@template_api.route('/politika-privatnosti', methods=['GET'])
+def privacy_politics():
+    return render_template('privacy_politics.html')
+
+@template_api.route('/uslovi-poslovanja', methods=['GET'])
+def terms_and_conditions():
+    return render_template('terms_and_conditions.html')
+# ----------------------------------------------------------------------------------------------------------------------
+
+# -JINJA2-FILTERI-------------------------------------------------------------------------------------------------------
 
 @template_api.app_template_filter('enumerate')
 def enumerate_filter(iterable):
@@ -70,7 +110,7 @@ def enumerate_filter(iterable):
     """
     return enumerate(iterable)
 
-
 @template_api.app_template_filter('format_date')
 def get_formated_date_name(date):
     return jinja2_filters.get_formated_date_name_filter(date)
+# ----------------------------------------------------------------------------------------------------------------------

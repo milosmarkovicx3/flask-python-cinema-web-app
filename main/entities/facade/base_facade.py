@@ -62,8 +62,10 @@ class BaseFacade(ABC):
             db.session.rollback()
             return None
 
-    def delete(self, value, column):
+    def delete(self, data):
         try:
+            value = data['value']
+            column = data['column'] if 'column' in data else 'id'
             log.info(f'value: {value}, column: {column}')
             response = db.session.query(self.T).filter_by(**{column: value}).first()
             if response is None:

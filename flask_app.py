@@ -64,7 +64,7 @@ def before_request():
 def apply_caching(response):
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["HTTP-HEADER"] = "VALUE"
-    response.headers["Cache-Control"] = "public, max-age=300, must-revalidate"
+    #response.headers["Cache-Control"] = "public, max-age=300, must-revalidate"
     return response
 
 
@@ -75,6 +75,7 @@ csrf.init_app(app)
 db.init_app(app)
 app.app_context().push()
 db.create_all()
+
 
 
 if __name__ == '__main__':

@@ -3,9 +3,9 @@ from datetime import datetime
 from flask_login import current_user
 from main.entities.core.status import Status
 from main.entities.facade.review_facade import ReviewFacade
-from main.entities.core.result import Result
+from main.entities.core.result import Result, result_handler
 from main.entities.models.review import Review
-from main.service.impl.base_impl import BaseImpl, _result_handler
+from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
 
 
@@ -39,7 +39,7 @@ class ReviewImpl(BaseImpl):
 
             review = Review(movie_id=movie_id, user_id=user_id, comment=comment, rating=rating, created_at=created_at)
 
-            return _result_handler(item=self.T.create(review))
+            return result_handler(item=self.T.create(review))
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)

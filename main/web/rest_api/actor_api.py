@@ -21,9 +21,9 @@ def find_all():
 def create():
     return ai.create(request.form, request.files)
 
-@actor_api.route('/<string:value>', methods=['DELETE'])
-@actor_api.route('/<string:value>/<string:column>', methods=['DELETE'])
-def delete(value, column='id'):
-    return ai.delete(value, column)
+@actor_api.route('/', methods=['DELETE'])
+def delete():
+    return ai.delete(request.form)
+
 
 

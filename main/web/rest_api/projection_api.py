@@ -19,9 +19,9 @@ def find_all():
 def create():
     return pi.create(request.form)
 
-@projection_api.route('/<string:value>', methods=['DELETE'])
-@projection_api.route('/<string:value>/<string:column>', methods=['DELETE'])
-def delete(value, column='id'):
-    return pi.delete(value, column)
+@projection_api.route('/', methods=['DELETE'])
+def delete():
+    return pi.delete(request.form)
+
 
 

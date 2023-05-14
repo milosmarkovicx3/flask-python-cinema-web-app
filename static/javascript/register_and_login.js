@@ -54,7 +54,7 @@ $(document).ready(function() {
       $('#register-passwd-msg').html('Izaberite lozinku.');
     }else if(!passwd_regex.test(passwd.val())){
       passwd.addClass('is-invalid register-stop');
-      $('#register-passwd-msg').html('Vaša lozinka mora sadržati minimum 5 karaktera, slovo, broj i specijalan znak.');
+      $('#register-passwd-msg').html('Lozinka mora sadržati minimum 5 karaktera, slovo, broj i specijalan znak.');
     }else{ passwd.removeClass('is-invalid register-stop');  }
 
     if(!basic_regex.test(first_name.val())){ first_name.addClass('is-invalid register-stop'); }
@@ -102,10 +102,12 @@ var $username_exist = false;
 
 $(document).ready(function() {
     const $username_input = $('#register-username');
-    const $username_msg = $('#register-username-msg'); 
+    const $username_msg = $('#register-username-msg');
+    const basic_regex = /^(?=.{1,255}$)\w{2,}/;
     
     $username_input.on('input', function() {
-      const username = $username_input.val();      
+      const username = $username_input.val();
+      if(!basic_regex.test(username)) return;
       
       $.ajax({
         url: `/user/${username}/username`,
@@ -134,11 +136,13 @@ var $email_exist = false;
 
 $(document).ready(function() {
     const $email_input = $('#register-email');
-    const $email_msg = $('#register-email-msg');  
+    const $email_msg = $('#register-email-msg');
+    const email_regex = /^(?=.{1,255}$)\w+(\w|((?<!\.)\.))*\w+\@\w+(\w|((?<!\.)\.))*\.\w{2,4}$/;
     
     
     $email_input.on('input', function() {
-      const email = $email_input.val();      
+      const email = $email_input.val();
+      if(!email_regex.test(email)) return;
       
       $.ajax({
         url: `/user/${email}/email`,

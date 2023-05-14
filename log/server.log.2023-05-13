@@ -1,0 +1,620 @@
+2023-05-13 02:14:51,654 INFO    [base_facade.py(find:13)] value: m, column: username
+2023-05-13 02:14:51,689 INFO    [base_facade.py(find:13)] value: mi, column: username
+2023-05-13 02:14:51,950 INFO    [base_facade.py(find:13)] value: mil, column: username
+2023-05-13 02:14:52,129 INFO    [base_facade.py(find:13)] value: milo, column: username
+2023-05-13 02:14:52,197 INFO    [base_facade.py(find:13)] value: milos, column: username
+2023-05-13 02:14:52,372 INFO    [base_facade.py(find:13)] value: milosm, column: username
+2023-05-13 02:14:52,462 INFO    [base_facade.py(find:13)] value: milosma, column: username
+2023-05-13 02:14:52,562 INFO    [base_facade.py(find:13)] value: milosmar, column: username
+2023-05-13 02:14:52,678 INFO    [base_facade.py(find:13)] value: milosmark, column: username
+2023-05-13 02:14:52,714 INFO    [base_facade.py(find:13)] value: milosmarko, column: username
+2023-05-13 02:14:52,839 INFO    [base_facade.py(find:13)] value: milosmarkov, column: username
+2023-05-13 02:14:52,992 INFO    [base_facade.py(find:13)] value: milosmarkovi, column: username
+2023-05-13 02:14:53,261 INFO    [base_facade.py(find:13)] value: milosmarkovic, column: username
+2023-05-13 02:14:53,526 INFO    [base_facade.py(find:13)] value: milosmarkovicx, column: username
+2023-05-13 02:14:54,616 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-13 02:14:55,754 INFO    [base_facade.py(find:13)] value: milosmarkovicx, column: username
+2023-05-13 02:14:56,266 INFO    [base_facade.py(find:13)] value: milosmarkovic, column: username
+2023-05-13 02:14:56,295 INFO    [base_facade.py(find:13)] value: milosmarkovi, column: username
+2023-05-13 02:14:56,326 INFO    [base_facade.py(find:13)] value: milosmarkov, column: username
+2023-05-13 02:14:56,357 INFO    [base_facade.py(find:13)] value: milosmarko, column: username
+2023-05-13 02:14:56,386 INFO    [base_facade.py(find:13)] value: milosmark, column: username
+2023-05-13 02:14:56,418 INFO    [base_facade.py(find:13)] value: milosmar, column: username
+2023-05-13 02:14:56,463 INFO    [base_facade.py(find:13)] value: milosma, column: username
+2023-05-13 02:14:56,495 INFO    [base_facade.py(find:13)] value: milosm, column: username
+2023-05-13 02:14:56,526 INFO    [base_facade.py(find:13)] value: milos, column: username
+2023-05-13 02:14:56,558 INFO    [base_facade.py(find:13)] value: milo, column: username
+2023-05-13 02:14:56,588 INFO    [base_facade.py(find:13)] value: mil, column: username
+2023-05-13 02:14:56,619 INFO    [base_facade.py(find:13)] value: mi, column: username
+2023-05-13 02:14:56,650 INFO    [base_facade.py(find:13)] value: m, column: username
+2023-05-13 02:14:56,682 INFO    [base_facade.py(find:13)] value: username, column: id
+2023-05-13 02:14:57,348 INFO    [base_facade.py(find:13)] value: s, column: username
+2023-05-13 02:14:57,499 INFO    [base_facade.py(find:13)] value: sh, column: username
+2023-05-13 02:14:57,614 INFO    [base_facade.py(find:13)] value: sha, column: username
+2023-05-13 02:14:57,726 INFO    [base_facade.py(find:13)] value: shad, column: username
+2023-05-13 02:14:57,857 INFO    [base_facade.py(find:13)] value: shado, column: username
+2023-05-13 02:17:34,032 ERROR   [jinja2_filters.py(get_formated_date_name_filter:29)] strptime() argument 1 must be str, not datetime.date
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\service\utility\jinja2_filters.py", line 8, in get_formated_date_name_filter
+    date = datetime.strptime(date, '%d.%m.%Y').date()
+TypeError: strptime() argument 1 must be str, not datetime.date
+
+2023-05-13 02:21:32,666 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 02:22:11,639 INFO    [base_facade.py(find:13)] value: c, column: username
+2023-05-13 02:22:11,918 INFO    [base_facade.py(find:13)] value: cl, column: username
+2023-05-13 02:22:13,647 INFO    [base_facade.py(find:13)] value: clu, column: username
+2023-05-13 02:22:13,751 INFO    [base_facade.py(find:13)] value: clut, column: username
+2023-05-13 02:22:14,077 INFO    [base_facade.py(find:13)] value: clutc, column: username
+2023-05-13 02:22:14,159 INFO    [base_facade.py(find:13)] value: clutch, column: username
+2023-05-13 02:22:14,610 INFO    [base_facade.py(find:13)] value: clutch_, column: username
+2023-05-13 02:22:14,908 INFO    [base_facade.py(find:13)] value: clutch_l, column: username
+2023-05-13 02:22:15,098 INFO    [base_facade.py(find:13)] value: clutch_lo, column: username
+2023-05-13 02:22:15,144 INFO    [base_facade.py(find:13)] value: clutch_lor, column: username
+2023-05-13 02:22:15,345 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 02:22:30,682 INFO    [base_facade.py(find_all:22)] column: username, value: clutch_lord, value_to: None, method: None, max: None
+2023-05-13 02:25:26,371 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 02:26:24,240 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 02:26:24,242 ERROR   [user_impl.py(update:106)] <FileStorage: '' ('application/octet-stream')>
+2023-05-13 02:26:26,652 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 02:26:26,653 ERROR   [user_impl.py(update:106)] <FileStorage: '' ('application/octet-stream')>
+2023-05-13 02:26:29,302 ERROR   [user_impl.py(update:107)] 
+2023-05-13 02:26:34,309 ERROR   [user_impl.py(update:107)] 
+2023-05-13 02:26:50,129 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 02:26:50,130 ERROR   [user_impl.py(update:106)] 
+2023-05-13 02:32:34,030 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 02:34:24,921 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 02:35:31,491 INFO    [user_impl.py(logout:171)] log out: Miloš Marković
+2023-05-13 02:35:45,774 INFO    [user_impl.py(login:138)] login: shadow1
+2023-05-13 02:35:45,775 INFO    [base_facade.py(find:13)] value: shadow1, column: username
+2023-05-13 02:36:05,460 INFO    [user_impl.py(login:138)] login: milosmarkovicx3
+2023-05-13 02:36:05,460 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-13 02:36:22,976 INFO    [base_facade.py(find:13)] value: d, column: username
+2023-05-13 02:36:23,113 INFO    [base_facade.py(find:13)] value: di, column: username
+2023-05-13 02:36:23,270 INFO    [base_facade.py(find:13)] value: dia, column: username
+2023-05-13 02:36:23,955 INFO    [base_facade.py(find:13)] value: diab, column: username
+2023-05-13 02:36:24,068 INFO    [base_facade.py(find:13)] value: diabl, column: username
+2023-05-13 02:36:24,251 INFO    [base_facade.py(find:13)] value: diablo, column: username
+2023-05-13 02:36:24,322 INFO    [base_facade.py(find:13)] value: diabloe, column: username
+2023-05-13 02:36:25,435 INFO    [base_facade.py(find:13)] value: diablo, column: username
+2023-05-13 02:37:31,425 INFO    [base_facade.py(find:13)] value: diablo, column: username
+2023-05-13 02:37:47,843 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 02:48:14,452 INFO    [user_impl.py(logout:171)] log out: Miloš Marković
+2023-05-13 02:48:14,456 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 02:48:32,111 INFO    [user_impl.py(login:138)] login: clutch_lord
+2023-05-13 02:48:32,112 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 02:48:32,159 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 02:48:48,529 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 03:01:22,365 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 03:01:22,366 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 03:20:32,122 INFO    [base_facade.py(find:13)] value: m, column: email
+2023-05-13 03:20:32,174 INFO    [base_facade.py(find:13)] value: mi, column: email
+2023-05-13 03:20:32,402 INFO    [base_facade.py(find:13)] value: mil, column: email
+2023-05-13 03:20:32,576 INFO    [base_facade.py(find:13)] value: milo, column: email
+2023-05-13 03:20:32,628 INFO    [base_facade.py(find:13)] value: milos, column: email
+2023-05-13 03:20:32,834 INFO    [base_facade.py(find:13)] value: milosm, column: email
+2023-05-13 03:20:32,937 INFO    [base_facade.py(find:13)] value: milosma, column: email
+2023-05-13 03:20:33,044 INFO    [base_facade.py(find:13)] value: milosmar, column: email
+2023-05-13 03:20:33,147 INFO    [base_facade.py(find:13)] value: milosmark, column: email
+2023-05-13 03:20:33,207 INFO    [base_facade.py(find:13)] value: milosmarko, column: email
+2023-05-13 03:20:33,304 INFO    [base_facade.py(find:13)] value: milosmarkov, column: email
+2023-05-13 03:20:33,433 INFO    [base_facade.py(find:13)] value: milosmarkovi, column: email
+2023-05-13 03:20:33,497 INFO    [base_facade.py(find:13)] value: milosmarkovic, column: email
+2023-05-13 03:20:33,948 INFO    [base_facade.py(find:13)] value: milosmarkovicx, column: email
+2023-05-13 03:20:34,260 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: email
+2023-05-13 03:20:34,626 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@, column: email
+2023-05-13 03:20:34,934 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@g, column: email
+2023-05-13 03:20:35,044 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gm, column: email
+2023-05-13 03:20:35,176 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gma, column: email
+2023-05-13 03:20:35,261 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmai, column: email
+2023-05-13 03:20:35,494 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail, column: email
+2023-05-13 03:20:35,726 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail., column: email
+2023-05-13 03:20:36,034 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.c, column: email
+2023-05-13 03:20:36,122 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.co, column: email
+2023-05-13 03:20:36,175 INFO    [base_facade.py(find:13)] value: milosmarkovicx3@gmail.com, column: email
+2023-05-13 03:21:04,884 INFO    [base_facade.py(find:13)] value: m, column: email
+2023-05-13 03:21:04,955 INFO    [base_facade.py(find:13)] value: mi, column: email
+2023-05-13 03:21:05,210 INFO    [base_facade.py(find:13)] value: mil, column: email
+2023-05-13 03:21:05,368 INFO    [base_facade.py(find:13)] value: milo, column: email
+2023-05-13 03:21:05,432 INFO    [base_facade.py(find:13)] value: milos, column: email
+2023-05-13 03:21:05,691 INFO    [base_facade.py(find:13)] value: milos., column: email
+2023-05-13 03:21:06,265 INFO    [base_facade.py(find:13)] value: milos.d, column: email
+2023-05-13 03:21:06,312 INFO    [base_facade.py(find:13)] value: milos.dj, column: email
+2023-05-13 03:21:06,583 INFO    [base_facade.py(find:13)] value: milos.dj., column: email
+2023-05-13 03:21:06,929 INFO    [base_facade.py(find:13)] value: milos.dj.m, column: email
+2023-05-13 03:21:07,037 INFO    [base_facade.py(find:13)] value: milos.dj.ma, column: email
+2023-05-13 03:21:07,102 INFO    [base_facade.py(find:13)] value: milos.dj.mar, column: email
+2023-05-13 03:21:07,193 INFO    [base_facade.py(find:13)] value: milos.dj.mark, column: email
+2023-05-13 03:21:07,249 INFO    [base_facade.py(find:13)] value: milos.dj.marko, column: email
+2023-05-13 03:21:07,374 INFO    [base_facade.py(find:13)] value: milos.dj.markov, column: email
+2023-05-13 03:21:07,477 INFO    [base_facade.py(find:13)] value: milos.dj.markovi, column: email
+2023-05-13 03:21:07,590 INFO    [base_facade.py(find:13)] value: milos.dj.markovic, column: email
+2023-05-13 03:21:11,568 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@, column: email
+2023-05-13 03:21:12,087 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@g, column: email
+2023-05-13 03:21:12,243 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gm, column: email
+2023-05-13 03:21:12,341 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gma, column: email
+2023-05-13 03:21:12,452 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmai, column: email
+2023-05-13 03:21:12,665 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail, column: email
+2023-05-13 03:21:12,879 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail., column: email
+2023-05-13 03:21:13,026 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.c, column: email
+2023-05-13 03:21:13,151 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.co, column: email
+2023-05-13 03:23:14,133 INFO    [user_impl.py(logout:179)] log out: Miloš Marković
+2023-05-13 03:23:19,246 INFO    [user_impl.py(login:146)] login: clutch_lord
+2023-05-13 03:23:19,246 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 03:35:21,245 ERROR   [user_impl.py(update:87)] $pbkdf2-sha256$29000$JWSsNUZICWGsNebc.18rpQ$c/TPwFaR.Q1jM4CNDKFbqE.d1yHzUpAXBagsE5Nt3W8
+2023-05-13 03:35:26,319 ERROR   [user_impl.py(update:88)] $pbkdf2-sha256$29000$UwqBUKqVklIKYcx577231g$3UogSjMHcFjCuGcdWAgLISieJOPs435bXEn5Dm4K0Xw
+2023-05-13 03:36:03,859 ERROR   [user_impl.py(update:87)] $pbkdf2-sha256$29000$4LxXqpXS.h.DMCZk7H0PIQ$wkHYTSzNORLLFK4Xf6NwUmCGBgFfHBcLT24GA4eWftY
+2023-05-13 03:36:08,869 ERROR   [user_impl.py(update:88)] $pbkdf2-sha256$29000$UwqBUKqVklIKYcx577231g$3UogSjMHcFjCuGcdWAgLISieJOPs435bXEn5Dm4K0Xw
+2023-05-13 03:47:14,524 INFO    [base_facade.py(find:13)] value: milos@gmail.co, column: email
+2023-05-13 03:47:14,595 INFO    [base_facade.py(find:13)] value: milos@gmail.com, column: email
+2023-05-13 03:47:18,690 INFO    [base_facade.py(find:13)] value: milos@gmail.co, column: email
+2023-05-13 03:52:24,219 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.co, column: email
+2023-05-13 03:59:55,931 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 03:59:57,803 INFO    [base_facade.py(find:13)] value: 101, column: id
+2023-05-13 03:59:57,806 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-13 04:00:02,241 INFO    [base_facade.py(find:13)] value: 101, column: id
+2023-05-13 04:00:02,243 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-13 04:00:07,258 INFO    [base_facade.py(find:13)] value: 101, column: id
+2023-05-13 04:00:07,260 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-13 04:00:08,748 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 04:02:42,089 ERROR   [base_facade.py(delete:77)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 68, in delete
+    column = data['column'] if data['column'] else 'id'
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\structures.py", line 192, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+2023-05-13 04:03:07,451 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 04:03:17,320 ERROR   [base_facade.py(delete:77)] 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 68, in delete
+    column = data['column'] if data['column'] else 'id'
+  File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\structures.py", line 192, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+2023-05-13 04:04:36,552 INFO    [base_facade.py(delete:69)] value: 26, column: id
+2023-05-13 04:04:38,033 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 04:04:40,029 INFO    [base_facade.py(delete:69)] value: 25, column: id
+2023-05-13 04:04:41,743 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 04:10:50,042 INFO    [base_facade.py(find:13)] value: 4, column: id
+2023-05-13 04:10:56,751 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 04:11:07,922 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 04:11:07,923 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 04:11:20,317 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 05:18:04,118 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:20:14,233 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:22:03,618 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:22:03,620 INFO    [user_impl.py(generate_user_data_csv:216)] {'id': 1, 'first_name': 'Miloš', 'last_name': 'Marković', 'email': 'milos.dj.markovic@gmail.com', 'username': 'clutch_lord', 'password': '$pbkdf2-sha256$29000$xDjnvHduTUmp9V6LMaYUIg$H3XW0CGqQKG6ATH.LWxKWzZAIBqvrGZpdMA4t0tlMmg', 'date_of_birth': '1999-01-15', 'phone_number': '062/18-17-855', 'image': '1.png', 'is_superuser': True, 'date_joined': '2023-04-30 01:11:03', 'last_login_at': '2023-05-13 03:23:19', 'last_login_ip': '127.0.0.1', 'last_seen': '2023-05-13 05:22:03', 'login_count': 45, 'confirmed_at': '2023-04-30 01:11:03', 'auth_token': '$pbkdf2-sha256$29000$TSllrBVCCIEwBiBkDOGcsw$hslorivstNM.zvCup5Ak/hchOtOMP7Mtpw09gVFjMYI'}
+2023-05-13 05:23:53,424 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:23:53,426 INFO    [user_impl.py(generate_user_data_csv:216)] {'id': 1, 'first_name': 'Miloš', 'last_name': 'Marković', 'email': 'milos.dj.markovic@gmail.com', 'username': 'clutch_lord', 'password': '$pbkdf2-sha256$29000$xDjnvHduTUmp9V6LMaYUIg$H3XW0CGqQKG6ATH.LWxKWzZAIBqvrGZpdMA4t0tlMmg', 'date_of_birth': '1999-01-15', 'phone_number': '062/18-17-855', 'image': '1.png', 'is_superuser': True, 'date_joined': '2023-04-30 01:11:03', 'last_login_at': '2023-05-13 03:23:19', 'last_login_ip': '127.0.0.1', 'last_seen': '2023-05-13 05:23:53', 'login_count': 45, 'confirmed_at': '2023-04-30 01:11:03', 'auth_token': '$pbkdf2-sha256$29000$TSllrBVCCIEwBiBkDOGcsw$hslorivstNM.zvCup5Ak/hchOtOMP7Mtpw09gVFjMYI'}
+2023-05-13 05:32:18,594 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:33:56,903 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:38:43,970 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:42:04,746 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:48:33,703 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:48:53,417 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:49:10,636 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:50:15,489 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:50:56,662 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:52:17,895 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:55:08,986 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:57:59,475 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 05:59:11,388 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:00:30,127 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:01:44,537 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:04:38,013 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:05:43,114 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:06:30,604 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:07:20,173 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:08:56,254 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:18:35,003 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:19:13,106 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:19:53,603 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:26:15,981 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 06:26:20,797 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 13:29:12,728 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 13:29:51,896 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 13:30:31,496 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 13:31:14,609 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 13:42:23,100 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 13:48:45,970 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 13:48:45,972 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 13:51:52,098 INFO    [base_facade.py(find:13)] value: T, column: title
+2023-05-13 13:51:52,545 INFO    [base_facade.py(find:13)] value: Th, column: title
+2023-05-13 13:51:52,583 INFO    [base_facade.py(find:13)] value: The, column: title
+2023-05-13 13:51:52,797 INFO    [base_facade.py(find:13)] value: The , column: title
+2023-05-13 13:51:53,063 INFO    [base_facade.py(find:13)] value: The M, column: title
+2023-05-13 13:51:53,397 INFO    [base_facade.py(find:13)] value: The Ma, column: title
+2023-05-13 13:51:53,707 INFO    [base_facade.py(find:13)] value: The Mat, column: title
+2023-05-13 13:51:53,923 INFO    [base_facade.py(find:13)] value: The Matr, column: title
+2023-05-13 13:51:54,051 INFO    [base_facade.py(find:13)] value: The Matri, column: title
+2023-05-13 13:51:54,199 INFO    [base_facade.py(find:13)] value: The Matrix, column: title
+2023-05-13 13:59:45,185 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-13 13:59:49,877 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: like, max: 5
+2023-05-13 13:59:50,642 INFO    [base_facade.py(find_all:22)] column: name, value: sc, value_to: None, method: like, max: 5
+2023-05-13 13:59:53,136 INFO    [base_facade.py(find_all:22)] column: name, value: sci, value_to: None, method: like, max: 5
+2023-05-13 13:59:53,887 INFO    [base_facade.py(find_all:22)] column: name, value: sc, value_to: None, method: like, max: 5
+2023-05-13 13:59:54,115 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: like, max: 5
+2023-05-13 13:59:55,395 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: like, max: 5
+2023-05-13 13:59:56,099 INFO    [base_facade.py(find_all:22)] column: name, value: sc, value_to: None, method: like, max: 5
+2023-05-13 13:59:56,907 INFO    [base_facade.py(find_all:22)] column: name, value: sci, value_to: None, method: like, max: 5
+2023-05-13 13:59:57,601 INFO    [base_facade.py(find_all:22)] column: name, value: scif, value_to: None, method: like, max: 5
+2023-05-13 13:59:58,401 INFO    [base_facade.py(find_all:22)] column: name, value: sci, value_to: None, method: like, max: 5
+2023-05-13 13:59:58,657 INFO    [base_facade.py(find_all:22)] column: name, value: sc, value_to: None, method: like, max: 5
+2023-05-13 13:59:58,894 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: like, max: 5
+2023-05-13 13:59:59,865 INFO    [base_facade.py(find_all:22)] column: name, value: n, value_to: None, method: like, max: 5
+2023-05-13 13:59:59,910 INFO    [base_facade.py(find_all:22)] column: name, value: na, value_to: None, method: like, max: 5
+2023-05-13 14:00:01,830 INFO    [base_facade.py(find_all:22)] column: name, value: n, value_to: None, method: like, max: 5
+2023-05-13 14:00:01,991 INFO    [base_facade.py(find_all:22)] column: name, value: nf, value_to: None, method: like, max: 5
+2023-05-13 14:00:02,154 INFO    [base_facade.py(find_all:22)] column: name, value: nfe, value_to: None, method: like, max: 5
+2023-05-13 14:00:02,322 INFO    [base_facade.py(find_all:22)] column: name, value: nfef, value_to: None, method: like, max: 5
+2023-05-13 14:00:02,438 INFO    [base_facade.py(find_all:22)] column: name, value: nfefe, value_to: None, method: like, max: 5
+2023-05-13 14:00:04,321 INFO    [base_facade.py(find_all:22)] column: name, value: nfefef, value_to: None, method: like, max: 5
+2023-05-13 14:00:04,458 INFO    [base_facade.py(find_all:22)] column: name, value: nfefefe, value_to: None, method: like, max: 5
+2023-05-13 14:00:04,789 INFO    [base_facade.py(find_all:22)] column: name, value: nfefefea, value_to: None, method: like, max: 5
+2023-05-13 14:00:05,046 INFO    [base_facade.py(find_all:22)] column: name, value: nfefefe, value_to: None, method: like, max: 5
+2023-05-13 14:00:05,547 INFO    [base_facade.py(find_all:22)] column: name, value: nfefef, value_to: None, method: like, max: 5
+2023-05-13 14:00:05,578 INFO    [base_facade.py(find_all:22)] column: name, value: nfefe, value_to: None, method: like, max: 5
+2023-05-13 14:00:05,608 INFO    [base_facade.py(find_all:22)] column: name, value: nfef, value_to: None, method: like, max: 5
+2023-05-13 14:00:05,654 INFO    [base_facade.py(find_all:22)] column: name, value: nfe, value_to: None, method: like, max: 5
+2023-05-13 14:00:05,685 INFO    [base_facade.py(find_all:22)] column: name, value: nf, value_to: None, method: like, max: 5
+2023-05-13 14:00:05,715 INFO    [base_facade.py(find_all:22)] column: name, value: n, value_to: None, method: like, max: 5
+2023-05-13 14:00:07,388 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-13 14:00:07,521 INFO    [base_facade.py(find_all:22)] column: name, value: an, value_to: None, method: like, max: 5
+2023-05-13 14:00:07,640 INFO    [base_facade.py(find_all:22)] column: name, value: ani, value_to: None, method: like, max: 5
+2023-05-13 14:00:07,881 INFO    [base_facade.py(find_all:22)] column: name, value: anim, value_to: None, method: like, max: 5
+2023-05-13 14:00:07,946 INFO    [base_facade.py(find_all:22)] column: name, value: anime, value_to: None, method: like, max: 5
+2023-05-13 14:00:08,635 INFO    [base_facade.py(find_all:22)] column: name, value: anim, value_to: None, method: like, max: 5
+2023-05-13 14:00:09,141 INFO    [base_facade.py(find_all:22)] column: name, value: ani, value_to: None, method: like, max: 5
+2023-05-13 14:00:09,181 INFO    [base_facade.py(find_all:22)] column: name, value: an, value_to: None, method: like, max: 5
+2023-05-13 14:00:09,208 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-13 14:00:11,656 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-13 14:00:13,383 INFO    [base_facade.py(find_all:22)] column: name, value: an, value_to: None, method: like, max: 5
+2023-05-13 14:00:13,523 INFO    [base_facade.py(find_all:22)] column: name, value: ane, value_to: None, method: like, max: 5
+2023-05-13 14:00:14,280 INFO    [base_facade.py(find_all:22)] column: name, value: anee, value_to: None, method: like, max: 5
+2023-05-13 14:00:14,313 INFO    [base_facade.py(find_all:22)] column: name, value: aneef, value_to: None, method: like, max: 5
+2023-05-13 14:00:14,451 INFO    [base_facade.py(find_all:22)] column: name, value: aneefe, value_to: None, method: like, max: 5
+2023-05-13 14:00:14,721 INFO    [base_facade.py(find_all:22)] column: name, value: aneefes, value_to: None, method: like, max: 5
+2023-05-13 14:00:14,819 INFO    [base_facade.py(find_all:22)] column: name, value: aneefesf, value_to: None, method: like, max: 5
+2023-05-13 14:00:14,963 INFO    [base_facade.py(find_all:22)] column: name, value: aneefesfs, value_to: None, method: like, max: 5
+2023-05-13 14:02:04,176 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-13 14:02:05,446 INFO    [base_facade.py(find_all:22)] column: name, value: b, value_to: None, method: like, max: 5
+2023-05-13 14:02:08,870 INFO    [base_facade.py(find_all:22)] column: name, value: q, value_to: None, method: like, max: 5
+2023-05-13 14:03:20,615 INFO    [base_facade.py(find_all:22)] column: name, value: q, value_to: None, method: like, max: 5
+2023-05-13 14:04:00,415 INFO    [base_facade.py(find_all:22)] column: name, value: q, value_to: None, method: like, max: 10
+2023-05-13 14:04:11,701 INFO    [base_facade.py(find_all:22)] column: name, value: qafeff, value_to: None, method: like, max: 10
+2023-05-13 14:05:37,902 INFO    [base_facade.py(find_all:22)] column: 'name', value: qafeff, value_to: None, method: like, max: 10
+2023-05-13 14:05:37,903 ERROR   [base_facade.py(find_all:49)] type object 'Actor' has no attribute ''name''
+Traceback (most recent call last):
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\base_facade.py", line 29, in find_all
+    column = getattr(self.T, column)
+AttributeError: type object 'Actor' has no attribute ''name''
+
+2023-05-13 14:05:58,038 INFO    [base_facade.py(find_all:22)] column: name, value: qafeff, value_to: None, method: like, max: 10
+2023-05-13 14:06:02,752 INFO    [base_facade.py(find_all:22)] column: name, value: qafeff, value_to: None, method: like, max: 3
+2023-05-13 14:06:33,349 INFO    [base_facade.py(find_all:22)] column: id, value: 1, value_to: None, method: like, max: 3
+2023-05-13 14:07:35,835 INFO    [base_facade.py(find_all:22)] column: id, value: 1, value_to: None, method: None, max: 3
+2023-05-13 14:07:51,560 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 14:07:51,561 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 14:09:27,508 INFO    [base_facade.py(find:13)] value: T, column: title
+2023-05-13 14:09:27,938 INFO    [base_facade.py(find:13)] value: Th, column: title
+2023-05-13 14:09:28,052 INFO    [base_facade.py(find:13)] value: The, column: title
+2023-05-13 14:09:28,187 INFO    [base_facade.py(find:13)] value: The , column: title
+2023-05-13 14:09:28,411 INFO    [base_facade.py(find:13)] value: The M, column: title
+2023-05-13 14:09:28,616 INFO    [base_facade.py(find:13)] value: The Ma, column: title
+2023-05-13 14:09:28,923 INFO    [base_facade.py(find:13)] value: The Mat, column: title
+2023-05-13 14:09:29,126 INFO    [base_facade.py(find:13)] value: The Matr, column: title
+2023-05-13 14:09:29,223 INFO    [base_facade.py(find:13)] value: The Matri, column: title
+2023-05-13 14:09:29,429 INFO    [base_facade.py(find:13)] value: The Matrix, column: title
+2023-05-13 14:09:36,156 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: None, max: 5
+2023-05-13 14:09:38,701 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 14:09:55,460 INFO    [base_facade.py(find_all:22)] column: name, value: n, value_to: None, method: None, max: 5
+2023-05-13 14:09:58,864 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 14:15:34,557 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Science Fiction', 'image': 'science_fiction.png'}
+2023-05-13 14:15:39,309 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 14:15:42,557 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: None, max: 5
+2023-05-13 14:20:29,176 INFO    [base_facade.py(find_all:22)] column: name, value: k, value_to: None, method: None, max: 5
+2023-05-13 14:20:44,283 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Keanu Reeves', 'image': 'keanu_reeves.jpg'}
+2023-05-13 14:22:59,113 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Laurence Fishburne', 'image': 'laurence_fishburne.jpg'}
+2023-05-13 14:27:37,087 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Carrie-Anne Moss', 'image': 'carrie_anne_moss.png'}
+2023-05-13 14:28:58,522 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Hugo Weaving', 'image': 'hugo_weaving.png'}
+2023-05-13 14:30:49,075 INFO    [base_facade.py(find_all:22)] column: name, value: ki, value_to: None, method: None, max: 5
+2023-05-13 14:30:51,171 INFO    [base_facade.py(find_all:22)] column: name, value: ke, value_to: None, method: None, max: 5
+2023-05-13 14:31:07,668 INFO    [base_facade.py(find_all:22)] column: name, value: c, value_to: None, method: None, max: 5
+2023-05-13 14:31:07,810 INFO    [base_facade.py(find_all:22)] column: name, value: ca, value_to: None, method: None, max: 5
+2023-05-13 14:31:19,846 INFO    [base_facade.py(find_all:22)] column: name, value: h, value_to: None, method: None, max: 5
+2023-05-13 14:31:21,029 INFO    [base_facade.py(find_all:22)] column: name, value: hu, value_to: None, method: None, max: 5
+2023-05-13 14:31:21,285 INFO    [base_facade.py(find_all:22)] column: name, value: hug, value_to: None, method: None, max: 5
+2023-05-13 14:31:21,289 INFO    [base_facade.py(find_all:22)] column: name, value: hugh, value_to: None, method: None, max: 5
+2023-05-13 14:31:22,174 INFO    [base_facade.py(find_all:22)] column: name, value: hug, value_to: None, method: None, max: 5
+2023-05-13 14:31:37,780 INFO    [base_facade.py(find_all:22)] column: name, value: L, value_to: None, method: None, max: 5
+2023-05-13 14:31:38,048 INFO    [base_facade.py(find_all:22)] column: name, value: La, value_to: None, method: None, max: 5
+2023-05-13 14:33:20,048 INFO    [base_facade.py(find_all:22)] column: name, value: w, value_to: None, method: None, max: 5
+2023-05-13 14:33:21,668 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 14:33:51,392 INFO    [base_facade.py(find:13)] value: 6, column: id
+2023-05-13 14:34:45,624 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 14:34:45,625 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 14:38:11,734 INFO    [base_facade.py(find:13)] value: Good Will Hunting, column: title
+2023-05-13 14:42:29,386 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Ben Affleck', 'image': 'ben_affleck.jpg'}
+2023-05-13 14:43:46,806 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Matt Damon', 'image': 'matt_damon.jpg'}
+2023-05-13 14:44:07,282 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 14:44:07,586 INFO    [base_facade.py(find_all:22)] column: name, value: st, value_to: None, method: None, max: 5
+2023-05-13 14:44:07,666 INFO    [base_facade.py(find_all:22)] column: name, value: ste, value_to: None, method: None, max: 5
+2023-05-13 14:46:36,472 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Robin Williams', 'image': 'robin_williams.png'}
+2023-05-13 14:50:25,630 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Stellan Skarsgard', 'image': 'stellan_skarsgard.png'}
+2023-05-13 14:54:10,012 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Rachel Majorowski', 'image': 'rachel_majorowski.png'}
+2023-05-13 15:00:25,195 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Casey Affleck', 'image': 'casey_affleck.png'}
+2023-05-13 15:00:38,800 INFO    [base_facade.py(find_all:22)] column: name, value: r, value_to: None, method: None, max: 5
+2023-05-13 15:00:40,731 INFO    [base_facade.py(find_all:22)] column: name, value: ro, value_to: None, method: None, max: 5
+2023-05-13 15:00:40,863 INFO    [base_facade.py(find_all:22)] column: name, value: rob, value_to: None, method: None, max: 5
+2023-05-13 15:00:48,096 INFO    [base_facade.py(find_all:22)] column: name, value: m, value_to: None, method: None, max: 5
+2023-05-13 15:00:48,475 INFO    [base_facade.py(find_all:22)] column: name, value: ma, value_to: None, method: None, max: 5
+2023-05-13 15:00:48,750 INFO    [base_facade.py(find_all:22)] column: name, value: mat, value_to: None, method: None, max: 5
+2023-05-13 15:00:48,953 INFO    [base_facade.py(find_all:22)] column: name, value: matt, value_to: None, method: None, max: 5
+2023-05-13 15:00:53,709 INFO    [base_facade.py(find_all:22)] column: name, value: B, value_to: None, method: None, max: 5
+2023-05-13 15:00:53,986 INFO    [base_facade.py(find_all:22)] column: name, value: Be, value_to: None, method: None, max: 5
+2023-05-13 15:01:04,695 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 15:01:04,941 INFO    [base_facade.py(find_all:22)] column: name, value: st, value_to: None, method: None, max: 5
+2023-05-13 15:01:04,993 INFO    [base_facade.py(find_all:22)] column: name, value: ste, value_to: None, method: None, max: 5
+2023-05-13 15:01:20,148 INFO    [base_facade.py(find_all:22)] column: name, value: r, value_to: None, method: None, max: 5
+2023-05-13 15:01:20,255 INFO    [base_facade.py(find_all:22)] column: name, value: ra, value_to: None, method: None, max: 5
+2023-05-13 15:01:20,451 INFO    [base_facade.py(find_all:22)] column: name, value: rac, value_to: None, method: None, max: 5
+2023-05-13 15:01:36,308 INFO    [base_facade.py(find_all:22)] column: name, value: c, value_to: None, method: None, max: 5
+2023-05-13 15:01:36,398 INFO    [base_facade.py(find_all:22)] column: name, value: ca, value_to: None, method: None, max: 5
+2023-05-13 15:01:36,607 INFO    [base_facade.py(find_all:22)] column: name, value: cas, value_to: None, method: None, max: 5
+2023-05-13 15:02:42,659 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 15:02:46,081 INFO    [base_facade.py(find_all:22)] column: name, value: r, value_to: None, method: None, max: 5
+2023-05-13 15:02:47,546 INFO    [base_facade.py(find_all:22)] column: name, value: ro, value_to: None, method: None, max: 5
+2023-05-13 15:02:48,015 INFO    [base_facade.py(find_all:22)] column: name, value: rom, value_to: None, method: None, max: 5
+2023-05-13 15:03:53,882 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Romance', 'image': 'romance.png'}
+2023-05-13 15:03:57,222 INFO    [base_facade.py(find_all:22)] column: name, value: roma, value_to: None, method: None, max: 5
+2023-05-13 15:03:59,630 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 15:04:19,885 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 15:04:59,333 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 15:05:14,186 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 15:07:23,917 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 15:07:27,222 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 15:07:51,429 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 15:21:47,632 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Ethan Hawke', 'image': 'ethan_awke.png'}
+2023-05-13 15:23:13,188 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Uma Thurman', 'image': 'uma_thurman.png'}
+2023-05-13 15:34:21,054 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Jude Law', 'image': 'jude_law.png'}
+2023-05-13 15:34:41,419 INFO    [base_facade.py(find:13)] value: Gattaca, column: title
+2023-05-13 15:35:18,233 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 15:35:21,851 INFO    [base_facade.py(find_all:22)] column: name, value: t, value_to: None, method: None, max: 5
+2023-05-13 15:35:24,148 INFO    [base_facade.py(find_all:22)] column: name, value: tr, value_to: None, method: None, max: 5
+2023-05-13 15:35:27,921 INFO    [base_facade.py(find_all:22)] column: name, value: t, value_to: None, method: None, max: 5
+2023-05-13 15:35:28,008 INFO    [base_facade.py(find_all:22)] column: name, value: th, value_to: None, method: None, max: 5
+2023-05-13 15:38:49,913 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 15:38:49,915 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 15:38:56,534 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Thriller ', 'image': 'thriller.png'}
+2023-05-13 15:39:59,031 INFO    [base_facade.py(find:13)] value: Gattaca, column: title
+2023-05-13 15:40:23,308 INFO    [base_facade.py(find_all:22)] column: name, value: t, value_to: None, method: None, max: 5
+2023-05-13 15:40:25,191 INFO    [base_facade.py(find_all:22)] column: name, value: th, value_to: None, method: None, max: 5
+2023-05-13 15:40:27,864 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 15:40:29,725 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 15:40:29,835 INFO    [base_facade.py(find_all:22)] column: name, value: sc, value_to: None, method: None, max: 5
+2023-05-13 15:40:34,005 INFO    [base_facade.py(find_all:22)] column: name, value: e, value_to: None, method: None, max: 5
+2023-05-13 15:40:34,275 INFO    [base_facade.py(find_all:22)] column: name, value: et, value_to: None, method: None, max: 5
+2023-05-13 15:40:43,338 INFO    [base_facade.py(find_all:22)] column: name, value: u, value_to: None, method: None, max: 5
+2023-05-13 15:40:43,602 INFO    [base_facade.py(find_all:22)] column: name, value: um, value_to: None, method: None, max: 5
+2023-05-13 15:40:43,689 INFO    [base_facade.py(find_all:22)] column: name, value: uma, value_to: None, method: None, max: 5
+2023-05-13 15:40:50,066 INFO    [base_facade.py(find_all:22)] column: name, value: j, value_to: None, method: None, max: 5
+2023-05-13 15:40:50,254 INFO    [base_facade.py(find_all:22)] column: name, value: ju, value_to: None, method: None, max: 5
+2023-05-13 15:40:50,331 INFO    [base_facade.py(find_all:22)] column: name, value: jud, value_to: None, method: None, max: 5
+2023-05-13 15:40:50,402 INFO    [base_facade.py(find_all:22)] column: name, value: jude, value_to: None, method: None, max: 5
+2023-05-13 15:47:16,599 INFO    [base_facade.py(find_all:22)] column: name, value: b, value_to: None, method: None, max: 5
+2023-05-13 15:47:16,886 INFO    [base_facade.py(find_all:22)] column: name, value: br, value_to: None, method: None, max: 5
+2023-05-13 15:47:16,941 INFO    [base_facade.py(find_all:22)] column: name, value: bra, value_to: None, method: None, max: 5
+2023-05-13 15:52:31,306 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Brad Pitt', 'image': 'brad_pitt.png'}
+2023-05-13 15:53:52,878 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Anthony Hopkins', 'image': 'anthony_hopkins.png'}
+2023-05-13 15:55:41,206 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Aidan Quinn', 'image': 'aidan_quinn.png'}
+2023-05-13 16:21:09,385 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Julia Ormond', 'image': 'julia_ormond.png'}
+2023-05-13 16:30:17,739 INFO    [base_facade.py(find:13)] value: Legends of the Fall, column: title
+2023-05-13 16:31:20,892 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 16:31:23,845 INFO    [base_facade.py(find_all:22)] column: name, value: r, value_to: None, method: None, max: 5
+2023-05-13 16:31:25,659 INFO    [base_facade.py(find_all:22)] column: name, value: ro, value_to: None, method: None, max: 5
+2023-05-13 16:31:28,477 INFO    [base_facade.py(find_all:22)] column: name, value: w, value_to: None, method: None, max: 5
+2023-05-13 16:31:28,735 INFO    [base_facade.py(find_all:22)] column: name, value: wa, value_to: None, method: None, max: 5
+2023-05-13 16:31:34,443 INFO    [base_facade.py(find_all:22)] column: name, value: b, value_to: None, method: None, max: 5
+2023-05-13 16:31:34,825 INFO    [base_facade.py(find_all:22)] column: name, value: br, value_to: None, method: None, max: 5
+2023-05-13 16:31:44,857 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: None, max: 5
+2023-05-13 16:31:45,453 INFO    [base_facade.py(find_all:22)] column: name, value: an, value_to: None, method: None, max: 5
+2023-05-13 16:31:45,681 INFO    [base_facade.py(find_all:22)] column: name, value: ant, value_to: None, method: None, max: 5
+2023-05-13 16:31:58,849 INFO    [base_facade.py(find_all:22)] column: name, value: A, value_to: None, method: None, max: 5
+2023-05-13 16:31:59,541 INFO    [base_facade.py(find_all:22)] column: name, value: Ai, value_to: None, method: None, max: 5
+2023-05-13 16:32:07,717 INFO    [base_facade.py(find_all:22)] column: name, value: J, value_to: None, method: None, max: 5
+2023-05-13 16:32:08,226 INFO    [base_facade.py(find_all:22)] column: name, value: Ju, value_to: None, method: None, max: 5
+2023-05-13 16:33:38,238 INFO    [base_facade.py(find:13)] value: 9, column: id
+2023-05-13 16:38:55,674 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: None, max: 5
+2023-05-13 16:38:56,074 INFO    [base_facade.py(find_all:22)] column: name, value: al, value_to: None, method: None, max: 5
+2023-05-13 16:39:00,151 INFO    [base_facade.py(find_all:22)] column: name, value: al , value_to: None, method: None, max: 5
+2023-05-13 16:39:00,780 INFO    [base_facade.py(find_all:22)] column: name, value: al p, value_to: None, method: None, max: 5
+2023-05-13 16:39:02,191 INFO    [base_facade.py(find_all:22)] column: name, value: p, value_to: None, method: None, max: 5
+2023-05-13 16:39:02,228 INFO    [base_facade.py(find_all:22)] column: name, value: pa, value_to: None, method: None, max: 5
+2023-05-13 16:39:02,385 INFO    [base_facade.py(find_all:22)] column: name, value: pac, value_to: None, method: None, max: 5
+2023-05-13 16:39:16,730 INFO    [base_facade.py(find_all:22)] column: name, value: b, value_to: None, method: None, max: 5
+2023-05-13 16:39:16,794 INFO    [base_facade.py(find_all:22)] column: name, value: br, value_to: None, method: None, max: 5
+2023-05-13 16:39:17,160 INFO    [base_facade.py(find_all:22)] column: name, value: bru, value_to: None, method: None, max: 5
+2023-05-13 16:43:05,818 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 16:43:05,819 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 16:43:12,887 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Michael Madsen', 'image': 'michael_madsen.png'}
+2023-05-13 16:46:51,521 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Al Pacino', 'image': 'al_pacino.png'}
+2023-05-13 16:48:27,796 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Bruno Kirby', 'image': 'bruno_kirby.png'}
+2023-05-13 16:49:23,466 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'James Russo', 'image': 'james_russo.png'}
+2023-05-13 16:50:10,115 INFO    [base_facade.py(find:13)] value: Donnie Brasco, column: title
+2023-05-13 16:50:53,504 INFO    [base_facade.py(find_all:22)] column: name, value: b, value_to: None, method: None, max: 5
+2023-05-13 16:50:56,534 INFO    [base_facade.py(find_all:22)] column: name, value: c, value_to: None, method: None, max: 5
+2023-05-13 16:50:59,507 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 16:51:05,302 INFO    [base_facade.py(find_all:22)] column: name, value: j, value_to: None, method: None, max: 5
+2023-05-13 16:51:05,758 INFO    [base_facade.py(find_all:22)] column: name, value: jo, value_to: None, method: None, max: 5
+2023-05-13 16:51:14,217 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: None, max: 5
+2023-05-13 16:51:15,194 INFO    [base_facade.py(find_all:22)] column: name, value: al, value_to: None, method: None, max: 5
+2023-05-13 16:51:17,743 INFO    [base_facade.py(find_all:22)] column: name, value: al , value_to: None, method: None, max: 5
+2023-05-13 16:51:25,697 INFO    [base_facade.py(find_all:22)] column: name, value: M, value_to: None, method: None, max: 5
+2023-05-13 16:51:26,590 INFO    [base_facade.py(find_all:22)] column: name, value: Mi, value_to: None, method: None, max: 5
+2023-05-13 16:51:27,312 INFO    [base_facade.py(find_all:22)] column: name, value: Mic, value_to: None, method: None, max: 5
+2023-05-13 16:51:33,438 INFO    [base_facade.py(find_all:22)] column: name, value: B, value_to: None, method: None, max: 5
+2023-05-13 16:51:33,718 INFO    [base_facade.py(find_all:22)] column: name, value: Br, value_to: None, method: None, max: 5
+2023-05-13 16:51:34,146 INFO    [base_facade.py(find_all:22)] column: name, value: Bru, value_to: None, method: None, max: 5
+2023-05-13 16:51:41,558 INFO    [base_facade.py(find_all:22)] column: name, value: J, value_to: None, method: None, max: 5
+2023-05-13 16:51:41,941 INFO    [base_facade.py(find_all:22)] column: name, value: Ja, value_to: None, method: None, max: 5
+2023-05-13 16:59:00,968 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 16:59:00,969 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 16:59:10,264 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Harrison Ford', 'image': 'harrison_ford.jpg'}
+2023-05-13 17:00:14,454 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Rutger Hauer', 'image': 'rutger_hauer.jpg'}
+2023-05-13 17:02:07,288 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Sean Young', 'image': 'sean_young.png'}
+2023-05-13 17:02:39,436 INFO    [base_facade.py(find:13)] value: Blade Runner, column: title
+2023-05-13 17:03:02,195 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: None, max: 5
+2023-05-13 17:03:05,171 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 17:03:07,740 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 17:03:42,091 INFO    [base_facade.py(find_all:22)] column: name, value: h, value_to: None, method: None, max: 5
+2023-05-13 17:03:42,756 INFO    [base_facade.py(find_all:22)] column: name, value: ha, value_to: None, method: None, max: 5
+2023-05-13 17:03:43,971 INFO    [base_facade.py(find_all:22)] column: name, value: har, value_to: None, method: None, max: 5
+2023-05-13 17:03:55,093 INFO    [base_facade.py(find_all:22)] column: name, value: r, value_to: None, method: None, max: 5
+2023-05-13 17:03:55,682 INFO    [base_facade.py(find_all:22)] column: name, value: ru, value_to: None, method: None, max: 5
+2023-05-13 17:03:55,960 INFO    [base_facade.py(find_all:22)] column: name, value: rut, value_to: None, method: None, max: 5
+2023-05-13 17:04:02,313 INFO    [base_facade.py(find_all:22)] column: name, value: S, value_to: None, method: None, max: 5
+2023-05-13 17:04:02,802 INFO    [base_facade.py(find_all:22)] column: name, value: Se, value_to: None, method: None, max: 5
+2023-05-13 17:04:03,418 INFO    [base_facade.py(find_all:22)] column: name, value: Sea, value_to: None, method: None, max: 5
+2023-05-13 17:04:27,161 INFO    [base_facade.py(find:13)] value: 11, column: id
+2023-05-13 17:28:00,378 INFO    [base_facade.py(find:13)] value: Hunger, column: title
+2023-05-13 17:28:24,893 INFO    [base_facade.py(find_all:22)] column: name, value: b, value_to: None, method: None, max: 5
+2023-05-13 17:28:26,986 INFO    [base_facade.py(find_all:22)] column: name, value: c, value_to: None, method: None, max: 5
+2023-05-13 17:28:29,087 INFO    [base_facade.py(find_all:22)] column: name, value: cd, value_to: None, method: None, max: 5
+2023-05-13 17:28:30,177 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 17:28:31,945 INFO    [base_facade.py(find_all:22)] column: name, value: c, value_to: None, method: None, max: 5
+2023-05-13 17:28:40,997 INFO    [base_facade.py(find_all:22)] column: name, value: m, value_to: None, method: None, max: 5
+2023-05-13 17:28:42,880 INFO    [base_facade.py(find_all:22)] column: name, value: mi, value_to: None, method: None, max: 5
+2023-05-13 17:28:43,894 INFO    [base_facade.py(find_all:22)] column: name, value: mic, value_to: None, method: None, max: 5
+2023-05-13 17:28:56,872 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Michael Fassbender', 'image': 'michael_fassbender.jpg'}
+2023-05-13 17:29:12,563 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Karen Hassan', 'image': 'karen_hassan.jpg'}
+2023-05-13 17:29:37,580 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Brian Milligan', 'image': 'brian_milligan.png'}
+2023-05-13 17:29:51,815 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Liam McMahon', 'image': 'liam_mcmahon.png'}
+2023-05-13 17:30:06,973 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Stuart Graham', 'image': 'stuart_graham.jpg'}
+2023-05-13 17:30:12,069 INFO    [base_facade.py(find_all:22)] column: name, value: mich, value_to: None, method: None, max: 5
+2023-05-13 17:30:24,609 INFO    [base_facade.py(find_all:22)] column: name, value: s, value_to: None, method: None, max: 5
+2023-05-13 17:30:25,131 INFO    [base_facade.py(find_all:22)] column: name, value: st, value_to: None, method: None, max: 5
+2023-05-13 17:30:27,157 INFO    [base_facade.py(find_all:22)] column: name, value: stu, value_to: None, method: None, max: 5
+2023-05-13 17:30:41,433 INFO    [base_facade.py(find_all:22)] column: name, value: k, value_to: None, method: None, max: 5
+2023-05-13 17:30:41,855 INFO    [base_facade.py(find_all:22)] column: name, value: ka, value_to: None, method: None, max: 5
+2023-05-13 17:30:42,162 INFO    [base_facade.py(find_all:22)] column: name, value: kar, value_to: None, method: None, max: 5
+2023-05-13 17:31:02,480 INFO    [base_facade.py(find_all:22)] column: name, value: k, value_to: None, method: None, max: 5
+2023-05-13 17:31:02,901 INFO    [base_facade.py(find_all:22)] column: name, value: l, value_to: None, method: None, max: 5
+2023-05-13 17:31:02,982 INFO    [base_facade.py(find_all:22)] column: name, value: li, value_to: None, method: None, max: 5
+2023-05-13 17:31:04,035 INFO    [base_facade.py(find_all:22)] column: name, value: lia, value_to: None, method: None, max: 5
+2023-05-13 17:31:17,909 INFO    [base_facade.py(find_all:22)] column: name, value: b, value_to: None, method: None, max: 5
+2023-05-13 17:31:18,111 INFO    [base_facade.py(find_all:22)] column: name, value: br, value_to: None, method: None, max: 5
+2023-05-13 17:35:51,205 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Ed Harris', 'image': 'ed_harris.jpg'}
+2023-05-13 17:38:31,460 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Joseph Fiennes', 'image': 'joseph_fiennes.jpg'}
+2023-05-13 17:39:43,146 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Rachel Weisz', 'image': 'rachel_weisz.jpg'}
+2023-05-13 17:41:07,840 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Bob Hoskins', 'image': 'bob_hoskins.jpg'}
+2023-05-13 17:42:28,182 INFO    [base_facade.py(create:54)] create: {'id': None, 'name': 'Ron Perlman', 'image': 'ron_perlman.png'}
+2023-05-13 17:44:42,474 INFO    [base_facade.py(find:13)] value: Enemy at the Gates, column: title
+2023-05-13 17:45:11,766 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: None, max: 5
+2023-05-13 17:45:14,517 INFO    [base_facade.py(find_all:22)] column: name, value: d, value_to: None, method: None, max: 5
+2023-05-13 17:45:16,983 INFO    [base_facade.py(find_all:22)] column: name, value: w, value_to: None, method: None, max: 5
+2023-05-13 17:45:26,228 INFO    [base_facade.py(find_all:22)] column: name, value: e, value_to: None, method: None, max: 5
+2023-05-13 17:45:26,345 INFO    [base_facade.py(find_all:22)] column: name, value: ed, value_to: None, method: None, max: 5
+2023-05-13 17:45:36,654 INFO    [base_facade.py(find_all:22)] column: name, value: j, value_to: None, method: None, max: 5
+2023-05-13 17:45:36,716 INFO    [base_facade.py(find_all:22)] column: name, value: ju, value_to: None, method: None, max: 5
+2023-05-13 17:45:45,937 INFO    [base_facade.py(find_all:22)] column: name, value: j, value_to: None, method: None, max: 5
+2023-05-13 17:45:46,110 INFO    [base_facade.py(find_all:22)] column: name, value: jo, value_to: None, method: None, max: 5
+2023-05-13 17:45:46,865 INFO    [base_facade.py(find_all:22)] column: name, value: jos, value_to: None, method: None, max: 5
+2023-05-13 17:45:58,905 INFO    [base_facade.py(find_all:22)] column: name, value: R, value_to: None, method: None, max: 5
+2023-05-13 17:45:59,131 INFO    [base_facade.py(find_all:22)] column: name, value: Ra, value_to: None, method: None, max: 5
+2023-05-13 17:45:59,357 INFO    [base_facade.py(find_all:22)] column: name, value: Rac, value_to: None, method: None, max: 5
+2023-05-13 17:46:09,044 INFO    [base_facade.py(find_all:22)] column: name, value: B, value_to: None, method: None, max: 5
+2023-05-13 17:46:09,581 INFO    [base_facade.py(find_all:22)] column: name, value: Bo, value_to: None, method: None, max: 5
+2023-05-13 17:46:09,667 INFO    [base_facade.py(find_all:22)] column: name, value: Bob, value_to: None, method: None, max: 5
+2023-05-13 17:46:26,032 INFO    [base_facade.py(find_all:22)] column: name, value: r, value_to: None, method: None, max: 5
+2023-05-13 17:46:26,106 INFO    [base_facade.py(find_all:22)] column: name, value: ro, value_to: None, method: None, max: 5
+2023-05-13 17:46:26,258 INFO    [base_facade.py(find_all:22)] column: name, value: ron, value_to: None, method: None, max: 5
+2023-05-13 17:54:22,445 INFO    [base_facade.py(find:13)] value: 12, column: id
+2023-05-13 18:05:58,758 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 18:06:01,533 INFO    [base_facade.py(find:13)] value: 19, column: id
+2023-05-13 18:06:01,535 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-13 18:06:08,992 INFO    [base_facade.py(find:13)] value: 19, column: id
+2023-05-13 18:06:08,993 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-13 18:06:11,785 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 18:52:55,263 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-13 18:57:23,878 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-13 18:57:58,577 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-13 18:58:38,726 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-13 19:00:45,033 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-13 19:01:06,547 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 19:01:30,356 INFO    [base_facade.py(find:13)] value: 11, column: id
+2023-05-13 19:01:54,225 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 19:11:38,297 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 19:11:38,299 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 19:12:20,729 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-13 19:21:01,494 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '2', 'comment': 'Jako dobar film koji prikazuje scene društva u ratu, drugarstva i širok spektar među-ljudskih odnosa i emocija.', 'rating': '10', 'created_at': '2023-05-13'}
+2023-05-13 19:21:03,011 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-13 19:21:26,405 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-13 19:27:57,196 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '3', 'comment': 'Prikazuju se scene društva u Sovjetskom Savezu, društva kontrolisanog političkom moći, života glavnih likova kako na visokoj tako i na niskoj noti i sve to sa dozom romantike.', 'rating': '9', 'created_at': '2023-05-13'}
+2023-05-13 19:27:58,810 INFO    [base_facade.py(find:13)] value: 3, column: id
+2023-05-13 19:29:34,284 INFO    [base_facade.py(find:13)] value: 2, column: id
+2023-05-13 19:30:03,422 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 19:31:02,356 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 19:31:31,391 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 19:31:57,400 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 19:32:43,355 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 19:32:51,904 INFO    [base_facade.py(find:13)] value: 4, column: id
+2023-05-13 19:52:21,501 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '4', 'comment': 'Priča je u svojoj osnovi poprilično jednostavna, ali sami karakteri su poprilično zanimljivi, od kojih je većina odglumljena od strane poznatih glumaca. John Dillinger kao karakter je prikazan kao jaka, staložena ličnost, poput koje bi mnogi voleli da budu.', 'rating': '10', 'created_at': '2023-05-13'}
+2023-05-13 19:52:23,071 INFO    [base_facade.py(find:13)] value: 4, column: id
+2023-05-13 19:52:30,524 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-13 19:57:39,176 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '5', 'comment': 'Zanimljiva priča o dvojici braće koji su se rastali kao mali usled porodičnih problema, gde im se roditelji razvode i nakon toga se susreću opet kao starije osobe koje izrazuju želju da učestvuju na istom borilačkom turniru. Priča svih glavnih karaktera ujedno predstavlja i priču o problemima sa kojim se svaki od njih susreće u životu.', 'rating': '10', 'created_at': '2023-05-13'}
+2023-05-13 19:57:40,435 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-13 19:57:46,196 INFO    [base_facade.py(find:13)] value: 6, column: id
+2023-05-13 19:58:32,660 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '6', 'comment': 'Genijalan film ispred svog vremena, sa dosta akcije i zanimljivih ličnosti.', 'rating': '10', 'created_at': '2023-05-13'}
+2023-05-13 19:58:34,116 INFO    [base_facade.py(find:13)] value: 6, column: id
+2023-05-13 19:58:40,498 INFO    [base_facade.py(find:13)] value: 5, column: id
+2023-05-13 19:59:07,145 INFO    [base_facade.py(find:13)] value: 6, column: id
+2023-05-13 19:59:28,069 INFO    [base_facade.py(find:13)] value: 6, column: id
+2023-05-13 19:59:33,139 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 20:09:55,841 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '7', 'comment': 'Priča o životu ekstremno inteligentnog mladića, rođenog u nižem staležu društva i njegovoj promeni načina razmišljanja ili njegovoj elovuciji kao ljudsko biće bolje rečeno nakon ostvarivanja kontakta sa dobrom osobom koja već ima izgrađen stabilan pogled na svet.', 'rating': '10', 'created_at': '2023-05-13'}
+2023-05-13 20:09:57,605 INFO    [base_facade.py(find:13)] value: 7, column: id
+2023-05-13 20:10:02,344 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-13 20:14:16,647 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '8', 'comment': 'Priča o osobi koja želi da pobegne iz kaveza punog ograničenja u koje ga je društvo stavilo prilikom rođenja, njegovom načinu razmišljanja i putu punom opasnosti.', 'rating': '10', 'created_at': '2023-05-13'}
+2023-05-13 20:14:18,154 INFO    [base_facade.py(find:13)] value: 8, column: id
+2023-05-13 20:14:24,900 INFO    [base_facade.py(find:13)] value: 9, column: id
+2023-05-13 20:19:48,742 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '9', 'comment': 'Priča o mirnim vremenima i trojici braće koji se zaljubljuju u istu devojku, nakon čega izbija rat u kojem su sva trojica prinuđeni da učestvuju na ovaj ili onaj način.', 'rating': '10', 'created_at': '2023-05-13'}
+2023-05-13 20:19:51,313 INFO    [base_facade.py(find:13)] value: 9, column: id
+2023-05-13 20:20:40,939 INFO    [base_facade.py(find:13)] value: 9, column: id
+2023-05-13 20:20:52,231 INFO    [base_facade.py(find:13)] value: 10, column: id
+2023-05-13 20:24:31,875 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '10', 'comment': 'Priča o mladiću u policijskom odredu koji se bavi istraživanjem narkotika, tajnoj misiji, mafiji i realnosti sa kojom se mladić susreće, da sve u životu nije ni samo crno ni samo belo, već neka nijansa sive.', 'rating': '9', 'created_at': '2023-05-13'}
+2023-05-13 20:24:33,344 INFO    [base_facade.py(find:13)] value: 10, column: id
+2023-05-13 20:24:40,149 INFO    [base_facade.py(find:13)] value: 11, column: id
+2023-05-13 20:26:27,873 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '11', 'comment': 'Jedan od retkih filmova, koji prosečna osoba pogleda i shvati da je možda glavni negativac ipak bio u pravu.', 'rating': '9', 'created_at': '2023-05-13'}
+2023-05-13 20:26:29,430 INFO    [base_facade.py(find:13)] value: 11, column: id
+2023-05-13 20:26:39,028 INFO    [base_facade.py(find:13)] value: 12, column: id
+2023-05-13 20:27:59,448 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '12', 'comment': 'Priča o zatvorenicima, društu, politici i surovoj realnosti koja se dešava među nama.', 'rating': '9', 'created_at': '2023-05-13'}
+2023-05-13 20:28:05,246 INFO    [base_facade.py(find:13)] value: 12, column: id
+2023-05-13 20:28:43,396 INFO    [base_facade.py(find:13)] value: 12, column: id
+2023-05-13 20:28:56,718 INFO    [base_facade.py(find:13)] value: 13, column: id
+2023-05-13 20:29:19,435 INFO    [base_facade.py(find:13)] value: 13, column: id
+2023-05-13 20:34:14,301 INFO    [base_facade.py(create:54)] create: {'id': None, 'user_id': '1', 'movie_id': '13', 'comment': 'Priča o ratu i jednom mladiću kome se život menja 360 stepeni nakon što spase jednog vojnog oficira u bici, kao i romansi i mržnji koja se stvara tokom nastana iste.', 'rating': '9', 'created_at': '2023-05-13'}
+2023-05-13 20:34:16,350 INFO    [base_facade.py(find:13)] value: 13, column: id
+2023-05-13 21:05:32,786 INFO    [user_impl.py(logout:183)] log out: Miloš Marković
+2023-05-13 22:08:08,130 INFO    [user_impl.py(login:150)] login: clutch_lord
+2023-05-13 22:08:08,130 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-13 23:50:25,567 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-13 23:50:27,853 INFO    [base_facade.py(find:13)] value: 102, column: id
+2023-05-13 23:50:27,857 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-13 23:50:32,186 INFO    [base_facade.py(find:13)] value: 102, column: id
+2023-05-13 23:50:32,188 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-13 23:50:35,203 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:52:37,877 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:52:41,511 INFO    [base_facade.py(delete:69)] value: 28, column: id
+2023-05-13 23:52:43,044 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:53:23,216 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:54:17,575 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:54:17,577 INFO    [template_api.py(reservations:38)] False
+2023-05-13 23:55:07,428 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:56:45,382 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:56:47,484 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:57:06,508 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:57:26,150 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:57:32,798 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:58:15,845 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-13 23:58:32,489 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None

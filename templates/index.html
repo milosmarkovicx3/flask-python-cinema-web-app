@@ -9,10 +9,10 @@
 
 {% block nav %}
 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire_search', page=1) }}">REPERTOAR</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire', page=1) }}">REPERTOAR</a></li>
 <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
-<li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
-<li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+ <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.membership') }}">ČLANSTVO</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.contact') }}">KONTAKT</a></li>
 {% endblock %}
 
 {% block content %}             
@@ -148,14 +148,14 @@
   <div class="container">
     <div class="row mt-4 text-center">
       <div class="col-sm-8 p-0">
-        <a href="">
+        <a href="{{ url_for( 'template_api.arhiv_tuesday') }}">
           <img src="{{ url_for('static', filename='resources/index/4-filmski-dan/filmski-dan.jpg') }}" class="w-100 border-black border" alt="filmski_dan">
         </a>
       </div>
       <div class="col-sm-4">
         <h1 class="m-0 my-5 text-black">FILMSKI DAN U ARHIVU</h1>
         <hr class="my-2">
-        <a href="" class="nav-link">
+        <a href="{{ url_for( 'template_api.arhiv_tuesday') }}" class="nav-link">
           <h2 class="m-0 my-5 text-danger">>> NA DETALJE</h2>
         </a>
       </div>

@@ -16,6 +16,8 @@ fst-italic/normal
 lh-1/sm/base/lg
 text-decoration-none
 -----------------------------------------------------
+g-0 (gutter)
+
 x (start/end)
 y (top/bottom)
 0-5 (size)

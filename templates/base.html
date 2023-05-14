@@ -120,8 +120,8 @@
                         <input type="checkbox" class="form-check-input" id="register-conditions" name="register-conditions">
                         <label class="form-label" for="register-conditions">
                             Prihvatam
-                            <a href="" class="text-danger-emphasis text-decoration-none">politiku privatnosti</a> i
-                            <a href="" class="text-danger-emphasis text-decoration-none">uslove korišćenja</a>
+                            <a href="{{ url_for('template_api.privacy_politics') }}" class="text-danger-emphasis text-decoration-none" target="_blank">politiku privatnosti</a> i
+                            <a href="{{ url_for('template_api.terms_and_conditions') }}" class="text-danger-emphasis text-decoration-none" target="_blank">uslove korišćenja</a>
                         </label>                    
                     </div>
                 </div>
@@ -170,10 +170,10 @@
                     </li>
                     {% block nav %}
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire_search') }}">REPERTOAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire') }}">REPERTOAR</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.membership') }}">ČLANSTVO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.contact') }}">KONTAKT</a></li>
                     {% endblock %}
                     </ul>
                     {% if current_user.is_authenticated %}
@@ -187,15 +187,15 @@
                         {{ current_user.first_name|upper }}
                         {{ current_user.last_name|upper }}
                     </a> 
-                    <ul class="dropdown-menu dropdown-menu-dark">
+                    <ul class="dropdown-menu dropdown-menu-dark border border-black">
                         {% if current_user.is_superuser %}
                         <li><a class="dropdown-item" href="{{ url_for('template_api.dashboard') }}"><span class="fi fi-rs-list"></span>&nbsp; Admin panel</a></li>
                         {% else %}
                         
                         {% endif %}
-                        <li><a class="dropdown-item" href="#"><span class="fi fi-sr-user"></span>&nbsp; Profil</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('template_api.profile') }}"><span class="fi fi-sr-user"></span>&nbsp; Profil</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('template_api.reservations') }}"><span class="fi fi-rs-message-code"></span>&nbsp; Rezervacije</a></li>
-                        <li><a class="dropdown-item" href="#"><span class="fi fi-rs-settings"></span>&nbsp; Podešavanja</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('template_api.settings') }}"><span class="fi fi-rs-settings"></span>&nbsp; Podešavanja</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ url_for('auth_api.logout') }}" id="log-out"><span class="fi fi-rs-exit"></span>&nbsp; Odjavi se</a></li>
                     </ul>
@@ -228,8 +228,8 @@
                     <h5>RADNO VREME</h5>
                     <p>
                     Radno vreme blagajne je od: <br>
-                    15:00 - 22:00 radnim danom <br>
-                    12:00 - 22:00 subota nedelja <br>
+                    08:00 - 22:00 radnim danom <br>
+                    10:00 - 22:00 subota nedelja <br>
                     (prodaja karata na dan projekcije)
                     </p>
                 </div>
@@ -263,11 +263,11 @@
                     <h5>DODATNE INFORMACIJE</h5>
                     <p>
                     <span class="fi fi-ss-messages-question"></span>
-                    <a href="">Često postavljena pitanja</a> <br>
+                    <a href="{{ url_for('template_api.faq') }}">Često postavljena pitanja</a> <br>
                     <span class="fi fi-ss-shield-check"></span>
-                    <a href="">Politika privatnosti</a> <br>
+                    <a href="{{ url_for('template_api.privacy_politics') }}">Politika privatnosti</a> <br>
                     <span class="fi  fi-ss-settings"></span>
-                    <a href="">Uslovi korišćenja</a> <br>
+                    <a href="{{ url_for('template_api.terms_and_conditions') }}">Uslovi korišćenja</a> <br>
                     <span class="fi fi-ss-search-alt"></span>
                     <a href="">O nama</a> <br>
                     <span class="fi fi-ss-map"></span>

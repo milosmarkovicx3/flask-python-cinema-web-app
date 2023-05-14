@@ -15,10 +15,10 @@
 
 {% block nav %}
 <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.index') }}">POČETNA</a></li>
-<li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('template_api.repertoire_search', page=1) }}">REPERTOAR</a></li>
+<li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('template_api.repertoire', page=1) }}">REPERTOAR</a></li>
 <li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
-<li class="nav-item"><a class="nav-link" href="#">ČLANSTVO</a></li>
-<li class="nav-item"><a class="nav-link" href="#">KONTAKT</a></li>
+ <li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.membership') }}">ČLANSTVO</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.contact') }}">KONTAKT</a></li>
 {% endblock %}
 
 
@@ -32,7 +32,7 @@
       <div id="loader-text">100%</div>
     </div>
   </div>
-  <!--SLANJE_ANIMACIJA_POČETAK-->
+  <!--SLANJE_ANIMACIJA_KRAJ-->
 
   <div class="container px-3">
 
@@ -121,10 +121,6 @@
             </div>
           </div>
 
-        </form>
-
-        <div class="row">
-
           <div class="col-md-6">
             <label for="genre-search" class="form-label">ŽANROVI: </label>
             <input type="search" class="form-control consolas border border-black" id="genre-search" placeholder="npr. Fantasy">
@@ -143,12 +139,12 @@
             </div>
           </div>
 
+        <div class="col-12 my-3 d-flex justify-content-end">
+          <button class="btn btn-success consolas border border-black me-3" type="submit">POTVRDI</button>
+          <button id="reset-movie-form" class="btn btn-danger consolas border border-black" type="reset">RESET</button>
         </div>
 
-        <div class="col-12 my-3 d-flex justify-content-end">
-          <button class="btn btn-success consolas border border-black me-3" type="submit" form="movie-form">POTVRDI</button>
-          <button id="reset-movie-form" class="btn btn-danger consolas border border-black" type="reset" form="movie-form">RESET</button>
-        </div>
+        </form>
         
       </div>
       <!--FILM_FORMA_KRAJ-->

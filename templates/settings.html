@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Podešavanja </title>
+<meta name="description" content="">
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-dark text-white border-black border mt-3 pb-3">
+  <div class="container ps-3">
+      <h1 class="display-7 my-2 text-shadow">PODEŠAVANJA: </h1>
+      <hr class="mt-2 mb-3">
+
+      <div class="container">
+          <span class="text-warning fs-4">PREUZIMANJE INFORMACIJA: </span>
+          <p>Preuzmite kopiju Vaših informacija kako biste ih sačuvali ili preneli na drugu uslugu, klikom na
+            <a class="nav-link d-inline text-primary" href="{{ url_for('resource_api.download_user_data', value=current_user.id ) }}">
+                sledeći link
+            </a>.
+          </p>
+<!--          <span class="text-warning fs-4">EMAIL OBAVEŠTENJA: </span>-->
+<!--          Ukoliko ne želite da primate bilten Arhiv bioskopa, kliknite na sledeći link.-->
+<!--          <span class="text-warning fs-4">GAŠENJE NALOGA: </span>-->
+      </div>
+      <hr>
+  </div>
+</div>
+{% endblock %}

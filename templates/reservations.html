@@ -11,40 +11,41 @@
 {% block content %}
 <div class="container-fluid bg-dark text-white border-black border mt-3 pb-3">
   <div class="container">
-      <h1 class="display-7 mb-2 mt-1">REZERVACIJE: </h1>
-      <hr class="my-2">
+      <h1 class="display-7 my-2">REZERVACIJE: </h1>
+      <hr class="mt-2 mb-3">
       <input type="hidden" id="csrf_token" name="csrf_token" value="{{ csrf_token() }}">
-      {% for reservation in reservations %}
-      <div class="container pe-0">
-          <div class="row">
-              <div class="col-sm-1 ps-0">
-                  <img src="{{ url_for('static', filename='resources/movie-posters/' + reservation.projection.movie_poster) }}" alt="{{ reservation.projection.movie_poster }}" class="border border-black w-100">
+      {% if reservations != 'False' %}
+          {% for reservation in reservations %}
+          <div class="container pe-0 fs-5">
+              <div class="row mb-3">
+                  <div class="col-sm-1 ps-0">
+                      <img src="{{ url_for('static', filename='resources/movie-posters/' + reservation.projection.movie_poster) }}" alt="{{ reservation.projection.movie_poster }}" class="border border-black w-100">
+                  </div>
+                  <div class="col-sm-11 container row pe-0">
+                      <div class="col-sm-3 text-secondary">
+                            Naziv filma: <br>
+                            Datum i vreme: <br>
+                            Sedište/a: <br>
+                            Rezervacija kreirana:
+                      </div>
+                      <div class="col-sm-7">
+                          <span class="text-warning">
+                            {{ reservation.projection.movie_title }} ({{ reservation.projection.movie_year }}) <br>
+                              </span>
+                            {{ reservation.projection.date | format_date }},  {{ reservation.projection.time }} <br>
+                            RED {{ reservation.seat.row }},  BROJ {{ reservation.seat.number }} <br>
+                            {{ reservation.created_at }}
+                      </div>
+                      <div class="col-sm-2 d-flex align-items-end p-0 justify-content-end">
+                          <button class="btn btn-danger border border-black" onclick="deleteReservation({{ reservation.id }})">OTKAŽI</button>
+                      </div>
+                  </div>
               </div>
-              <div class="col-sm-11 container row pe-0">
-                  <div class="col-sm-2 text-secondary">
-                        Naziv filma: <br>
-                        Datum i vreme: <br>
-                        Sedište/a: <br>
-                        Rezervacija kreirana:
-                  </div>
-                  <div class="col-sm-8">
-                      <span class="text-warning">
-                        {{ reservation.projection.movie_title }} ({{ reservation.projection.movie_year }}) <br>
-                          </span>
-                        {{ reservation.projection.date | format_date }},  {{ reservation.projection.time }} <br>
-                        RED {{ reservation.seat.row }},  BROJ {{ reservation.seat.number }} <br>
-                        {{ reservation.created_at }}
-                  </div>
-                  <div class="col-sm-2 d-flex align-items-end p-0 justify-content-end">
-                      <button class="btn btn-danger border border-black" onclick="deleteReservation({{ reservation.id }})">OTKAŽI</button>
-                  </div>
               </div>
-          </div>
-          </div>
-      <hr class="my-2">
-      {% endfor %}
+          {% endfor %}
+      {% endif %}
 
-
+      <hr>
 
   </div>
 </div>

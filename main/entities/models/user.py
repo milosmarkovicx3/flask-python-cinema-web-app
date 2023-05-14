@@ -13,7 +13,7 @@ class User(db.Model, UserMixin):
     email = db.Column('email', db.String(255), unique=True, nullable=False)
     username = db.Column('username', db.String(255), unique=True, nullable=False)
     password = db.Column('password', db.String(255), nullable=False)
-    date_of_birth = db.Column('date_of_birth', db.DateTime())
+    date_of_birth = db.Column('date_of_birth', db.Date())
     phone_number = db.Column('phone_number', db.String(255))
     image = db.Column('image', db.String(255))
     is_superuser = db.Column('is_superuser', db.Boolean)
@@ -57,16 +57,16 @@ class User(db.Model, UserMixin):
             "email": self.email,
             "username": self.username,
             "password": self.password,
-            "date_of_birth": str(self.date_of_birth),
+            "date_of_birth": self.date_of_birth.strftime('%d.%m.%Y'),
             "phone_number": self.phone_number,
             "image": self.image,
             "is_superuser": self.is_superuser,
-            "date_joined": str(self.date_joined),
-            "last_login_at": str(self.last_login_at),
+            "date_joined": self.date_joined.strftime('%d.%m.%Y'),
+            "last_login_at": self.last_login_at.strftime('%d.%m.%Y'),
             "last_login_ip": self.last_login_ip,
-            "last_seen": str(self.last_seen),
+            "last_seen": self.last_seen.strftime('%d.%m.%Y'),
             "login_count": self.login_count,
-            "confirmed_at": str(self.confirmed_at),
+            "confirmed_at": self.confirmed_at.strftime('%d.%m.%Y'),
             "auth_token": self.auth_token
         }
 

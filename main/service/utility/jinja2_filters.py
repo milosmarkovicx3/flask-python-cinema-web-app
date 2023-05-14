@@ -29,4 +29,3 @@ def get_formated_date_name_filter(date):
         log.error(f"{e}\n{traceback.format_exc()}")
         return date
 
-

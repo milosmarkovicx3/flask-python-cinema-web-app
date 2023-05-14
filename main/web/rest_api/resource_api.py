@@ -1,8 +1,14 @@
 import os
 from flask import Blueprint, send_file, abort
+from flask_login import login_required
 from config import STATIC_DIR_PATH
+from main.entities.facade.user_facade import UserFacade
+from main.service.impl.user_impl import UserImpl
+from main.service.utility.utils import find_directory_path
 
 resource_api = Blueprint('resource_api', __name__, url_prefix='/resource')
+ui = UserImpl()
+uf = UserFacade()
 
 @resource_api.route('/<directory>/<name>')
 def get_image(directory, name):
@@ -17,8 +23,7 @@ def get_image(directory, name):
     abort(404)
 
 
-def find_directory_path(root_directory, directory_name):
-    for root, dirs, files in os.walk(root_directory):
-        if directory_name in dirs:
-            return os.path.join(root, directory_name)
-    return None
+@resource_api.route('/<value>', methods=['GET'])
+@login_required
+def download_user_data(value):
+    return ui.generate_user_data(value, 'id')

@@ -5,8 +5,8 @@ from config import STATIC_DIR_PATH
 from main.entities.core.status import Status
 from main.entities.models.genre import Genre
 from main.entities.facade.genre_facade import GenreFacade
-from main.entities.core.result import Result
-from main.service.impl.base_impl import BaseImpl, _result_handler
+from main.entities.core.result import Result, result_handler
+from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
 
 class GenreImpl(BaseImpl):
@@ -30,7 +30,7 @@ class GenreImpl(BaseImpl):
                 return result.response()
 
             genre = Genre(name=name, image=image.filename)
-            return _result_handler(item=self.T.create(genre))
+            return result_handler(item=self.T.create(genre))
         except Exception as e:
             os.remove(os.path.join(f'{STATIC_DIR_PATH}\\resources\\genre-images\\', filename))
             log.error(f"{e}\n{traceback.format_exc()}")

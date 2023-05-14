@@ -1,7 +1,5 @@
-import datetime
 import os
 import traceback
-from datetime import datetime, time
 from json import loads
 from sqlalchemy import or_
 from werkzeug.utils import secure_filename
@@ -12,10 +10,10 @@ from main.entities.models.actor import Actor
 from main.entities.models.genre import Genre
 from main.entities.models.movie import Movie
 from main.entities.facade.movie_facade import MovieFacade
-from main.entities.core.result import Result
+from main.entities.core.result import Result, result_handler
 from main.entities.models.role import Role
 from main.entities.models.movies_genres import MoviesGenres
-from main.service.impl.base_impl import BaseImpl, _result_handler
+from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
 
 
@@ -63,7 +61,7 @@ class MovieImpl(BaseImpl):
 
             db.session.commit()
 
-            return _result_handler(item=movie)
+            return result_handler(item=movie)
         except Exception as e:
             db.session.rollback()
             db.session.delete(movie)
@@ -73,7 +71,7 @@ class MovieImpl(BaseImpl):
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
             return result.response()
 
-    def repertoire_search(self, imdb_rating=None, timeline=None, genre_name=None, search_input=None, sort_method=None, page=1, per_page=12):
+    def repertoire(self, imdb_rating=None, timeline=None, genre_name=None, search_input=None, sort_method=None, page=1, per_page=12):
         try:
             query = db.session.query(Movie)
 
@@ -91,7 +89,6 @@ class MovieImpl(BaseImpl):
                 query = query.filter(or_(
                     Movie.title.like(f'%{search_input}%'),
                     Movie.year.like(f'%{search_input}%'),
-                    Movie.genres.any(Genre.name.like(f'%{search_input}%')),
                     Movie.actors.any(Actor.name.like(f'%{search_input}%'))
                 ))
 

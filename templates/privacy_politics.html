@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Politika privatnosti </title>
+<meta name="description" content="">
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-dark border-black border mt-3">
+  <div class="container my-4 text-white">
+
+      <span class="display-7 ">POLITIKA PRIVATNOSTI: </span>
+      <hr>
+      <a href="{{ url_for('static', filename='resources/documents/politika_privatnosti.pdf') }}" class="nav-link" target="_blank">
+          <span class="fi fi-ss-file-pdf text-danger"></span>
+          <span class="text-danger">Politika privatnosti i opšti uslovi zaštite podataka o ličnosti</span>
+      </a>
+
+  </div>
+</div>
+{% endblock %}

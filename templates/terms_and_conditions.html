@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Opšti uslovi </title>
+<meta name="description" content="">
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-dark border-black border mt-3">
+  <div class="container my-4 text-white">
+
+      <span class="display-7 ">OPŠTI USLOVI POSLOVANJA: </span>
+      <hr>
+      <div class="d-block">
+          <a href="{{ url_for('static', filename='resources/documents/opšti_uslovi_poslovanja.pdf') }}" class="nav-link d-inline-block" target="_blank">
+              <span class="fi fi-ss-file-pdf text-danger"></span>
+              <span class="text-danger">Opšti uslovi poslovanja</span>
+          </a>
+          (Aktuelno: Novembar 2020.)
+      </div>
+      <div class="d-block">
+          <a href="{{ url_for('static', filename='resources/documents/opšti_uslovi_poslovanja_kućni_red.pdf') }}" class="nav-link d-inline-block" target="_blank">
+              <span class="fi fi-ss-file-pdf text-danger"></span>
+              <span class="text-danger">Opšti uslovi poslovanja - Kućni red</span>
+          </a>
+          (Aktuelno: Januar 2019.)
+      </div>
+      <div class="d-block">
+          <a href="{{ url_for('static', filename='resources/documents/politika_kolačića.pdf') }}" class="nav-link d-inline-block" target="_blank">
+              <span class="fi fi-ss-file-pdf text-danger"></span>
+              <span class="text-danger">Politika kolačića </span>
+          </a>
+          (Aktuelno: April 2023.)
+      </div>
+
+  </div>
+</div>
+{% endblock %}

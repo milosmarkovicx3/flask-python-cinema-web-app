@@ -18,9 +18,8 @@ def find_all():
 def create():
     return gi.create(request.form, request.files)
 
-@genre_api.route('/<string:value>', methods=['DELETE'])
-@genre_api.route('/<string:value>/<string:column>', methods=['DELETE'])
-def delete(value, column='id'):
-    return gi.delete(value, column)
+@genre_api.route('/', methods=['DELETE'])
+def delete():
+    return gi.delete(request.form)
 
 

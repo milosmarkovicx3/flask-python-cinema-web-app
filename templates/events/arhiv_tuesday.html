@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Arhiv Utorak </title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-dark border-black border mt-3">
+  <div class="container my-4 text-white">
+
+      <span class="display-7">FILMSKI DAN U ARHIVU: </span>
+      <hr>
+      <div class="row">
+          <div class="col-sm-6 fs-5">
+            <span class="text-warning">SNIŽENA CENA KARTE ZA SVE POSETIOCE!</span>
+              <br>
+              - Svaki utorak u bioskopu Arhihv je dan za film po sniženoj ceni!
+              Iskoristite prednosti i uživajte utorkom!
+              <hr>
+              <span class="text-warning">DETALJI</span>
+              <br>
+              - Cena pojedinačnih bioskopskih ulaznica je 20% manja, odnosno:
+              <br>
+                  <table>
+                  <tr>
+                    <th>Cena klasičnih sedišta:</th>
+                    <td>240rsd</td>
+                    <td>320rsd</td>
+                    <td>400rsd</td>
+                  </tr>
+                  <tr>
+                    <th>Cena VIP sedišta (x1.2):</th>
+                    <td>290rsd</td>
+                    <td>390rsd</td>
+                    <td>480rsd</td>
+                  </tr>
+                  <tr>
+                    <th>Trajanje filma:</th>
+                    <td>> 1h</td>
+                    <td>> 2h</td>
+                    <td>> 3h</td>
+                  </tr>
+                </table>
+              <hr>
+
+          </div>
+          <div class="col-sm-6">
+              <img src="{{ url_for('static', filename='resources/index/4-filmski-dan/filmski-dan.jpg') }}" class="w-100 border-black border" alt="filmski_dan">
+          </div>
+      </div>
+
+  </div>
+</div>
+{% endblock %}

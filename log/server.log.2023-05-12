@@ -165,3 +165,150 @@
 2023-05-12 05:55:43,396 INFO    [base_facade.py(find:13)] value: reserved, column: type
 2023-05-12 05:55:45,143 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
 2023-05-12 05:58:12,431 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 16:25:36,500 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 16:36:16,649 INFO    [user_impl.py(logout:107)] log out: Miloš Marković
+2023-05-12 16:43:02,593 INFO    [user_impl.py(login:74)] login: shadow1!
+2023-05-12 16:43:02,593 INFO    [base_facade.py(find:13)] value: shadow1!, column: username
+2023-05-12 16:43:07,705 INFO    [user_impl.py(login:74)] login: shadow!1
+2023-05-12 16:43:07,705 INFO    [base_facade.py(find:13)] value: shadow!1, column: username
+2023-05-12 16:43:25,373 INFO    [user_impl.py(login:74)] login: milosmarkovicx3
+2023-05-12 16:43:25,373 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-12 16:43:28,222 INFO    [base_facade.py(find_all:22)] column: user_id, value: 2, value_to: None, method: None, max: None
+2023-05-12 17:07:12,688 INFO    [base_facade.py(find_all:22)] column: user_id, value: 2, value_to: None, method: None, max: None
+2023-05-12 17:07:51,905 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 17:08:23,806 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 17:08:26,990 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 17:10:52,116 INFO    [user_impl.py(logout:107)] log out: Miloš Marković
+2023-05-12 17:10:53,996 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-12 17:10:53,996 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-12 17:21:09,355 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:21:09,357 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:21:38,995 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:21:38,996 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:22:35,467 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:22:58,101 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:22:59,624 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:23:07,156 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:23:15,712 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:32:38,062 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:32:51,297 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:33:07,798 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:34:52,741 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:35:13,252 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:35:36,316 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 17:35:58,108 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 17:36:04,965 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 17:36:04,968 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 17:36:13,469 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 17:36:13,471 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 17:36:22,004 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:37:30,237 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:37:32,636 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 17:37:53,614 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 17:37:53,616 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 17:38:04,854 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:38:25,920 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:38:34,785 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 17:38:34,790 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 17:38:36,260 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:39:35,496 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:39:56,264 INFO    [base_facade.py(delete:67)] value: 23, column: id
+2023-05-12 17:39:57,842 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:39:59,063 INFO    [base_facade.py(delete:67)] value: 22, column: id
+2023-05-12 17:39:59,891 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:40:00,913 INFO    [base_facade.py(delete:67)] value: 21, column: id
+2023-05-12 17:40:01,969 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:47:36,578 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:47:36,580 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:48:34,668 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:48:34,669 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:48:47,440 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:48:47,441 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:51:35,456 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:51:35,457 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:52:04,692 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 17:52:32,335 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:52:32,336 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:54:16,050 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:54:16,051 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 17:54:18,042 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-12 17:54:35,261 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-12 18:25:10,794 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 18:25:10,795 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 18:36:22,782 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 18:36:42,770 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 19:12:42,937 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-12 19:12:52,788 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 19:12:52,791 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 19:13:03,332 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 19:13:03,335 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 19:13:07,438 INFO    [user_impl.py(logout:107)] log out: Miloš Marković
+2023-05-12 19:13:07,442 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 19:13:07,444 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 19:13:10,073 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-12 19:13:10,073 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-12 19:13:10,114 INFO    [base_facade.py(find:13)] value: 18, column: id
+2023-05-12 19:13:10,117 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-12 19:13:12,094 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 19:13:16,342 INFO    [base_facade.py(delete:67)] value: 24, column: id
+2023-05-12 19:13:17,326 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 19:13:18,110 INFO    [base_facade.py(delete:67)] value: 20, column: id
+2023-05-12 19:13:18,995 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-12 19:13:21,476 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 19:13:21,477 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 22:32:15,199 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-12 22:32:15,200 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 00:47:47,548 INFO    [base_facade.py(find:13)] value: username, column: id
+2023-05-13 00:47:49,416 INFO    [base_facade.py(find:13)] value: m, column: email
+2023-05-13 00:47:50,113 INFO    [base_facade.py(find:13)] value: email, column: id
+2023-05-13 00:49:17,498 INFO    [user_impl.py(logout:107)] log out: Miloš Marković
+2023-05-13 00:49:26,291 INFO    [user_impl.py(login:74)] login: shadow
+2023-05-13 00:49:26,292 INFO    [base_facade.py(find:13)] value: shadow, column: username
+2023-05-13 00:50:42,712 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.co, column: email
+2023-05-13 00:50:43,419 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-05-13 00:56:20,799 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.co, column: email
+2023-05-13 00:56:21,783 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-05-13 00:56:30,182 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.co, column: email
+2023-05-13 00:56:30,970 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-05-13 00:58:07,442 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.co, column: email
+2023-05-13 00:58:07,592 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.com, column: email
+2023-05-13 00:59:20,688 INFO    [base_facade.py(find:13)] value: shado, column: username
+2023-05-13 00:59:25,905 INFO    [base_facade.py(find:13)] value: m, column: username
+2023-05-13 00:59:26,000 INFO    [base_facade.py(find:13)] value: mi, column: username
+2023-05-13 00:59:26,293 INFO    [base_facade.py(find:13)] value: mil, column: username
+2023-05-13 00:59:26,451 INFO    [base_facade.py(find:13)] value: milo, column: username
+2023-05-13 00:59:26,565 INFO    [base_facade.py(find:13)] value: milos, column: username
+2023-05-13 00:59:26,720 INFO    [base_facade.py(find:13)] value: milosm, column: username
+2023-05-13 00:59:26,857 INFO    [base_facade.py(find:13)] value: milosma, column: username
+2023-05-13 00:59:26,981 INFO    [base_facade.py(find:13)] value: milosmar, column: username
+2023-05-13 00:59:27,066 INFO    [base_facade.py(find:13)] value: milosmark, column: username
+2023-05-13 00:59:27,137 INFO    [base_facade.py(find:13)] value: milosmarko, column: username
+2023-05-13 00:59:27,283 INFO    [base_facade.py(find:13)] value: milosmarkov, column: username
+2023-05-13 00:59:27,377 INFO    [base_facade.py(find:13)] value: milosmarkovi, column: username
+2023-05-13 00:59:27,505 INFO    [base_facade.py(find:13)] value: milosmarkovic, column: username
+2023-05-13 00:59:27,628 INFO    [base_facade.py(find:13)] value: milosmarkovicx, column: username
+2023-05-13 00:59:28,039 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username
+2023-05-13 00:59:57,326 INFO    [base_facade.py(find:13)] value: milos.dj.markovic@gmail.co, column: email
+2023-05-13 01:02:59,762 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 01:02:59,764 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 01:03:34,656 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 01:03:34,657 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 01:03:37,793 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-13 01:04:17,313 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 01:04:17,313 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-13 01:04:18,443 INFO    [base_facade.py(find_all:22)] column: name, value: a, value_to: None, method: like, max: 5
+2023-05-13 01:26:42,831 INFO    [base_facade.py(find:13)] value: m, column: username
+2023-05-13 01:26:42,920 INFO    [base_facade.py(find:13)] value: mi, column: username
+2023-05-13 01:26:43,148 INFO    [base_facade.py(find:13)] value: mil, column: username
+2023-05-13 01:26:43,316 INFO    [base_facade.py(find:13)] value: milo, column: username
+2023-05-13 01:26:43,377 INFO    [base_facade.py(find:13)] value: milos, column: username
+2023-05-13 01:26:43,557 INFO    [base_facade.py(find:13)] value: milosm, column: username
+2023-05-13 01:26:43,786 INFO    [base_facade.py(find:13)] value: milosma, column: username
+2023-05-13 01:26:43,879 INFO    [base_facade.py(find:13)] value: milosmar, column: username
+2023-05-13 01:26:43,931 INFO    [base_facade.py(find:13)] value: milosmark, column: username
+2023-05-13 01:26:44,017 INFO    [base_facade.py(find:13)] value: milosmarko, column: username
+2023-05-13 01:26:44,159 INFO    [base_facade.py(find:13)] value: milosmarkov, column: username
+2023-05-13 01:26:44,271 INFO    [base_facade.py(find:13)] value: milosmarkovi, column: username
+2023-05-13 01:26:44,464 INFO    [base_facade.py(find:13)] value: milosmarkovic, column: username
+2023-05-13 01:26:44,627 INFO    [base_facade.py(find:13)] value: milosmarkovicx, column: username
+2023-05-13 01:26:45,059 INFO    [base_facade.py(find:13)] value: milosmarkovicx3, column: username

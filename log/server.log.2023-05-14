@@ -1,0 +1,20 @@
+2023-05-14 00:12:02,843 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-14 00:19:44,805 INFO    [user_impl.py(logout:183)] log out: Miloš Marković
+2023-05-14 00:22:15,384 INFO    [user_impl.py(login:150)] login: clutch_lord
+2023-05-14 00:22:15,384 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-14 05:16:53,295 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-14 05:16:56,086 INFO    [user_impl.py(logout:183)] log out: Miloš Marković
+2023-05-14 05:16:56,091 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-14 05:17:00,624 INFO    [user_impl.py(login:150)] login: clutch_lord
+2023-05-14 05:17:00,624 INFO    [base_facade.py(find:13)] value: clutch_lord, column: username
+2023-05-14 05:17:00,663 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-14 05:17:08,126 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-14 05:17:08,127 INFO    [base_facade.py(find_all:22)] column: None, value: None, value_to: None, method: None, max: None
+2023-05-14 05:17:32,259 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-14 05:17:34,268 INFO    [base_facade.py(find:13)] value: 102, column: id
+2023-05-14 05:17:34,271 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-14 05:17:39,682 INFO    [base_facade.py(find:13)] value: 102, column: id
+2023-05-14 05:17:39,684 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-14 05:17:45,736 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-14 05:17:55,542 INFO    [base_facade.py(delete:69)] value: 29, column: id
+2023-05-14 05:17:57,011 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None

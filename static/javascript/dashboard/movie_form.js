@@ -16,7 +16,7 @@ $(document).ready(function() {
     $('#movie-form').submit(function(event) {        
     event.preventDefault(); 
 
-    const basic_regex = /^(?=.{1,255}$)\w{2,}/;
+    const basic_regex = /^(?=.{1,255}$)\w{1,}/;
 
     title = $('#title');
     year = $('#year');
@@ -134,7 +134,6 @@ $(document).ready(function() {
                 genres_added_to_movie = new Map();
             }else{
                 alert("Došlo je do greške prilikom kreiranja filma." + response.description);
-
                 console.log(response);
             }            
         },
@@ -197,7 +196,7 @@ $(document).ready(function() {
       }
       
       $.ajax({
-        url: `actor/?column=name&method=like&value1=${actors_search}&max=5`,
+        url: `actor/?column=name&value=${actors_search}&max=5`,
         method: 'get',
         success: function(response) {
             actors_list.html('');  
@@ -266,7 +265,7 @@ $(document).ready(function() {
       }
       
       $.ajax({
-        url: `genre/?column=name&method=like&value1=${genres_search}&max=5`,
+        url: `genre/?column=name&value=${genres_search}&max=5`,
         method: 'get',
         success: function(response) {
             genres_list.html('');  
@@ -315,8 +314,6 @@ $(document).ready(function() {
         genres_added_to_movie = new Map();
         $('#actors-list').html('');
         $('#genres-list').html('');
-        $('#actor-search').val('');
-        $('#genre-search').val('');
       });
 });
 //------------------------------------------------------------------------------

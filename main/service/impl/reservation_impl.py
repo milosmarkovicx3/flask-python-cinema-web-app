@@ -2,11 +2,11 @@ import traceback
 
 from flask_login import current_user
 from main.entities.core.base import db
-from main.entities.core.result import Result
+from main.entities.core.result import Result, result_handler
 from main.entities.core.status import Status
 from main.entities.facade.reservation_facade import ReservationFacade
 from main.entities.models.reservation import Reservation
-from main.service.impl.base_impl import BaseImpl, _result_handler
+from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
 
 
@@ -43,7 +43,7 @@ class ReservationImpl(BaseImpl):
             db.session.add(reservation)
             db.session.commit()
 
-            return _result_handler(item=True)
+            return result_handler(item=True)
         except Exception as e:
             db.session.rollback()
             log.error(f"{e}\n{traceback.format_exc()}")

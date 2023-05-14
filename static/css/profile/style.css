@@ -1,0 +1,7 @@
+/*---------------------------------------------------------------------------------*/
+/* restartovanje ne default ponašanje klase usled preklapanja sa ostalim stilovima */
+.invalid-feedback{
+    font-size: small;
+    text-shadow: none;
+}
+/*---------------------------------------------------------------------------------*/

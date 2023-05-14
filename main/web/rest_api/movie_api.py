@@ -1,6 +1,5 @@
 from flask import Blueprint, request
 from main.service.impl.movie_impl import MovieImpl
-from main.service.utility.logger import log
 
 movie_api = Blueprint('movie_api', __name__, url_prefix='/movie')
 mi = MovieImpl()
@@ -23,10 +22,10 @@ def create():
     return mi.create(request.form, request.files)
 
 
-@movie_api.route('/<string:value>', methods=['DELETE'])
-@movie_api.route('/<string:value>/<string:column>', methods=['DELETE'])
-def delete(value, column='id'):
-    return mi.delete(value, column)
+@movie_api.route('/', methods=['DELETE'])
+def delete():
+    return mi.delete(request.form)
+
 
 
 

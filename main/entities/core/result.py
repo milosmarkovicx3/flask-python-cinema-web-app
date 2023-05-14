@@ -1,6 +1,8 @@
+import traceback
 from json import dumps
 from flask import Response
 from main.entities.core.status import Status
+from main.service.utility.logger import log
 from main.service.utility.utils import repr_helper_method
 
 
@@ -55,5 +57,15 @@ class Result:
             "item": repr_helper_method(self._item)
         }
 
-
-
+def result_handler(item):
+    try:
+        result = Result(item=item)
+        if item is False:
+            result.set_status(Status.NOT_FOUND)
+        elif item is None:
+            result.set_status(Status.INTERNAL_SERVER_ERROR)
+        return result.response()
+    except Exception as e:
+        log.error(f"{e}\n{traceback.format_exc()}")
+        result = Result(status=Status.INTERNAL_SERVER_ERROR)
+        return result.response()

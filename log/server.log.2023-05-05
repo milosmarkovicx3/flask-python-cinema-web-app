@@ -10,27 +10,27 @@ Traceback (most recent call last):
     query = query.filter(self.T.kwargs['column'].between(kwargs['value1'], kwargs['value2']))
 AttributeError: type object 'Movie' has no attribute 'kwargs'
 
-2023-05-05 01:16:59,510 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: ''
+2023-05-05 01:16:59,510 ERROR   [movie_facade.py(repertoire:87)] invalid literal for int() with base 10: ''
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire
     timeline = int(kwargs['timeline'])
 ValueError: invalid literal for int() with base 10: ''
 
-2023-05-05 01:17:01,200 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: ''
+2023-05-05 01:17:01,200 ERROR   [movie_facade.py(repertoire:87)] invalid literal for int() with base 10: ''
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire
     timeline = int(kwargs['timeline'])
 ValueError: invalid literal for int() with base 10: ''
 
-2023-05-05 01:19:33,258 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: ''
+2023-05-05 01:19:33,258 ERROR   [movie_facade.py(repertoire:87)] invalid literal for int() with base 10: ''
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 49, in repertoire
     timeline = int(kwargs['timeline'])
 ValueError: invalid literal for int() with base 10: ''
 
-2023-05-05 01:21:11,567 ERROR   [movie_facade.py(repertoire_search:87)] invalid literal for int() with base 10: 'robert'
+2023-05-05 01:21:11,567 ERROR   [movie_facade.py(repertoire:87)] invalid literal for int() with base 10: 'robert'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 57, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 57, in repertoire
     search_input = int(kwargs['search_input'])
 ValueError: invalid literal for int() with base 10: 'robert'
 

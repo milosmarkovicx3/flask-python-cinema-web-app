@@ -19,9 +19,9 @@ def find_all():
 def create():
     return ri.create(request.form)
 
-@review_api.route('/<string:value>', methods=['DELETE'])
-@review_api.route('/<string:value>/<string:column>', methods=['DELETE'])
-def delete(value, column='id'):
-    return ri.delete(value, column)
+@review_api.route('/', methods=['DELETE'])
+def delete():
+    return ri.delete(request.form)
+
 
 

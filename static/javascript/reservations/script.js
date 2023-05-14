@@ -4,9 +4,10 @@
 function deleteReservation(id){
     let fd = new FormData();
     fd.append('csrf_token', $('#csrf_token').val());
+    fd.append('value', id);
 
     $.ajax({
-        url: `/reservation/${id}`,
+        url: '/reservation',
         type: "delete",
         data: fd,
         contentType: false,

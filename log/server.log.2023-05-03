@@ -39,10 +39,10 @@ AttributeError: type object 'Movie' has no attribute 'name'
 2023-05-03 17:28:36,834 INFO    [base_facade.py(find:13)] value: shadow, column: username
 2023-05-03 17:28:38,570 INFO    [base_facade.py(find:13)] value: shadow, column: username
 2023-05-03 19:11:57,504 INFO    [base_facade.py(find:13)] value: custom, column: id
-2023-05-03 19:13:05,230 INFO    [movie_api.py(repertoire_search:42)] prosa123
-2023-05-03 19:24:59,387 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 19:13:05,230 INFO    [movie_api.py(repertoire:42)] prosa123
+2023-05-03 19:24:59,387 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -52,9 +52,9 @@ Traceback (most recent call last):
     if page < 1:
 TypeError: '<' not supported between instances of 'str' and 'int'
 
-2023-05-03 19:58:53,019 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 19:58:53,019 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -64,9 +64,9 @@ Traceback (most recent call last):
     if page < 1:
 TypeError: '<' not supported between instances of 'str' and 'int'
 
-2023-05-03 19:59:17,605 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 19:59:17,605 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -76,9 +76,9 @@ Traceback (most recent call last):
     if page < 1:
 TypeError: '<' not supported between instances of 'str' and 'int'
 
-2023-05-03 20:00:34,480 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 20:00:34,480 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -88,9 +88,9 @@ Traceback (most recent call last):
     if page < 1:
 TypeError: '<' not supported between instances of 'str' and 'int'
 
-2023-05-03 20:01:07,220 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 20:01:07,220 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -100,9 +100,9 @@ Traceback (most recent call last):
     if page < 1:
 TypeError: '<' not supported between instances of 'str' and 'int'
 
-2023-05-03 20:02:22,785 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 20:02:22,785 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -112,9 +112,9 @@ Traceback (most recent call last):
     if page < 1:
 TypeError: '<' not supported between instances of 'str' and 'int'
 
-2023-05-03 20:02:55,969 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 20:02:55,969 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -124,9 +124,9 @@ Traceback (most recent call last):
     if page < 1:
 TypeError: '<' not supported between instances of 'str' and 'int'
 
-2023-05-03 20:06:27,128 ERROR   [movie_facade.py(repertoire_search:79)] '<' not supported between instances of 'str' and 'int'
+2023-05-03 20:06:27,128 ERROR   [movie_facade.py(repertoire:79)] '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 75, in repertoire
     movies = query.paginate(page=page, per_page=per_page, error_out=False)
   File "C:\Users\Markovic Milos\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_sqlalchemy\query.py", line 99, in paginate
     return QueryPagination(
@@ -191,15 +191,15 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 2023-05-03 21:57:33,643 INFO    [base_facade.py(find:13)] value: shadow, column: username
 2023-05-03 21:57:35,999 INFO    [base_facade.py(find:13)] value: shadow, column: username
 2023-05-03 22:09:17,552 INFO    [base_facade.py(find:13)] value: shadow, column: username
-2023-05-03 22:09:42,053 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+2023-05-03 22:09:42,053 ERROR   [movie_facade.py(repertoire:79)] can only concatenate str (not "int") to str
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire
     query = query.filter(Movie.rating.between(timeline, timeline + 10))
 TypeError: can only concatenate str (not "int") to str
 
-2023-05-03 22:14:01,780 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+2023-05-03 22:14:01,780 ERROR   [movie_facade.py(repertoire:79)] can only concatenate str (not "int") to str
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire
     query = query.filter(Movie.rating.between(timeline, timeline + 10))
 TypeError: can only concatenate str (not "int") to str
 
@@ -252,15 +252,15 @@ TypeError: can only concatenate str (not "int") to str
 2023-05-03 22:47:58,148 INFO    [base_facade.py(find:13)] value: shadow, column: username
 2023-05-03 22:48:04,612 INFO    [base_facade.py(find:13)] value: shadow, column: username
 2023-05-03 22:51:26,234 INFO    [base_facade.py(find:13)] value: shadow, column: username
-2023-05-03 22:51:32,760 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+2023-05-03 22:51:32,760 ERROR   [movie_facade.py(repertoire:79)] can only concatenate str (not "int") to str
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire
     query = query.filter(Movie.rating.between(timeline, timeline + 10))
 TypeError: can only concatenate str (not "int") to str
 
-2023-05-03 22:51:36,161 ERROR   [movie_facade.py(repertoire_search:79)] can only concatenate str (not "int") to str
+2023-05-03 22:51:36,161 ERROR   [movie_facade.py(repertoire:79)] can only concatenate str (not "int") to str
 Traceback (most recent call last):
-  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire_search
+  File "C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main\entities\facade\movie_facade.py", line 48, in repertoire
     query = query.filter(Movie.rating.between(timeline, timeline + 10))
 TypeError: can only concatenate str (not "int") to str
 

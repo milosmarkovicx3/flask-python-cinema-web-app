@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<title>Arhiv | Arhiv Članstvo </title>
+<meta name="description" content="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events/style.css') }}">
+<script src="{{ url_for('static', filename='javascript/events/script.js') }}" defer></script>
+{% endblock %}
+
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link"  href="{{ url_for('template_api.index') }}">POČETNA</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.repertoire', page=1) }}">REPERTOAR</a></li>
+<li class="nav-item"><a class="nav-link" href="#">DOGAĐAJI</a></li>
+ <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_api.membership') }}">ČLANSTVO</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('template_api.contact') }}">KONTAKT</a></li>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-dark border-black border mt-3">
+  <div class="container my-4 text-white">
+
+      <span class="display-7">ČLANSTVO: </span>
+      <hr>
+            <span class="text-warning display-8">ARHIV BONUS KARTICA</span>
+            <hr>
+            <div class="col-sm-7 fs-5">
+                - Ostvari više pri svakoj poseti bioskopu! Za svaki 1 dinar potrošen na blagajni bioskopa pri kupovini ulaznica,
+                hrane ili pića, dobijaš 1 bonus bod. Svoje bodove možeš zameniti za atraktivne nagrade, dok uplatom od
+                najmanje 2.000 dinara na svoju Arhiv bonus karticu, možeš ostvariti pravo na sniženu cenu ulaznica.
+
+                <img src="{{ url_for('static', filename='resources/pages/membership/slika-1.png') }}" class="w-100 my-3">
+                <hr>
+                <span class="text-warning display-8">TVOJE POGODNOSTI</span> <br>
+                <span class="fi fi-ss-check"></span>
+                1 bonus bod za svaki potrošeni dinar* <br>
+                <span class="fi fi-ss-check"></span>
+                atraktivne nagrade u zamenu za bodove<br>
+                <span class="fi fi-ss-check"></span>
+                online kupovina bioskopskih ulaznica** <br>
+                <span class="fi fi-ss-check"></span>
+                online provera stanja bodova <br>
+                <span class="text-secondary fs-6">
+                    * Na dnevnom nivou može da se prikupi najviše 2.000 bonus bodova za bioskopske ulaznice,
+                    dok na blagajni hrane i pića najviše 4.000 bodova.
+                    <br>
+                    ** Na dnevnom nivou moguće je online kupiti najviše dve bioskopske ulaznice
+                </span>
+                <hr>
+                <span class="text-warning display-8">UPLATI NOVAC NA KARTICU I UŠTEDI</span> <br>
+                - Prilikom uplate od najmanje 2.000 dinara na svoju Arhiv bonus karticu, možeš ostvariti dodatne pogodnosti: <br> <br>
+                <span class="fi fi-ss-check"></span>
+                preuzimanje rezervisanih bioskopskih ulaznica do 10 minuta pre početka projekcije (umesto uobičajenih 30 minuta) <br>
+                <span class="fi fi-ss-check"></span>
+                atraktivne nagrade u zamenu za bodove <br>
+                <span class="fi fi-ss-check"></span>
+                popust na cene bioskopskih ulaznica <br>
+                <span class="fi fi-ss-check"></span>
+                bezgotovinsko plaćanje na blagajni bioskopa <br>
+                <hr>
+                <span class="text-warning display-8">ŽELIŠ JOŠ VIŠE? ARHIV BONUS BLACK KARTICA</span> <br>
+
+                - Black status ostvaruješ na period od najkraće godinu dana, ukoliko tokom kalendarske godine
+                skupiš 30 ili više ulaznica koristeći svoju Arhiv bonus karticu. Na dnevnom nivou moguće
+                je ostvariti dve ulaznice za Black status, bez obzira na broj kupljenih ulaznica.
+                Ukoliko u toku jednog dana kupite više ulaznica sa različitim datumima projekcija,
+                sistem će evidentirati samo dve ulaznice za Black status.
+                <br><br>
+                Dodatne pogodnosti koje ostvaruješ sa Black karticom su: <br> <br>
+
+                <span class="fi fi-ss-check"></span>
+                1 besplatna ulaznica prilikom prelaska na Black karticu <br>
+                <span class="fi fi-ss-check"></span>
+                10% popusta na kupovinu Arhiv bonus Black karticom na blagajni hrane i pića (potrebno je da na kartici ima sredstava)* <br>
+                <span class="fi fi-ss-check"></span>
+                atraktivan rođendanski poklon <br>
+                <span class="fi fi-ss-check"></span>
+                ekskluzivni obilazak Arhiv bioskopa <br>
+                <span class="fi fi-ss-check"></span>
+                pozivnice za premijere i specijalne događaje <br>
+                <span class="text-secondary fs-6">
+                * Navedena pogodnost se odnosi na upotrebu Arhiv bonus BLACK kartice kao sredstva plaćanja.
+                </span>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+{% endblock %}
