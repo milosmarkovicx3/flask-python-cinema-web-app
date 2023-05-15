@@ -20,21 +20,21 @@
 {% block content %} 
 <!--PRETRAGA_POČETAK-->
 <div class="container-fluid bg-dark text-white mt-3 pt-3 pb-4 border-black border">
-    <div class="container">
+    <div class="container-lg">
         <form class="row" action="" method="get">
             <div class="col-12">
               <label for="search_input" class="form-label my-1">PRETRAGA</label>
             </div>
 
-            <div class="col-10">
+            <div class="col-sm-8 col-md-10">
               <input type="search" value="{{ '' if form['search_input'] == None else form['search_input']  }}" class="form-control border-black border py-1 px-2 consolas" id="search_input" name="search_input" placeholder=":pretraga po nazivu filma, imenu glumca ili godini izdanja">
             </div>
 
-            <div class="col-2">
+            <div class="col-sm-4 col-md-2 mt-sm-0 mt-3">
                 <button type="submit" class="btn btn-success w-100 border-black border py-1 px-2">PRETRAŽI</button>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
               <label for="genre_name" class="form-label my-1">ŽANR</label>
               <select id="genre_name" name="genre_name" class="form-select border-black border py-1 px-2 consolas">
                 <option value="" {{ 'selected' if form['genre_name'] == '' else '' }}>> BEZ FILTERA</option>
@@ -55,7 +55,7 @@
                          
             </div>
 
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
               <label for="imdb_rating" class="form-labe my-1">IMDB REJTING</label>
               <select id="imdb_rating" name="imdb_rating" class="form-select border-black border py-1 px-2 consolas">
                   <option value="" {{ 'selected' if form['imdb_rating'] == '' else '' }}>> BEZ FILTERA</option>
@@ -67,7 +67,7 @@
               </select>
           </div>
 
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
               <label for="timeline" class="form-label my-1">PERIOD</label>
               <select id="timeline" name="timeline" class="form-select border-black border py-1 px-2 consolas">
                   <option value="" {{ 'selected' if form['timeline'] == '' else '' }}>> BEZ FILTERA</option>
@@ -82,7 +82,7 @@
               </select>
           </div>
 
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <label for="sort_method" class="form-label my-1">SORTIRAJ PO</label>
                 <select id="sort_method" name="sort_method" class="form-select border-black border py-1 px-2 consolas">
                   <option value="" {{ 'selected' if form['sort_method'] == '' else '' }}>> BEZ FILTERA</option>
@@ -104,14 +104,14 @@
 
 <!--FILMOVI_PREGLED_POČETAK-->
 <div class="container-fluid bg-dark text-white mt-3 border-black border">
-    <div class="container">
+    <div class="container-lg">
 
       <h1 class="display-7 m-0 mt-2">REZULTATI PRETRAGE</h1>
       <hr class="my-2">
 
       <div class="row mt-4 text-center ">
         {% for movie in pagination %}
-        <div class="col-sm-2 border-5 border-danger">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 border-5 border-danger">
           <a href="{{ url_for('template_api.movie', id=movie.id ) }}">
             <img src="{{ url_for('static', filename='resources/movie-posters/' + movie.poster) }}"
             style="border: 1px solid black!important;"

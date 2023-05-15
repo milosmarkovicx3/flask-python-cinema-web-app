@@ -54,3 +54,7 @@ align-self-start/center/end
 justify-content-start/center/end/around/between/evenly
 *blok mora biti tipa flex
 -----------------------------------------------------
+RESPONSIVE
+
+"d-none d-lg-inline-block"
+-----------------------------------------------------

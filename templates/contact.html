@@ -19,16 +19,15 @@
 
 {% block content %}
 <div class="container-fluid bg-dark border-black border mt-3">
-  <div class="container my-4 text-white">
-    <span class="display-7 ">KONTAKT: </span>
+  <div class="container-lg my-4 text-white">
+    <span class="display-7">KONTAKT: </span>
     <hr>
-    <div class="row">
-
+    <div class="row px-3">
             <!--OPŠTE_INFORMACIJE_POČETAK-->
-            <div class="col-sm-6">
+            <div class="col-lg-6 pe-3">
                 <span class="text-warning display-8">OPŠTE INFORMACIJE:</span>
                 <hr>
-                <div class="col-sm-12 row m-0 px-4">
+                <div class="col-sm-12 row m-0">
                     <div class="col-sm-6 p-0">
                         <h5>KONTAKT INFORMACIJE</h5>
                             <span class="fi fi-ss-envelope"></span>
@@ -47,25 +46,20 @@
                 </div>
                 <br>
                 <hr class="mt-0">
-                <div style="text-align: justify;" class="px-4">
-                    <h5>UPOTREBA KONTAKT FORMULARA:</h5>
-                    - Vaša poruka će automatski biti prosleđena u nadležnu službu za obradu upita.
-                    Odgovor ćete dobiti u toku radnog vremena bioskopa, u periodu od ponedeljka do petka.
-                    U hitnim slučajevima, molimo da se obratite našem ljubaznom osoblju u bioskopu Arhiv.
-                    <br><br>
-                    - Prilikom obrade vašeg upita, detaljnije informacije su nam od velike pomoći
-                    (između ostalog: bioskop, vreme, datum projekcije, broj rezervacije, itd.)
+                <div>
+                    <iframe height="300px" class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.57685171064!2d20.4654834!3d44.8098116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa58cb01271%3A0x3c4d18d26980361c!2sKneza%20Milo%C5%A1a%207%2C%20Beograd%2011040!5e0!3m2!1sen!2srs!4v1684014131455!5m2!1sen!2srs"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <!--OPŠTE_INFORMACIJE_KRAJ-->
 
-          <!--FORMA_POČETAK-->
-          <form id="contact-form" class="col-sm-6 needs-validation" novalidate enctype="multipart/form-data">
+            <!--FORMA_POČETAK-->
+            <form id="contact-form" class="col-lg-6 ps-3 needs-validation" novalidate enctype="multipart/form-data">
+              <hr class="d-lg-none d-flex">
               <span class="text-warning display-8">KONTAKT FORMULAR:</span>
               <hr>
               <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
-                    <div class="col-sm-12 row mb-2">
+                    <div class="row mb-2">
                       <div class="col-sm-6">
                             <span class="fi-ss-user">
                                 <label class="form-label mb-1 fs-5">Ime:</label>
@@ -87,7 +81,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
+                    <div class="row mb-2">
                         <span class="fi fi-ss-at">
                             <label for="contact-email" class="form-label mb-1 fs-5">Email adresa:</label>
                         </span>
@@ -97,35 +91,28 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
+                    <div class="row mb-2">
                         <span class="fi fi-ss-attribution-pencil">
                             <label for="contact-message" class="form-label mb-1 fs-5">Poruka:</label>
                         </span>
                         <div class="input-group has-validation">
                             <textarea  class="form-control" id="contact-message" name="contact-message" rows="8" aria-describedby="surnameHelp" placeholder="npr. Poštovani,
 
-Javljam vam se povodom nemogućnosti rezervisanja sedišta.
-Naziv filma 'Dracula Untold', red sedišta 8, broj sedišta 10, sala 'Marilyn Monroe', projekcija 14.05 u 12:45.
+            Javljam vam se povodom nemogućnosti rezervisanja sedišta.
+            Naziv filma 'Dracula Untold', red sedišta 8, broj sedišta 10, sala 'Marilyn Monroe', projekcija 14.05 u 12:45.
 
-Srdačan pozdrav"></textarea>
+            Srdačan pozdrav"></textarea>
                             <div class="invalid-feedback">Unesite vašu poruku.</div>
                         </div>
                     </div>
 
-                        <div class="col-sm-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success border border-black me-4">POŠALJI</button>
-                        </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success border border-black w-100">POŠALJI</button>
+                    </div>
 
                 </form>
-          <!--FORMA_KRAJ-->
-
+            <!--FORMA_KRAJ-->
     </div>
-
-      <hr>
-      <span class="text-warning display-8">KAKO DO NAS:</span>
-      <hr>
-
-      <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.57685171064!2d20.4654834!3d44.8098116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa58cb01271%3A0x3c4d18d26980361c!2sKneza%20Milo%C5%A1a%207%2C%20Beograd%2011040!5e0!3m2!1sen!2srs!4v1684014131455!5m2!1sen!2srs"  height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 {% endblock %}

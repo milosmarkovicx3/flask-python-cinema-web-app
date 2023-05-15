@@ -10,13 +10,13 @@
 {% block content %}
 <!--FILM_DETALJI_POČETAK-->
 <div class="container-fluid bg-dark text-white border-black border mt-3">
-  <div class="container">
+  <div class="container-lg">
     <div class="d-flex justify-content-between">
     <h1 class="d-inline-block display-7 m-0 mt-3">
       {{ movie.title }} ({{ movie.year }}) [{{ movie.duration }}]
     </h1>
       <!--OCENE_GLOBALNO_POČETAK-->
-      <div class="d-inline-block mt-2 p-1">
+      <div class="d-flex mt-2 p-1">
             <div class="d-flex align-items-center">
                 <span class="fi fi-ss-star fs-4 me-2" style="color: rgb(209, 209, 15)"></span>
                 <div class="fs-5 lh-1">
@@ -36,24 +36,24 @@
       <div class="col-sm-3 p-0 pe-3">
         <img src="{{ url_for('static', filename='resources/movie-posters/' + movie.poster) }}" class="w-100 border-black border" alt="{{ movie.poster }}">
       </div>
-      <div class="col-sm-9 p-0 bg-black border-black border">
+      <div class="col-md-9 p-0 bg-black border-black border mt-3 mt-md-0">
         <iframe src="{{ movie.trailer }}" class="h-100 w-100" allow="autoplay;" allowfullscreen></iframe>
       </div>
 
       <!--ŽANROVI_POČETAK-->
-      <div class="col-sm-3 p-0 pe-3 mb-2">
+      <div class="col-md-3 p-0 pe-3 mb-2">
         <div class="w-100 p-0">
           <h3 class="display-8 mt-3 mb-0">Žanrovi:</h3>
           <hr>
         </div>
         
-        <div class="container">
+        <div class="container-lg">
         {% for genre in movie.genres %}
           <div class="row mb-2">
-              <div class="col-sm-2 p-0">
+              <div class="col-2 col-sm-1 col-md-2 p-0">
                 <img src="{{ url_for('static', filename='resources/genre-images/' + genre.image) }}" class="w-100 border-black border" alt="{{ genre.image }}">
               </div>
-              <div class="col-sm-10">
+              <div class="col-9 col-lg-9">
                 <span class="display-8">{{ genre.name }}</span>
               </div>
           </div>
@@ -63,24 +63,24 @@
       <!--ŽANROVI_KRAJ-->
 
       <!--GLUMCI_POČETAK-->
-      <div class="col-sm-9 p-0">
+      <div class="col-md-9 p-0">
 
           <div class="w-100 p-0">
             <h3 class="display-8 mt-3 mb-0">Glumci:</h3>
             <hr>
           </div>
 
-        <div class="container">
+        <div class="container-lg">
           <div class="row mb-2">
           {% for actor in movie.actors %}
 
-            <div class="col-sm-4 mb-3 p-0">
-              <div class="container row p-0">
+            <div class="col-12 col-sm-7 col-md-6 col-xxl-4 mb-3 p-0">
+              <div class="container-lg row p-0">
 
-                  <div class="col-sm-3">
+                  <div class="col-3">
                     <img src="{{ url_for('static', filename='resources/actor-images/' + actor.image) }}" class="w-100 border-black border" alt="{{ actor.image }}">
                   </div>
-                  <div class="col-sm-9 p-0 ">
+                  <div class="col-9 p-0 ">
                     <span class="display-8 text-nowrap">{{ actor.name }}</span>
                     <br>
                     <span class="text-secondary">({{ actor.role }})</span>
@@ -102,29 +102,29 @@
 
 <!--PROJEKCIJE_POČETAK-->
 <div class="container-fluid bg-dark text-white border-black border mt-3">
-  <div class="container pb-3">
+  <div class="container-lg pb-3">
     <h1 class="display-8 my-2">
       Projekcije:
     </h1>
     <hr class="m-0 mt-3">
     {% for projection_date, projection in movie.projections.items() %}
-    <div class="container row lh-sm mt-2">
-    <div class="col-sm-3 p-0">
-      <span class="text-warning">{{ projection.day_name }}</span>
-      <br>
-      <span class="text-secondary fs-7">{{ projection_date }}</span>
-    </div>
-        {% for single_showing in projection.hall_time %}
-        <a class="col-sm-2 nav-link projection-background me-4 px-3"
-           href="{{ url_for('template_api.projection', projection_id=single_showing.id, date=projection_date) }}"
-           target="_blank">
-          <span>{{ single_showing.time }}</span>
+    <div class="container-lg row lh-sm m-0 my-2">
+        <div class="col-sm-3 p-0">
+          <span class="text-warning">{{ projection.day_name }}</span>
           <br>
-          <span class="text-danger">{{ single_showing.hall_name }}</span>
-        </a>
-        {% endfor %}
-        <hr class="m-0 mt-2">
+          <span class="text-secondary fs-7">{{ projection_date }}</span>
+        </div>
+            {% for single_showing in projection.hall_time %}
+            <a class="col-md-4 col-lg-3 col-xl-2 nav-link projection-background me-0 me-md-4 my-2 my-md-0 px-3"
+               href="{{ url_for('template_api.projection', projection_id=single_showing.id, date=projection_date) }}"
+               target="_blank">
+              <span>{{ single_showing.time }}</span>
+              <br>
+              <span class="text-danger">{{ single_showing.hall_name }}</span>
+            </a>
+            {% endfor %}
     </div>
+    <hr class="m-0">
     {% endfor %}
   </div>
 </div>
@@ -132,23 +132,31 @@
 
 <!--RECENZIJE_POČETAK-->
 <div class="container-fluid bg-dark text-white border-black border mt-3">
-  <div class="container">
+  <div class="container-lg">
         <h1 class="display-8 my-2">
           Recenzije:
         </h1>
         <hr class="m-0 my-3">
-      <div class="container row">
+      <div class="container-lg row justify-content-center m-0 p-0">
               {% for review in movie.reviews %}
-              <div class="col-sm-1">
+              <div class="col-4 col-sm-3 col-md-2 col-xl-1 ps-0">
                   {% if review.user_image %}
                   <img src="{{ url_for('static', filename='resources/user-images/' + review.user_image) }}" alt="profile_picture" class="border border-black w-100">
                   {% else %}
                   <img src="{{ url_for('static', filename='resources/user-images/avatar_profile_picture.png') }}" alt="profile_picture" class="border border-black w-100">
                   {% endif %}
               </div>
-              <div class="col-sm-11">
+              <div class="col-8 justify-content-between align-items-center mb-2 d-flex d-sm-none">
+                  <div>
+                      <span class="text-warning display-8">{{ review.user_username }}</span> <br>
+                      <span class="fi fi-ss-star " style="color: rgb(209, 209, 15)"></span>
+                      {{ review.rating }}<span class="text-secondary">/10</span>
+                      <span class="text-secondary"> {{ review.created_at }}</span>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-9 col-md-10 col-xl-11">
                   <div class="row">
-                      <div class="col-sm-12 d-flex justify-content-between align-items-center mb-2">
+                      <div class="col-sm-12 justify-content-between align-items-center mb-2 d-none d-sm-flex">
                           <div>
                               <span class="text-warning display-8">{{ review.user_username }}</span>
                               <span class="text-secondary"> - {{ review.created_at }}</span>
@@ -158,7 +166,7 @@
                               {{ review.rating }}<span class="text-secondary">/10</span>
                           </div>
                       </div>
-                      <div class="col-sm-12 fst-italic">
+                      <div class="col-sm-12 fst-italic mt-2 mt-sm-0">
                           "{{ review.comment }}"
                       </div>
                   </div>
@@ -174,14 +182,14 @@
 
 <!--POŠALJI_KOMENTAR_POČETAK-->
 <div class="container-fluid bg-dark text-white border-black border mt-3">
-  <div class="container">
+  <div class="container-lg">
         <h1 class="display-8 my-2">
           Pošaljite recenziju:
         </h1>
         <hr class="m-0 my-3">
 
-        <div class="container row lh-sm mt-2">
-            <div class="col-sm-3 p-0">
+        <div class="container-lg row lh-sm mt-2">
+            <div class="col-xl-3 p-0">
                     <label class="form-label display-8 p-0">Ocena: </label>
                     <div class="d-flex align-items-center needs-validation">
                       <span class="fi fi-ss-star fs-5 star-hover-effect"></span>
@@ -198,7 +206,7 @@
                       <span class="text-secondary">/10</span>
                     </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-xl-9">
               <form id="review-form" class="row g-3 needs-validation" novalidate>
                       <label for="comment" class="form-label display-8 p-0">Komentar: </label>
                       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">

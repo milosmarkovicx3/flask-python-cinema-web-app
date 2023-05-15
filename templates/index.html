@@ -17,7 +17,7 @@
 
 {% block content %}             
 <!--IMG_SLIDER_POČETAK-->
-<div id="carouselControls" class="carousel slide p-0 my-3 border-black border" data-bs-ride="carousel">
+<div id="carouselControls" class="carousel slide d-none d-md-flex p-0 mt-3 border-black border" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="{{ url_for('static', filename='resources/pages/index/slider-img-1.jpg') }}" class="w-100">
@@ -47,47 +47,43 @@
 <!--IMG_SLIDER_KRAJ-->
 
 <!--DOGAĐAJI_3x2_POČETAK-->
-<div class="container-fluid bg-dark text-white border-black border">
-  <div class="container">
+<div class="container-fluid bg-dark text-white border-black border mt-3">
+  <div class="container-lg">
     <h1 class="display-7 m-0 mt-2">DOGAĐAJI</h1>
     <hr class="my-2">
     <div class="row mt-4 text-center">
-      <div class="col-sm-4">
+      <div class="col-sm-6 col-lg-4 mb-3">
         <a href="{{ url_for('template_api.online_shopping') }}">
           <img src="{{ url_for('static', filename='resources/pages/online_shopping/online_shopping.jpg') }}" class="w-100 img-zoom-hover border-black border">
         </a>
         <h5 class="mb-0 mt-2">ONLINE KUPOVINA JE STIGLA U ARHIV!</h5>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6 col-lg-4 mb-3">
         <a href="{{ url_for('template_api.arhiv_popcorns') }}">
           <img src="{{ url_for('static', filename='resources/pages/arhiv_popcorns/arhiv_popcorns.jpg') }}" class="w-100 img-zoom-hover border-black border">
         </a>
         <h5 class="mb-0 mt-2">BESPLATNE KOKICE ZA ČLANOVE PORODIČNOG FILM KLUBA!</h5>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6 col-lg-4 mb-3">
         <a href="{{ url_for('template_api.arhiv_family') }}">
           <img src="{{ url_for('static', filename='resources/pages/arhiv_family/arhiv_family.jpg') }}" class="w-100 img-zoom-hover border-black border">
         </a>
         <h5 class="mb-0 mt-2">BIOSKOP ZA CELU PORODICU!</h5>
       </div>
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="row mt-4 text-center">
-      <div class="col-sm-4">
+      <div class="col-sm-6 col-lg-4 mb-3">
         <a href="{{ url_for('template_api.arhiv_meal') }}">
           <img src="{{ url_for('static', filename='resources/pages/arhiv_meal/arhiv_meal.jpg') }}" class="w-100 img-zoom-hover border-black border">
         </a>
         <h5 class="mb-0 mt-2">ARHIV BONUS KARTICA ZA VIŠE POGODNOSTI!</h5>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6 col-lg-4 mb-3">
         <a href="{{ url_for('template_api.bonus_card') }}">
           <img src="{{ url_for('static', filename='resources/pages/bonus_card/bonus_card.jpg') }}" class="w-100 img-zoom-hover border-black border">
         </a>
         <h5 class="mb-0 mt-2">ARHIV BONUS KARTICA - TVOJ KLUB POGODNOSTI!</h5>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6 col-lg-4 mb-3">
         <a href="{{ url_for( 'template_api.arhiv_party') }}">
           <img src="{{ url_for('static', filename='resources/pages/arhiv_party/arhiv_party.jpg') }}" class="w-100 img-zoom-hover border-black border">
         </a>
@@ -95,40 +91,38 @@
       </div>
     </div>
   </div>
-
-  <br>
 </div>
 <!--DOGAĐAJI_3x2_KRAJ-->
 
 <!--IZDVAJAMO_POČETAK-->
 <div class="container-fluid bg-dark text-white my-3 border-black border">
-  <div class="container">
+  <div class="container-lg">
 
     <h1 class="display-7 m-0 mt-2">IZDVAJAMO</h1>
     <hr class="my-2">
-    <div class="row mt-4 text-center">
-      <div class="col-sm-3">
+    <div class="row mt-4 text-center justify-content-center">
+      <div class="col-7 col-sm-5 col-md-4 col-lg-3 mb-3">
         <a href="{{ url_for('template_api.movie', id=1 ) }}">
           <img src="{{ url_for('static', filename='resources/movie-posters/dracula_untold.png') }}" class="w-100 img-zoom-lower-hover border-black border" alt="dracula_untold">
         </a>
         <h5 class="mb-0 mt-2">Dracula Untold</h5>
         <span class="text-secondary">(2014)</span>
       </div>
-      <div class="col-sm-3">
+      <div class="col-7 col-sm-5 col-md-4 col-lg-3 mb-3">
         <a href="{{ url_for('template_api.movie', id=4 ) }}">
           <img src="{{ url_for('static', filename='resources/movie-posters/public_enemies.png') }}" class="w-100 img-zoom-lower-hover border-black border" alt="public_enemies">
         </a>
         <h5 class="mb-0 mt-2">Public Enemies</h5>
         <span class="text-secondary">(2009)</span>
       </div>
-      <div class="col-sm-3">
+      <div class="col-7 col-sm-5 col-md-4 col-lg-3 mb-3">
         <a href="{{ url_for('template_api.movie', id=2 ) }}">
           <img src="{{ url_for('static', filename='resources/movie-posters/the_deer_hunter.png') }}" class="w-100 img-zoom-lower-hover border-black border" alt="the_deer_hunter">
         </a>
         <h5 class="mb-0 mt-2">The Deer Hunter</h5>
         <span class="text-secondary">(1978)</span>
       </div>
-      <div class="col-sm-3">
+      <div class="col-7 col-sm-5 col-md-4 col-lg-3 mb-3">
         <a href="{{ url_for('template_api.movie', id=5 ) }}">
           <img src="{{ url_for('static', filename='resources/movie-posters/warrior.png') }}" class="w-100 img-zoom-lower-hover border-black border" alt="warrior">
         </a>
@@ -139,24 +133,23 @@
     </div>
 
   </div>
-  <br>
 </div>
 <!--IZDVAJAMO_KRAJ-->
 
 <!--FILMSKI_DAN_POČETAK-->
 <div class="container-fluid bg-light bg-gradient border-black border">
-  <div class="container">
-    <div class="row mt-4 text-center">
-      <div class="col-sm-8 ">
+  <div class="container-lg">
+    <div class="row mt-4 text-center align-items-center">
+      <div class="col-md-8 ">
         <a href="{{ url_for( 'template_api.arhiv_tuesday') }}">
           <img src="{{ url_for('static', filename='resources/pages/arhiv_tuesday/arhiv_tuesday.jpg') }}" class="w-100 border-black border" alt="filmski_dan">
         </a>
       </div>
-      <div class="col-sm-4">
-        <h1 class="m-0 my-5 display-6 fw-semibold">FILMSKI DAN U ARHIVU</h1>
+      <div class="col-md-4">
+        <h1 class="m-0 my-lg-5 display-6 fw-semibold">FILMSKI DAN U ARHIVU</h1>
         <hr class="my-2">
         <a href="{{ url_for( 'template_api.arhiv_tuesday') }}" class="nav-link">
-          <h2 class="m-0 my-5 text-danger display-7 fw-semibold">>> NA DETALJE</h2>
+          <h2 class="m-0 my-lg-5 text-danger display-7 fw-semibold">>> NA DETALJE</h2>
         </a>
       </div>
     </div>

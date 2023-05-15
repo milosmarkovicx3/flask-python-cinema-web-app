@@ -1,0 +1,29 @@
+2023-05-15 08:24:52,261 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-15 08:24:54,216 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:24:54,220 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:24:58,330 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:24:58,332 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:25:00,274 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:25:00,276 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:25:10,969 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-15 08:25:22,766 INFO    [base_facade.py(delete:69)] value: 33, column: id
+2023-05-15 08:25:23,947 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-15 08:25:25,374 INFO    [base_facade.py(delete:69)] value: 32, column: id
+2023-05-15 08:25:26,521 INFO    [base_facade.py(find_all:22)] column: user_id, value: 1, value_to: None, method: None, max: None
+2023-05-15 08:25:41,065 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-15 08:25:44,691 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:25:44,693 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:25:52,115 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:25:52,116 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:26:00,670 INFO    [user_impl.py(logout:183)] log out: Miloš Marković
+2023-05-15 08:26:04,406 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-15 08:26:06,760 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:26:06,762 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:39:29,821 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:39:29,823 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:42:00,656 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-15 08:42:03,504 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:42:03,507 INFO    [base_facade.py(find:13)] value: reserved, column: type
+2023-05-15 08:45:00,671 INFO    [base_facade.py(find:13)] value: 1, column: id
+2023-05-15 08:45:03,865 INFO    [base_facade.py(find:13)] value: 103, column: id
+2023-05-15 08:45:03,867 INFO    [base_facade.py(find:13)] value: reserved, column: type

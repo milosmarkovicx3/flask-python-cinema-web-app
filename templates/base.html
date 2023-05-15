@@ -7,23 +7,24 @@
     <meta name="author" content="Marković Miloš, milos.dj.markovic@gmail.com">
     <link rel="shortcut icon" href="{{ url_for('static', filename='resources/images/arhiv_logo.ico') }}" type="image/x-icon">    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/misc.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/register_and_login.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-solid-rounded/css/uicons-solid-rounded.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-bold-straight/css/uicons-bold-straight.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-solid-straight/css/uicons-solid-straight.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/uicons/uicons-regular-straight/css/uicons-regular-straight.css') }}">
     <script src="{{ url_for('static', filename='javascript/jquery.js') }}"></script>
-    <script src="{{ url_for('static', filename='javascript/bootstrap.bundle.min.js') }}"></script>  
+    {% if not current_user.is_authenticated %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register_and_login.css') }}">
     <script src="{{ url_for('static', filename='javascript/register_and_login.js') }}" defer></script>
+    {% endif %}
+    <script src="{{ url_for('static', filename='javascript/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/misc.js') }}" defer></script>
     {% block head %}
     {% endblock %}
 </head>
 <body>
-    {% if current_user.is_authenticated %}    
-    {% else %}
+    {% if not current_user.is_authenticated %}
     <!--MODALS_POČETAK-->    
     <div>
         <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLoginLabel" aria-hidden="true">
@@ -139,15 +140,15 @@
 
 <div id="texture" class="min-vh-100">
     <div id="background" class="container-fluid min-vh-100">
-        <div class="container">
+        <div class="container-lg">
 
             <!--HEADER_POČETAK-->
             <div class="container-fluid">
                 <div class="row mb-3 p-0 align-items-center border-black border bg-white user-select-none" >
-                    <div class="col-sm-3 p-0 border-end border-black">
+                    <div class="d-none d-lg-inline-block col-sm-3 p-0 border-end border-black">
                         <img src="{{ url_for('static', filename='resources/images/lion_intro.gif') }}" class="w-100 p-0" alt="lion_intro.gif">
                     </div>
-                    <div class="col-sm-9 ">                        
+                    <div class="col-lg-9 ">
                         <p id="quote" class="active">"You either die a hero or you live long enough to see yourself become the villain."</p>
                         <p id="quote-from" class="active"><span id="quote-from-hover">- The Dark Knight</span></p>           
                     </div>
@@ -157,13 +158,13 @@
 
             <!--NAVIGACIJA_POČETAK-->
             <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark border-black border">
-                <div class="container-fluid">
+                <div class="container-fluid d-flex justify-content-center text-center">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li>
+                    <ul class="navbar-nav me-auto " style="--bs-scroll-height: 100px;">
+                    <li class="d-none d-lg-inline-block">
                         <a id="nav-li-logo" href="{{ url_for('template_api.index') }}">
                         <img style="width: 40px;" src="{{ url_for('static', filename='resources/images/arhiv_logo.jpg') }}" alt="ARHIV_LOGO">
                         </a>
@@ -177,6 +178,7 @@
                     {% endblock %}
                     </ul>
                     {% if current_user.is_authenticated %}
+                    <div class="d-flex justify-content-center">
                     <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         {% if current_user.image %}
@@ -199,6 +201,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ url_for('auth_api.logout') }}" id="log-out"><span class="fi fi-rs-exit"></span>&nbsp; Odjavi se</a></li>
                     </ul>
+                    </div>
                     </div>
                     {% else %}
                     <ul class="nav navbar-nav navbar-right not-logged">
@@ -224,7 +227,7 @@
 
             <footer class="container-fluid text-white bg-dark border-black border mt-3">
                 <div class="row m-3 mb-0 justify-content-between">
-                <div class="col-sm-3 p-0">
+                <div class="col-lg-3 col-sm-6 p-0">
                     <h5>RADNO VREME</h5>
                     <p>
                     Radno vreme blagajne je od: <br>
@@ -233,7 +236,7 @@
                     (prodaja karata na dan projekcije)
                     </p>
                 </div>
-                <div class="col-sm-3 p-0">
+                <div class="col-lg-3 col-sm-6 p-0">
                     <h5>KONTAKTIRAJTE NAS</h5>
                     <p>
                     <span class="fi fi-ss-map-marker"></span>
@@ -246,7 +249,7 @@
                     +381 11 22 03 400
                     </p>
                 </div>
-                <div id="social" class="col-sm-2 p-0">
+                <div id="social" class="col-lg-2 col-sm-6 p-0">
                     <h5>PRATITE NAS</h5>
                     <p>
                     <img src="{{ url_for('static', filename='resources/social-media-icons/facebook (6).png') }}" class="fi" alt="facebook">
@@ -259,7 +262,7 @@
                     <a href="https://www.youtube.com" target="_blank">YouTube</a>
                     </p>
                 </div>
-                <div class="col-sm-3 p-0">
+                <div class="col-lg-3 col-sm-6 p-0">
                     <h5>DODATNE INFORMACIJE</h5>
                     <p>
                     <span class="fi fi-ss-messages-question"></span>

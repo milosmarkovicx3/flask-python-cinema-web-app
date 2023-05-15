@@ -10,7 +10,7 @@
 
 
 {% block content %}
-<div id="loading-animation-container" class="container-fluid bg-dark text-white border-black border mt-3 ps-0 pb-3">
+<div id="loading-animation-container" class="container-fluid bg-dark text-white border-black border mt-3 pb-3">
 
     <!--SLANJE_ANIMACIJA_POČETAK-->
     <div id="loader">
@@ -21,63 +21,70 @@
     </div>
     <!--SLANJE_ANIMACIJA_KRAJ-->
 
-  <div class="container ps-3">
+  <div class="container-lg ps-3">
       <h1 class="display-7 my-2 text-shadow">MOJ PROFIL: </h1>
-      <hr class="mt-2 mb-3">
-      <div class="container pe-0 fs-5">
+      <hr class="my-3">
+      <div class="container-lg px-0 fs-5">
 
         <div class="tab-content" id="nav-tabContent">
 
           <!--PROFILE_POČETAK-->
           <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-            <div class="row">
-              <div class="col-sm-2 ps-0">
-                {% if current_user.image %}
-                  <img src="{{ url_for('static', filename='resources/user-images/' + current_user.image) }}" alt="profile_picture" class="border border-black w-100">
-                {% else %}
-                  <img src="{{ url_for('static', filename='resources/user-images/avatar_profile_picture.png') }}" alt="profile_picture" class="border border-black w-100  ">
-                {% endif %}
-              </div>
-              <div class="col-sm-2 text-secondary">
-                Ime: <br>
-                Prezime: <br>
-                E-mail adresa: <br>
-                Username: <br>
-                Datum rođenja: <br>
-                Broj telefona: <br>
-              </div>
-              <div class="col-sm-6">
-                {{ current_user.first_name }} <br>
-                {{ current_user.last_name }} <br>
-                {{ current_user.email }} <br>
-                {{ current_user.username }} <br>
-                {% if current_user.date_of_birth %} {{ current_user.date_of_birth.strftime('%d.%m.%Y') }} {% endif %} <br>
-                {% if current_user.phone_number %} {{ current_user.phone_number }}{% endif %} <br>
-              </div>
-              <div class="col-sm-2 d-flex justify-content-end align-items-end">
-                    <nav>
-                      <div id="nav-tab" role="tablist">
-                        <button class="active d-none" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">FILM</button>
-                        <button class="btn btn-secondary border border-black" id="nav-edit-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-edit-profile" type="button" role="tab" aria-controls="nav-edit-profile" aria-selected="false">IZMENI</button>
+              <div class="container-lg">
+                  <div class="row">
+                      <div class="col-lg-2 col-sm-3 p-0">
+                            {% if current_user.image %}
+                              <img src="{{ url_for('static', filename='resources/user-images/' + current_user.image) }}" alt="profile_picture" class="border border-black w-100">
+                            {% else %}
+                              <img src="{{ url_for('static', filename='resources/user-images/avatar_profile_picture.png') }}" alt="profile_picture" class="border border-black w-100  ">
+                            {% endif %}
                       </div>
-                    </nav>
-              </div>
-            </div>
-
+                      <div class="col-lg-9 px-0 ps-lg-4 my-3 my-lg-0">
+                              <div class="row">
+                                <div class="col-md-4 col-xl-3 text-secondary">Ime i prezime:</div>
+                                <div class="col-sm-8">{{ current_user.first_name }} {{ current_user.last_name }}</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4 col-xl-3 text-secondary">E-mail adresa:</div>
+                                <div class="col-sm-8">{{ current_user.email }}</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4 col-xl-3 text-secondary">Username:</div>
+                                <div class="col-sm-8">{{ current_user.username }}</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4 col-xl-3 text-secondary">Datum rođenja:</div>
+                                <div class="col-sm-8">{% if current_user.date_of_birth %} {{ current_user.date_of_birth.strftime('%d.%m.%Y') }} {% endif %}</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4 col-xl-3 text-secondary">Broj telefona:</div>
+                                <div class="col-sm-8">{% if current_user.phone_number %} {{ current_user.phone_number }}{% endif %}</div>
+                              </div>
+                      </div>
+                        <div class="col-sm-3 col-lg-1 d-flex align-items-end p-0">
+                                <nav class="w-100">
+                                      <div id="nav-tab" role="tablist" class="w-100">
+                                        <button class="active d-none" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">FILM</button>
+                                        <button class="btn btn-secondary border border-black w-100" id="nav-edit-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-edit-profile" type="button" role="tab" aria-controls="nav-edit-profile" aria-selected="false">IZMENI</button>
+                                      </div>
+                                </nav>
+                        </div>
+                  </div>
+                </div>
           </div>
           <!--PROFILE_KRAJ-->
 
           <!--IZMENA_PROFILA_POČETAK-->
           <div class="tab-pane fade" id="nav-edit-profile" role="tabpanel" aria-labelledby="nav-edit-profile-tab" tabindex="0">
-            <form id="profile-form" class=" needs-validation" novalidate enctype="multipart/form-data">
+            <form id="profile-form" class="needs-validation container-lg" novalidate enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <input type="hidden" id="original_username" value="{{ current_user.username }}">
                     <input type="hidden" id="original_email" value="{{ current_user.email }}">
                     <span class="text-warning fs-4">PROFILNA SLIKA (1:1): </span>
                     <hr>
-                    <div class="col-sm-12 row mb-2 align-items-center">
-                        <div class="col-sm-3">
-                            <div class="col-sm-6">
+                    <div class="row m-0 mb-2 align-items-center">
+                        <div class="col-md-3 p-0 pb-3 pb-lg-0">
+                            <div class="col-md-6">
                             {% if current_user.image %}
                               <img src="{{ url_for('static', filename='resources/user-images/' + current_user.image) }}" id="profile-image-edit" alt="profile_picture" class="border border-black w-100">
                             {% else %}
@@ -85,7 +92,7 @@
                             {% endif %}
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="input-group has-validation">
                               <input type="text" id="profile-image-input-msg" class="form-control consolas border border-black" placeholder="npr. C:\\fakepath\\star_wars_iv.png" disabled>
                               <input type="file" class="form-control d-none" id="profile-image" name="profile-image" accept=".png, .jpg, .jpeg, .gif">
@@ -94,29 +101,27 @@
                             </div>
                         </div>
                   </div>
-
-                <hr>
+                    <hr>
                     <span class="text-warning fs-4">OSNOVNI PODACI: </span>
                     <hr>
-
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                              <label for="profile-username" class="form-label">Korisničko ime:</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="input-group has-validation">
                                 <span class="input-group-text">@</span>
-                                <input type="text" class="form-control" id="profile-username" name="profile-username" aria-describedby="usernameHelp" placeholder="npr. milosmarkovicx3" value="{{ current_user.username }}">
+                                <input type="text" class="form-control" id="profile-username" name="profile-username" aria-describedby="usernameHelp" placeholder="npr. milomdarkovicx3" value="{{ current_user.username }}">
                                 <div id="profile-username-msg" class="invalid-feedback"> Izarerite korisničko ime.</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                             <label for="profile-passwd" class="form-label mb-1">Lozinka:</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="input-group has-validation">
                                 <input autocomplete="new-password" type="password" id="profile-passwd" name="profile-passwd" class="form-control" placeholder="npr. arhiv1999?">
                                 <span id="profile-show-passwd" class="input-group-text fi-rs-eye"></span>
@@ -125,12 +130,11 @@
                         </div>
                     </div>
 
-
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                             <label for="profile-passwd" class="form-label mb-1">Nova lozinka:</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="input-group has-validation">
                                 <input autocomplete="new-password" type="password" id="profile-passwd-new" name="profile-passwd-new" class="form-control" placeholder="npr. aezakmi$4">
                                 <span id="profile-show-passwd-new" class="input-group-text fi-rs-eye"></span>
@@ -139,11 +143,11 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                             <label for="profile-email" class="form-label mb-1">Email adresa:</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="input-group has-validation">
                                 <input type="email" class="form-control" id="profile-email" name="profile-email" aria-describedby="emailHelp" placeholder="npr. milos.dj.markovic@gmail.com" value="{{ current_user.email }}">
                                 <div id="profile-email-msg" class="invalid-feedback">Unesite email adresu.</div>
@@ -151,11 +155,11 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                             <label for="profile-first-name" class="form-label mb-1">Ime:</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="input-group has-validation">
                                 <input type="text" class="form-control" id="profile-first-name" name="profile-first-name" aria-describedby="nameHelp" placeholder="npr. Miloš" value="{{ current_user.first_name }}">
                                 <div class="invalid-feedback">Unesite vaše ime.</div>
@@ -163,11 +167,11 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                             <label for="profile-last-name" class="form-label mb-1">Prezime:</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="input-group has-validation">
                                 <input type="text" class="form-control" id="profile-last-name" name="profile-last-name" aria-describedby="surnameHelp" placeholder="npr. Marković" value="{{ current_user.last_name }}">
                                 <div class="invalid-feedback">Unesite vaše prezime.</div>
@@ -175,39 +179,37 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                             <label for="profile-date-of-birth" class="form-label mb-1">Datum rođenja: </label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <input type="date" class="form-control" id="profile-date-of-birth" name="profile-date-of-birth" aria-describedby="surnameHelp" placeholder="dd-mm-yyyy" min="1950-01-01" max="2020-12-31" value="{{ current_user.date_of_birth }}">
                         </div>
                     </div>
 
-                    <div class="col-sm-12 row mb-2">
-                        <div class="col-sm-3">
+                    <div class="row mb-2">
+                        <div class="col-md-3">
                         <label for="profile-phone-number" class="form-label mb-1">Broj telefona: </label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <input type="text" class="form-control" id="profile-phone-number" name="profile-phone-number" aria-describedby="surnameHelp" placeholder="npr. 062/186-75-51" value="{{ current_user.phone_number }}">
                         </div>
                     </div>
 
-                    <div class="col-sm-12 mb-2 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-success border border-black">SAČUVAJ</button>
+                    <div class="row justify-content-end">
+                    <div class="col-md-2 mb-2">
+                        <button type="submit" class="btn btn-success border border-black w-100">SAČUVAJ</button>
+                    </div>
                     </div>
 
             </form>
 
           </div>
           <!--IZMENA_PROFILA_KRAJ-->
-
         </div>
-
     </div>
     <hr>
-
-
   </div>
 </div>
 {% endblock %}

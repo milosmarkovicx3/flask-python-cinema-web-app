@@ -1,9 +1,0 @@
-flask
-mysqlclient
-sqlalchemy
-flask-sqlalchemy
-flask-login
-flask-security-too
-flask-mailman
-bcrypt
-python-dotenv

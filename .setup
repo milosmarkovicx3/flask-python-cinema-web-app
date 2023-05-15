@@ -1,21 +1,19 @@
+------------------------------------------------------------
 pip freeze > requirements.txt
 pip unistall -r requirements.txt -y
-
 ------------------------------------------------------------
-1. Promeniti vrednost 'project_path' promenljive u 'logger.py' klasi.
+(I) Proveriti vrednost 'PROJECT_ROOT' promenljive, koja se automatski generiše.
 ------------------------------------------------------------
-2. Kreirati promenljivu 'PYTHONPATH' sa vrednošću npr:
-'C:\Users\Markovic Milos\PycharmProjects\pythonProject\zavrsni-rad\main'
+(II) Kreirati promenljivu 'PYTHONPATH', gde se vrednost završava sa '..t\zavrsni-rad\'
 ------------------------------------------------------------
-2.1. Ako se problem ne reši kreiranjem promenljive, uraditi desni klik
+(II) Ako se problem ne reši kreiranjem promenljive, uraditi desni klik
 na 'main' folder i setovati ga kao 'Source folder' kroz 'Mark directory as'.
-
 I onda checkirati opciju 'Add source roots to PYHTONPATH' unutar
 podesavanja 'Build, Execution, Deployment' > 'Console' > 'Pyhton Console'
 
 https://stackoverflow.com/questions/21236824/unresolved-reference-issue-in-pycharm
 ------------------------------------------------------------
-3. MySql bazu prebaciti sa localhosta
+(III) MySql bazu prebaciti sa localhosta
 ------------------------------------------------------------
-4. Ugraditi promenljivu za link sajta kada se recimo salje mail kod registracije isl
+(IV) Ugraditi promenljivu za link sajta kada se recimo salje mail kod registracije isl
 ------------------------------------------------------------
