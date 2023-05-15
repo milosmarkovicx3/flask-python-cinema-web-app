@@ -49,5 +49,5 @@ FIX: najčešće je u pitanju csrf token koji nedostaje ili je ne važeći
 JSON
 --------------------------------------------------------------
 PROBLEM: Message: 'Object of type time is not JSON serializable
-FIX: pprebaciti datum i vreme u string
+FIX: prebaciti datum i vreme u string
 --------------------------------------------------------------

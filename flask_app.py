@@ -25,7 +25,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 app.config["WTF_CSRF_SECRET_KEY"] = os.environ.get("SECRET_KEY")
 app.config["SECURITY_PASSWORD_SALT"] = os.environ.get("SECURITY_PASSWORD_SALT")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "mysql://root:@localhost/arhiv")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL_PRODUCTION", "mysql://root:@localhost/arhiv")
 app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER")
 app.config["MAIL_PORT"] = os.getenv("MAIL_PORT")
 app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
@@ -74,7 +74,6 @@ mail.init_app(app)
 csrf.init_app(app)
 db.init_app(app)
 app.app_context().push()
-db.create_all()
 
 
 

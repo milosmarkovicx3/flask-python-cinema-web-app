@@ -2,18 +2,102 @@
 pip freeze > requirements.txt
 pip unistall -r requirements.txt -y
 ------------------------------------------------------------
-(I) Proveriti vrednost 'PROJECT_ROOT' promenljive, koja se automatski generiše.
+(I) Za windows kreirati promenljivu 'PYTHONPATH', gde se vrednost završava sa '..t\zavrsni-rad\'
 ------------------------------------------------------------
-(II) Kreirati promenljivu 'PYTHONPATH', gde se vrednost završava sa '..t\zavrsni-rad\'
-------------------------------------------------------------
-(II) Ako se problem ne reši kreiranjem promenljive, uraditi desni klik
-na 'main' folder i setovati ga kao 'Source folder' kroz 'Mark directory as'.
-I onda checkirati opciju 'Add source roots to PYHTONPATH' unutar
-podesavanja 'Build, Execution, Deployment' > 'Console' > 'Pyhton Console'
 
-https://stackoverflow.com/questions/21236824/unresolved-reference-issue-in-pycharm
+
+
+
 ------------------------------------------------------------
-(III) MySql bazu prebaciti sa localhosta
+FLASK SETUP ZA PYTHON ANYWHERE
 ------------------------------------------------------------
-(IV) Ugraditi promenljivu za link sajta kada se recimo salje mail kod registracije isl
+1. git clone repo_url
+
+-> tražiće git username i password (koji je ustvari 'GIT Personal Access Token')
+token: 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
 ------------------------------------------------------------
+2.  mkvirtualenv env --python='usr/bin/python3.10'
+
+-> kreiramo virtuelno okruženje
+------------------------------------------------------------
+3. pip install -r .requirements.txt
+
+-> jedini problem koji mi je ovde pravio jeste za instalaciju 'dotenv' plugina,
+jer se on instalira preko python-dotenv, pa sam ja ručno ažulirao trenutni fajl
+da se problem ne bi pojavio opet
+------------------------------------------------------------
+4. na web conzoli:
+
+(a) Add a new web app
+-> izabrati 'Manual configuration (including virtualenvs)'
+-> izabrati najnoviju verziju pythona tj 'Python 3.10'
+------------------------------------------------------------
+(b) Virtualenv:
+-> napisati samo naziv okruženja koje smo napravili, odnosno 'env', to je
+dovoljno, jer će sistem sam prepoznati putanju
+------------------------------------------------------------
+(c) Code: => Source code:
+-> napisati samo naziv glavnog foldera, sistem će sam prepoznati putanju
+------------------------------------------------------------
+(d) Code: => WSGI configuration file:
+-> editujemo fajl u kome importujemo aplikaciju i učitamo promenljive iz
+'.env' falja pošto sistem ne može da prepozna sam bez pomoći
+
+import sys
+path = '/home/arhiv/flask-python-cinema-web-app'
+if path not in sys.path:
+    sys.path.append(path)
+
+import os
+from dotenv import load_dotenv
+project_folder = os.path.expanduser(path)
+load_dotenv(os.path.join(project_folder, '.env'))
+
+from flask_app import app
+application = app
+------------------------------------------------------------
+(e) Static files:
+-> staviti punu putanju iz pwd komande do foldera, poput:
+
+URL: /static/
+Directory: home/arhiv/flask-python-cinema-web-app/static
+------------------------------------------------------------
+(f) Force HTTPS: Enabled
+------------------------------------------------------------
+**Konstatno osvežavati aplikaciju na web strani posle bilo kakvih izmena.
+**Error greške možemo pratiti u logu.
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+MYSQL SETUP PYTHON ANYWHERE
+------------------------------------------------------------
+1. Napravimo bazu:
+-> user: arhiv
+-> host: arhiv.mysql.pythonanywhere-services.com
+-> tabela: arhiv$arhiv
+-> lozinka: Losmim123!
+------------------------------------------------------------
+2. Importujemo staru bazu:
+-> uploadujemo fajl preko gita
+-> odemo na mysql konzolu za tu bazu
+-> source /home/arhiv/flask-python-cinema-web-app/arhiv.sql
+
+problem koji sam viđao ovde jeste da nije hteo da importuje sve tabele, jer
+nije mogao da podesi default current_timestamp() za neku datum kolonu, pa sam
+morao da prepravim defaultnu vrednost na null, dropovao sve tabele i uradio
+import ponovo
+------------------------------------------------------------
+**Dodatne korisne sql komande:
+show databases;
+show tables;
+quit;
+select * from xzy;
+------------------------------------------------------------
+
+
+
+
+
+
