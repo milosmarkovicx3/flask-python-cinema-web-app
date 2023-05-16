@@ -133,18 +133,15 @@ $(document).ready(function() {
         success: response=>{
           $('#loader').css({'display':'none'});
             if (response.status == '200') {
-                alert("Nalog je uspešno ažuliran.");
-                location.reload(true);
+                successAlert("NALOG JE USPEŠNO AŽULIRAN!", "", "", true);
                 $('#staticBackdropRegistation').modal('hide');
             }else{
-                alert("Došlo je greške prilikom ažuliranja naloga." + response.description);
-                console.log(response);
+                errorAlert(response);
             }
         },
         error: function(error) {
           $('#loader').css({'display':'none'});
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });
 
@@ -181,7 +178,7 @@ $(document).ready(function() {
           }
         },
         error: function(error) {
-          console.error(error);
+
         }
       });
     });
@@ -217,7 +214,7 @@ $(document).ready(function() {
           }
         },
         error: function(error) {
-          console.error(error);
+
         }
       });
     });

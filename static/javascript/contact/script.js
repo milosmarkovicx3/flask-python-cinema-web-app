@@ -47,16 +47,14 @@ $(document).ready(function() {
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                alert("Poruka je uspešno poslata.");
+                successAlert("PORUKA JE USPEŠNO POSLATA!", "", "", false);
                 $(this)[0].reset();
             }else{
-                alert("Došlo je greške prilikom slanja poruke." + response.description);
-                console.log(response);
+                errorAlert(response);
             }
         },
         error: function(error) {
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });
 

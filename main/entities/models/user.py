@@ -57,16 +57,16 @@ class User(db.Model, UserMixin):
             "email": self.email,
             "username": self.username,
             "password": self.password,
-            "date_of_birth": self.date_of_birth.strftime('%d.%m.%Y'),
+            "date_of_birth": self.date_of_birth.strftime('%d.%m.%Y') if self.date_of_birth else '',
             "phone_number": self.phone_number,
             "image": self.image,
             "is_superuser": self.is_superuser,
-            "date_joined": self.date_joined.strftime('%d.%m.%Y'),
-            "last_login_at": self.last_login_at.strftime('%d.%m.%Y'),
+            "date_joined": self.date_joined.strftime('%d.%m.%Y') if self.date_joined else '',
+            "last_login_at": self.last_login_at.strftime('%d.%m.%Y') if self.last_login_at else '',
             "last_login_ip": self.last_login_ip,
-            "last_seen": self.last_seen.strftime('%d.%m.%Y'),
+            "last_seen": self.last_seen.strftime('%d.%m.%Y') if self.last_seen else '',
             "login_count": self.login_count,
-            "confirmed_at": self.confirmed_at.strftime('%d.%m.%Y'),
+            "confirmed_at": self.confirmed_at.strftime('%d.%m.%Y') if self.confirmed_at else '',
             "auth_token": self.auth_token
         }
 

@@ -2,7 +2,7 @@
 //menjanje ikonica pri odabiru sedišta i pamćenje lokacije
 let selected = [];
 
-function selectSeat(element, id, type, image){
+function selectSeat(element, id, type, image, ticket_price){
     if (type == 3 || type == 4 || type == 6) return;
 
     if (selected[0]) $(`#${selected[0]}`).attr('src', `${$('#root_path').val()}${selected[2]}`);
@@ -11,13 +11,8 @@ function selectSeat(element, id, type, image){
 
     selected = [id, type, image];
 
-    if(type == 2){
-        $('#ticket-info').text('1x600rsd')
-    }else if(type == 5){
-        $('#ticket-info').text('2x400rsd')
-    }else{
-        $('#ticket-info').text('1x400rsd')
-    }
+    $('#ticket-info').text(ticket_price)
+
 }
 //-------------------------------------------------------------------------------------------------------------------------
 //funkcija za rezervaciju izabranih sedišta
@@ -37,16 +32,13 @@ $(document).ready(function() {
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                alert("Rezervacija je uneta u sistem.");
-                location.reload(true);
+                successAlert("REZERVACIJA JE UNETA U SISTEM!", "", "", true);
             }else{
-                alert("Došlo je do greške prilikom kreiranja rezervacije." + response.description);
-                console.log(response);
+                errorAlert(response);
             }            
         },
         error: function(error) {
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });  
 

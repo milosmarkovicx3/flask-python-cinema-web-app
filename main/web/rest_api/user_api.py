@@ -1,8 +1,5 @@
-import logging
-
 from flask import Blueprint, request
 from main.service.impl.user_impl import UserImpl
-from main.service.utility.logger import log
 
 user_api = Blueprint('user_api', __name__, url_prefix='/user')
 ui = UserImpl()

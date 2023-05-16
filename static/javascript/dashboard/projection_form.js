@@ -50,17 +50,15 @@ $(document).ready(function() {
         success: response=>{
             $('#loader').css({'display':'none'});
             if (response.status == '200') {
-                alert("Projekcija je uspešno kreirana.");
+                successAlert("PROJEKCIJA JE USPEŠNO KREIRANA!", "", "", false);
                 $(this)[0].reset();
             }else{
-                alert("Došlo je do greške prilikom kreiranja projekcije." + response.description);
-                console.log(response);
+                errorAlert(response);
             }
         },
         error: function(error) {
             $('#loader').css({'display':'none'});
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });
 

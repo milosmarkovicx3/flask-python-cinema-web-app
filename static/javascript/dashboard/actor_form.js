@@ -67,17 +67,15 @@ $(document).ready(function() {
         success: response=>{
             $('#loader').css({'display':'none'});
             if (response.status == '200') {
-                alert("Glumac je uspešno kreiran.");
+                successAlert("GLUMAC JE USPEŠNO KREIRAN!", "", "", false);
                 $(this)[0].reset();
             }else{
-                alert("Došlo je do greške prilikom kreiranja glumca." + response.description);
-                console.log(response);
+                 errorAlert(response);
             }            
         },
         error: function(error) {
             $('#loader').css({'display':'none'});
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });  
 

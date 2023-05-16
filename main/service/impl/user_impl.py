@@ -65,7 +65,7 @@ class UserImpl(BaseImpl):
             )
 
             if self.T.create(user):
-                send_mail_confirm_email(msg_to=user.email, token=pbkdf2_sha256.hash(user.username))
+                send_mail_confirm_email(username=username, msg_to=user.email, token=pbkdf2_sha256.hash(user.username))
                 return result_handler(item=user)
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")

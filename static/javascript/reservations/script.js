@@ -14,16 +14,13 @@ function deleteReservation(id){
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                alert("Rezervacija je uspešno otkazana.");
-                location.reload(true);
+                successAlert("REZERVACIJA JE USPEŠNO OTKAZANA!", "", "", true);
             }else{
-                alert("Došlo je do greške prilikom otkazivanja rezervacije." + response.description);
-                console.log(response);
+                errorAlert(response);
             }
         },
         error: function(error) {
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });
 }

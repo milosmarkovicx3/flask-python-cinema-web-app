@@ -24,6 +24,45 @@
     {% endblock %}
 </head>
 <body>
+    <div class="modal fade" id="staticBackdropSuccessAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropSuccessAlertLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered border-5 border-danger">
+            <div class="modal-content bg-body-secondary modal-texture border border-black">
+                <div class="modal-header">
+                    <div class="container text-center">
+                        <div class="row">
+                            <h1 id="message-header" class="modal-title display-7"></h1>
+                            <h5 id="message-text"></h5>
+                            <p id="additional-message-text"></p>
+                            <div class="d-flex justify-content-center ">
+                              <button id="success-confirm" type="button" class="btn btn-success border border-black py-1" data-bs-dismiss="modal" aria-label="Close">Razumeo/la</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropErrorAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropErrorAlertLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered border-5 border-danger">
+            <div class="modal-content bg-body-secondary modal-texture border border-black">
+                <div class="modal-header">
+                    <div class="container text-center">
+                        <div class="row">
+                    <h1 class="modal-title display-6" id="staticBackdropErrorAlertLabel">UPS, ŽAO NAM JE.</h1>
+                    <h5>NAŽALOST, NISMO MOGLI DA UČITAMO ODREĐENE PODATKE.</h5>
+                    <p> Molimo da ponovo učitate stranicu ili pokušate malo kasnije.</p>
+                            <div class="container d-flex justify-content-between">
+                                    <button id="cancel-page" class="btn btn-secondary border border-black py-1">Otkazati</button>
+                                    <button id="refresh-page" class="btn btn-danger border border-black py-1">Obnovi stranicu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
     {% if not current_user.is_authenticated %}
     <!--MODALS_POČETAK-->    
     <div>

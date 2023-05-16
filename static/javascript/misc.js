@@ -29,5 +29,44 @@ const quotes = [  [`"You either die a hero or you live long enough to see yourse
       quote_from.addClass('active');
     }, 500);
   }, 7000);
-  //------------------------------------------------------------------------------
-  
+//------------------------------------------------------------------------------
+//Logika za informativne modale
+
+$(document).ready(function() {
+    $('#refresh-page').click(function() {
+        location.reload(true);
+    });
+    $('#cancel-page').click(function() {
+        location.href = "/";
+    });
+});
+
+function errorAlert(response){
+        let modal = $('#staticBackdropErrorAlert');
+        let modalTrigger = new bootstrap.Modal(modal);
+        modalTrigger.show();
+        console.error(response);
+}
+function successAlert(header, message, additional_message, refresh){
+        let modal = $('#staticBackdropSuccessAlert');
+        let modalTrigger = new bootstrap.Modal(modal);
+        modalTrigger.show();
+        $('#message-header').text(header);
+        $('#message-text').text(message);
+        $('#additional-message-text').text(additional_message);
+        if(refresh){
+            $('#success-confirm').click(function() {
+                location.reload(true);
+            });
+        }else{
+            $('#success-confirm').off('click');
+        }
+}
+//------------------------------------------------------------------------------
+//Iz nekog razloga mora da se doda ovaj kod.?
+$(document).ready(function() {
+    $(function () {
+      $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+});
+//------------------------------------------------------------------------------

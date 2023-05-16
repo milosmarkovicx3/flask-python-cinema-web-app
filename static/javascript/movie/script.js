@@ -60,16 +60,13 @@ $(document).ready(function() {
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                alert("Recenzija je uspešno poslata.");
-                location.reload(true);
+                successAlert("RECENZIJA JE USPEŠNO POSLATA!", "", "", true);
             }else{
-                alert("Došlo je do greške prilikom slanja recenzije." + response.description);
-                console.log(response);
+                errorAlert(response);
             }            
         },
         error: function(error) {
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });  
 

@@ -43,7 +43,7 @@
 
                         <img id="{{ seat.id }}"
                             src="{{ url_for('static', filename='resources/seat-images/' + seat.image) }}"
-                            onclick="selectSeat(this, {{ seat.id }}, {{ seat.type }}, '{{ seat.image }}')"
+                            onclick="selectSeat(this, {{ seat.id }}, {{ seat.type }}, '{{ seat.image }}', '{{ seat.ticket_price }}')"
                         >
                             {% if seat.type == 6 and seat.love %}
                             <td class="pb-3">
@@ -60,7 +60,7 @@
                 </tr>
             </table>
             </div>
-            <!--LEVA_POLOVINA_KRAJ-->
+          <!--LEVA_POLOVINA_KRAJ-->
 
             <!--DESNA_POLOVINA_POČETAK-->
             <div class="col-md-6 row">
@@ -105,12 +105,17 @@
           </div>
           <hr>
           <div class="d-flex justify-content-between mb-3">
-              <span class="h5">
+                <span class="h5">
                     Cena karte:
                     <span id="ticket-info"></span>
-              </span>
-
-              <button form="reservation-form" class="btn btn-secondary border border-black">REZERVIŠI</button>
+                </span>
+                {% if current_user.is_authenticated %}
+                    <button form="reservation-form" class="btn btn-secondary border border-black">REZERVIŠI</button>
+                {% else %}
+                <span class="d-inline-block" tabindex="0" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-title="Da biste rezervisali sedište, molimo vas da budete prijavljeni na vaš nalog!">
+                    <button form="reservation-form" class="btn btn-secondary border border-black" disabled>REZERVIŠI</button>
+                </span>
+                {% endif %}
           </div>
   </div>
 </div>

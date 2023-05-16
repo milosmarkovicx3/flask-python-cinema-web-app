@@ -1,3 +1,6 @@
+import math
+import re
+
 from main.entities.core.base import db
 from main.entities.facade.seat_type_facade import SeatTypeFacade
 
@@ -61,11 +64,28 @@ class Projection(db.Model):
                     "row": seat.row,
                     "number": seat.number,
                     "type": seat.seat_type_id,
-                    "image": seat.seat_type.image
+                    "image": seat.seat_type.image,
+                    "ticket_price": self.ticket_price(seat.seat_type_id)
                 })
 
         return seats
 
+    def ticket_price(self, seat_type):
+        first_number = int(re.findall(r'\d+', self.movie.duration)[0])
+        price = 200 + first_number * 100
+
+        if seat_type == 2:
+            price = int(round(price * 1.2))
+        elif seat_type == 5:
+            price = int(round(price * 2))
+
+        if self.date.weekday() == 1:
+            return int(math.ceil(price*0.8 / 10) * 10)
+
+        if seat_type == 5:
+            return f'2x{price}rsd'
+        else:
+            return f'1x{price}rsd'
 
 
 

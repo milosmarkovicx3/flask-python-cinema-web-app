@@ -216,7 +216,13 @@
                           Unesite komentar.
                         </div>
                       <div class="col-12 my-3 d-flex justify-content-end p-0">
-                        <button class="btn btn-success consolas border border-black" type="submit">POŠALJI</button>
+                          {% if current_user.is_authenticated %}
+                                <button class="btn btn-success consolas border border-black" type="submit">POŠALJI</button>
+                          {% else %}
+                          <span class="d-inline-block" tabindex="0" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-title="Da biste poslali recenziju, molimo vas da budete prijavljeni na vaš nalog!">
+                                <button class="btn btn-success consolas border border-black" type="submit" disabled>POŠALJI</button>
+                          </span>
+                          {% endif %}
                       </div>
               </form>
             </div>

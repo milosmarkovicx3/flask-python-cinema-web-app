@@ -79,17 +79,16 @@ $(document).ready(function() {
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                alert("Nalog je uspešno kreiran.\nMail za konfirmaciju vam je poslat.");
+                successAlert("VAŠ NALOG JE USPEŠNO KREIRAN!","MOLIMO VAS DA PROVERITE SVOJ EMAIL ZA DALJE INSTRUKCIJE!",
+                             "Ako ne vidite email odmah, molimo Vas da proverite vašu spam poštu.", false);
                 $(this)[0].reset();
                 $('#staticBackdropRegistation').modal('hide');
             }else{
-                alert("Došlo je greške prilikom pravljenja naloga." + response.description);
-                console.log(response);
+                errorAlert(response);
             }
         },
         error: function(error) {
-            alert("Došlo je do greške prilikom slanja zahteva.");
-            console.error(error);
+            errorAlert(response);
         }
     });
 
@@ -124,7 +123,7 @@ $(document).ready(function() {
           }
         },
         error: function(error) {
-          console.error(error);
+
         }
       });
     });
@@ -159,7 +158,7 @@ $(document).ready(function() {
           }
         },
         error: function(error) {
-          console.error(error);
+
         }
       });
     });
