@@ -1,10 +1,21 @@
 ------------------------------------------------------------
+pip install -r requirements.txt
 pip freeze > requirements.txt
 pip unistall -r requirements.txt -y
 ------------------------------------------------------------
 (I) Za windows kreirati promenljivu 'PYTHONPATH', gde se vrednost završava sa '..t\zavrsni-rad\'
 ------------------------------------------------------------
 
+
+
+
+# -ZA-PRODUKCIJU----------------------------------------------------------------
+# app.app_context().push()
+# db.create_all()
+#
+# Promenuti database_uri.
+# Debug flag na false.
+# ------------------------------------------------------------------------------
 
 
 
@@ -89,11 +100,81 @@ nije mogao da podesi default current_timestamp() za neku datum kolonu, pa sam
 morao da prepravim defaultnu vrednost na null, dropovao sve tabele i uradio
 import ponovo
 ------------------------------------------------------------
-**Dodatne korisne sql komande:
+3. Za exportovanje baze:
+-> mysqldump --no-tablespaces -u arhiv -h arhiv.mysql.pythonanywhere-services.com 'arhiv$arhiv'  > db-backup.sql
+
+komandu pokrenuti iz bash konzole iz /home/arhiv foldera
+-----------------------------------------------------------
+4. Restorovanje verzije baze:
+-> mysql -u arhiv -h arhiv.mysql.pythonanywhere-services.com 'arhiv$arhiv' < db-backup.sql
+-----------------------------------------------------------
+5. Povezivanje na bazu:
+-> mysql -u arhiv -h arhiv.mysql.pythonanywhere-services.com 'arhiv$arhiv' -p
+-----------------------------------------------------------
 show databases;
 show tables;
+use arhiv$arhiv;
+source /home/path_to_sql_file.sql
 quit;
 select * from xzy;
+------------------------------------------------------------
+6. Problemi sa konekcijom:
+-> https://help.pythonanywhere.com/pages/ManagingDatabaseConnections/
+
+Error: MySQLdb.OperationalError: (4031, 'The client was disconnected by the server because
+of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.')
+
+-> U suštini PythonAnywhere team je smanjio default vreme od 'wait_timeout' promenljive
+28800 na 300, što je oko 5min da se ne bi trošilo serversko vreme za dž. Tu nastupa
+sqlalchemy sa promenljivom 'pool_recycle' koja može da se setuje da bi negirala ovu
+izmenu i osvežavala konekciju na svakih 280s, tj 20 pre prekida veza sa MySQL serverom.
+Međutim nevidljivi problem koji sam debug-ova 14h jeste brisanje/komentarisanje linije
+koda sa 'app.app_context().push()'.
+
+Vrednosti promenljivih na MySQL serveru:
+mysql> show variables like '%timeout%';
+mysql> show global variables like '%timeout%';
+
+Flask-SQLAlchemy dokumentacije:
+https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/config/
+
+Podešavanja koja sam takođe pokušavao pri rešavanju greške:
+(pool_timeout: 10 i 28000)
+app.config['SQLALCHEMY_POOL_RECYCLE'] = 280
+app.config['SQLALCHEMY_POOL_TIMEOUT'] = 10
+app.config['SQLALCHEMY_POOL_PRE_PING'] = True
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    'pool_recycle': 280,
+    'pool_timeout': 10,
+    'pool_pre_ping': True
+}
+
+Takođe pokušavao dodavanje (?wait_timeout=2147483) na kraj database_uri,
+međutim i to izbacuje error jer nije dozvoljeno.
+
+Default vrednosti za SQLAlchemy:
+print(db.engine.pool.status())
+print("pool_timeoutt:", db.engine.pool.timeout())
+print("pool_recycle:", db.engine.pool._recycle)
+print("pool_pre_ping:", db.engine.pool._pre_ping)
+
+-> Pool size: 5  Connections in pool: 0 Current Overflow: -5 Current Checked out connections: 0
+-> pool_timeoutt: 30.0
+-> pool_recycle: 7200
+-> pool_pre_ping: False
+------------------------------------------------------------
+
+------------------------------------------------------------
+VIRTUAL ENV
+------------------------------------------------------------
+-> workon env
+
+prebaci se na okruženje, gpt kaže da treba za njega plugin:
+-> pip install virtualenvwrapper
+------------------------------------------------------------
+-> deactivate
+
+univerzalna komanda za izlazak iz okruženja
 ------------------------------------------------------------
 
 

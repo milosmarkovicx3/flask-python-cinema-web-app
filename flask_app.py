@@ -1,4 +1,3 @@
-# https://flask.palletsprojects.com/en/2.3.x/security/#security-csp
 import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
@@ -22,21 +21,42 @@ app = Flask(__name__)
 load_dotenv()
 
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-app.config["WTF_CSRF_SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config["WTF_CSRF_SECRET_KEY"] = os.environ.get("WTF_CSRF_SECRET_KEY")
 app.config["SECURITY_PASSWORD_SALT"] = os.environ.get("SECURITY_PASSWORD_SALT")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL_PRODUCTION", "mysql://root:@localhost/arhiv")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI_PRODUCTION", "mysql://root:@localhost/arhiv")
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = { 'pool_recycle': 280 }
 app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER")
 app.config["MAIL_PORT"] = os.getenv("MAIL_PORT")
 app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
 app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")
-app.config["MAIL_DEFAULT_SENDER"] = "office@arhiv.com"
-app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USE_TLS"] = False
+app.config["MAIL_DEFAULT_SENDER"] = os.getenv("MAIL_DEFAULT_SENDER")
+app.config["MAIL_USE_SSL"] = os.getenv("MAIL_USE_SSL")
+app.config["MAIL_USE_TLS"] = os.getenv("MAIL_USE_TLS")
 app.config['MAX_CONTENT_LENGTH'] = 3 * 1024 * 1024
+"""
+Ograničava kolačiće da se koriste samo na HTTPS standardu prometa podataka.
+"""
 app.config['SESSION_COOKIE_SECURE'] = True
+"""
+Sprečava mogućnost čitanja sadržaja kolačića preko JavaScript-a.
+"""
 app.config['SESSION_COOKIE_HTTPONLY'] = True
+"""
+Flask aplikacija u scenariju gde je recimo ona middle-man za neki API, sprečava
+slanje kolačića koje je primila od strane klijentovog pretraživača sa zahtevima
+ka eksternih sajtova koji su skloni CSRF napadima.
+"""
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+"""
+Na pythonanywhere hostingu mora da se isključi inače se dobija csrf token
+missing/missmatching flag, inače ovakav problem je usko povezan isto kada je
+cookie_secure flag stavljen na true, a sajt pritom ne koristi https standard
+"""
+app.config['SESSION_COOKIE_DOMAIN'] = False
+"""
+Modifikovanje ugrađene jsonify metode, da vraća utf8 karaktere.
+"""
 app.config['JSON_AS_ASCII'] = False
 
 app.register_blueprint(actor_api)
@@ -62,21 +82,54 @@ def before_request():
 
 @app.after_request
 def apply_caching(response):
+    """
+    Sprečava da eksterni sajtovi ugrađuju vaš sajt preko iframe taga. Ovo
+    sprečava jednu klasu napada gde se klikovi na spoljnom okviru (scam sajt)
+    mogu preneti nevidljivo na elemente vaše stranice. Ovo je takođe poznato
+    kao "clickjacking".
+    """
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    """
+    Omogućava setovanje custom header-a, poput 'Cache-Control' i mnogih drugih.
+    """
     response.headers["HTTP-HEADER"] = "VALUE"
-    #response.headers["Cache-Control"] = "public, max-age=300, must-revalidate"
+    #response.headers["Cache-Control"] = "public, max-age=60, must-revalidate"
     return response
 
 
 login_manager.init_app(app)
 login_manager.login_view = "template_api.index"
 mail.init_app(app)
+"""
+WTForms plugin je korišćen prvenstveno zbog generisanje csrf tokena.
+CSRF tip napada: scan artist pošalje skriveni link u email dopisci koji vodi, do
+recimo sajta banke gde se izvrši transakcija novca na njegov račun, ali u slučaju
+da je csrf zaštita instalirana, poziv neće biti validiran usled nepostojanja
+csrf tokena koji se generiše tek kada se pristupi baš tom sajtu.
+"""
 csrf.init_app(app)
 db.init_app(app)
-app.app_context().push()
+# ------------------------------------------------------------------------------
+# app.app_context().push()
+# db.create_all()
+#
+# Isključiti na produkciji, takođe promenuti database_uri i debug flag na false.
+# ------------------------------------------------------------------------------
+"""
+Još neke implementirane sigurnosne mere:
 
+XXS tip napada: scam artist u formi kada je kreirao svoj nalog u samom imenu je
+postavio deo skripte koja recimo 'krade' kolačiće, poput document.cookie sintakse
+i slično kada se strana učita na korisničkim pretraživačima, ali Jinja2 siktansa
+po defult-u sprečava ove napade sintaksom {{ user.name }} koja sve u duplim
+vitičastim zagradama tretira kao običan tekst (stručni izraz: autoescaping).
+
+SQL injection: svi korisnički input-i se unose u bazu preko sqlalchemy modela.
+
+Korisničke lozinke se hash-uju sha256 algoritkom.
+"""
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=True)  # produkcija debug=False
+    app.run(host='127.0.0.1', port=5000, debug=False)  # produkcija debug=False
 
