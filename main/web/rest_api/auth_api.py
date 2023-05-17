@@ -19,8 +19,8 @@ def logout():
     return ui.logout()
 
 @auth_api.route('/confirm-email/<email>/<token>', methods=['GET'])
-def confirm_email(email, username_hash):
-    return ui.confirm_email(email, username_hash)
+def confirm_email(email, token):
+    return ui.confirm_email(email, token)
 
 
 @login_manager.user_loader

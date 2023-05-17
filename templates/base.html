@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Marković Miloš, milos.dj.markovic@gmail.com">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='resources/images/arhiv_logo.ico') }}" type="image/x-icon">    
+    <link rel="shortcut icon" href="{{ url_for('static', filename='resources/images/arhiv_logo.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/misc.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
@@ -24,7 +24,7 @@
     {% endblock %}
 </head>
 <body>
-    <div class="modal fade" id="staticBackdropSuccessAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropSuccessAlertLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdropSuccessAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropSuccessAlertLabel" aria-hidden="true" style="z-index: 9999;">
         <div class="modal-dialog modal-lg modal-dialog-centered border-5 border-danger">
             <div class="modal-content bg-body-secondary modal-texture border border-black">
                 <div class="modal-header">
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="staticBackdropErrorAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropErrorAlertLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdropErrorAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropErrorAlertLabel" aria-hidden="true" style="z-index: 9999;">
         <div class="modal-dialog modal-lg modal-dialog-centered border-5 border-danger">
             <div class="modal-content bg-body-secondary modal-texture border border-black">
                 <div class="modal-header">
@@ -64,7 +64,7 @@
         </div>
         </div>
     {% if not current_user.is_authenticated %}
-    <!--MODALS_POČETAK-->    
+    <!--MODALS_POČETAK-->
     <div>
         <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLoginLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered border-5 border-danger">
@@ -80,7 +80,7 @@
             </div>
             <form action="{{ url_for('auth_api.login') }}" method="post" id="login-form" >
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <div class="modal-body">              
+                <div class="modal-body">
                     <div class="mb-2">
                         <label for="login-username" id="login-username-lbl" class="form-label w-100">Korisničko ime</label>
                         <input type="text" id="login-username" class="form-control" name="login-username" aria-describedby="usernameHelp" placeholder="npr. milosmarkovicx3">
@@ -89,9 +89,9 @@
                         <label for="login-passwd" id="login-passwd-lbl" class="form-label">Lozinka</label>
                         <div class="input-group has-validation">
                             <input type="password" id="login-passwd" class="form-control" name="login-passwd" placeholder="npr. arhiv1999?">
-                            <span id="login-show-passwd" class="input-group-text fi-rs-eye"></span>        
-                            <div class="invalid-feedback"></div>  
-                        </div>                        
+                            <span id="login-show-passwd" class="input-group-text fi-rs-eye"></span>
+                            <div class="invalid-feedback"></div>
+                        </div>
                     </div>
                     <div class="mt-3 form-check">
                         <input type="checkbox" class="form-check-input" id="login-conditions" name="login-conditions">
@@ -99,7 +99,7 @@
                             Zapamti me
                         </label>
                         <a href="" class="text-danger-emphasis text-decoration-none float-end">*Zaboravljena lozinka</a>
-                    </div>              
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="submit" class="btn btn-success border border-black">Potvrdi</button>
@@ -126,7 +126,7 @@
                             <input type="text" class="form-control" id="register-username" name="register-username" aria-describedby="usernameHelp" placeholder="npr. milosmarkovicx3" >
                             <div id="register-username-msg" class="invalid-feedback"> Izarerite korisničko ime.</div>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="mb-2">
                         <label for="register-email" class="form-label mb-1">Email adresa</label>
                         <div class="input-group has-validation">
@@ -138,23 +138,23 @@
                         <label for="register-passwd" class="form-label mb-1">Lozinka</label>
                         <div class="input-group has-validation">
                             <input autocomplete="new-password" type="password" id="register-passwd" name="register-passwd" class="form-control" placeholder="npr. arhiv1999?">
-                            <span id="register-show-passwd" class="input-group-text fi-rs-eye"></span>                     
+                            <span id="register-show-passwd" class="input-group-text fi-rs-eye"></span>
                             <div id="register-passwd-msg" class="invalid-feedback">Izaberite lozinku.</div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="mb-2">
                         <label for="register-first-name" class="form-label mb-1">Ime</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="register-first-name" name="register-first-name" aria-describedby="nameHelp" placeholder="npr. Miloš">                    
+                            <input type="text" class="form-control" id="register-first-name" name="register-first-name" aria-describedby="nameHelp" placeholder="npr. Miloš">
                             <div class="invalid-feedback">Unesite vaše ime.</div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="mb-2">
                         <label for="register-last-name" class="form-label mb-1">Prezime</label>
                         <div class="input-group has-validation">
                             <input type="text" class="form-control" id="register-last-name" name="register-last-name" aria-describedby="surnameHelp" placeholder="npr. Marković">
                             <div class="invalid-feedback">Unesite vaše prezime.</div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="mb-2 form-check">
                         <input type="checkbox" class="form-check-input" id="register-conditions" name="register-conditions">
@@ -162,7 +162,7 @@
                             Prihvatam
                             <a href="{{ url_for('template_api.privacy_politics') }}" class="text-danger-emphasis text-decoration-none" target="_blank">politiku privatnosti</a> i
                             <a href="{{ url_for('template_api.terms_and_conditions') }}" class="text-danger-emphasis text-decoration-none" target="_blank">uslove korišćenja</a>
-                        </label>                    
+                        </label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -175,7 +175,7 @@
         </div>
     </div>
     <!--MODALS_KRAJ-->
-    {% endif %}        
+    {% endif %}
 
 <div id="texture" class="min-vh-100">
     <div id="background" class="container-fluid min-vh-100">
@@ -189,7 +189,7 @@
                     </div>
                     <div class="col-lg-9 ">
                         <p id="quote" class="active">"You either die a hero or you live long enough to see yourself become the villain."</p>
-                        <p id="quote-from" class="active"><span id="quote-from-hover">- The Dark Knight</span></p>           
+                        <p id="quote-from" class="active"><span id="quote-from-hover">- The Dark Knight</span></p>
                     </div>
                 </div>
             </div>
@@ -227,12 +227,12 @@
                         {% endif %}
                         {{ current_user.first_name|upper }}
                         {{ current_user.last_name|upper }}
-                    </a> 
+                    </a>
                     <ul class="dropdown-menu dropdown-menu-dark border border-black">
                         {% if current_user.is_superuser %}
                         <li><a class="dropdown-item" href="{{ url_for('template_api.dashboard') }}"><span class="fi fi-rs-list"></span>&nbsp; Admin panel</a></li>
                         {% else %}
-                        
+
                         {% endif %}
                         <li><a class="dropdown-item" href="{{ url_for('template_api.profile') }}"><span class="fi fi-sr-user"></span>&nbsp; Profil</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('template_api.reservations') }}"><span class="fi fi-rs-message-code"></span>&nbsp; Rezervacije</a></li>
@@ -255,7 +255,7 @@
                         </a>
                     </li>
                     </ul>
-                    {% endif %}           
+                    {% endif %}
                 </div>
                 </div>
             </nav>
