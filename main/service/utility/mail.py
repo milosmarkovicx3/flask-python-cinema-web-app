@@ -8,9 +8,10 @@ app_url = 'https://arhiv.pythonanywhere.com'
 def send_mail(msg_to, msg_subject, msg_html=''):
     msg = Message(msg_subject, recipients=[msg_to])
     msg.html = msg_html
-    with open(f'{STATIC_DIR_PATH}/resources/images/arhiv_logo.jpg', 'rb') as fp:
-        image_data = fp.read()
-    msg.attach('image.jpg', 'image/jpeg', image_data, 'inline', headers=[('Content-ID', '<arhiv_logo>')])
+    # with open(f'{STATIC_DIR_PATH}/resources/images/arhiv_logo.jpg', 'rb') as fp:
+    #    image_data = fp.read()
+    # msg.attach('arhiv_logo.jpg', 'image/jpeg', image_data, 'inline', headers=[('Content-ID', '<arhiv_logo>')])
+    # <img src="cid:arhiv_logo">
     mail.send(msg)
 
 def send_mail_confirm_email(username, msg_to, token):
@@ -39,7 +40,7 @@ def send_mail_confirm_email(username, msg_to, token):
                               <a href="{app_url}/confirm-email?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <img src="cid:arhiv_logo" style="width: 50px; height: 50px; margin: auto 0 auto auto;">
+                                    <img src="{app_url}/resource/images/arhiv_logo.jpg" style="width: 50px; height: 50px; margin: auto 0 auto auto;">
                               </div>
                               <hr>
                               <p style="margin: 0;">Ako se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>
