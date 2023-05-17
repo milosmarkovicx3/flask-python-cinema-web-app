@@ -192,10 +192,10 @@ class UserImpl(BaseImpl):
             log.error(f"{e}\n{traceback.format_exc()}")
             return redirect(request.referrer or url_for('template_api.index'))
 
-    def confirm_email(self, email, username_hash):
+    def confirm_email(self, email, token):
         try:
             user = self.T.find(email, "email")
-            if user and pbkdf2_sha256.verify(secret=user.username, hash=username_hash):
+            if user and pbkdf2_sha256.verify(secret=user.username, hash=token):
                 user.confirmed_at = datetime.now()
                 db.session.commit()
                 flash('email_confirmed')
