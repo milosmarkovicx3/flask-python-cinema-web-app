@@ -41,6 +41,15 @@ def reservations():
 @login_required
 def settings():
     return render_template('profile/settings.html')
+
+@template_api.route('/zaboravljena-lozinka', methods=['GET'])
+def forgotten_password():
+    return render_template('profile/forgotten_password.html')
+
+@template_api.route('/nova-lozinka', methods=['GET'])
+def new_password():
+    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
+    return render_template('profile/new_password.html', **kwargs)
 # ----------------------------------------------------------------------------------------------------------------------
 
 # -GLAVNA-NAVIGACIJA----------------------------------------------------------------------------------------------------

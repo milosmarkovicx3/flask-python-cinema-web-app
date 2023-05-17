@@ -17,7 +17,7 @@ from main.entities.models.user import User
 from main.service.core.wtf_forms import allowed_file
 from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
-from main.service.utility.mail import send_mail_confirm_email, send_mail_login_new_ip
+from main.service.utility.mail import send_mail_confirm_email, send_mail_login_new_ip, send_mail_forgotten_password
 from main.service.utility.utils import basic_regex, email_regex, passwd_regex
 
 
@@ -63,15 +63,14 @@ class UserImpl(BaseImpl):
                 date_joined=datetime.now(),
                 login_count=0
             )
-
+            token = pbkdf2_sha256.hash(user.username+str(user.date_joined))
             if self.T.create(user):
-                send_mail_confirm_email(username=username, msg_to=user.email, token=pbkdf2_sha256.hash(user.username))
+                send_mail_confirm_email(msg_to=user.email, username=username, token=token)
                 return result_handler(item=user)
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
             return result.response()
-
 
     def update(self, data, files):
         new_filename = ''
@@ -202,11 +201,13 @@ class UserImpl(BaseImpl):
     def confirm_email(self, email, token):
         try:
             user = self.T.find(email, "email")
-            if user and pbkdf2_sha256.verify(secret=user.username, hash=token):
-                if not user.confirmed_at:
-                    user.confirmed_at = datetime.now()
-                    db.session.commit()
-                flash('email_confirmed')
+            if user:
+                secret = user.username+str(user.date_joined)
+                if pbkdf2_sha256.verify(secret=secret, hash=token):
+                    if not user.confirmed_at:
+                        user.confirmed_at = datetime.now()
+                        db.session.commit()
+                    flash('email_confirmed')
             return redirect(url_for('template_api.index'))
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
@@ -225,5 +226,35 @@ class UserImpl(BaseImpl):
         response = Response(json_data, content_type='application/json')
         response.headers.set('Content-Disposition', 'attachment', filename='user_data.json')
         return response
+
+    def forgotten_password(self, form):
+        try:
+            email = form.get('email', None)
+            new_passwd = form.get('new-passwd', None)
+            token = form.get('token', None)
+
+            if token is not None:
+                user = self.T.find(value=email, column="email")
+                if not user and not passwd_regex(new_passwd):
+                    result = Result(
+                        status=Status.BAD_REQUEST,
+                        description="Error: loš zahtev, poslate pogrešne vrednosti."
+                    )
+                    return result.response()
+
+                secret = user.username+str(user.date_joined)
+                if pbkdf2_sha256.verify(secret=secret, hash=token):
+                    user.password = pbkdf2_sha256.hash(new_passwd)
+                    return result_handler(item=True)
+
+            elif email is not None:
+                user = self.T.find(value=email, column="email")
+                if user:
+                    token = pbkdf2_sha256.hash(user.username + str(user.date_joined))
+                    send_mail_forgotten_password(msg_to=user.email, token=token)
+                    return result_handler(item=True)
+        except Exception as e:
+            log.error(f"{e}\n{traceback.format_exc()}")
+            return redirect(request.referrer or url_for('template_api.index'))
 
 

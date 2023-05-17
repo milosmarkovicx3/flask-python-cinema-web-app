@@ -23,6 +23,10 @@ def confirm_email():
     kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
     return ui.confirm_email(**kwargs)
 
+@auth_api.route('/forgotten-password', methods=['POST'])
+def forgotten_password():
+    return ui.forgotten_password(request.form)
+
 
 @login_manager.user_loader
 def load_user(user_id):

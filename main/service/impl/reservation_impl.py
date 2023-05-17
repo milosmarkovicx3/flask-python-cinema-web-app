@@ -50,7 +50,7 @@ class ReservationImpl(BaseImpl):
                 movie=reservation.projection.movie.title,
                 date=reservation.projection.date.strftime('%d.%m.%Y'),
                 time=reservation.projection.time.strftime('%H:%M'),
-                seat=f'R{reservation.seat.row}#{reservation.seat.number}'
+                seat=f'R{reservation.seat.row} #{reservation.seat.number}'
             )
 
             return result_handler(item=True)
