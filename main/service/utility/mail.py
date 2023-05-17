@@ -44,7 +44,7 @@ def send_mail_confirm_email(msg_to, username, token):
                                     <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; width: 50px; height: 50px; margin: auto 0 auto auto;">
                               </div>
                               <hr>
-                              <p style="margin: 0;">Ukoliko se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>
+                              <p style="margin: 0;">Ako se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>
                         </div>
                     </body>
                     </html>
@@ -130,20 +130,20 @@ def send_mail_forgotten_password(msg_to, token):
                                   <div>
                                     <h2>Poštovani, </h2>
                                     <p>
-                                      Na vašem nalogu pokrenuta je procedura promene lozinke.
+                                      Na vašem nalogu pokrenuta je procedura za promenu lozinke.
                                       <br><br>
                                       Molimo vas kliknite dugme ispod kako bi nastavili.
                                     </p>
                                   </div>
                               </div>
                               <br>
-                              <a href="{app_url}/nova-lozinka?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
+                              <a href="{app_url}/nova-lozinka?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Promeni lozinku</a>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
                                     <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; width: 50px; height: 50px; margin: auto 0 auto auto;">
                               </div>
                               <hr>
-                              <p style="margin: 0;">Ukoliko vi niste pokrenuli proceduru zamene lozinke, molimo vas ignorišite ovaj mail.</p>
+                              <p style="margin: 0;">Ako niste pokrenuli proceduru za zamenu lozinke, molimo vas ignorišite ovaj mail.</p>
                         </div>
                     </body>
                     </html>

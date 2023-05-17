@@ -245,6 +245,7 @@ class UserImpl(BaseImpl):
                 secret = user.username+str(user.date_joined)
                 if pbkdf2_sha256.verify(secret=secret, hash=token):
                     user.password = pbkdf2_sha256.hash(new_passwd)
+                    db.session.commit()
                     return result_handler(item=True)
 
             elif email is not None:

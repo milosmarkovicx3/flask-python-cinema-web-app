@@ -1,4 +1,15 @@
 //------------------------------------------------------------------------------
+//logika za prikazivanje(toggle) ikonice pored inputa za lozinke u formama
+
+$(document).ready(function() {
+    $('#new-passwd-show').click(function() {
+        $('#new-passwd').prop('type', function(index, value) {
+            return value === 'password' ? 'text' : 'password';
+        });
+        $('#new-passwd-show').toggleClass('fi-rs-eye fi-rs-crossed-eye');
+    });
+});
+//------------------------------------------------------------------------------
 // validacija za promenu lozinke
 
 $(document).ready(function() {
