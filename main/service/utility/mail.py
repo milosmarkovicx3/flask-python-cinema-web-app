@@ -7,7 +7,7 @@ app_url = 'https://arhiv.pythonanywhere.com'
 def send_mail(msg_to, msg_subject, msg_html=''):
     msg = Message(msg_subject, recipients=[msg_to])
     msg.html = msg_html
-    with open('static/resources/images/arhiv_logo.jpg', 'rb') as fp:
+    with open('../../../static/resources/images/arhiv_logo.jpg', 'rb') as fp:
         image_data = fp.read()
     msg.attach('image.jpg', 'image/jpeg', image_data, 'inline', headers=[('Content-ID', '<arhiv_logo>')])
     mail.send(msg)
