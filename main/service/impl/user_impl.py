@@ -196,8 +196,9 @@ class UserImpl(BaseImpl):
         try:
             user = self.T.find(email, "email")
             if user and pbkdf2_sha256.verify(secret=user.username, hash=token):
-                user.confirmed_at = datetime.now()
-                db.session.commit()
+                if not user.confirmed_at:
+                    user.confirmed_at = datetime.now()
+                    db.session.commit()
                 flash('email_confirmed')
             return redirect(url_for('template_api.index'))
         except Exception as e:
