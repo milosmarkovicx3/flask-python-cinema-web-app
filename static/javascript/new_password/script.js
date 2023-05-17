@@ -6,14 +6,15 @@ $(document).ready(function() {
     event.preventDefault();
 
     const passwd_regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W]).{5,50}$/;
+    const basic_regex = /^(?=.{1,255}$)\w{2,}/;
     passwd = $('#new-passwd');
 
     if(!basic_regex.test(passwd.val())){
       passwd.addClass('is-invalid new-stop');
-      $('#register-passwd-msg').html('Izaberite lozinku.');
+      $('#new-passwd-msg').html('Izaberite lozinku.');
     }else if(!passwd_regex.test(passwd.val())){
       passwd.addClass('is-invalid new-stop');
-      $('#register-passwd-msg').html('Lozinka mora sadržati minimum 5 karaktera, slovo, broj i specijalan znak.');
+      $('#new-passwd-msg').html('Lozinka mora sadržati minimum 5 karaktera, slovo, broj i specijalan znak.');
     }else{ passwd.removeClass('is-invalid new-stop');  }
 
     const validated = $('.new-stop');

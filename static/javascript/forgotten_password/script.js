@@ -6,14 +6,15 @@ $(document).ready(function() {
     event.preventDefault();
 
     const email_regex = /^(?=.{1,255}$)\w+(\w|((?<!\.)\.))*\w+\@\w+(\w|((?<!\.)\.))*\.\w{2,4}$/;
+    const basic_regex = /^(?=.{1,255}$)\w{2,}/;
     email = $('#forgotten-passwd-email');
 
     if(!basic_regex.test(email.val())){
       email.addClass('is-invalid forgotten-stop');
-      $('#register-email-msg').html('Unesite email adresu.');
+      $('#forgotten-passwd-email-msg').html('Unesite email adresu.');
     }else if(!email_regex.test(email.val())){
       email.addClass('is-invalid forgotten-stop');
-      $('#register-email-msg').html('Email adresa uneta u pogrešnom formatu.');
+      $('#forgotten-passwd-email-msg').html('Email adresa uneta u pogrešnom formatu.');
     }else{ email.removeClass('is-invalid forgotten-stop');  }
 
     const validated = $('.forgotten-stop');

@@ -24,7 +24,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 app.config["WTF_CSRF_SECRET_KEY"] = os.environ.get("WTF_CSRF_SECRET_KEY")
 app.config["SECURITY_PASSWORD_SALT"] = os.environ.get("SECURITY_PASSWORD_SALT")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI", "mysql://root:@localhost/arhiv")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI1", "mysql://root:@localhost/arhiv")
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'pool_recycle': 280}
 app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER")
 app.config["MAIL_PORT"] = os.getenv("MAIL_PORT")
@@ -131,5 +131,5 @@ Korisničke lozinke se hash-uju sha256 algoritkom.
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=False)  # produkcija debug=False
+    app.run(host='127.0.0.1', port=5000, debug=True)  # produkcija debug=False
 
