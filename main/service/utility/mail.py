@@ -35,7 +35,7 @@ def send_mail_confirm_email(username, msg_to, token):
                                   </div>
                                 </div>
                               <br>
-                              <a href="{app_url}/confirm-email/{msg_to}/{token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
+                              <a href="{app_url}/confirm-email?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
                               <p>Srdačan pozdrav,<br>Arhiv</p>
                               <hr>
                               <p style="margin: 0;">Ako se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>

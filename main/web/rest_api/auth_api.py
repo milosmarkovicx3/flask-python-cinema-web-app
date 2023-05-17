@@ -18,9 +18,10 @@ def login():
 def logout():
     return ui.logout()
 
-@auth_api.route('/confirm-email/<string:email>/<string:token>', methods=['GET'])
-def confirm_email(email, token):
-    return ui.confirm_email(email, token)
+@auth_api.route('/confirm-email', methods=['GET'])
+def confirm_email():
+    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
+    return ui.confirm_email(**kwargs)
 
 
 @login_manager.user_loader
