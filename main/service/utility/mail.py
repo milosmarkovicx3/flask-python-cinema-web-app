@@ -3,10 +3,10 @@ from flask_mail import Message, Mail
 
 
 mail = Mail()
-app_url = ''
+app_url = 'https://arhiv.pythonanywhere.com'
 
 def send_mail(msg_to, msg_subject, msg_body="", msg_html=""):
-    msg = Message(msg_subject, sender='milos.dj.markovic@gmail.com', recipients=[msg_to])
+    msg = Message(msg_subject, recipients=[msg_to])
     msg.html = msg_html
     # with app.open_resource("image.jpg") as fp:
     #     msg.attach("mage.jpg", "image/jpg", fp.read())
