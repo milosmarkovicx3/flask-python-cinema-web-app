@@ -48,7 +48,7 @@ class UserImpl(BaseImpl):
 
                 result = Result(
                     status=Status.BAD_REQUEST,
-                    description="\nError: loš zahtev, poslate pogrešne vrednosti."
+                    description="Error: loš zahtev, poslate pogrešne vrednosti."
                 )
                 return result.response()
 
@@ -89,7 +89,7 @@ class UserImpl(BaseImpl):
             if not pbkdf2_sha256.verify(secret=passwd, hash=current_user.password):
                 result = Result(
                     status=Status.BAD_REQUEST,
-                    description="\nError: pogrešna lozinka."
+                    description="Error: pogrešna lozinka."
                 )
                 return result.response()
 
@@ -109,7 +109,7 @@ class UserImpl(BaseImpl):
 
                 result = Result(
                     status=Status.BAD_REQUEST,
-                    description="\nError: loš zahtev, poslate pogrešne vrednosti."
+                    description="Error: loš zahtev, poslate pogrešne vrednosti."
                 )
                 return result.response()
 

@@ -42,7 +42,7 @@ class MovieImpl(BaseImpl):
             else:
                 result = Result(
                     status=Status.BAD_REQUEST,
-                    description='\nError: došlo je do greške prilikom optremanja postera.'
+                    description='Error: došlo je do greške prilikom optremanja postera.'
                 )
                 return result.response()
 

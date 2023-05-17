@@ -25,7 +25,7 @@ class GenreImpl(BaseImpl):
             else:
                 result = Result(
                     status=Status.BAD_REQUEST,
-                    description='\nError: došlo je do greške prilikom optremanja slike.'
+                    description='Error: došlo je do greške prilikom optremanja slike.'
                 )
                 return result.response()
 

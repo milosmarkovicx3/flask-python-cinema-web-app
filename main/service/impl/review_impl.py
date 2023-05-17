@@ -25,13 +25,13 @@ class ReviewImpl(BaseImpl):
             if len(comment) >= 2048:
                 result = Result(
                     status=Status.BAD_REQUEST,
-                    description='\nError: maksimalni broj karaktera za komentar je 2048.'
+                    description='Error: maksimalni broj karaktera za komentar je 2048.'
                 )
                 return result.response()
             if not current_user.is_authenticated:
                 result = Result(
                     status=Status.UNAUTHORIZED,
-                    description='\nError: samo ulogovani korisnici mogu da ostave recenziju.'
+                    description='Error: samo ulogovani korisnici mogu da ostave recenziju.'
                 )
                 return result.response()
 

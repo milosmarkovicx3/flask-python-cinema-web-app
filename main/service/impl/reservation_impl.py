@@ -22,7 +22,7 @@ class ReservationImpl(BaseImpl):
             if not current_user.is_authenticated:
                 result = Result(
                     status=Status.UNAUTHORIZED,
-                    description='\nError: samo ulogovani korisnici mogu da kreiraju rezervacije.'
+                    description='Error: samo ulogovani korisnici mogu da kreiraju rezervacije.'
                 )
                 return result.response()
 
@@ -36,7 +36,7 @@ class ReservationImpl(BaseImpl):
             if reservation:
                 result = Result(
                     status=Status.BAD_REQUEST,
-                    description=f'\nError: rezervacija za dato sedište već postoji.\n{reservation.__repr__()}')
+                    description=f'Error: rezervacija za dato sedište već postoji.\n{reservation.__repr__()}')
                 return result.response()
 
             reservation = Reservation(projection_id=projection_id, seat_id=seat_id, user_id=user_id)

@@ -44,7 +44,7 @@ class ProjectionImpl(BaseImpl):
                 if projection:
                     result = Result(
                         status=Status.BAD_REQUEST,
-                        description=f'\nError: projekcija u datom terminu već postoji.\n{projection.__str__()}')
+                        description=f'Error: projekcija u datom terminu već postoji.\n{projection.__str__()}')
                     return result.response()
 
                 projection = Projection(hall_id=hall_id, movie_id=movie_id, date=current_date, time=time)
