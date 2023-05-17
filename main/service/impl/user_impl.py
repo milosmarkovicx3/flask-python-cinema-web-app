@@ -159,11 +159,11 @@ class UserImpl(BaseImpl):
                 user.login_count += 1
                 if request.headers['X-Real-IP']:
                     if user.last_login_ip != request.headers['X-Real-IP']:
-                        send_mail_login_new_ip(ip_adress=request.headers['X-Real-IP'])
+                        send_mail_login_new_ip(msg_to=current_user.email, ip_adress=request.headers['X-Real-IP'])
                     user.last_login_ip = request.headers['X-Real-IP']
                 else:
                     if user.last_login_ip != request.remote_addr:
-                        send_mail_login_new_ip(ip_adress=request.remote_addr)
+                        send_mail_login_new_ip(msg_to=current_user.email, ip_adress=request.remote_addr)
                     user.last_login_ip = request.remote_addr
                 """    
                 Koristi se u svrhe izlogovanja korisnika kada se prijavi sa različitog uređaja.
