@@ -19,6 +19,7 @@ def get_image(directory, name):
             mimetype = 'image/png' if name.endswith('.png') else 'image/jpeg'
             response = make_response(send_file(image_path))
             response.headers['Content-Type'] = mimetype
+            response.status_code = 200
             return response
     abort(404)
 
