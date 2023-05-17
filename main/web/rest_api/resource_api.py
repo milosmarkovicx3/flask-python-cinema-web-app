@@ -1,5 +1,5 @@
 import os
-from flask import Blueprint, send_file, abort
+from flask import Blueprint, send_file, abort, make_response
 from flask_login import login_required
 from config import STATIC_DIR_PATH
 from main.entities.facade.user_facade import UserFacade
@@ -16,12 +16,11 @@ def get_image(directory, name):
     if directory_path:
         image_path = os.path.join(directory_path, name)
         if os.path.isfile(image_path):
-            if name.endswith('.png'):
-                return send_file(image_path, mimetype='image/png'), 200
-            else:
-                return send_file(image_path, mimetype='image/jpg'), 200
+            mimetype = 'image/png' if name.endswith('.png') else 'image/jpeg'
+            response = make_response(send_file(image_path))
+            response.headers['Content-Type'] = mimetype
+            return response
     abort(404)
-
 
 @resource_api.route('/<value>', methods=['GET'])
 @login_required
