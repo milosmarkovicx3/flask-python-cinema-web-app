@@ -157,6 +157,12 @@
 
   <br>
 </div>
+
+{% if 'email_confirmed' in get_flashed_messages() %}
+<script>
+  successAlert("VAŠA EMAIL ADRESA JE USPEŠNO VERIFIKOVANA!", "", "", false);
+</script>
+{% endif %}
 <!--FILMSKI_DAN_KRAJ-->
 {% endblock %}
 

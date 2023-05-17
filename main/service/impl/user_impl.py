@@ -198,18 +198,11 @@ class UserImpl(BaseImpl):
             if user and pbkdf2_sha256.verify(secret=user.username, hash=username_hash):
                 user.confirmed_at = datetime.now()
                 db.session.commit()
-            return '''
-                    <html>
-                        <body>
-                            <script>
-                                alert('Vaša email adresa je uspešno verifikovana!');
-                            </script>
-                        </body>
-                    </html>
-                    '''
+                flash('email_confirmed')
+            return url_for('template_api.index')
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
-            return redirect(request.referrer or url_for('template_api.index'))
+            return url_for('template_api.index')
 
     def generate_user_data(self, value, column):
         user = self.T.find(value=value, column=column)
