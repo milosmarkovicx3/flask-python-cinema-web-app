@@ -40,7 +40,7 @@ def send_mail_confirm_email(username, msg_to, token):
                               <a href="{app_url}/confirm-email?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <img src="{app_url}/resource/images/arhiv_logo.png" style="width: 50px; height: 50px; margin: auto 0 auto auto;">
+                                    <img src="{app_url}/resource/images/arhiv_logo.jpg" width="50" height="50" title="logo" alt="logo" style="display:block; width: 50px; height: 50px; margin: auto 0 auto auto;">
                               </div>
                               <hr>
                               <p style="margin: 0;">Ako se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>
