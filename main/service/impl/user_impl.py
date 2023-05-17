@@ -199,10 +199,10 @@ class UserImpl(BaseImpl):
                 user.confirmed_at = datetime.now()
                 db.session.commit()
                 flash('email_confirmed')
-            return url_for('template_api.index')
+            return redirect(url_for('template_api.index'))
         except Exception as e:
             log.error(f"{e}\n{traceback.format_exc()}")
-            return url_for('template_api.index')
+            return redirect(url_for('template_api.index'))
 
     def generate_user_data(self, value, column):
         user = self.T.find(value=value, column=column)
