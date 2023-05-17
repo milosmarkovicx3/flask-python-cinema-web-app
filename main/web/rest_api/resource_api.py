@@ -17,9 +17,9 @@ def get_image(directory, name):
         image_path = os.path.join(directory_path, name)
         if os.path.isfile(image_path):
             if name.endswith('.png'):
-                return send_file(image_path, mimetype='image/png')
+                return send_file(image_path, mimetype='image/png'), 200
             else:
-                return send_file(image_path, mimetype='image/jpg')
+                return send_file(image_path, mimetype='image/jpg'), 200
     abort(404)
 
 
