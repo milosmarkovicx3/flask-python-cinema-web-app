@@ -8,6 +8,7 @@ from main.entities.facade.reservation_facade import ReservationFacade
 from main.entities.models.reservation import Reservation
 from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
+from main.service.utility.mail import send_mail_create_reservation
 
 
 class ReservationImpl(BaseImpl):
@@ -42,6 +43,15 @@ class ReservationImpl(BaseImpl):
             reservation = Reservation(projection_id=projection_id, seat_id=seat_id, user_id=user_id)
             db.session.add(reservation)
             db.session.commit()
+
+            send_mail_create_reservation(
+                msg_to=current_user.email,
+                reservation_id=reservation.id,
+                movie=reservation.projection.movie.title,
+                date=reservation.projection.date.strftime('%d.%m.%Y'),
+                time=reservation.projection.time.strftime('%H:%M'),
+                seat=f'R{reservation.seat.row}#{reservation.seat.number}'
+            )
 
             return result_handler(item=True)
         except Exception as e:

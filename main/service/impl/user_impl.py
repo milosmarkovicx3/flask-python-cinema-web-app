@@ -17,7 +17,7 @@ from main.entities.models.user import User
 from main.service.core.wtf_forms import allowed_file
 from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
-from main.service.utility.mail import send_mail_confirm_email
+from main.service.utility.mail import send_mail_confirm_email, send_mail_login_new_ip
 from main.service.utility.utils import basic_regex, email_regex, passwd_regex
 
 
@@ -157,7 +157,14 @@ class UserImpl(BaseImpl):
 
                 user.last_login_at = datetime.now()
                 user.login_count += 1
-                user.last_login_ip = request.remote_addr
+                if request.headers['X-Real-IP']:
+                    if user.last_login_ip != request.headers['X-Real-IP']:
+                        send_mail_login_new_ip(ip_adress=request.headers['X-Real-IP'])
+                    user.last_login_ip = request.headers['X-Real-IP']
+                else:
+                    if user.last_login_ip != request.remote_addr:
+                        send_mail_login_new_ip(ip_adress=request.remote_addr)
+                    user.last_login_ip = request.remote_addr
                 """    
                 Koristi se u svrhe izlogovanja korisnika kada se prijavi sa različitog uređaja.
                 Postoji funkcija 'check_auth_token' koja se poziva pre svakog eksternog poziva
