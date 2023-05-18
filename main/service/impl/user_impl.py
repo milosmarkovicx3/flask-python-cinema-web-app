@@ -65,8 +65,7 @@ class UserImpl(BaseImpl):
             )
             token = pbkdf2_sha256.hash(user.username+str(user.date_joined))
             log.info(token)
-            test = user.username+str(user.date_joined)
-            log.info(pbkdf2_sha256.hash(test))
+            log.info(pbkdf2_sha256.verify(secret=user.username+str(user.date_joined), hash=token))
             if self.T.create(user):
                 send_mail_confirm_email(msg_to=user.email, username=username, token=token)
                 return result_handler(item=user)
@@ -206,13 +205,9 @@ class UserImpl(BaseImpl):
             user = self.T.find(email, "email")
             if user:
                 secret = user.username+str(user.date_joined)
-                log.info(f'secret: {secret}')
-                log.info(f'token: {token}')
                 log.info(pbkdf2_sha256.verify(secret=secret, hash=token))
                 if pbkdf2_sha256.verify(secret=secret, hash=token):
-                    log.info('prosao1?')
                     if not user.confirmed_at:
-                        log.info('prosao2?')
                         user.confirmed_at = datetime.now()
                         db.session.commit()
                     flash('email_confirmed')
