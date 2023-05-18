@@ -31,6 +31,7 @@ class ProjectionImpl(BaseImpl):
             minutes = re.search(r'(\d+)m', movie.duration).group(1)
             total_minutes = int(hours) * 60 + int(minutes)
 
+            time_before = datetime.combine(datetime.today(), time) - timedelta(minutes=total_minutes)
             time_after = datetime.combine(datetime.today(), time) + timedelta(minutes=total_minutes)
 
             current_date = date_from
@@ -38,7 +39,7 @@ class ProjectionImpl(BaseImpl):
                 projection = Projection.query\
                     .filter(Projection.hall_id == hall_id)\
                     .filter(Projection.date == current_date)\
-                    .filter(Projection.time.between(time, time_after.time()))\
+                    .filter(Projection.time.between(time_before.time(), time_after.time()))\
                     .first()
 
                 if projection:

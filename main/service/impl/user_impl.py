@@ -63,11 +63,9 @@ class UserImpl(BaseImpl):
                 date_joined=datetime.now(),
                 login_count=0
             )
-            token = pbkdf2_sha256.hash(user.username+str(user.date_joined))
-            log.info(f'username: {user.username}, date_joined: {user.date_joined}')
-            log.info(token)
-            log.info(pbkdf2_sha256.verify(secret=user.username+str(user.date_joined), hash=token))
+
             if self.T.create(user):
+                token = pbkdf2_sha256.hash(user.username + str(user.date_joined))
                 send_mail_confirm_email(msg_to=user.email, username=username, token=token)
                 return result_handler(item=user)
         except Exception as e:
@@ -206,8 +204,6 @@ class UserImpl(BaseImpl):
             user = self.T.find(email, "email")
             if user:
                 secret = user.username+str(user.date_joined)
-                log.info(token)
-                log.info(pbkdf2_sha256.verify(secret=secret, hash=token))
                 if pbkdf2_sha256.verify(secret=secret, hash=token):
                     if not user.confirmed_at:
                         user.confirmed_at = datetime.now()
