@@ -64,6 +64,9 @@ class UserImpl(BaseImpl):
                 login_count=0
             )
             token = pbkdf2_sha256.hash(user.username+str(user.date_joined))
+            log.info(token)
+            test = user.username+str(user.date_joined)
+            log.infopbkdf2_sha256.hash((test))
             if self.T.create(user):
                 send_mail_confirm_email(msg_to=user.email, username=username, token=token)
                 return result_handler(item=user)
