@@ -22,7 +22,7 @@ class ActorImpl(BaseImpl):
 
             if image:
                 filename = secure_filename(image.filename)
-                image.save(os.path.join(f'{STATIC_DIR_PATH}\\resources\\actor-images\\', filename))
+                image.save(os.path.join(f'{STATIC_DIR_PATH}/resources/actor-images', filename))
             else:
                 result = Result(
                     status=Status.BAD_REQUEST,
@@ -33,7 +33,7 @@ class ActorImpl(BaseImpl):
             actor = Actor(name=name, image=image.filename)
             return result_handler(item=self.T.create(actor))
         except Exception as e:
-            os.remove(os.path.join(f'{STATIC_DIR_PATH}\\resources\\actor-images\\', filename))
+            os.remove(os.path.join(f'{STATIC_DIR_PATH}/resources/actor-images', filename))
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
             return result.response()

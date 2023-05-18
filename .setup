@@ -118,6 +118,7 @@ source /home/path_to_sql_file.sql
 quit;
 select * from xzy\G;
 (\G flag je za da se svaka kolona prikaže u novom redu)
+alter table xyz auto_increment = 1000;
 ------------------------------------------------------------
 6. Problemi sa konekcijom:
 -> https://help.pythonanywhere.com/pages/ManagingDatabaseConnections/

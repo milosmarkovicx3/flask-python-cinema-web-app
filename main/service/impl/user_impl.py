@@ -116,7 +116,7 @@ class UserImpl(BaseImpl):
                 filename = secure_filename(image.filename)
                 basename, extension = os.path.splitext(filename)
                 new_filename = f"{current_user.id}{extension}"
-                image.save(os.path.join(f'{STATIC_DIR_PATH}\\resources\\user-images\\', new_filename))
+                image.save(os.path.join(f'{STATIC_DIR_PATH}/resources/user-images', new_filename))
                 current_user.image = new_filename
 
             if passwd_new:
@@ -134,7 +134,7 @@ class UserImpl(BaseImpl):
 
             return result_handler(item=True)
         except Exception as e:
-            os.remove(os.path.join(f'{STATIC_DIR_PATH}\\resources\\user-images\\', new_filename))
+            os.remove(os.path.join(f'{STATIC_DIR_PATH}/resources/user-images', new_filename))
             db.session.rollback()
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
@@ -204,7 +204,9 @@ class UserImpl(BaseImpl):
             if user:
                 secret = user.username+str(user.date_joined)
                 if pbkdf2_sha256.verify(secret=secret, hash=token):
+                    log.info('prosao1?')
                     if not user.confirmed_at:
+                        log.info('prosao2?')
                         user.confirmed_at = datetime.now()
                         db.session.commit()
                     flash('email_confirmed')
@@ -218,7 +220,7 @@ class UserImpl(BaseImpl):
         if not user:
             return result_handler(item=False)
         data = user.__repr__()
-        image_path = f'{STATIC_DIR_PATH}\\resources\\user-images\\{user.image}'
+        image_path = f'{STATIC_DIR_PATH}/resources/user-images/{user.image}'
         with open(image_path, "rb") as img_file:
             image = str(base64.b64encode(img_file.read()))
         data['image_base64'] = image

@@ -7,7 +7,7 @@ from config import PROJECT_ROOT
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
-log_path = PROJECT_ROOT + "\\log\\"
+log_path = PROJECT_ROOT + "/log/"
 current_time = time.strftime("%Y-%m-%d")
 
 handler = TimedRotatingFileHandler(f'{log_path}server.log.{current_time}', when="d", interval=1, backupCount=30, utc=True, encoding='utf-8')

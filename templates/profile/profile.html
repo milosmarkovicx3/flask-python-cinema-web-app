@@ -193,7 +193,7 @@
                         <label for="profile-phone-number" class="form-label mb-1">Broj telefona: </label>
                         </div>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="profile-phone-number" name="profile-phone-number" aria-describedby="surnameHelp" placeholder="npr. 062/186-75-51" value="{{ current_user.phone_number }}">
+                            <input type="text" class="form-control" id="profile-phone-number" name="profile-phone-number" aria-describedby="surnameHelp" placeholder="npr. 062/186-75-51" value="{% if current_user.phone_number %}{{ current_user.phone_number }}{% endif %}">
                         </div>
                     </div>
 

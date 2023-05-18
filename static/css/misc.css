@@ -66,6 +66,11 @@ img {
 
 #quote.active, #quote-from.active {
   opacity: 1;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
 }
 /*---------------------------------------------------------------------------------*/
 /* css za citate na vrhu strane */
@@ -136,6 +141,7 @@ footer a{
     height: 100%;
     width: 100%;
     display: none;
+    left: 0;
     justify-content: center;
     align-items: center;
     background-color: rgb(76, 68, 68);

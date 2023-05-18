@@ -38,7 +38,7 @@ class MovieImpl(BaseImpl):
 
             if poster:
                 filename = secure_filename(poster.filename)
-                poster.save(os.path.join(f'{STATIC_DIR_PATH}\\resources\\movie-posters\\', filename))
+                poster.save(os.path.join(f'{STATIC_DIR_PATH}/resources/movie-posters', filename))
             else:
                 result = Result(
                     status=Status.BAD_REQUEST,
@@ -66,7 +66,7 @@ class MovieImpl(BaseImpl):
             db.session.rollback()
             db.session.delete(movie)
             db.session.commit()
-            os.remove(os.path.join(f'{STATIC_DIR_PATH}\\resources\\movie-posters\\', filename))
+            os.remove(os.path.join(f'{STATIC_DIR_PATH}/resources/movie-posters', filename))
             log.error(f"{e}\n{traceback.format_exc()}")
             result = Result(status=Status.INTERNAL_SERVER_ERROR)
             return result.response()

@@ -15,7 +15,6 @@ def send_mail(msg_to, msg_subject, msg_html=''):
     # <img src="{app_url}/resource/images/arhiv_logo.jpg"
     mail.send(msg)
 
-
 def send_mail_confirm_email(msg_to, username, token):
     send_mail(msg_to=msg_to,
               msg_subject='Arhiv: molimo vas verifikujte vašu email adresu',
@@ -33,7 +32,7 @@ def send_mail_confirm_email(msg_to, username, token):
                                     <p>
                                       Hvala što ste se registrovali kod nas.
                                       <br><br>
-                                      Molimo vas kliknite dugme ispod kako bi ste se verifikovali vašu email adresu.
+                                      Molimo vas kliknite dugme ispod kako bi ste verifikovali vašu email adresu.
                                     </p>
                                   </div>
                               </div>
@@ -78,6 +77,8 @@ def send_mail_create_reservation(msg_to, reservation_id, movie, date, time, seat
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
                                     <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; width: 50px; height: 50px; margin: auto 0 auto auto;">
+                                    <img src="https://drive.google.com/file/d/1WoMYWuLQEcmTpljSVCdH4wTZuAvlr0JO/view?usp=sharing" width="50" height="50" title="logo" alt="logo" style="display:block; width: 50px; height: 50px; margin: auto 0 auto auto;">
+                                    <img src="https://drive.google.com/file/d/1WoMYWuLQEcmTpljSVCdH4wTZuAvlr0JO/preview" width="50" height="50" title="logo" alt="logo" style="display:block; width: 50px; height: 50px; margin: auto 0 auto auto;">
                               </div>
                         </div>
                     </body>
@@ -100,6 +101,7 @@ def send_mail_login_new_ip(msg_to, ip_adress):
                                     <h2>Poštovani,</h2>
                                     <p>
                                         Primetili smo novu prijavu na vašem nalogu sa ip adrese: {ip_adress}. 
+                                        <br><br>
                                         Ukoliko ste to vi, onda nema potrebe da preduzimate bilo kakve mere. 
                                         U suprotnom, sigurnosne kredencijale možete promeniti u okviru podešavanja vašeg naloga.
                                     </p>
