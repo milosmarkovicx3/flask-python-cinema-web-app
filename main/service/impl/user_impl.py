@@ -203,6 +203,9 @@ class UserImpl(BaseImpl):
             user = self.T.find(email, "email")
             if user:
                 secret = user.username+str(user.date_joined)
+                log.info(f'secret: {secret}')
+                log.info(f'token: {token}')
+                log.info(pbkdf2_sha256.verify(secret=secret, hash=token))
                 if pbkdf2_sha256.verify(secret=secret, hash=token):
                     log.info('prosao1?')
                     if not user.confirmed_at:
