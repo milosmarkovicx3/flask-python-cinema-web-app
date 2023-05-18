@@ -64,6 +64,7 @@ class UserImpl(BaseImpl):
                 login_count=0
             )
             token = pbkdf2_sha256.hash(user.username+str(user.date_joined))
+            log.info(f'username: {user.username}, date_joined: {user.date_joined}')
             log.info(token)
             log.info(pbkdf2_sha256.verify(secret=user.username+str(user.date_joined), hash=token))
             if self.T.create(user):
@@ -205,6 +206,7 @@ class UserImpl(BaseImpl):
             user = self.T.find(email, "email")
             if user:
                 secret = user.username+str(user.date_joined)
+                log.info(token)
                 log.info(pbkdf2_sha256.verify(secret=secret, hash=token))
                 if pbkdf2_sha256.verify(secret=secret, hash=token):
                     if not user.confirmed_at:
