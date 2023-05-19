@@ -6,7 +6,6 @@ from main.entities.facade.projection_facade import ProjectionFacade
 from main.entities.facade.reservation_facade import ReservationFacade
 from main.service.impl.movie_impl import MovieImpl
 from main.service.utility import jinja2_filters
-from main.service.utility.logger import log
 from main.service.utility.utils import repr_helper_method
 from main.web.rest_api.auth_api import admin_required
 

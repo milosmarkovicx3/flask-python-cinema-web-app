@@ -118,7 +118,10 @@ source /home/path_to_sql_file.sql
 quit;
 select * from xzy\G;
 (\G flag je za da se svaka kolona prikaže u novom redu)
-alter table xyz auto_increment = 1000;
+alter table table_name auto_increment = 1000;
+show index from table_name;
+create index idx_name on customers (last_name);
+alter table table_name drop index idx_name;
 ------------------------------------------------------------
 6. Problemi sa konekcijom:
 -> https://help.pythonanywhere.com/pages/ManagingDatabaseConnections/
