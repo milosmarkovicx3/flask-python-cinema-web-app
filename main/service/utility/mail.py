@@ -100,7 +100,7 @@ def send_mail_login_new_ip(msg_to, ip_adress):
                                     <p>
                                         Primetili smo novu prijavu na vašem nalogu sa ip adrese: {ip_adress}. 
                                         <br><br>
-                                        Ukoliko ste to vi, onda nema potrebe da preduzimate bilo kakve mere. 
+                                        Ukoliko ste to vi, onda nema potrebe da preduzimate bilo kakve mere. <br>
                                         U suprotnom, sigurnosne kredencijale možete promeniti u okviru podešavanja vašeg naloga.
                                     </p>
                                   </div>
