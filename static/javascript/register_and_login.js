@@ -106,7 +106,10 @@ $(document).ready(function() {
     
     $username_input.on('input', function() {
       const username = $username_input.val();
-      if(!basic_regex.test(username)) return;
+      if(!basic_regex.test(username)){
+        if ($username_exist) $username_msg.html('Izarerite korisničko ime.');
+        return;
+      }
       
       $.ajax({
         url: `/user/${username}/username`,
@@ -141,7 +144,10 @@ $(document).ready(function() {
     
     $email_input.on('input', function() {
       const email = $email_input.val();
-      if(!email_regex.test(email)) return;
+      if(!email_regex.test(email)){
+        if ($email_exist) $email_msg.html('Unesite email adresu.');
+        return;
+      }
       
       $.ajax({
         url: `/user/${email}/email`,
