@@ -42,7 +42,11 @@ def send_mail_confirm_email(msg_to, username, token):
                               <a href="{app_url}/confirm-email?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; width: 50px; height: 50px; margin: auto 0 auto auto;">
+                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                                    <img src="https://www.drive.google.com/file/d/1WoMYWuLQEcmTpljSVCdH4wTZuAvlr0JO/preview" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                                    <img src="{app_url}/resource/images/arhiv_logo.jpg" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                                    <div style="height: 50px; width: 50px; display: block; background: url(https://www.drive.google.com/file/d/1WoMYWuLQEcmTpljSVCdH4wTZuAvlr0JO/preview); background-size: contain; margin: auto 0 auto auto;"></div>
+                                    <div style="height: 50px; width: 50px; display: block; background: url({app_url}/resource/images/arhiv_logo.jpg); background-size: contain; margin: auto 0 auto auto;"></div>
                               </div>
                               <hr>
                               <p style="margin: 0;">Ako se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>

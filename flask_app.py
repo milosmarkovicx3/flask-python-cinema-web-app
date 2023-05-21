@@ -55,9 +55,6 @@ missing/missmatching flag, inače ovakav problem je usko povezan isto kada je
 cookie_secure flag stavljen na true, a sajt pritom ne koristi https standard.
 """
 app.config['SESSION_COOKIE_DOMAIN'] = False
-"""
-Modifikovanje ugrađene jsonify metode, da vraća utf8 karaktere.
-"""
 app.config['JSON_AS_ASCII'] = False
 
 app.register_blueprint(actor_api)
@@ -83,16 +80,7 @@ def before_request():
 
 @app.after_request
 def apply_caching(response):
-    """
-    Sprečava da eksterni sajtovi ugrađuju vaš sajt preko iframe taga. Ovo
-    sprečava jednu klasu napada gde se klikovi na spoljnom okviru (scam sajt)
-    mogu preneti nevidljivo na elemente vaše stranice. Ovo je takođe poznato
-    kao "clickjacking".
-    """
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
-    """
-    Omogućava setovanje custom header-a, poput 'Cache-Control' i mnogih drugih.
-    """
     response.headers["HTTP-HEADER"] = "VALUE"
     #response.headers["Cache-Control"] = "public, max-age=60, must-revalidate"
     return response
@@ -101,41 +89,17 @@ def apply_caching(response):
 login_manager.init_app(app)
 login_manager.login_view = "template_api.index"
 mail.init_app(app)
-"""
-WTForms plugin je korišćen prvenstveno zbog generisanje csrf tokena.
-CSRF tip napada: scan artist pošalje skriveni link u email dopisci koji vodi, do
-recimo sajta banke gde se izvrši transakcija novca na njegov račun, ali u slučaju
-da je csrf zaštita instalirana, poziv neće biti validiran usled nepostojanja
-csrf tokena koji se generiše tek kada se pristupi baš tom sajtu.
-"""
 csrf.init_app(app)
 db.init_app(app)
 bcrypt.init_app(app)
-# ------------------------------------------------------------------------------
+
+# -ISKLJUČITI-NA-PRODUKCIJI-----------------------------------------------------
 # app.app_context().push()
 # db.create_all()
-#
-# Isključiti na produkciji, takođe promenuti database_uri i debug flag na false.
 # ------------------------------------------------------------------------------
-"""
-Još neke implementirane sigurnosne mere:
-
-XXS tip napada: scam artist u formi kada je kreirao svoj nalog u samom imenu je
-postavio deo skripte koja recimo 'krade' kolačiće, poput document.cookie sintakse
-i slično kada se strana učita na korisničkim pretraživačima, ali Jinja2 siktansa
-po defult-u sprečava ove napade sintaksom {{ user.name }} koja sve u duplim
-vitičastim zagradama tretira kao običan tekst (stručni izraz: autoescaping).
-
-SQL injection: svi korisnički unosi se unose u bazu preko sqlalchemy modela.
-
-Korisničke lozinke se hash-uju sha256 algoritmom.
-"""
-
-
-
-
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=False)
+
 
 
