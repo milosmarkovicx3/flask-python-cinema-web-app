@@ -159,10 +159,17 @@
 </div>
 
 {% if 'email_confirmed' in get_flashed_messages() %}
-
 <script defer>
 $(document).ready(function() {
   successAlert("VAŠA EMAIL ADRESA JE USPEŠNO VERIFIKOVANA!", "", "", false);
+});
+</script>
+{% endif %}
+
+{% if 'email_confirmation_failed' in get_flashed_messages() %}
+<script defer>
+$(document).ready(function() {
+  errorAlert();
 });
 </script>
 {% endif %}

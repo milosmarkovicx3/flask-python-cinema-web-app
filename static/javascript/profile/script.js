@@ -164,7 +164,7 @@ $(document).ready(function() {
       if(!basic_regex.test(username)) return;
 
       $.ajax({
-        url: `/user/${username}/username`,
+        url: `/user?value=${username}&column=username`,
         method: 'get',
         success: function(response) {
           if (response.status == '200') {
@@ -200,7 +200,7 @@ $(document).ready(function() {
       if(!email_regex.test(email)) return;
 
       $.ajax({
-        url: `/user/${email}/email`,
+        url: `/user?value=${email}&column=email`,
         method: 'get',
         success: function(response) {
           if (response.status == '200') {

@@ -3,6 +3,7 @@ from flask import Flask, render_template
 from dotenv import load_dotenv
 from flask_login import current_user
 from main.entities.core.base import db
+from main.service.core.bcrypt import bcrypt
 from main.service.core.wtf_forms import csrf
 from main.service.utility.mail import mail
 from main.web.rest_api.auth_api import login_manager, auth_api, check_auth_token, ping
@@ -51,7 +52,7 @@ app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 """
 Na pythonanywhere hostingu mora da se isključi inače se dobija csrf token
 missing/missmatching flag, inače ovakav problem je usko povezan isto kada je
-cookie_secure flag stavljen na true, a sajt pritom ne koristi https standard
+cookie_secure flag stavljen na true, a sajt pritom ne koristi https standard.
 """
 app.config['SESSION_COOKIE_DOMAIN'] = False
 """
@@ -109,6 +110,7 @@ csrf tokena koji se generiše tek kada se pristupi baš tom sajtu.
 """
 csrf.init_app(app)
 db.init_app(app)
+bcrypt.init_app(app)
 # ------------------------------------------------------------------------------
 # app.app_context().push()
 # db.create_all()
@@ -124,12 +126,16 @@ i slično kada se strana učita na korisničkim pretraživačima, ali Jinja2 sik
 po defult-u sprečava ove napade sintaksom {{ user.name }} koja sve u duplim
 vitičastim zagradama tretira kao običan tekst (stručni izraz: autoescaping).
 
-SQL injection: svi korisnički input-i se unose u bazu preko sqlalchemy modela.
+SQL injection: svi korisnički unosi se unose u bazu preko sqlalchemy modela.
 
-Korisničke lozinke se hash-uju sha256 algoritkom.
+Korisničke lozinke se hash-uju sha256 algoritmom.
 """
 
 
+
+
+
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=False)  # produkcija debug=False
+    # app.run(host='127.0.0.1', port=5000, debug=True)
+    app()
 

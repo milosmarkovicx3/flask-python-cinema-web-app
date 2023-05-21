@@ -70,15 +70,10 @@
         <div class="modal-dialog modal-md modal-dialog-centered border-5 border-danger">
             <div class="modal-content bg-body-secondary modal-texture border border-black">
             <div class="modal-header ">
-                <h1 class="modal-title fs-5" id="staticBackdropLoginLabel">
-                PRIJAVA
-                {% if 'login_fail' in get_flashed_messages() %}
-                <span class="text-danger"> (POGREŠNI KREDENCIJALI)</span>
-                {% endif %}
-                </h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLoginLabel">PRIJAVA</h1>
                 <button type="button" id="login-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ url_for('auth_api.login') }}" method="post" id="login-form" >
+            <form id="login-form">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <div class="modal-body">
                     <div class="mb-2">
@@ -322,15 +317,6 @@
         </div>
     </div>
 </div>
-    {% if 'login_fail' in get_flashed_messages() %}
-    <script defer>
-    $(document).ready(function() {
-        let modal = $('#staticBackdropLogin');
-        let modalTrigger = new bootstrap.Modal(modal);
-        modalTrigger.show();
-    });
-    </script>
-    {% endif %}
 </body>
 </html>
 

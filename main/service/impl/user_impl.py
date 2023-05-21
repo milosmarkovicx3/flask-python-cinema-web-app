@@ -1,12 +1,9 @@
 import base64
 import os
-import traceback
 from datetime import datetime, timedelta
 from json import dumps
-
 from flask import make_response, redirect, request, url_for, session, flash, Response
 from flask_login import login_user, current_user, logout_user
-from passlib.handlers.pbkdf2 import pbkdf2_sha256
 from werkzeug.utils import secure_filename
 from config import STATIC_DIR_PATH
 from main.entities.core.base import db
@@ -14,6 +11,7 @@ from main.entities.core.result import Result, result_handler
 from main.entities.core.status import Status
 from main.entities.facade.user_facade import UserFacade
 from main.entities.models.user import User
+from main.service.core.bcrypt import bcrypt
 from main.service.core.wtf_forms import allowed_file
 from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
@@ -25,17 +23,17 @@ class UserImpl(BaseImpl):
     def __init__(self):
         super().__init__(UserFacade)
 
-    def create(self, data):
+    def create(self, form):
         try:
-            username = data['register-username']
-            email = data['register-email']
-            passwd = data['register-passwd']
-            first_name = data['register-first-name']
-            last_name = data['register-last-name']
-            conditions = data.get('register-conditions')
+            username = form.get('register-username')
+            email = form.get('register-email')
+            passwd = form.get('register-passwd')
+            first_name = form.get('register-first-name')
+            last_name = form.get('register-last-name')
+            conditions = form.get('register-conditions')
 
-            find_username = self.T.find(username, "username")
-            find_email = self.T.find(email, "email")
+            find_username = self.T.find(username, 'username')
+            find_email = self.T.find(email, 'email')
 
             if (not basic_regex(username) or
                     not email_regex(email) or
@@ -45,59 +43,48 @@ class UserImpl(BaseImpl):
                     not conditions or
                     find_username or
                     find_email):
+                return Result(status=Status.BAD_REQUEST).response()
 
-                result = Result(
-                    status=Status.BAD_REQUEST,
-                    description="Error: loš zahtev, poslate pogrešne vrednosti."
-                )
-                return result.response()
-
-            passwd_hash = pbkdf2_sha256.hash(passwd)
+            passwd_hash = bcrypt.generate_password_hash(passwd).decode('utf-8')
 
             user = User(
                 first_name=first_name,
                 last_name=last_name,
                 email=email,
                 username=username,
-                password=passwd_hash,
-                date_joined=datetime.now(),
-                login_count=0
+                password=passwd_hash
             )
 
             if self.T.create(user):
-                token = pbkdf2_sha256.hash(user.username + str(user.date_joined))
+                to_hash = f'{user.id}{user.date_joined}'
+                token = bcrypt.generate_password_hash(to_hash).decode('utf-8')
                 send_mail_confirm_email(msg_to=user.email, username=username, token=token)
                 return result_handler(item=user)
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
-            result = Result(status=Status.INTERNAL_SERVER_ERROR)
-            return result.response()
+            log.error(f'{e}', exc_info=True)
+            return Result(status=Status.INTERNAL_SERVER_ERROR).response()
 
-    def update(self, data, files):
+    def update(self, form, files):
         new_filename = ''
         try:
-            username = data['profile-username']
-            email = data['profile-email']
-            passwd = data['profile-passwd']
-            passwd_new = data['profile-passwd-new']
-            first_name = data['profile-first-name']
-            last_name = data['profile-last-name']
-            date_of_birth = data['profile-date-of-birth']
-            phone_number = data['profile-phone-number']
-            image = files['profile-image']
+            username = form.get('profile-username')
+            email = form.get('profile-email')
+            passwd = form.get('profile-passwd')
+            passwd_new = form.get('profile-passwd-new')
+            first_name = form.get('profile-first-name')
+            last_name = form.get('profile-last-name')
+            date_of_birth = form.get('profile-date-of-birth')
+            phone_number = form.get('profile-phone-number')
+            image = files.get('profile-image')
 
-            if not pbkdf2_sha256.verify(secret=passwd, hash=current_user.password):
-                result = Result(
-                    status=Status.BAD_REQUEST,
-                    description="Error: pogrešna lozinka."
-                )
-                return result.response()
+            if not bcrypt.check_password_hash(current_user.password, passwd):
+                return Result(status=Status.UNAUTHORIZED).response()
 
             find_username, find_email = False, False
             if current_user.username != username:
-                find_username = self.T.find(value=username, column="username")
+                find_username = self.T.find(value=username, column='username')
             if current_user.email != email:
-                find_email = self.T.find_all(value=email, column="email")
+                find_email = self.T.find(value=email, column='email')
 
             if (not basic_regex(username) or
                     not email_regex(email) or
@@ -106,12 +93,7 @@ class UserImpl(BaseImpl):
                     not basic_regex(last_name) or
                     find_username or
                     find_email):
-
-                result = Result(
-                    status=Status.BAD_REQUEST,
-                    description="Error: loš zahtev, poslate pogrešne vrednosti."
-                )
-                return result.response()
+                return Result(status=Status.BAD_REQUEST).response()
 
             if image and allowed_file(image.filename):
                 filename = secure_filename(image.filename)
@@ -121,8 +103,7 @@ class UserImpl(BaseImpl):
                 current_user.image = new_filename
 
             if passwd_new:
-                passwd_hash = pbkdf2_sha256.hash(passwd_new)
-                current_user.password = passwd_hash
+                current_user.password = bcrypt.generate_password_hash(passwd_new).decode('utf-8')
 
             current_user.username = username
             current_user.email = email
@@ -133,85 +114,83 @@ class UserImpl(BaseImpl):
 
             db.session.commit()
 
-            return result_handler(item=True)
+            return Result().response()
         except Exception as e:
             os.remove(os.path.join(f'{STATIC_DIR_PATH}/resources/user-images', new_filename))
             db.session.rollback()
-            log.error(f"{e}\n{traceback.format_exc()}")
-            result = Result(status=Status.INTERNAL_SERVER_ERROR)
-            return result.response()
+            log.error(f'{e}', exc_info=True)
+            return Result(status=Status.INTERNAL_SERVER_ERROR).response()
 
-    def login(self, data):
+    def login(self, form):
         try:
-            username = data["login-username"]
-            password = data["login-passwd"]
-            remember = data.get('login-conditions')
+            username = form.get("login-username")
+            password = form.get("login-passwd")
+            remember = form.get('login-conditions')
 
             log.info(f'login: {username}')
             user = self.T.find(username, "username")
 
-            if user and pbkdf2_sha256.verify(secret=password, hash=user.password):
-                login_user(user)
+            if not user or not bcrypt.check_password_hash(user.password, password):
+                return Result(status=Status.BAD_REQUEST).response()
+            
+            login_user(user, remember=True, duration=timedelta(days=365)) if remember else login_user(user)
 
-                login_user(user, remember=True, duration=timedelta(days=365)) if remember else login_user(user)
-
-                user.last_login_at = datetime.now()
-                user.login_count += 1
-                if request.headers['X-Real-IP']:
-                    if user.last_login_ip != request.headers['X-Real-IP']:
-                        send_mail_login_new_ip(msg_to=current_user.email, ip_adress=request.headers['X-Real-IP'])
-                    user.last_login_ip = request.headers['X-Real-IP']
-                else:
-                    if user.last_login_ip != request.remote_addr:
-                        send_mail_login_new_ip(msg_to=current_user.email, ip_adress=request.remote_addr)
-                    user.last_login_ip = request.remote_addr
-                """    
-                Koristi se u svrhe izlogovanja korisnika kada se prijavi sa različitog uređaja.
-                Postoji funkcija 'check_auth_token' koja se poziva pre svakog eksternog poziva
-                korisnika sa uslovom da je prethodno ulogovan, gde se zatim proverava vrednost 
-                'device_auth_token' kolone u bazi i u slučaju da se vrednosti razlikuju sistem
-                će izlogovati korisnika.                
-                """
-                auth_token = user.generate_auth_token()
-                user.auth_token = auth_token
-                db.session.commit()
-                session['auth_token'] = auth_token
-
-                return redirect(request.referrer or url_for('template_api.index'))
+            user.last_login_at = datetime.now()
+            user.login_count += 1
+            if 'X-Real-IP' in request.headers:
+                if user.last_login_ip != request.headers['X-Real-IP']:
+                    send_mail_login_new_ip(msg_to=current_user.email, ip_adress=request.headers['X-Real-IP'])
+                user.last_login_ip = request.headers['X-Real-IP']
             else:
-                flash('login_fail', 'error')
-                return redirect(request.referrer or url_for('template_api.index'))
+                if user.last_login_ip != request.remote_addr:
+                    send_mail_login_new_ip(msg_to=current_user.email, ip_adress=request.remote_addr)
+                user.last_login_ip = request.remote_addr
+            """    
+            Koristi se u svrhe izlogovanja korisnika kada se prijavi sa različitog uređaja.
+            Postoji funkcija 'check_auth_token' koja se poziva pre svakog eksternog poziva
+            korisnika sa uslovom da je prethodno ulogovan, gde se zatim proverava vrednost 
+            'device_auth_token' kolone u bazi i u slučaju da se vrednosti razlikuju sistem
+            će izlogovati korisnika.                
+            """
+            auth_token = user.generate_auth_token()
+            user.auth_token = auth_token
+            db.session.commit()
+            session['auth_token'] = auth_token
+
+            return Result().response()
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
-            return redirect(request.referrer or url_for('template_api.index'))
+            log.error(f'{e}', exc_info=True)
+            return Result(status=Status.INTERNAL_SERVER_ERROR).response()
 
     def logout(self):
         try:
-            log.info(f'log out: {current_user.first_name} {current_user.last_name}')
+            log.info(f'logout: {current_user.username}')
             logout_user()
             if request.cookies.get('archive'):
                 response = make_response(redirect(request.referrer or url_for('template_api.index')))
                 response.delete_cookie('archive')
                 return response
-
             return redirect(request.referrer or url_for('template_api.index'))
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
             return redirect(request.referrer or url_for('template_api.index'))
 
     def confirm_email(self, email, token):
         try:
             user = self.T.find(email, "email")
             if user:
-                secret = user.username+str(user.date_joined)
-                if pbkdf2_sha256.verify(secret=secret, hash=token):
+                secret = f'{user.id}{user.date_joined}'
+                if bcrypt.check_password_hash(token, secret):
                     if not user.confirmed_at:
                         user.confirmed_at = datetime.now()
                         db.session.commit()
                     flash('email_confirmed')
+                    return redirect(url_for('template_api.index'))
+            flash('email_confirmation_failed')
             return redirect(url_for('template_api.index'))
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
+            flash('email_confirmation_failed')
             return redirect(url_for('template_api.index'))
 
     def generate_user_data(self, value, column):
@@ -230,33 +209,35 @@ class UserImpl(BaseImpl):
 
     def forgotten_password(self, form):
         try:
-            email = form.get('email', None)
-            new_passwd = form.get('new-passwd', None)
-            token = form.get('token', None)
+            email = form.get('email')
+            new_passwd = form.get('new-passwd')
+            token = form.get('token')
 
-            if token is not None:
-                user = self.T.find(value=email, column="email")
-                if not user and not passwd_regex(new_passwd):
-                    result = Result(
-                        status=Status.BAD_REQUEST,
-                        description="Error: loš zahtev, poslate pogrešne vrednosti."
-                    )
-                    return result.response()
+            if token:
+                user = self.T.find(value=email, column='email')
+                current_time = datetime.now()
+                timer_15 = user.forgot_passwd + timedelta(minutes=15)
 
-                secret = user.username+str(user.date_joined)
-                if pbkdf2_sha256.verify(secret=secret, hash=token):
-                    user.password = pbkdf2_sha256.hash(new_passwd)
+                if not user or not passwd_regex(new_passwd) or timer_15 <= current_time:
+                    return Result(status=Status.BAD_REQUEST).response()
+
+                secret = f'{user.id}{user.forgot_passwd}'
+                if bcrypt.check_password_hash(token, secret):
+                    user.password = bcrypt.generate_password_hash(new_passwd).decode('utf-8')
                     db.session.commit()
-                    return result_handler(item=True)
+                    return Result().response()
 
-            elif email is not None:
+            elif email:
                 user = self.T.find(value=email, column="email")
                 if user:
-                    token = pbkdf2_sha256.hash(user.username + str(user.date_joined))
+                    user.forgot_passwd = datetime.now()
+                    secret = f'{user.id}{user.forgot_passwd}'
+                    token = bcrypt.generate_password_hash(secret).decode('utf-8')
                     send_mail_forgotten_password(msg_to=user.email, token=token)
-                    return result_handler(item=True)
+                    return Result().response()
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
-            return redirect(request.referrer or url_for('template_api.index'))
+            log.error(f'{e}', exc_info=True)
+            return Result(status=Status.INTERNAL_SERVER_ERROR).response()
+
 
 

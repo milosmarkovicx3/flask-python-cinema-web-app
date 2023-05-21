@@ -2,9 +2,8 @@ from flask_wtf import CSRFProtect
 
 csrf = CSRFProtect()
 
-ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
 def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ['png', 'jpg', 'jpeg', 'gif']
 
 # def length(min=-1, max=-1):
 #     message = f"Unos mora biti dužine od {min} do {max} karaktera!"
@@ -31,7 +30,6 @@ def allowed_file(filename):
 #             raise ValidationError(message)
 #     return _end_with
 #
-#
 # class wtf_create_movie(FlaskForm):
 #     title = StringField("Naslov: ", validators=[length(min=2, max=100)], render_kw={"placeholder": "npr. Star Wars: Episode IV - A New Hope"})
 #     year = StringField("Godina: ", validators=[length(min=4, max=4)], render_kw={"placeholder": "npr. 1977"})
@@ -41,18 +39,18 @@ def allowed_file(filename):
 #     poster = StringField("Poster (2:3): ", validators=[], render_kw={"placeholder": "npr. C:\\fakepath\\star_wars_iv.png", "readonly": "true"})
 #     posterFile = FileField("Izaberi", validators=[FileAllowed(['png', 'jpg', 'jpeg'])], render_kw={"accept": ".png, .jpg, .jpeg"})
 #     submit = SubmitField("Pošalji zahtev")
-#     # recaptcha = RecaptchaField()
+#     recaptcha = RecaptchaField()
 #
 # class wtf_create_actor(FlaskForm):
 #     name = StringField("Ime i prezime: ", validators=[length(min=6, max=100)], render_kw={"placeholder": "npr. Robert De Niro"})
 #     actorImage = StringField("Slika (1:1): ", validators=[FileAllowed(['png','jpg','jpeg'])], render_kw={"placeholder": "npr. C:\\fakepath\\robert_de_niro.png", "readonly": "true"})
 #     actorFile = FileField("Izaberi", validators=[], render_kw={"accept": ".png, .jpg, .jpeg"})
 #     submit = SubmitField("Pošalji zahtev")
-#     # recaptcha = RecaptchaField()
+#     recaptcha = RecaptchaField()
 #
 # class wtf_create_genre(FlaskForm):
 #     genre = StringField("Naziv: ", validators=[length(min=3, max=100)], render_kw={"placeholder": "npr. Action"})
 #     genreImage = StringField("Slika (1:1): ", validators=[FileAllowed(['png','jpg','jpeg'])], render_kw={"placeholder": "npr. C:\\fakepath\\action.png", "readonly": "true"})
 #     genreFile = FileField("Izaberi", validators=[], render_kw={"accept": ".png, .jpg, .jpeg"})
 #     submit = SubmitField("Pošalji zahtev")
-#     # recaptcha = RecaptchaField()
+#     recaptcha = RecaptchaField()

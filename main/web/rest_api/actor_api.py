@@ -1,21 +1,16 @@
 from flask import Blueprint, request
 from main.service.impl.actor_impl import ActorImpl
 
-
 actor_api = Blueprint('actor_api', __name__, url_prefix='/actor')
 ai = ActorImpl()
 
-
-@actor_api.route('/<string:value>', methods=['GET'])
-@actor_api.route('/<string:value>/<string:column>', methods=['GET'])
-def find(value, column='id'):
-    return ai.find(value, column)
-
-
 @actor_api.route('/', methods=['GET'])
+def find():
+    return ai.find(**request.args)
+
+@actor_api.route('/s', methods=['GET'])
 def find_all():
-    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
-    return ai.find_all(kwargs)
+    return ai.find_all(**request.args)
 
 @actor_api.route('/', methods=['POST'])
 def create():
@@ -23,7 +18,7 @@ def create():
 
 @actor_api.route('/', methods=['DELETE'])
 def delete():
-    return ai.delete(request.form)
+    return ai.delete(**request.form)
 
 
 

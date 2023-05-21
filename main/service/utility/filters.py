@@ -26,6 +26,6 @@ def get_formated_date_name_filter(date):
             return f'{day_name[day_index]}, {formated_date}'
 
     except Exception as e:
-        log.error(f"{e}\n{traceback.format_exc()}")
-        return date
+        log.error(f'{e}', exc_info=True)
+        return f'{date}'
 

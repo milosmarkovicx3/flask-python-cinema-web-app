@@ -1,3 +1,5 @@
+import inspect
+
 from flask import render_template, Blueprint, request, abort
 from flask_login import login_required, current_user
 from main.entities.facade.hall_facade import HallFacade
@@ -5,7 +7,7 @@ from main.entities.facade.movie_facade import MovieFacade
 from main.entities.facade.projection_facade import ProjectionFacade
 from main.entities.facade.reservation_facade import ReservationFacade
 from main.service.impl.movie_impl import MovieImpl
-from main.service.utility import jinja2_filters
+from main.service.utility import filters
 from main.service.utility.utils import repr_helper_method
 from main.web.rest_api.auth_api import admin_required
 
@@ -47,7 +49,7 @@ def forgotten_password():
 
 @template_api.route('/nova-lozinka', methods=['GET'])
 def new_password():
-    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
+    kwargs = {k: v for k, v in request.args.items() if v}
     return render_template('profile/new_password.html', **kwargs)
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -59,10 +61,10 @@ def index():
 
 @template_api.route('/repertoar', methods=['GET'])
 def repertoire():
-    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
+    kwargs = {k: v for k, v in request.args.items() if v and k in inspect.signature(mi.repertoire).parameters}
     paginate = mi.repertoire(**kwargs)
     if 'page' in kwargs: del kwargs['page']
-    return render_template("repertoire.html", pagination=paginate, endpoint='template_api.repertoire', form=kwargs)
+    return render_template('repertoire.html', pagination=paginate, endpoint='template_api.repertoire', form=kwargs)
 
 @template_api.route('/članstvo', methods=['GET'])
 def membership():
@@ -81,12 +83,12 @@ def contact():
 
 @template_api.route('/film/<int:id>', methods=['GET'])
 def movie(id):
-    entity = mf.find(id, 'id').__repr__()
+    entity = mf.find(id).__repr__()
     return render_template('movie.html', movie=entity) if entity else abort(404)
 
 @template_api.route('/projekcija/<int:projection_id>/<string:date>', methods=['GET'])
 def projection(projection_id, date):
-    entity = pf.find(projection_id, 'id').__repr__()
+    entity = pf.find(projection_id).__repr__()
     return render_template('projection.html', projection=entity, date=date) if entity else abort(404)
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -152,5 +154,5 @@ def enumerate_filter(iterable):
 
 @template_api.app_template_filter('format_date')
 def get_formated_date_name(date):
-    return jinja2_filters.get_formated_date_name_filter(date)
+    return filters.get_formated_date_name_filter(date)
 # ----------------------------------------------------------------------------------------------------------------------

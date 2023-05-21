@@ -5,7 +5,7 @@ class Role(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'))
     actor_id = db.Column(db.Integer, db.ForeignKey('actor.id'))
-    role = db.Column(db.String(255))
+    role = db.Column(db.String(64))
 
     movie = db.relationship('Movie', back_populates='actors_association')
     actor = db.relationship('Actor', back_populates='movies_association')
@@ -16,7 +16,7 @@ class Role(db.Model):
         self.role = role
 
     def __str__(self):
-        return str(self.__repr__())
+        return f'Role(id={self.id})'
 
     def __repr__(self):
         return {

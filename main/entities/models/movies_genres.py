@@ -14,7 +14,7 @@ class MoviesGenres(db.Model):
         self.genre_id = genre_id
 
     def __str__(self):
-        return str(self.__repr__())
+        return f'MoviesGenres(id={self.id})'
 
     def __repr__(self):
         return {

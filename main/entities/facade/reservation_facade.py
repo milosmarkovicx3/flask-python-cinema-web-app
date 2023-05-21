@@ -1,6 +1,4 @@
-import traceback
 from datetime import datetime
-
 from main.entities.core.base import db
 from main.entities.facade.base_facade import BaseFacade
 from main.entities.models.projection import Projection
@@ -34,5 +32,5 @@ class ReservationFacade(BaseFacade):
 
             return reservations
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
             return None

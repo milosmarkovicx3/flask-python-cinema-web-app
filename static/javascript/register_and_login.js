@@ -112,7 +112,7 @@ $(document).ready(function() {
       }
       
       $.ajax({
-        url: `/user/${username}/username`,
+        url: `/user?value=${username}&column=username`,
         method: 'get',
         success: function(response) {
           if (response.status == '200') {
@@ -150,7 +150,7 @@ $(document).ready(function() {
       }
       
       $.ajax({
-        url: `/user/${email}/email`,
+        url: `/user?value=${email}&column=email`,
         method: 'get',
         success: function(response) {
           if (response.status == '200') {
@@ -167,6 +167,37 @@ $(document).ready(function() {
 
         }
       });
+    });
+  });
+//------------------------------------------------------------------------------
+// login forma
+
+$(document).ready(function() {
+    $('#login-form').submit(function(event) {
+    event.preventDefault();
+
+    let fd = new FormData(this);
+
+    $.ajax({
+        url: "/login",
+        type: "post",
+        data: fd,
+        contentType: false,
+        processData: false,
+        success: response=>{
+            if (response.status == '200') {
+                location.reload(true);
+            }else if(response.status == '404'){
+                $('#staticBackdropLoginLabel').html('PRIJAVA<span class="text-danger"> (POGREŠNI KREDENCIJALI)</span>')
+            }else{
+                errorAlert(response);
+            }
+        },
+        error: function(error) {
+            errorAlert(response);
+        }
+    });
+
     });
   });
 //------------------------------------------------------------------------------

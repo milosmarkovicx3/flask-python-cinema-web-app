@@ -1,9 +1,9 @@
+import inspect
 from functools import wraps
 from flask import request, Blueprint, session, abort
 from flask_login import login_required, LoginManager, current_user
 from main.entities.models.user import User
 from main.service.impl.user_impl import UserImpl
-from main.service.utility.logger import log
 
 auth_api = Blueprint('auth_api', __name__, url_prefix='/')
 login_manager = LoginManager()
@@ -20,13 +20,12 @@ def logout():
 
 @auth_api.route('/confirm-email', methods=['GET'])
 def confirm_email():
-    kwargs = {k: v for k, v in request.args.items() if v is not (None or '')}
+    kwargs = {k: v for k, v in request.args.items() if v and k in inspect.signature(ui.confirm_email).parameters}
     return ui.confirm_email(**kwargs)
 
 @auth_api.route('/forgotten-password', methods=['POST'])
 def forgotten_password():
     return ui.forgotten_password(request.form)
-
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -68,16 +67,14 @@ def ping():
     if current_user.is_authenticated:
         current_user.ping()
 
-
 @auth_api.context_processor
 def inject_data():
     """
-    U teoriji koristi se da se pošalju podaci iz sesije koji su
-    setovani u xzy metodi i ujedno izbrišu iz same.
-    Predviđen slučaj korišćena, koristik je poslao zahtev za
-    registraciju, ali podaci iz forme nisu prošli validaciju, pa
-    se sami vraćaju da korisnik ne bi morao da unosi sve podatke
-    ponovo.
+    Кoristi se da se pošalju podaci iz sesije koji su setovani u
+    xzy metodi i ujedno izbrišu iz same. Predviđen slučaj korišćena,
+    koristik je poslao zahtev za registraciju, ali podaci iz forme
+    nisu prošli validaciju, pa se sami vraćaju da korisnik ne bi
+    morao da unosi sve podatke ponovo.
     """
     form_data = session.pop('form_data', None)
     return {'form_data': form_data}

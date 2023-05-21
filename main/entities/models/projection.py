@@ -1,9 +1,8 @@
 import math
 import re
-
 from main.entities.core.base import db
 from main.entities.facade.seat_type_facade import SeatTypeFacade
-
+from main.service.utility.utils import repr_format_time, repr_format_date
 
 class Projection(db.Model):
     __tablename__ = 'projection'
@@ -11,24 +10,20 @@ class Projection(db.Model):
     hall_id = db.Column('hall_id', db.Integer, db.ForeignKey('hall.id'), nullable=False)
     movie_id = db.Column('movie_id', db.Integer, db.ForeignKey('movie.id'), nullable=False)
     date = db.Column('date', db.Date(), nullable=False)
-    time = db.Column('time', db.Time(), nullable=False)
+    time_from = db.Column('time_from', db.Time(), nullable=False)
+    time_to = db.Column('time_to', db.Time(), nullable=False)
 
     reservations = db.relationship('Reservation', backref='projection')
 
-    def __init__(self, hall_id, movie_id, date, time):
+    def __init__(self, hall_id, movie_id, date, time_from, time_to):
         self.hall_id = hall_id
         self.movie_id = movie_id
         self.date = date
-        self.time = time
+        self.time_from = time_from
+        self.time_to = time_to
 
     def __str__(self):
-        return f'''Projection(
-                    id={self.id}, 
-                    hall_id={self.hall_id}, 
-                    movie_id={self.movie_id}, 
-                    date={self.date.strftime('%d.%m.%Y')}, 
-                    time={self.time.strftime('%H:%M')}
-                    )'''
+        return f'Projection(id={self.id}, date={self.date}, time_from={self.time_from}, time_to={self.time_to})'
 
     def __repr__(self):
         return {
@@ -36,8 +31,9 @@ class Projection(db.Model):
             "hall_id": self.hall_id,
             "hall_name": self.hall.name,
             "movie_id": self.movie_id,
-            "date": self.date.strftime('%d.%m.%Y'),
-            "time": self.time.strftime('%H:%M'),
+            "date": repr_format_date(self.date),
+            "time_from": repr_format_time(self.time_from),
+            "time_to": repr_format_time(self.time_to),
             "seats": self.get_seats_for_projection()
         }
 

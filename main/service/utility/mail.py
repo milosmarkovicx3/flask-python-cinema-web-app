@@ -4,7 +4,6 @@ from config import STATIC_DIR_PATH
 mail = Mail()
 app_url = 'https://arhiv.pythonanywhere.com'
 
-
 def send_mail(msg_to, msg_subject, msg_html=''):
     msg = Message(msg_subject, sender=('Arhiv', 'arhiv.bioskop@gmail.com'), recipients=[msg_to])
     msg.html = msg_html
@@ -101,7 +100,7 @@ def send_mail_login_new_ip(msg_to, ip_adress):
                                         Primetili smo novu prijavu na vašem nalogu sa ip adrese: {ip_adress}. 
                                         <br><br>
                                         Ukoliko ste to vi, onda nema potrebe da preduzimate bilo kakve mere. <br>
-                                        U suprotnom, sigurnosne kredencijale možete promeniti u okviru podešavanja vašeg naloga.
+                                        U suprotnom sigurnosne kredencijale možete promeniti u okviru podešavanja vašeg naloga.
                                     </p>
                                   </div>
                               </div>
@@ -132,7 +131,8 @@ def send_mail_forgotten_password(msg_to, token):
                                     <p>
                                       Na vašem nalogu pokrenuta je procedura za promenu lozinke.
                                       <br><br>
-                                      Molimo vas kliknite dugme ispod kako bi nastavili.
+                                      Molimo vas kliknite dugme ispod kako bi nastavili.<br>
+                                      Vremensko ograničenje za promenu lozinke je 15 minuta.
                                     </p>
                                   </div>
                               </div>

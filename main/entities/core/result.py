@@ -5,15 +5,11 @@ from main.entities.core.status import Status
 from main.service.utility.logger import log
 from main.service.utility.utils import repr_helper_method
 
-
 class Result:
     def __init__(self, item=None, status=Status.OK, description=None):
         self._item = item
         self._status = status.value
-        if description is not None:
-            self._description = description
-        else:
-            self._description = status.name
+        self._description = description or status.name
 
     def get_item(self):
         return self._item
@@ -66,6 +62,5 @@ def result_handler(item):
             result.set_status(Status.INTERNAL_SERVER_ERROR)
         return result.response()
     except Exception as e:
-        log.error(f"{e}\n{traceback.format_exc()}")
-        result = Result(status=Status.INTERNAL_SERVER_ERROR)
-        return result.response()
+        log.error(f'{e}', exc_info=True)
+        return Result(status=Status.INTERNAL_SERVER_ERROR).response()

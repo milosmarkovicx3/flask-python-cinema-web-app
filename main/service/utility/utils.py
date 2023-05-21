@@ -1,7 +1,6 @@
 import os
 import re
 
-
 def email_regex(value):
     regex = r'^(?=.{1,255}$)\w+(\w|((?<!\.)\.))*\w+\@\w+(\w|((?<!\.)\.))*\.\w{2,4}$'
     return re.search(regex, value)
@@ -13,6 +12,12 @@ def passwd_regex(value):
 def basic_regex(value):
     regex = r'^(?=.{1,255}$)\w{2,}'
     return re.search(regex, value)
+
+def repr_format_date(date):
+    return date.strftime('%d.%m.%Y') if date else ''
+
+def repr_format_time(time):
+    return time.strftime('%H:%M') if time else ''
 
 def repr_helper_method(root):
     """
@@ -30,7 +35,6 @@ def repr_helper_method(root):
         else:
             _list.append(item.__repr__())
     return _list
-
 
 def find_directory_path(root_directory, directory_name):
     for root, dirs, files in os.walk(root_directory):

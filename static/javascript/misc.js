@@ -41,7 +41,7 @@ $(document).ready(function() {
     });
 });
 
-function errorAlert(response){
+function errorAlert(response='error'){
         let modal = $('#staticBackdropErrorAlert');
         let modalTrigger = new bootstrap.Modal(modal);
         modalTrigger.show();

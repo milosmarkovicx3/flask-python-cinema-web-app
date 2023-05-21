@@ -1,5 +1,7 @@
 from datetime import datetime
 from main.entities.core.base import db
+from main.service.utility.utils import repr_format_date, repr_format_time
+
 
 class Reservation(db.Model):
     __tablename__ = 'reservation'
@@ -16,14 +18,14 @@ class Reservation(db.Model):
         self.created_at = datetime.now()
 
     def __str__(self):
-        return str(self.__repr__())
+        return f'Reservation(id={self.id})'
 
     def __repr__(self):
         return {
             "id": self.id,
             "projection": {
-                "date": self.projection.date.strftime('%d.%m.%Y'),
-                "time": self.projection.time.strftime('%H:%M'),
+                "date": repr_format_date(self.projection.date),
+                "time": repr_format_time(self.projection.time),
                 "movie_title": self.projection.movie.title,
                 "movie_year": self.projection.movie.year,
                 "movie_poster": self.projection.movie.poster

@@ -6,7 +6,7 @@ class Seat(db.Model):
     hall_id = db.Column('hall_id', db.Integer, db.ForeignKey('hall.id'), nullable=False)
     seat_type_id = db.Column('seat_type_id', db.Integer, db.ForeignKey('seat_type.id'), nullable=False)
     row = db.Column('row', db.Integer, nullable=False)
-    number = db.Column('number', db.String(11), nullable=False)
+    number = db.Column('number', db.String(8), nullable=False)
 
     reservations = db.relationship('Reservation', backref='seat')
 
@@ -17,7 +17,7 @@ class Seat(db.Model):
         self.number = number
 
     def __str__(self):
-        return str(self.__repr__())
+        return f'Seat(id={self.id})'
 
     def __repr__(self):
         return {

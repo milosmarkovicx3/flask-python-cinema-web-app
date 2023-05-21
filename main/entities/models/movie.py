@@ -5,18 +5,20 @@ from main.entities.core.base import db
 from main.entities.models.movies_genres import MoviesGenres
 from main.entities.models.role import Role
 from main.entities.models.review import Review
-# -------------------------------------------------------------
+from main.service.utility.utils import repr_format_date
 
+
+# -------------------------------------------------------------
 
 class Movie(db.Model):
     __tablename__ = 'movie'
     id = db.Column('id', db.Integer, primary_key=True)
-    title = db.Column('title', db.String(255), unique=True, nullable=False)
+    title = db.Column('title', db.String(128), unique=True, nullable=False)
     year = db.Column('year', db.Integer, nullable=False)
-    duration = db.Column('duration', db.String(255), nullable=False)
-    rating = db.Column('rating', db.String(255), nullable=False)
+    duration = db.Column('duration', db.String(8), nullable=False)
+    rating = db.Column('rating', db.String(8), nullable=False)
     votes = db.Column('votes', db.Integer, nullable=False)
-    poster = db.Column('poster', db.String(255), unique=True, nullable=False)
+    poster = db.Column('poster', db.String(128), unique=True, nullable=False)
     trailer = db.Column('trailer', db.String(1024))
 
     """
@@ -48,14 +50,14 @@ class Movie(db.Model):
     def __init__(self, title, year, duration, rating, votes, poster, trailer):
         self.title = title
         self.year = year
-        self.duration = duration
+        self.duration = duration.lower()
         self.rating = rating
         self.votes = votes
         self.poster = poster
         self.trailer = trailer
 
     def __str__(self):
-        return str(self.__repr__())
+        return f'Movie(id={self.id}, title={self.title})'
 
     def __repr__(self):
         return {
@@ -86,7 +88,7 @@ class Movie(db.Model):
                  "user_image": mur.user.image,
                  "comment": mur.comment,
                  "rating": mur.rating,
-                 "created_at": mur.created_at.strftime('%d.%m.%Y')
+                 "created_at": repr_format_date(mur.created_at)
                  } for mur in self.reviews_association
             ]
         }
@@ -106,7 +108,7 @@ class Movie(db.Model):
 
         for projection in self.projections:
             date = projection.date
-            time = projection.time
+            time = projection.time_from
 
             if date > five_days_from_today or (date == today and time < datetime.now().time()):
                 continue

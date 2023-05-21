@@ -1,5 +1,4 @@
 import os
-import traceback
 from json import loads
 from sqlalchemy import or_
 from werkzeug.utils import secure_filename
@@ -21,32 +20,33 @@ class MovieImpl(BaseImpl):
     def __init__(self):
         super().__init__(MovieFacade)
 
-    def create(self, data, files):
+    def create(self, form, files):
         filename, movie = '', ''
         try:
-            title = data['title']
-            year = data['year']
-            duration = data['duration']
-            rating = data['rating']
-            votes = data['votes']
-            poster = files['poster']
-            trailer = data['trailer']
+            title = form.get('title')
+            year = form.get('year')
+            duration = form.get('duration')
+            rating = form.get('rating')
+            votes = form.get('votes')
+            poster = files.get('poster')
+            trailer = form.get('trailer')
 
-            # jer se dobija kao json string iako kada se uradi log sve prikazuje lepo
-            actors = loads(data['actors'])
-            genres = loads(data['genres'])
+            # vrednosti dobijaju kao json string, iako kada se uradi print() prikazuje običan string
+            actors = loads(form.get('actors'))
+            genres = loads(form.get('genres'))
 
-            if poster:
-                filename = secure_filename(poster.filename)
-                poster.save(os.path.join(f'{STATIC_DIR_PATH}/resources/movie-posters', filename))
-            else:
-                result = Result(
-                    status=Status.BAD_REQUEST,
-                    description='Error: došlo je do greške prilikom optremanja postera.'
-                )
-                return result.response()
+            filename = secure_filename(poster.filename)
+            poster.save(os.path.join(f'{STATIC_DIR_PATH}/resources/movie-posters', filename))
 
-            movie = Movie(title=title, year=year, duration=duration, rating=rating, votes=votes, poster=poster.filename, trailer=trailer )
+            movie = Movie(
+                title=title,
+                year=year,
+                duration=duration,
+                rating=rating,
+                votes=votes,
+                poster=poster.filename,
+                trailer=trailer
+            )
 
             db.session.add(movie)
             db.session.commit()
@@ -63,13 +63,13 @@ class MovieImpl(BaseImpl):
 
             return result_handler(item=movie)
         except Exception as e:
+            if movie and movie.id:
+                db.session.delete(movie)
+                db.session.commit()
             db.session.rollback()
-            db.session.delete(movie)
-            db.session.commit()
             os.remove(os.path.join(f'{STATIC_DIR_PATH}/resources/movie-posters', filename))
-            log.error(f"{e}\n{traceback.format_exc()}")
-            result = Result(status=Status.INTERNAL_SERVER_ERROR)
-            return result.response()
+            log.error(f'{e}', exc_info=True)
+            return Result(status=Status.INTERNAL_SERVER_ERROR).response()
 
     def repertoire(self, imdb_rating=None, timeline=None, genre_name=None, search_input=None, sort_method=None, page=1, per_page=12):
         try:
@@ -107,9 +107,7 @@ class MovieImpl(BaseImpl):
                     query = query.order_by(sort_map[sort_method])
 
             movies = query.paginate(page=int(page), per_page=int(per_page), error_out=False)
-
             return movies
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
             return None
-

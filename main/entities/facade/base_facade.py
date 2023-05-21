@@ -1,72 +1,59 @@
-import traceback
-from abc import ABC, abstractmethod
+from abc import ABC
 from main.entities.core.base import db
 from main.service.utility.logger import log
 
 class BaseFacade(ABC):
-    @abstractmethod
     def __init__(self, T):
         self.T = T
 
-    def find(self, value, column):
+    def find(self, value, column='id'):
         try:
-            log.info(f'value: {value}, column: {column}')
             response = db.session.query(self.T).filter_by(**{column: value}).first()
-            return False if response is None else response
+            return response or False
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
             return None
 
     def find_all(self, column=None, value=None, value_to=None, method=None, max=None):
         try:
-            log.info(f'column: {column}, value: {value}, value_to: {value_to}, method: {method}, max: {max}')
             query = self.T.query
 
-            if column is None:
-                response = query.all()
-                return False if response is None else response
+            if column is not None:
+                column = getattr(self.T, column)
 
-            column = getattr(self.T, column)
-
-            if value is not None:
-                if value_to is not None:
-                    query = query.filter(column.between(value, value_to))
-                elif method is not None:
-                    if method == 'less':
+                if value is not None:
+                    if value_to is not None:
+                        query = query.filter(column.between(value, value_to))
+                    elif method == 'less':
                         query = query.filter(column <= value)
                     elif method == 'higher':
                         query = query.filter(column >= value_to)
-                else:
-                    query = query.filter(column.like(f"%{value}%"))
-
+                    else:
+                        query = query.filter(column.like(f"%{value}%"))
 
             if max is not None:
                 query = query.limit(max)
 
             response = query.all()
-            return False if response is None else response
+            return response or False
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
             return None
 
     def create(self, entity):
         try:
-            log.info(f'create: {entity}')
             if not isinstance(entity, self.T):
                 return False
             db.session.add(entity)
             db.session.commit()
             return entity
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
             db.session.rollback()
             return None
 
-    def delete(self, data):
+    def delete(self, value, column='id'):
         try:
-            value = data['value']
-            column = data['column'] if 'column' in data else 'id'
-            log.info(f'value: {value}, column: {column}')
             response = db.session.query(self.T).filter_by(**{column: value}).first()
             if response is None:
                 return False
@@ -74,6 +61,6 @@ class BaseFacade(ABC):
             db.session.commit()
             return True
         except Exception as e:
-            log.error(f"{e}\n{traceback.format_exc()}")
+            log.error(f'{e}', exc_info=True)
             db.session.rollback()
             return None

@@ -158,7 +158,7 @@ $(document).ready(function() {
       const title = $title_input.val();      
       
       $.ajax({
-        url: `/movie/${title}/title`,
+        url: `/movie?value=${title}&column=title`,
         method: 'get',
         success: function(response) {
           if (response.status == '200') {
@@ -194,7 +194,7 @@ $(document).ready(function() {
       }
       
       $.ajax({
-        url: `actor/?column=name&value=${actors_search}&max=5`,
+        url: `actor/s?column=name&value=${actors_search}&max=5`,
         method: 'get',
         success: function(response) {
             actors_list.html('');  
@@ -263,7 +263,7 @@ $(document).ready(function() {
       }
       
       $.ajax({
-        url: `genre/?column=name&value=${genres_search}&max=5`,
+        url: `genre/s?column=name&value=${genres_search}&max=5`,
         method: 'get',
         success: function(response) {
             genres_list.html('');  
