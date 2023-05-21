@@ -100,15 +100,15 @@ nije mogao da podesi default current_timestamp() za neku datum kolonu, pa sam
 morao da prepravim defaultnu vrednost na null, dropovao sve tabele i uradio
 import ponovo
 ------------------------------------------------------------
-3. Za exportovanje baze:
+3. Za export(ovanje) baze:
 -> mysqldump --no-tablespaces -u arhiv -h arhiv.mysql.pythonanywhere-services.com 'arhiv$arhiv'  > db-backup.sql
 
-komandu pokrenuti iz bash konzole iz /home/arhiv foldera
+!komandu pokrenuti iz bash konzole iz /home/arhiv foldera
 -----------------------------------------------------------
-4. Restorovanje verzije baze:
+4. Za restore(ovanje) verzije baze:
 -> mysql -u arhiv -h arhiv.mysql.pythonanywhere-services.com 'arhiv$arhiv' < db-backup.sql
 -----------------------------------------------------------
-5. Povezivanje na bazu:
+5. Za povezivanje na bazu:
 -> mysql -u arhiv -h arhiv.mysql.pythonanywhere-services.com 'arhiv$arhiv' -p
 -----------------------------------------------------------
 show databases;
@@ -122,6 +122,8 @@ alter table table_name auto_increment = 1000;
 show index from table_name;
 create index idx_name on customers (last_name);
 alter table table_name drop index idx_name;
+drop database db_name;
+create databse db_name;
 ------------------------------------------------------------
 6. Problemi sa konekcijom:
 -> https://help.pythonanywhere.com/pages/ManagingDatabaseConnections/

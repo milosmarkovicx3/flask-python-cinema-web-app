@@ -187,7 +187,7 @@ $(document).ready(function() {
         success: response=>{
             if (response.status == '200') {
                 location.reload(true);
-            }else if(response.status == '404'){
+            }else if(response.status == '400'){
                 $('#staticBackdropLoginLabel').html('PRIJAVA<span class="text-danger"> (POGREŠNI KREDENCIJALI)</span>')
             }else{
                 errorAlert(response);
