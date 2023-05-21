@@ -1,6 +1,6 @@
 import os
-from flask import Flask, render_template
 from dotenv import load_dotenv
+from flask import Flask, render_template
 from flask_login import current_user
 from main.entities.core.base import db
 from main.service.core.bcrypt import bcrypt
@@ -136,6 +136,6 @@ Korisničke lozinke se hash-uju sha256 algoritmom.
 
 
 if __name__ == '__main__':
-    # app.run(host='127.0.0.1', port=5000, debug=True)
-    app()
+    app.run(host='127.0.0.1', port=5000, debug=False)
+
 

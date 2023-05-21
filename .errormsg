@@ -1,23 +1,4 @@
 --------------------------------------------------------------
-PYTHON IMPORTI
---------------------------------------------------------------
-ImportError: cannot import name 'load_dotenv' from 'dotenv'
->>> pip install python-dotenv
---------------------------------------------------------------
-ModuleNotFoundError: No module named 'MySQLdb'
->>> pip3 install mysqlclient
---------------------------------------------------------------
-ModuleNotFoundError: No module named 'flask_sqlalchemy'
->>> pip3 install sqlalchemy flask-sqlalchemy
---------------------------------------------------------------
-ModuleNotFoundError: No module named 'flask_wtf'
->>> pip3 install flask-wtf
---------------------------------------------------------------
-ModuleNotFoundError: No module named 'flask_mail'
->>> pip3 install flask-mail
---------------------------------------------------------------
-
---------------------------------------------------------------
 BOOTSTRAP
 --------------------------------------------------------------
 PROBLEM: Modal neće da se prikaze
