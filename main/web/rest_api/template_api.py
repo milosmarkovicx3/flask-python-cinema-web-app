@@ -8,6 +8,7 @@ from main.entities.facade.projection_facade import ProjectionFacade
 from main.entities.facade.reservation_facade import ReservationFacade
 from main.service.impl.movie_impl import MovieImpl
 from main.service.utility import filters
+from main.service.utility.mail import support
 from main.service.utility.utils import repr_helper_method
 from main.web.rest_api.auth_api import admin_required
 
@@ -76,6 +77,9 @@ def events():
 
 @template_api.route('/kontakt', methods=['GET'])
 def contact():
+    kwargs = {k: v for k, v in request.args.items() if v and k in inspect.signature(support).parameters}
+    if not kwargs:
+        support(**kwargs)
     return render_template('contact.html')
 # ----------------------------------------------------------------------------------------------------------------------
 

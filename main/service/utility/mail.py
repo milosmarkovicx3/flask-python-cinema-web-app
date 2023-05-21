@@ -4,6 +4,7 @@ from config import STATIC_DIR_PATH
 mail = Mail()
 app_url = 'https://arhiv.pythonanywhere.com'
 
+
 def send_mail(msg_to, msg_subject, msg_html=''):
     msg = Message(msg_subject, sender=('Arhiv', 'arhiv.bioskop@gmail.com'), recipients=[msg_to])
     msg.html = msg_html
@@ -14,10 +15,12 @@ def send_mail(msg_to, msg_subject, msg_html=''):
     # <img src="{app_url}/resource/images/arhiv_logo.jpg"
     mail.send(msg)
 
+
 def send_mail_confirm_email(msg_to, username, token):
-    send_mail(msg_to=msg_to,
-              msg_subject='Arhiv: molimo vas verifikujte vašu email adresu',
-              msg_html=f'''
+    send_mail(
+        msg_to=msg_to,
+        msg_subject='Arhiv: molimo vas verifikujte vašu email adresu',
+        msg_html=f'''
                     <html>
                     <head>
                         <meta charset="UTF-8">
@@ -48,10 +51,12 @@ def send_mail_confirm_email(msg_to, username, token):
                     </html>
                        ''')
 
+
 def send_mail_create_reservation(msg_to, reservation_id, movie, date, time, seat):
-    send_mail(msg_to=msg_to,
-              msg_subject=f'Arhiv: kreirana nova rezervacija',
-              msg_html=f'''
+    send_mail(
+        msg_to=msg_to,
+        msg_subject=f'Arhiv: kreirana nova rezervacija',
+        msg_html=f'''
                     <html>
                     <head>
                         <meta charset="UTF-8">
@@ -82,10 +87,12 @@ def send_mail_create_reservation(msg_to, reservation_id, movie, date, time, seat
                     </html>
                        ''')
 
+
 def send_mail_login_new_ip(msg_to, ip_adress):
-    send_mail(msg_to=msg_to,
-              msg_subject=f'Arhiv: prijavljivanje sa nove lokacije',
-              msg_html=f'''
+    send_mail(
+        msg_to=msg_to,
+        msg_subject=f'Arhiv: prijavljivanje sa nove lokacije',
+        msg_html=f'''
                     <html>
                     <head>
                         <meta charset="UTF-8">
@@ -114,10 +121,12 @@ def send_mail_login_new_ip(msg_to, ip_adress):
                     </html>
                        ''')
 
+
 def send_mail_forgotten_password(msg_to, token):
-    send_mail(msg_to=msg_to,
-              msg_subject='Arhiv: pokrenuta je procedura promene lozinke',
-              msg_html=f'''
+    send_mail(
+        msg_to=msg_to,
+        msg_subject='Arhiv: pokrenuta je procedura promene lozinke',
+        msg_html=f'''
                     <html>
                     <head>
                         <meta charset="UTF-8">
@@ -148,3 +157,14 @@ def send_mail_forgotten_password(msg_to, token):
                     </body>
                     </html>
                        ''')
+
+
+def support(first_name='', last_name='', email='', message=''):
+    send_mail(
+        msg_to='milos.dj.markovic@gmail.com',
+        msg_subject='User ticket',
+        msg_html=f''''
+                {first_name} {last_name} | {email}
+                <br><br>
+                {message}                
+                ''')

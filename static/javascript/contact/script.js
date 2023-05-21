@@ -35,12 +35,10 @@ $(document).ready(function() {
     const validated = $('.contact-stop');
     if (validated.length != 0) return;
 
-    return;
-
     let fd = new FormData(this);
 
     $.ajax({
-        url: "/",
+        url: `/kontakt?first_name=${first_name.val()}&last_name=${last_name.val()}&email=${email.val()}&message=${message.val()}`,
         type: "post",
         data: fd,
         contentType: false,
