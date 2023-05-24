@@ -82,7 +82,9 @@ def send_mail_create_reservation(msg_to, reservation_id, movie, date, time, seat
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
                                     <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                                    <img src="https://www.drive.google.com/file/d/1WoMYWuLQEcmTpljSVCdH4wTZuAvlr0JO/preview" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
                                     <img src="{app_url}/resource/images/arhiv_logo.jpg" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                                    <div style="height: 50px; width: 50px; display: block; background: url(https://www.drive.google.com/file/d/1WoMYWuLQEcmTpljSVCdH4wTZuAvlr0JO/preview); background-size: contain; margin: auto 0 auto auto;"></div>
                                     <div style="height: 50px; width: 50px; display: block; background: url({app_url}/resource/images/arhiv_logo.jpg); background-size: contain; margin: auto 0 auto auto;"></div>
                           </div>
                         </div>
