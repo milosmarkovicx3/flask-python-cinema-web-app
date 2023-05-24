@@ -162,13 +162,15 @@ def send_mail_forgotten_password(msg_to, token):
 
 def customer_support(first_name='', last_name='', email='', message=''):
     msg = Message('User ticket', sender=('Arhiv', 'arhiv.bioskop@gmail.com'), recipients=['milos.dj.markovic@gmail.com'])
-    msg.html = f''''
+    msg.html = f'''
+                <hr>
                 First name: {first_name} <br>
                 Last name : {last_name} <br>
                 Email adress: {email} <br>
                 <hr>
                 Message: <br>
-                {message}                
+                {message}    
+                <hr>            
                 '''
     mail.send(msg)
     return True

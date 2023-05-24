@@ -21,7 +21,7 @@ class ReservationFacade(BaseFacade):
 
             for reservation in reservations:
                 p = Projection.query.filter_by(id=reservation.projection_id).first()
-                if p is None or p.date < now.date() or (p.date == now.date() and p.time < now.time()):
+                if p is None or p.date < now.date() or (p.date == now.date() and p.time_from < now.time()):
                     old_reservations_for_deletion.append(reservation)
 
             for r in old_reservations_for_deletion:
