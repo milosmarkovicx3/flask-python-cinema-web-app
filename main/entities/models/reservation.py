@@ -25,7 +25,7 @@ class Reservation(db.Model):
             "id": self.id,
             "projection": {
                 "date": repr_format_date(self.projection.date),
-                "time": repr_format_time(self.projection.time),
+                "time": repr_format_time(self.projection.time_from),
                 "movie_title": self.projection.movie.title,
                 "movie_year": self.projection.movie.year,
                 "movie_poster": self.projection.movie.poster
