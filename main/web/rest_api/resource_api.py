@@ -10,6 +10,18 @@ resource_api = Blueprint('resource_api', __name__, url_prefix='/resource')
 ui = UserImpl()
 uf = UserFacade()
 
+# @resource_api.route('/<directory>/<name>')
+# def get_image(directory, name):
+#     directory_path = find_directory_path(STATIC_DIR_PATH, directory)
+#     if directory_path:
+#         image_path = os.path.join(directory_path, name)
+#         if os.path.isfile(image_path):
+#             mimetype = 'image/png' if name.endswith('.png') else 'image/jpeg'
+#             response = make_response(send_file(image_path))
+#             response.headers['Content-Type'] = mimetype
+#             response.status_code = 200
+#             return response
+#     abort(404)
 @resource_api.route('/<directory>/<name>')
 def get_image(directory, name):
     directory_path = find_directory_path(STATIC_DIR_PATH, directory)
@@ -17,10 +29,7 @@ def get_image(directory, name):
         image_path = os.path.join(directory_path, name)
         if os.path.isfile(image_path):
             mimetype = 'image/png' if name.endswith('.png') else 'image/jpeg'
-            response = make_response(send_file(image_path))
-            response.headers['Content-Type'] = mimetype
-            response.status_code = 200
-            return response
+            return send_file(image_path, mimetype=mimetype, as_attachment=True)
     abort(404)
 
 @resource_api.route('/<value>', methods=['GET'])
