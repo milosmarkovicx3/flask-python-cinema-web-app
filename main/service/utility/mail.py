@@ -43,7 +43,7 @@ def send_mail_confirm_email(msg_to, username, token):
                               <a href="{app_url}/confirm-email?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <div style="display: block; background: url("{app_url}/resource/images/arhiv_logo.jpg"); background-size: contain; margin: auto 0 auto auto; width: 50px; height: 50px;"></div>
+                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
                               </div>
                               <hr>
                               <p style="margin: 0;">Ako se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>
@@ -81,7 +81,7 @@ def send_mail_create_reservation(msg_to, reservation_id, movie, date, time, seat
                               <br>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=4b3d0c35a9&amp;attid=0.1&amp;permmsgid=msg-f:1766320520155701801&amp;th=18833b279b5d2229&amp;view=fimg&amp;fur=ip&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ_Krm9vXbok13hIsvjVIR7QVPnC1BF6rmKixG7yx3JFGOeX9CACkDHIxaFfLvIMvJMi8hxxWaiwz5rdVwvBgUCrimvVnnBvEnJn9aRnUqUOkGYFqPA87U6AKFU&amp;disp=emb" width="50" height="50" title="logo" alt="logo" style="display:block;width:50px;height:50px;margin:auto 0 auto auto" data-image-whitelisted="" class="CToWUd" data-bit="iit">
+                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
                           </div>
                         </div>
                     </body>
@@ -115,7 +115,7 @@ def send_mail_login_new_ip(msg_to, ip_adress):
                               <br>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <div style="display: block; background: url("{app_url}/resource/images/arhiv_logo.jpg"); background-size: contain; margin: auto 0 auto auto; width: 50px; height: 50px;"></div>
+                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
                               </div>
                         </div>
                     </body>
@@ -150,7 +150,7 @@ def send_mail_forgotten_password(msg_to, token):
                               <a href="{app_url}/nova-lozinka?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Promeni lozinku</a>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <div style="display: block; background: url("{app_url}/resource/images/arhiv_logo.jpg"); background-size: contain; margin: auto 0 auto auto; width: 50px; height: 50px;"></div>
+                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
                               </div>
                               <hr>
                               <p style="margin: 0;">Ako niste pokrenuli proceduru za zamenu lozinke, molimo vas ignorišite ovaj mail.</p>
