@@ -1,5 +1,7 @@
 from flask_mail import Message, Mail
 
+from config import STATIC_DIR_PATH
+
 mail = Mail()
 app_url = 'https://arhiv.pythonanywhere.com'
 
@@ -7,9 +9,9 @@ app_url = 'https://arhiv.pythonanywhere.com'
 def send_mail(msg_to, msg_subject, msg_html=''):
     msg = Message(msg_subject, sender=('Arhiv', 'arhiv.bioskop@gmail.com'), recipients=[msg_to])
     msg.html = msg_html
-    # with open(f'{STATIC_DIR_PATH}/resources/images/arhiv_logo.jpg', 'rb') as fp:
-    #    image_data = fp.read()
-    # msg.attach('arhiv_logo.jpg', 'image/jpeg', image_data, 'inline', headers=[('Content-ID', '<arhiv_logo>')])
+    with open(f'{STATIC_DIR_PATH}/resources/images/arhiv_logo.jpg', 'rb') as fp:
+        image_data = fp.read()
+    msg.attach('arhiv_logo.jpg', 'image/jpeg', image_data, 'inline', headers=[('Content-ID', '<arhiv_logo>')])
     # <img src="cid:arhiv_logo">
     # <img src="{app_url}/resource/images/arhiv_logo.jpg"
     mail.send(msg)
@@ -79,7 +81,9 @@ def send_mail_create_reservation(msg_to, reservation_id, movie, date, time, seat
                               <br>
                               <div style="display: flex;">
                                     <p>Srdačan pozdrav,<br>Arhiv</p>
-                                    <div style="display: block; background: url("{app_url}/resource/images/arhiv_logo.jpg"); background-size: contain; margin: auto 0 auto auto; width: 50px; height: 50px;"></div>
+                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                                    <img src="{app_url}/resource/images/arhiv_logo.jpg" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                                    <div style="height: 50px; width: 50px; display: block; background: url({app_url}/resource/images/arhiv_logo.jpg); background-size: contain; margin: auto 0 auto auto;"></div>
                           </div>
                         </div>
                     </body>
