@@ -20,7 +20,6 @@ $(document).ready(function() {
     if(!basic_regex.test(last_name.val())){ last_name.addClass('is-invalid contact-stop'); }
     else{ last_name.removeClass('is-invalid contact-stop'); }
 
-    if(!$email_exist)
     if(!basic_regex.test(email.val())){
       email.addClass('is-invalid contact-stop');
       $('#contact-email-msg').html('Unesite email adresu.');
