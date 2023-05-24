@@ -161,12 +161,14 @@ def send_mail_forgotten_password(msg_to, token):
 
 
 def customer_support(first_name='', last_name='', email='', message=''):
-    send_mail(
-        msg_to='milos.dj.markovic@gmail.com',
-        msg_subject='User ticket',
-        msg_html=f''''
-                {first_name} {last_name} | {email}
-                <br><br>
+    msg = Message('User ticket', sender=('Arhiv', 'arhiv.bioskop@gmail.com'), recipients=['milos.dj.markovic@gmail.com'])
+    msg.html = f''''
+                First name: {first_name} <br>
+                Last name : {last_name} <br>
+                Email adress: {email} <br>
+                <hr>
+                Message: <br>
                 {message}                
-                ''')
+                '''
+    mail.send(msg)
     return True
