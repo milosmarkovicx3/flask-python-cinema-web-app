@@ -44,7 +44,7 @@ $(document).ready(function() {
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                successAlert("PORUKA JE USPEŠNO POSLATA!", "ODGOVOR MOŽETE DA OČEKUJETA U NAREDNIH 24H!, "", false);
+                successAlert("PORUKA JE USPEŠNO POSLATA!", "ODGOVOR MOŽETE DA OČEKUJETA U NAREDNIH 24H!", "", false);
                 $(this)[0].reset();
             }else{
                 errorAlert(response);
