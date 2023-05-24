@@ -38,13 +38,13 @@ $(document).ready(function() {
 
     $.ajax({
         url: `/kontakt?first_name=${first_name.val()}&last_name=${last_name.val()}&email=${email.val()}&message=${message.val()}`,
-        type: "post",
+        type: "get",
         data: fd,
         contentType: false,
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                successAlert("PORUKA JE USPEŠNO POSLATA!", "", "", false);
+                successAlert("PORUKA JE USPEŠNO POSLATA!", "ODGOVOR MOŽETE DA OČEKUJETA U NAREDNIH 24H!, "", false);
                 $(this)[0].reset();
             }else{
                 errorAlert(response);
