@@ -14,7 +14,6 @@ class BaseImpl(ABC):
         valid_kwargs = {k: v for k, v in kwargs.items() if v and k in inspect.signature(self.T.find_all).parameters}
         return result_handler(item=self.T.find_all(**valid_kwargs))
 
-
     def delete(self, **kwargs):
         valid_kwargs = {k: v for k, v in kwargs.items() if v and k in inspect.signature(self.T.delete).parameters}
         return result_handler(item=self.T.delete(**valid_kwargs))

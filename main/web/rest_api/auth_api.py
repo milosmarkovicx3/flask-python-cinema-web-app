@@ -13,7 +13,7 @@ ui = UserImpl()
 def login():
     return ui.login(request.form)
 
-@auth_api.route('/logout', methods=['GET', 'POST'])
+@auth_api.route('/logout', methods=['GET'])
 @login_required
 def logout():
     return ui.logout()
@@ -35,9 +35,6 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 def admin_required(func):
-    """
-    Custom dekorator funkcija za praćenje permisija.
-    """
     @wraps(func)
     def decorated_view(*args, **kwargs):
         if not current_user.is_authenticated or not current_user.is_superuser:

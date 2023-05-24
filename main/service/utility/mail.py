@@ -1,5 +1,4 @@
 from flask_mail import Message, Mail
-from config import STATIC_DIR_PATH
 
 mail = Mail()
 app_url = 'https://arhiv.pythonanywhere.com'
