@@ -231,6 +231,7 @@ class UserImpl(BaseImpl):
                 user = self.T.find(value=email, column="email")
                 if user:
                     user.forgot_passwd = datetime.now()
+                    db.session.commit()
                     secret = f'{user.id}{user.forgot_passwd}'
                     token = bcrypt.generate_password_hash(secret).decode('utf-8')
                     send_mail_forgotten_password(msg_to=user.email, token=token)
