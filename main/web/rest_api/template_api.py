@@ -78,7 +78,7 @@ def events():
 @template_api.route('/kontakt', methods=['GET'])
 def contact():
     kwargs = {k: v for k, v in request.args.items() if v and k in inspect.signature(support).parameters}
-    if not kwargs:
+    if kwargs:
         support(**kwargs)
     return render_template('contact.html')
 # ----------------------------------------------------------------------------------------------------------------------
