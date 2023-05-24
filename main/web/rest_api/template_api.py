@@ -2,13 +2,15 @@ import inspect
 
 from flask import render_template, Blueprint, request, abort
 from flask_login import login_required, current_user
+
+from main.entities.core.result import result_handler
 from main.entities.facade.hall_facade import HallFacade
 from main.entities.facade.movie_facade import MovieFacade
 from main.entities.facade.projection_facade import ProjectionFacade
 from main.entities.facade.reservation_facade import ReservationFacade
 from main.service.impl.movie_impl import MovieImpl
 from main.service.utility import filters
-from main.service.utility.mail import support
+from main.service.utility.mail import customer_support
 from main.service.utility.utils import repr_helper_method
 from main.web.rest_api.auth_api import admin_required
 
@@ -77,10 +79,8 @@ def events():
 
 @template_api.route('/kontakt', methods=['GET'])
 def contact():
-    kwargs = {k: v for k, v in request.args.items() if v and k in inspect.signature(support).parameters}
-    if kwargs:
-        support(**kwargs)
-    return render_template('contact.html')
+    kwargs = {k: v for k, v in request.args.items() if v and k in inspect.signature(customer_support).parameters}
+    return result_handler(customer_support(**kwargs)) if kwargs else render_template('contact.html')
 # ----------------------------------------------------------------------------------------------------------------------
 
 # -FILM-GRUPA-----------------------------------------------------------------------------------------------------------

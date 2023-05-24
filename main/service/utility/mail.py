@@ -160,7 +160,7 @@ def send_mail_forgotten_password(msg_to, token):
                        ''')
 
 
-def support(first_name='', last_name='', email='', message=''):
+def customer_support(first_name='', last_name='', email='', message=''):
     send_mail(
         msg_to='milos.dj.markovic@gmail.com',
         msg_subject='User ticket',
@@ -169,3 +169,4 @@ def support(first_name='', last_name='', email='', message=''):
                 <br><br>
                 {message}                
                 ''')
+    return True
