@@ -32,7 +32,7 @@ $(document).ready(function() {
         processData: false,
         success: response=>{
             if (response.status == '200') {
-                successAlert("REZERVACIJA JE UNETA U SISTEM!", "NA MAIL VAM JE POSLATA POTVRDA O REZERVACIJI!",
+                successAlert("REZERVACIJA JE UNETA U SISTEM!", "NA EMAIL VAM JE POSLATA POTVRDA O REZERVACIJI!",
                              "Ako ne vidite email odmah, molimo Vas da proverite vašu spam poštu.", true);
             }else{
                 errorAlert(response);
