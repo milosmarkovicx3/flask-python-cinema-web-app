@@ -1,5 +1,0 @@
-2023-04-28 22:48:22,342 INFO    [actors_facade.py(get_by_id:12)] id: 1
-2023-04-28 22:48:22,347 ERROR   [actors_facade.py(get_by_id:19)] secondary argument <class 'entities.models.movie_actor.MoviesActors'> passed to to relationship() Movie.actors must be a Table object or other FROM clause; can't send a mapped class directly as rows in 'secondary' are persisted independently of a class that is mapped to that same table.
-2023-04-28 22:52:03,144 INFO    [actors_facade.py(get_by_id:12)] id: 1
-2023-04-28 22:52:14,006 INFO    [movies_facade.py(get_by_id:9)] id: 1
-2023-04-28 23:19:40,473 INFO    [movies_facade.py(get_by_id:9)] id: 1

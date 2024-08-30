@@ -20,12 +20,6 @@ FIX: response.actor.actor.name umesto response.actor[0].actor.name, za sve mora 
 --------------------------------------------------------------
 
 --------------------------------------------------------------
-FLASK-MAIL
---------------------------------------------------------------
-Neće da se pošalje slika, pošto sam imao sve tagove, alt/title/widht/height,
-najverovatnije je došlo do sudara sa stilom gde sam isto ima podešeno
-widht/height atribute.
---------------------------------------------------------------
 
 --------------------------------------------------------------
 CLIENT SIDE
