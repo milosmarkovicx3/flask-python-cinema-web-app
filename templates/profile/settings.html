@@ -4,6 +4,7 @@
 {% block head %}
 <title>Arhiv | Podešavanja </title>
 <meta name="description" content="">
+<script src="{{ url_for('static', filename='javascript/profile/script.js') }}" defer></script>
 {% endblock %}
 
 
@@ -20,8 +21,13 @@
                 sledeći link
             </a>.
           </p>
-<!--          <span class="text-warning fs-4">EMAIL OBAVEŠTENJA: </span>-->
-<!--          Ukoliko ne želite da primate bilten Arhiv bioskopa, kliknite na sledeći link.-->
+          <span class="text-warning fs-4">EMAIL 2FA: </span>
+          <form id="two-fa-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="checkbox" id="two-fa" name="two-fa" class="bg-secondary form-check-input" value="{{ current_user.two_fa }}">
+              Omogući dvofaktornu zaštitu prilikom prijavljivanja na nalog.
+          </form>
+
 <!--          <span class="text-warning fs-4">GAŠENJE NALOGA: </span>-->
       </div>
       <hr>

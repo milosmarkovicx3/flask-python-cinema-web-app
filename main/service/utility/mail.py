@@ -3,7 +3,8 @@ from flask_mail import Message, Mail
 from config import STATIC_DIR_PATH
 
 mail = Mail()
-app_url = 'https://arhiv.pythonanywhere.com'
+#app_url = 'https://arhiv.pythonanywhere.com'
+app_url = 'http://127.0.0.1:5000'
 
 
 def send_mail(msg_to, msg_subject, msg_html=''):
@@ -52,6 +53,40 @@ def send_mail_confirm_email(msg_to, username, token):
                     </html>
                        ''')
 
+def send_mail_two_fa(msg_to, username, token):
+    send_mail(
+        msg_to=msg_to,
+        msg_subject='Arhiv: molimo vas verifikujte vašu email adresu',
+        msg_html=f'''
+                    <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    </head>
+                    <body style="margin: 0; padding: 0; font-family: 'Trebuchet MS', 'Sans Serif'; font-size: 16px; ">
+                        <div style="padding: 40px; background-color: #efefef; border-radius: 40px; width: 350px; margin: auto; border: 1px solid black;">
+                              <div style="border: 2px solid gray; background-color: #fafafa;padding: 0 15px; display: flex">
+                                  <div>
+                                    <h2>Poštovanje, {username}</h2>
+                                    <p>
+                                      Dvofaktorska zaštita je uključena.
+                                      <br><br>
+                                      Molimo vas kliknite dugme ispod kako bi ste nastavili proces prijave.
+                                    </p>
+                                  </div>
+                              </div>
+                              <br>
+                              <a href="{app_url}/two_fa?email={msg_to}&token={token}" style="border: 1px solid black; text-align: center; width: calc(100% - 40px); background-color: #7630f3; color: #ffffff; display: inline-block; padding: 10px 20px; text-decoration: none;  border-radius: 20px;">Verifikuj email</a>
+                              <div style="display: flex;">
+                                    <p>Srdačan pozdrav,<br>Arhiv</p>
+                                    <img src="cid:arhiv_logo" width="50" height="50" title="logo" alt="logo" style="display:block; margin: auto 0 auto auto;">
+                              </div>
+                              <hr>
+                              <p style="margin: 0;">Ako se niste registrovali kod nas, molimo vas ignorišite ovaj mail.</p>
+                        </div>
+                    </body>
+                    </html>
+                       ''')
 
 def send_mail_create_reservation(msg_to, reservation_id, movie, date, time, seat):
     send_mail(

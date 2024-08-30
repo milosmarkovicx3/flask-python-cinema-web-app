@@ -27,6 +27,11 @@ def confirm_email():
 def forgotten_password():
     return ui.forgotten_password(request.form)
 
+@auth_api.route('/two-fa', methods=['POST'])
+@login_required
+def two_fa():
+    return ui.two_fa(request.form)
+
 @login_manager.user_loader
 def load_user(user_id):
     """
@@ -75,3 +80,4 @@ def inject_data():
     """
     form_data = session.pop('form_data', None)
     return {'form_data': form_data}
+

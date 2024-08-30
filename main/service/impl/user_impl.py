@@ -132,7 +132,12 @@ class UserImpl(BaseImpl):
 
             if not user or not bcrypt.check_password_hash(user.password, password):
                 return Result(status=Status.BAD_REQUEST).response()
-            
+
+            if current_user.two_fa:
+                user = self.T.find(username, "username")
+                send_mail_login_new_ip(msg_to=user.email, ip_adress=request.remote_addr)
+                return
+
             login_user(user, remember=True, duration=timedelta(days=365)) if remember else login_user(user)
 
             user.last_login_at = datetime.now()
@@ -236,6 +241,19 @@ class UserImpl(BaseImpl):
                     token = bcrypt.generate_password_hash(secret).decode('utf-8')
                     send_mail_forgotten_password(msg_to=user.email, token=token)
                     return Result().response()
+        except Exception as e:
+            log.error(f'{e}', exc_info=True)
+            return Result(status=Status.INTERNAL_SERVER_ERROR).response()
+
+    def two_fa(self, form):
+        try:
+            two_fa = form.get("two-fa")
+            if two_fa:
+                current_user.two_fa = True
+            else:
+                current_user.two_fa = False
+            db.session.commit()
+            return Result().response()
         except Exception as e:
             log.error(f'{e}', exc_info=True)
             return Result(status=Status.INTERNAL_SERVER_ERROR).response()

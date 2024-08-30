@@ -220,3 +220,46 @@ $(document).ready(function() {
     });
   });
 //------------------------------------------------------------------------------
+$(document).ready(function() {
+    const two_fa = $('#two-fa').val();
+
+    if (two_fa == 'True') {
+      $('#two-fa').prop('checked', true);
+    } else {
+      $('#two-fa').prop('checked', false);
+    }
+
+    $('#two-fa').on('change', function() {
+        if ($('#two-fa').prop('checked')) {
+          $('#two-fa').val(true)
+        } else {
+          $('#two-fa').val(false)
+        }
+      $('#two-fa-form').submit();
+    });
+
+    $('#two-fa-form').on('submit', function(event) {
+          event.preventDefault();
+
+          let fd = new FormData(this);
+
+            $.ajax({
+                url: "/two-fa",
+                type: "post",
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: response=>{
+                    if (response.status == '200') {
+                    }else{
+                        errorAlert(response);
+                    }
+                },
+                error: function(error) {
+                }
+            });
+        });
+
+});
+
+//------------------------------------------------------------------------------
