@@ -25,7 +25,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 app.config["WTF_CSRF_SECRET_KEY"] = os.environ.get("WTF_CSRF_SECRET_KEY")
 app.config["SECURITY_PASSWORD_SALT"] = os.environ.get("SECURITY_PASSWORD_SALT")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI1", "mysql://root:@localhost/arhiv")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI", "mysql://root:@localhost/arhiv")
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'pool_recycle': 280}
 app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER")
 app.config["MAIL_PORT"] = os.getenv("MAIL_PORT")
@@ -94,15 +94,11 @@ db.init_app(app)
 bcrypt.init_app(app)
 
 #-ISKLJUČITI-NA-PRODUKCIJI-----------------------------------------------------
-app.app_context().push()
-db.create_all()
+# app.app_context().push()
+# db.create_all()
 
-# liniju 28 za link baze
+# liniju 28, DATABASE_URI
 # app_url promenljivu u mail.py
-
-# stigao sam do user_impl.py, 137 linija gde treba da se posalje mail sa usernamom i hashovanom lozinkom
-# a u originalnom prozoru se prikazuju prozor/obavestenje da se proveri mail i dugme na koje se zatvara prozor
-# a onda na klik linka u mailu se otvara index strana gde je korisnik ulogovan
 #------------------------------------------------------------------------------
 
 if __name__ == '__main__':

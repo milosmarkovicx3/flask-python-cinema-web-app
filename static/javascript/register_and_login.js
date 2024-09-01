@@ -172,11 +172,16 @@ $(document).ready(function() {
 //------------------------------------------------------------------------------
 // login forma
 
+var two_fa_code = 0;
+
 $(document).ready(function() {
     $('#login-form').submit(function(event) {
     event.preventDefault();
 
     let fd = new FormData(this);
+    if (two_fa_code){
+        fd.append('two-fa-code', two_fa_code);
+    }
 
     $.ajax({
         url: "/login",
@@ -186,9 +191,15 @@ $(document).ready(function() {
         processData: false,
         success: response=>{
             if (response.status == '200') {
+                two_fa_code = 0;
                 location.reload(true);
+            }else if(response.status == '304'){
+                $('#staticBackdropTwoFA').modal('show');
             }else if(response.status == '400'){
                 $('#staticBackdropLoginLabel').html('PRIJAVA<span class="text-danger"> (POGREŠNI KREDENCIJALI)</span>')
+            }else if(response.status == '401'){
+                $('#staticBackdropTwoFALabel').html('AUTORIZACIONI KOD<span class="text-danger"> (POGREŠNI 2FA KOD)</span>')
+                $('#staticBackdropTwoFA').modal('show');
             }else{
                 errorAlert(response);
             }
@@ -200,4 +211,13 @@ $(document).ready(function() {
 
     });
   });
+//------------------------------------------------------------------------------
+$(document).ready(function() {
+      $('#two-fa-code-submit').click(function(event) {
+            two_fa_code = $('#two-fa-code').val();
+            if (two_fa_code){
+                $('#login-form').submit();
+            }
+      });
+    });
 //------------------------------------------------------------------------------

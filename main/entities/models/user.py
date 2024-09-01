@@ -27,6 +27,7 @@ class User(db.Model, UserMixin):
     auth_token = db.Column('auth_token', db.String(256))
     forgot_passwd = db.Column('forgot_passwd', db.DateTime())
     two_fa = db.Column('two_fa', db.Boolean)
+    two_fa_code = db.Column('two_fa_code', db.Integer)
 
     reviews_association = db.relationship('Review', back_populates='user')
     reviews = association_proxy('reviews_association', 'movie')
@@ -50,6 +51,7 @@ class User(db.Model, UserMixin):
         self.auth_token = None
         self.forgot_passwd = None
         self.two_fa = None
+        self.two_fa_code = None
 
     def __str__(self):
         return f'User(id={self.id}, username={self.username})'
@@ -74,7 +76,8 @@ class User(db.Model, UserMixin):
             "confirmed_at": repr_format_date(self.confirmed_at),
             "auth_token": self.auth_token,
             "forgot_passwd": repr_format_date(self.forgot_passwd),
-            "two_fa": self.two_fa
+            "two_fa": self.two_fa,
+            "two_fa_code": self.two_fa_code
         }
 
     def generate_auth_token(self):

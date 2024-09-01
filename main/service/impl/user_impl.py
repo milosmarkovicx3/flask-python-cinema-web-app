@@ -1,5 +1,6 @@
 import base64
 import os
+import random
 from datetime import datetime, timedelta
 from json import dumps
 from flask import make_response, redirect, request, url_for, session, flash, Response
@@ -15,7 +16,7 @@ from main.service.core.bcrypt import bcrypt
 from main.service.core.wtf_forms import allowed_file
 from main.service.impl.base_impl import BaseImpl
 from main.service.utility.logger import log
-from main.service.utility.mail import send_mail_confirm_email, send_mail_login_new_ip, send_mail_forgotten_password
+from main.service.utility.mail import send_mail_confirm_email, send_mail_login_new_ip, send_mail_forgotten_password, send_mail_two_fa
 from main.service.utility.utils import basic_regex, email_regex, passwd_regex
 
 
@@ -126,19 +127,30 @@ class UserImpl(BaseImpl):
             username = form.get("login-username")
             password = form.get("login-passwd")
             remember = form.get('login-conditions')
+            two_fa_code = form.get('two-fa-code')
 
             log.info(f'login: {username}')
             user = self.T.find(username, "username")
 
-            if not user or not bcrypt.check_password_hash(user.password, password):
+            if not user or not bcrypt.check_password_hash(user.password, password) :
                 return Result(status=Status.BAD_REQUEST).response()
 
-            if current_user.two_fa:
-                user = self.T.find(username, "username")
-                send_mail_login_new_ip(msg_to=user.email, ip_adress=request.remote_addr)
-                return
+            if user.two_fa and two_fa_code:
+                if two_fa_code == str(user.two_fa_code):
+                    login_user(user, remember=True, duration=timedelta(days=365)) if remember else login_user(user)
+                    user.two_fa_code = None
+                    db.session.commit()
+                else:
+                    return Result(status=Status.UNAUTHORIZED).response()
+            elif user.two_fa:
+                random_number = random.randint(100000, 999999)
+                user.two_fa_code = random_number
+                db.session.commit()
+                send_mail_two_fa(msg_to=user.email, username=user.username, two_fa_code=random_number)
+                return Result(status=Status.NOT_MODIFIED).response()
+            else:
+                login_user(user, remember=True, duration=timedelta(days=365)) if remember else login_user(user)
 
-            login_user(user, remember=True, duration=timedelta(days=365)) if remember else login_user(user)
 
             user.last_login_at = datetime.now()
             user.login_count += 1

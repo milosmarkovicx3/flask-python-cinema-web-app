@@ -104,6 +104,27 @@
             </div>
         </div>
         </div>
+
+        <div class="modal fade" id="staticBackdropTwoFA" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropTwoFALabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered border-5 border-danger">
+            <div class="modal-content bg-body-secondary modal-texture border border-black">
+            <div class="modal-header ">
+                <h1 class="modal-title fs-5" id="staticBackdropTwoFALabel">AUTORIZACIONI KOD</h1>
+                <button type="button" id="two-fa-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                    <div class="mb-2">
+                        <label for="two-fa-code" id="two-fa-code-lbl" class="form-label w-100">Potreban kod vam je poslat na mail:</label>
+                        <input type="text" id="two-fa-code" class="form-control" name="two-fa-code" aria-describedby="twofaHelp" placeholder="npr. 645319">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button id="two-fa-code-submit" class="btn btn-success border border-black">Potvrdi</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
         <div class="modal fade" id="staticBackdropRegistation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropRegistationLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content bg-body-secondary modal-texture border border-black">
